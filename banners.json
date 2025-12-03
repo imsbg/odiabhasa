@@ -1,6 +1,18 @@
 [
-  "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
-  "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
-  "https://imsbg.github.io/odiabhasa/images/banner/history_odisha.png",
-  "https://imsbg.github.io/odiabhasa/images/banner/history_lang.png"
+    {
+    "image": "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
+    "text": "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର"
+  },
+    {
+    "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
+    "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ"
+  },
+  {
+    "image": "https://imsbg.github.io/odiabhasa/images/banner/history_odisha.png",
+    "text": "କୋଣାର୍କର ରଥଚକ"
+  },
+  {
+    "image": "https://imsbg.github.io/odiabhasa/images/banner/history_lang.png",
+    "text": "ଓଡ଼ିଆ ଭାଷାର ପୁରାତନ ଲିପି"
+  }
 ]
