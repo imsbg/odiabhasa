@@ -1,0 +1,99 @@
+{
+  "title": "ଚତୁର କାଉ",
+  "author": "ପାରମ୍ପରିକ ଲୋକକଥା",
+  "source": "ଓଡ଼ିଆ ଶିଶୁ ସାହିତ୍ୟ",
+  "coverpage": "https://raw.githubusercontent.com/imsbg/odiabhasa/main/bahi/covers/cover1.jpg",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "content": [
+        {
+          "type": "header",
+          "text": "ପ୍ରଥମ ପୃଷ୍ଠା: ଶୋଷିଲା କାଉ"
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            { "text": "ଗୋଟିଏ ଥିଲା କାଉ । ଥରେ ବହୁତ ଖରା ହେଉଥିଲା । କାଉକୁ ଭାରି ଶୋଷ ହେଲା, କିନ୍ତୁ ସେ କେଉଁଠି ପାଣି ପାଇଲା ନାହିଁ । ସେ ପାଣି ପାଇଁ ", "style": "normal" },
+            { "text": "ବହୁତ ବ୍ୟାକୁଳ", "style": "italic" },
+            { "text": " ହୋଇ ଏଣେତେଣେ ଉଡ଼ି ବୁଲୁଥିଲା ।", "style": "normal" }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "content": [
+        {
+          "type": "header",
+          "text": "ଦ୍ୱିତୀୟ ପୃଷ୍ଠା: ପାଣିର ସନ୍ଧାନ"
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            { "text": "ବହୁତ ଖୋଜିବା ପରେ, ସେ ଗୋଟିଏ ଗାଁ ମୁଣ୍ଡରେ ଏକ ", "style": "normal" },
+            { "text": "ମାଠିଆ", "style": "bold" },
+            { "text": " ଦେଖିଲା । ସେ ଆଶା କଲା ଯେ ସେଥିରେ ନିଶ୍ଚୟ ପାଣି ଥିବ । ମାଠିଆରେ ପାଣି ଥିଲା, କିନ୍ତୁ ", "style": "normal" },
+            { "text": "ବହୁତ ତଳେ ଥିଲା ।", "style": "italic" },
+            { "text": " କାଉର ଥଣ୍ଟ ସେଠି ପର୍ଯ୍ୟନ୍ତ ପାଉନଥିଲା ।", "style": "normal" }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "content": [
+        {
+          "type": "header",
+          "text": "ତୃତୀୟ ପୃଷ୍ଠା: ଏକ ଚତୁର ଉପାୟ"
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            { "text": "କାଉଟି ହତାଶ ହେଲା ନାହିଁ । ସେ ବହୁତ ", "style": "normal" },
+            { "text": "ଚତୁର", "style": "italic" },
+            { "text": " ଥିଲା । ସେ ଗୋଟିଏ ଉପାୟ ପାଞ୍ଚିଲା । ସେ ପାଖରେ ପଡିଥିବା ଛୋଟ ଛୋଟ ଗୋଡ଼ି ଆଣି ମାଠିଆରେ ପକାଇବାକୁ ଲାଗିଲା ।", "style": "normal" }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "content": [
+        {
+          "type": "header",
+          "text": "ଚତୁର୍ଥ ପୃଷ୍ଠା: ପରିଶ୍ରମର ଫଳ"
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            { "text": "ଗୋଟିଏ ପରେ ଗୋଟିଏ ଗୋଡ଼ି ପକାଇବା ପରେ, ମାଠିଆର ପାଣି ଧୀରେ ଧୀରେ ", "style": "normal" },
+            { "text": "ଉପରକୁ ଉଠି ଆସିଲା ।", "style": "bold" },
+            { "text": " ଏବେ କାଉ ସହଜରେ ପାଣି ପିଇ ପାରିଲା । ତା'ର ପରିଶ୍ରମ ସଫଳ ହେଲା ।", "style": "normal" }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "content": [
+        {
+          "type": "header",
+          "text": "ପଞ୍ଚମ ପୃଷ୍ଠା: ଶିକ୍ଷା"
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            { "text": "ପାଣି ପିଇ ସାରି କାଉ ଖୁସିରେ କା କା କରି ଉଡ଼ିଗଲା । ଏହି କାହାଣୀରୁ ଆମେ ଶିଖିଲେ ଯେ,", "style": "normal" }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            { "text": "ବୁଦ୍ଧି ଥିଲେ ସବୁକିଛି ସମ୍ଭବ ଏବଂ ପରିଶ୍ରମର ଫଳ ସବୁବେଳେ ମିଠା ହୋଇଥାଏ ।", "style": "italic" }
+          ]
+        }
+      ]
+    }
+  ]
+}
