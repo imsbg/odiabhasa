@@ -1,8 +1,8 @@
 {
   "title": "କବିତାମାଳା",
   "author": "ସ୍ୱଭାବକବି ଗଙ୍ଗାଧର ମେହେର",
-  "source": "ଓଡ଼ିଆ ଭର୍ଚୁଆଲ୍ ଏକାଡେମୀ",
-  "coverpage": "https://raw.githubusercontent.com/imsbg/odiabhasa/main/bahi/covers/kabitamala.jpg",
+  "source": "Online",
+  "coverpage": "",
   "pages": [
     {
       "pageNumber": 1,
@@ -14,21 +14,19 @@
         {
           "type": "paragraph",
           "spans": [
-            { "text": "ଏହି ପୁସ୍ତକରେ ନିମ୍ନଲିଖିତ ବିବରଣୀ ରହିଛି:", "style": "italic" }
+            {
+              "text": "ସ୍ୱଭାବକବି ଗଙ୍ଗାଧର ମେହେର",
+              "style": "italic"
+            }
           ]
         },
         {
           "type": "paragraph",
           "spans": [
-            { "text": "ଲେଖକ: ", "style": "bold" },
-            { "text": "ସ୍ୱଭାବକବି ଗଙ୍ଗାଧର ମେହେର", "style": "normal" }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "spans": [
-            { "text": "ସୋର୍ସ: ", "style": "bold" },
-            { "text": "ଓଡ଼ିଆ ଭର୍ଚୁଆଲ୍ ଏକାଡେମୀ", "style": "normal" }
+            {
+              "text": "Online",
+              "style": "normal"
+            }
           ]
         }
       ]
@@ -43,7 +41,10 @@
         {
           "type": "paragraph",
           "spans": [
-            { "text": "ଗୋ-ବିଳାପ", "style": "normal" }
+            {
+              "text": "୧. ଗୋ-ବିଳାପ",
+              "style": "normal"
+            }
           ]
         }
       ]
@@ -53,100 +54,288 @@
       "content": [
         {
           "type": "header",
-          "text": "ବିଷୟ: ଗୋ-ବିଳାପ"
+          "text": "ଗୋ-ବିଳାପ\nକହନ୍ତି ଗୋମାତା ଶୋକ ଗଦ୍‌ଗଦ-ବଚନେ,"
         },
         {
           "type": "paragraph",
           "spans": [
-            { "text": "କହନ୍ତି ଗୋମାତା ଶୋକ ଗଦ୍‌ଗଦ-ବଚନେ, ବିକଳେ ହୃଦୟେ ଅଶ୍ରୁପୂରିତ ଲୋଚନେ । କି ହିନ୍ଦୁ ମୁସଲମାନ କିବା ଖ୍ରୀଷ୍ଟିଆନ, ମାନବ ମାତ୍ରକେ ମୋର ଦୃଷ୍ଟିରେ ସମାନ ।", "style": "normal" }
+            {
+              "text": "ବିକଳେ ହୃଦୟେ ଅଶ୍ରୁପୂରିତ ଲୋଚନେ ।",
+              "style": "normal"
+            }
           ]
         },
         {
           "type": "paragraph",
           "spans": [
-            { "text": "ବ୍ରିଟିଶ ନରେଶ ଆଉ ଭାରତୀୟ ରାଜା, ଭୂସ୍ୱାମିଗଣ ସହିତ ଯେତେକ ପରଜା, ଭାରତନିବାସୀ ଅନ୍ୟ ଦେଶବାସିଗଣ, ସମସ୍ତଙ୍କଠାରେ ମୋର ଏହି ନିବେଦନ ।", "style": "normal" }
+            {
+              "text": "କି ହିନ୍ଦୁ ମୁସଲମାନ କିବା ଖ୍ରୀଷ୍ଟିଆନ,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ମାନବ ମାତ୍ରକେ ମୋର ଦୃଷ୍ଟିରେ ସମାନ ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ବ୍ରିଟିଶ ନରେଶ ଆଉ ଭାରତୀୟ ରାଜା,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଭୂସ୍ୱାମିଗଣ ସହିତ ଯେତେକ ପରଜା,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଭାରତନିବାସୀ ଅନ୍ୟ ଦେଶବାସିଗଣ,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ସମସ୍ତଙ୍କଠାରେ ମୋର ଏହି ନିବେଦନ ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ସମସ୍ତେ ସର୍ବଦା ମୋତେ ଚିହ୍ନିଛ ସର୍ବଥା,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଚିହ୍ନାଇ ହେବାକୁ ମୋର ନାହିଁ ଆଉ କଥା ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଯାହା ଯାହା ମୋହୋଠାରୁ ପାଅ ଉପକାର,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ସେସବୁ ବର୍ଣ୍ଣିବା ମଧ୍ୟ ନାହିଁ ଦରକାର ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଜାଣୁଛ ତ ଦୁଇ ବେଳ ଦୁହିଁ ମୋର ଦୁଧ,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଘିଅ କର ଛେନା କର ଖାଇ ହୁଅ ବୋଧ ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ତହିଁରେ ବଢ଼ାଅ ନିଜ ଶାରିରୀକ ବଳ,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ବାଛୁରୀକୁ କର ଭୂମି ଚଷିବାରେ ହଳ ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଏକା ଭୂମି ଚଷିକରି ନାହିଁ ତା’ ନିସ୍ତାର,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ପାଣିଛିଞ୍ଚା ଗାଡ଼ିଟଣା କାର୍ଯ୍ୟ ହିଁ ତାହାର ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଲଦାଲଦି ଦ୍ରବ୍ୟ ନେଇ ବୁଲାଇ ବୁଲାଇ,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ବାଲିମୟ ପଥେ ଗିରିପଥରେ ଚଳାଇ,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ବାଣିଜ୍ୟ ବ୍ୟାପାର କରି ଅର୍ଜ୍ଜୁଅଛ ଧନ,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ବନାଉଛ ଉଚ୍ଚ ଉଚ୍ଚ ତ୍ରିତଳ ଭବନ ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଯେତେବେଳେ ବତ୍ସା ମୋର ନଦୀବାଲିଗାଡ଼ି",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଟାଣୁଥାଏ, ପୃଷ୍ଠେ ତାର ବର୍ଷୁଥାଏ ବାଡ଼ି ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ତୁମ୍ଭ ଧନରକ୍ଷା ଲାଗି ସେ ପ୍ରହାର-ପ୍ରାସ,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଦୂର କରେ ନିଜେ କରି ଶୁଷ୍କ-ତୃଣଗ୍ରାସ ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ସେ ତୃଣରୁ ଯେ ଗୋବର ହୁଅଇ ବାହାର,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଶୁଖାଇ ତା’ ଜାଳରୂପେ କର ବ୍ୟବହାର ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଜଳିକରି ଅବଶେଷେ ହୁଏ ଯାହା କ୍ଷାର,",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଖତରୂପେ କ୍ଷେତେ ପଡ଼ି କରେ ଉପକାର ।",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ମୋହର ଗୋବର ଯାଇ ପଡ଼େ ଯେଉଁ ସ୍ଥଳ",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ଚତୁର୍ଗୁଣେ ସହି ସ୍ଥାନ ଉପୁଯାଏ ଫଳ ।",
+              "style": "normal"
+            }
           ]
         }
       ]
-    },
-    {
-        "pageNumber": 4,
-        "content": [
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "ସମସ୍ତେ ସର୍ବଦା ମୋତେ ଚିହ୍ନିଛ ସର୍ବଥା,\nଚିହ୍ନାଇ ହେବାକୁ ମୋର ନାହିଁ ଆଉ କଥା ।\nଯାହା ଯାହା ମୋହୋଠାରୁ ପାଅ ଉପକାର,\nସେସବୁ ବର୍ଣ୍ଣିବା ମଧ୍ୟ ନାହିଁ ଦରକାର ।", "style": "normal" }
-                ]
-            },
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "ଜାଣୁଛ ତ ଦୁଇ ବେଳ ଦୁହିଁ ମୋର ଦୁଧ,\nଘିଅ କର ଛେନା କର ଖାଇ ହୁଅ ବୋଧ ।\nତହିଁରେ ବଢ଼ାଅ ନିଜ ଶାରିରୀକ ବଳ,\nବାଛୁରୀକୁ କର ଭୂମି ଚଷିବାରେ ହଳ ।", "style": "normal" }
-                ]
-            }
-        ]
-    },
-    {
-        "pageNumber": 5,
-        "content": [
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "ଏକା ଭୂମି ଚଷିକରି ନାହିଁ ତା’ ନିସ୍ତାର,\nପାଣିଛିଞ୍ଚା ଗାଡ଼ିଟଣା କାର୍ଯ୍ୟ ହିଁ ତାହାର ।\nଲଦାଲଦି ଦ୍ରବ୍ୟ ନେଇ ବୁଲାଇ ବୁଲାଇ,\nବାଲିମୟ ପଥେ ଗିରିପଥରେ ଚଳାଇ,", "style": "normal" }
-                ]
-            },
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "ବାଣିଜ୍ୟ ବ୍ୟାପାର କରି ଅର୍ଜ୍ଜୁଅଛ ଧନ,\nବନାଉଛ ଉଚ୍ଚ ଉଚ୍ଚ ତ୍ରିତଳ ଭବନ ।\nଯେତେବେଳେ ବତ୍ସା ମୋର ନଦୀବାଲିଗାଡ଼ି\nଟାଣୁଥାଏ, ପୃଷ୍ଠେ ତାର ବର୍ଷୁଥାଏ ବାଡ଼ି ।", "style": "normal" }
-                ]
-            }
-        ]
-    },
-    {
-        "pageNumber": 6,
-        "content": [
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "ତୁମ୍ଭ ଧନରକ୍ଷା ଲାଗି ସେ ପ୍ରହାର-ପ୍ରାସ,\nଦୂର କରେ ନିଜେ କରି ଶୁଷ୍କ-ତୃଣଗ୍ରାସ ।\nସେ ତୃଣରୁ ଯେ ଗୋବର ହୁଅଇ ବାହାର,\nଶୁଖାଇ ତା’ ଜାଳରୂପେ କର ବ୍ୟବହାର ।", "style": "normal" }
-                ]
-            },
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "ଜଳିକରି ଅବଶେଷେ ହୁଏ ଯାହା କ୍ଷାର,\nଖତରୂପେ କ୍ଷେତେ ପଡ଼ି କରେ ଉପକାର ।\nମୋହର ଗୋବର ଯାଇ ପଡ଼େ ଯେଉଁ ସ୍ଥଳ\nଚତୁର୍ଗୁଣେ ସହି ସ୍ଥାନ ଉପୁଯାଏ ଫଳ ।", "style": "normal" }
-                ]
-            }
-        ]
-    },
-    {
-        "pageNumber": 7,
-        "content": [
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "ବିଚାର ମାନବଗଣ, ମୋହର ସନ୍ତତି\nକେତେ ପରକାରେ ତୁମ୍ଭ ହିତ କରୁଛନ୍ତି ।\nଦେଖ ସର୍ବପରକାରେ ମୋହର କୁମର,\nପୋଷକ ଅଟନ୍ତି ତୁମ୍ଭ ଦେହ ଜୀବନର ।", "style": "normal" }
-                ]
-            },
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "କରୁନାହିଁ ବାବା, ଏହା ମୁଁ ନିଜ ବଡ଼ାଇ,\nଉପହାସେ ମୋ’ କଥାକୁ ନ ଦିଅ ଉଡ଼ାଇ ।\nଅବଶ୍ୟ ନିଜର ପରଶଂସା ନୁହେ ଭଲ,\nକିନ୍ତୁ ଭଲ ଥିଲେ ପର ଉପକାର ଛଳ ।", "style": "normal" }
-                ]
-            }
-        ]
-    },
-    {
-        "pageNumber": 8,
-        "content": [
-            {
-                "type": "paragraph",
-                "spans": [
-                    { "text": "(ପୂର୍ବରୁ ‘କବିତାମାଳା’ ରେ ସ୍ଥାନିତ ହୋଇନଥିବା ଓ ଗ୍ରନ୍ଥାବଳୀରେ ପ୍ରକାଶ ପାଇନଥିବା କବିତାଗୁଡ଼ିକ ଏଠାରେ ସ୍ଥାନିତ ହେଲା)", "style": "italic" }
-                ]
-            }
-        ]
     }
   ]
 }
