@@ -1,8 +1,10 @@
 [
   {
+    "type": "json",
     "destination": "https://imsbg.github.io/odiabhasa/bahi/all/kabitamala.json"
   },
   {
-    "destination": "https://imsbg.github.io/odiabhasa/bahi/book2.json"
+    "type": "pdf",
+    "destination": "https://imsbg.github.io/odiabhasa/bahi/all/another-book.json"
   }
 ]
