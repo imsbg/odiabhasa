@@ -1,1 +1,10 @@
 କେବଳ ବହି ଅପଲୋଡ ପାଇଁ
+
+
+for pdf use this json - 
+{
+  "title": "ମୋର ପ୍ରିୟ କବିତା",
+  "author": "ଜଣେ କବି",
+  "coverpage": "https://raw.githubusercontent.com/imsbg/odiabhasa/main/bahi/covers/cover2.jpg",
+  "pdfUrl": "https://imsbg.github.io/odiabhasa/bahi/pdfs/sample.pdf"
+}
