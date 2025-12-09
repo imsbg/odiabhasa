@@ -489,6 +489,20 @@
           ]
         }
       ]
+    },
+    {
+      "pageNumber": 6,
+      "content": [
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "ସମାପ୍ତ",
+              "style": "normal"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
