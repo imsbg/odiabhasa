@@ -1,12 +1,292 @@
 {
   "data": {
-    "2025-12-13": {
-      "name": "ମାର୍ଗଶିର ପୂର୍ଣ୍ଣିମା",
-      "color": "#1A237E",
-      "ct": "ପୂର୍ଣ୍ଣିମା | ଶୁକ୍ଳପକ୍ଷ"
+    "2026-01-01": {
+      "name": "English New Year",
+      "color": "#e53935"
     },
-    "2025-12-14": {
-      "ct": "test"
+    "2026-01-02": {
+      "name": "Hazarat Ali's Birthday",
+      "color": "#e53935"
+    },
+    "2026-01-09": {
+      "name": "Vivekananda Jayanti *Samvat",
+      "color": "#e53935"
+    },
+    "2026-01-12": {
+      "name": "National Youth Day",
+      "color": "#1e88e5"
+    },
+    "2026-01-13": {
+      "name": "Lohri",
+      "color": "#e53935"
+    },
+    "2026-01-14": {
+      "name": "Pongal",
+      "color": "#e53935"
+    },
+    "2026-01-23": {
+      "name": "Subhas Chandra Bose Jayanti",
+      "color": "#43a047"
+    },
+    "2026-01-26": {
+      "name": "Republic Day",
+      "color": "#43a047"
+    },
+    "2026-01-30": {
+      "name": "Gandhi Punyatithi",
+      "color": "#43a047"
+    },
+    "2026-02-01": {
+      "name": "Guru Ravidas Jayanti",
+      "color": "#e53935"
+    },
+    "2026-02-04": {
+      "name": "World Cancer Day",
+      "color": "#1e88e5"
+    },
+    "2026-02-12": {
+      "name": "Maharishi Dayanand Saraswati Jayanti",
+      "color": "#e53935"
+    },
+    "2026-02-14": {
+      "name": "Valentine's Day",
+      "color": "#1e88e5"
+    },
+    "2026-02-15": {
+      "name": "Maha Shivaratri",
+      "color": "#e53935"
+    },
+    "2026-02-19": {
+      "name": "Chhatrapati Shivaji Maharaj Jayanti",
+      "color": "#43a047"
+    },
+    "2026-03-03": {
+      "name": "Chaitanya Mahaprabhu Jayanti",
+      "color": "#e53935"
+    },
+    "2026-03-04": {
+      "name": "Holi",
+      "color": "#e53935"
+    },
+    "2026-03-06": {
+      "name": "Chhatrapati Shivaji Maharaj Jayanti",
+      "color": "#e53935"
+    },
+    "2026-03-08": {
+      "name": "International Women's Day",
+      "color": "#1e88e5"
+    },
+    "2026-03-19": {
+      "name": "Gudi Padwa",
+      "color": "#e53935"
+    },
+    "2026-03-20": {
+      "name": "Parsi New Year",
+      "color": "#e53935"
+    },
+    "2026-03-23": {
+      "name": "Shaheed Diwas",
+      "color": "#43a047"
+    },
+    "2026-03-26": {
+      "name": "Rama Navami *Smarta",
+      "color": "#e53935"
+    },
+    "2026-03-27": {
+      "name": "Rama Navami *ISKCON",
+      "color": "#e53935"
+    },
+    "2026-03-31": {
+      "name": "Mahavir Swami Jayanti",
+      "color": "#e53935"
+    },
+    "2026-04-01": {
+      "name": "Bank's Holiday",
+      "color": "#43a047"
+    },
+    "2026-04-03": {
+      "name": "Good Friday",
+      "color": "#e53935"
+    },
+    "2026-04-05": {
+      "name": "Easter",
+      "color": "#e53935"
+    },
+    "2026-04-13": {
+      "name": "Vallabhacharya Jayanti",
+      "color": "#e53935"
+    },
+    "2026-04-14": {
+      "name": "Baisakhi",
+      "color": "#e53935"
+    },
+    "2026-04-21": {
+      "name": "Surdas Jayanti",
+      "color": "#e53935"
+    },
+    "2026-04-22": {
+      "name": "Earth Day",
+      "color": "#1e88e5"
+    },
+    "2026-05-01": {
+      "name": "International Workers' Day",
+      "color": "#1e88e5"
+    },
+    "2026-05-03": {
+      "name": "World Laughter Day",
+      "color": "#1e88e5"
+    },
+    "2026-05-07": {
+      "name": "Rabindranath Tagore Jayanti",
+      "color": "#43a047"
+    },
+    "2026-05-10": {
+      "name": "Mother's Day",
+      "color": "#1e88e5"
+    },
+    "2026-05-27": {
+      "name": "Bakrid",
+      "color": "#e53935"
+    },
+    "2026-05-31": {
+      "name": "World No Tobacco Day",
+      "color": "#1e88e5"
+    },
+    "2026-06-05": {
+      "name": "World Environment Day",
+      "color": "#1e88e5"
+    },
+    "2026-06-17": {
+      "name": "Islamic New Year",
+      "color": "#e53935"
+    },
+    "2026-06-21": {
+      "name": "International Yoga Day",
+      "color": "#1e88e5"
+    },
+    "2026-06-26": {
+      "name": "Muharram",
+      "color": "#e53935"
+    },
+    "2026-06-29": {
+      "name": "Kabirdas Jayanti",
+      "color": "#e53935"
+    },
+    "2026-07-16": {
+      "name": "Jagannath Rathyatra",
+      "color": "#e53935"
+    },
+    "2026-07-29": {
+      "name": "Guru Purnima",
+      "color": "#e53935"
+    },
+    "2026-08-02": {
+      "name": "Friendship Day",
+      "color": "#1e88e5"
+    },
+    "2026-08-15": {
+      "name": "Independence Day",
+      "color": "#43a047"
+    },
+    "2026-08-19": {
+      "name": "Tulsidas Jayanti",
+      "color": "#e53935"
+    },
+    "2026-08-26": {
+      "name": "Eid-e-Milad",
+      "color": "#e53935"
+    },
+    "2026-08-28": {
+      "name": "Rakhi",
+      "color": "#e53935"
+    },
+    "2026-09-04": {
+      "name": "Krishna Janmashtami",
+      "color": "#e53935"
+    },
+    "2026-09-05": {
+      "name": "Teachers' Day",
+      "color": "#1e88e5"
+    },
+    "2026-09-14": {
+      "name": "Hindi Diwas",
+      "color": "#1e88e5"
+    },
+    "2026-09-15": {
+      "name": "Engineer's Day",
+      "color": "#1e88e5"
+    },
+    "2026-09-23": {
+      "name": "Autumnal Equinox",
+      "color": "#e53935"
+    },
+    "2026-10-02": {
+      "name": "Gandhi Jayanti",
+      "color": "#43a047"
+    },
+    "2026-10-11": {
+      "name": "Maharaja Agrasen Jayanti",
+      "color": "#e53935"
+    },
+    "2026-10-19": {
+      "name": "Maha Navami",
+      "color": "#e53935"
+    },
+    "2026-10-20": {
+      "name": "Dussehra",
+      "color": "#e53935"
+    },
+    "2026-10-21": {
+      "name": "Madhvacharya Jayanti",
+      "color": "#e53935"
+    },
+    "2026-10-26": {
+      "name": "Meerabai Jayanti",
+      "color": "#e53935"
+    },
+    "2026-10-29": {
+      "name": "Karwa Chauth",
+      "color": "#e53935"
+    },
+    "2026-11-08": {
+      "name": "Diwali",
+      "color": "#e53935"
+    },
+    "2026-11-10": {
+      "name": "Govardhan Puja",
+      "color": "#e53935"
+    },
+    "2026-11-11": {
+      "name": "Bhaiya Dooj",
+      "color": "#e53935"
+    },
+    "2026-11-14": {
+      "name": "Children's Day",
+      "color": "#1e88e5"
+    },
+    "2026-11-15": {
+      "name": "Chhath Puja",
+      "color": "#e53935"
+    },
+    "2026-11-24": {
+      "name": "Guru Nanak Jayanti",
+      "color": "#e53935"
+    },
+    "2026-12-01": {
+      "name": "World AIDS Day",
+      "color": "#1e88e5"
+    },
+    "2026-12-22": {
+      "name": "Shortest Day of Year",
+      "color": "#e53935"
+    },
+    "2026-12-23": {
+      "name": "Hazarat Ali's Birthday",
+      "color": "#e53935"
+    },
+    "2026-12-25": {
+      "name": "Merry Christmas",
+      "color": "#e53935"
     }
   }
 }
