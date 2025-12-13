@@ -18,7 +18,7 @@
         html, body {
             height: 100%;
             font-family: 'Noto Sans Oriya', sans-serif;
-            background-color: #0d1117; /* A dark charcoal/blue background */
+            background-color: #0d1117; /* Dark charcoal/blue background */
             color: #e6edf3; /* Off-white for better readability */
             display: flex;
             justify-content: center;
@@ -34,7 +34,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2rem; /* Consistent spacing between elements */
+            gap: 2rem;
         }
 
         /* --- Top "Coming Soon" Text --- */
@@ -49,7 +49,7 @@
             display: flex;
             justify-content: center;
             gap: 1.5rem;
-            flex-wrap: wrap; /* Allows characters to wrap on smaller screens */
+            flex-wrap: wrap;
         }
 
         .char-card {
@@ -60,26 +60,20 @@
             justify-content: center;
             align-items: center;
             border-radius: 8px;
-
-            /* The grid/blueprint background */
             background-image:
                 linear-gradient(rgba(45, 108, 224, 0.2) 1px, transparent 1px),
                 linear-gradient(to right, rgba(45, 108, 224, 0.2) 1px, transparent 1px);
             background-size: 10px 10px;
-            
-            /* Subtle dark to light gradient overlay for depth */
             background-color: #161b22;
-            background-blend-mode: normal;
         }
 
         .char-card .char {
             font-size: 3.5rem;
             font-weight: 700;
-            color: rgba(230, 237, 243, 0.2); /* Faded character color */
+            color: rgba(230, 237, 243, 0.2);
             text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
 
-        /* The blue "active" outline effect */
         .char-card.active::before {
             content: '';
             position: absolute;
@@ -95,7 +89,7 @@
             justify-content: center;
             align-items: center;
             gap: 1rem;
-            flex-wrap: wrap; /* Allows tag to wrap if needed */
+            flex-wrap: wrap;
         }
 
         h1 {
@@ -112,7 +106,7 @@
             border-radius: 6px;
             font-size: 1rem;
             font-weight: 700;
-            align-self: flex-start; /* Aligns better with the top of the H1 */
+            align-self: flex-start;
             margin-top: 0.5rem;
         }
 
@@ -124,24 +118,61 @@
             line-height: 1.7;
         }
 
-        /* --- Responsive Design --- */
+        /* --- Progress Bar Styles --- */
+        .progress-section {
+            width: 100%;
+            max-width: 600px;
+            background-color: #161b22;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            margin-top: 1rem;
+        }
+
+        .progress-labels {
+            display: flex;
+            justify-content: space-between;
+            color: #e6edf3;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 12px;
+            background-color: #0d1117;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #30363d;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%; /* JS will update this */
+            background: linear-gradient(90deg, #2d6ce0, #58a6ff);
+            border-radius: 20px;
+            transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 10px rgba(45, 108, 224, 0.6);
+        }
+
+        .status-msg {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #848d97;
+        }
+
+        .status-msg strong {
+            color: #58a6ff;
+        }
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-
-            .tagline {
-                font-size: 1rem;
-            }
-
-            .char-card {
-                width: 80px;
-                height: 80px;
-            }
-
-            .char-card .char {
-                font-size: 2.8rem;
-            }
+            h1 { font-size: 3rem; }
+            .tagline { font-size: 1rem; }
+            .char-card { width: 80px; height: 80px; }
+            .char-card .char { font-size: 2.8rem; }
+            .progress-labels { font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -175,7 +206,100 @@
             ଓଡ଼ିଆ ହେଉଛି ଆମ ଭାଷା ଓ ଆମ ପରିଚୟ । <br> ଓଡ଼ିଆ ଭାଷା ଓ ସଂସ୍କୃତି ମୋ ଗର୍ବ ।
         </p>
 
+        <!-- --- Progress Bar Section --- -->
+        <div class="progress-section">
+            <div class="progress-labels">
+                <span></span>
+                <span id="percent-display">୦%</span>
+                <span></span>
+            </div>
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-bar"></div>
+            </div>
+            <p class="status-msg" id="days-remaining">
+                ଗଣନା ଚାଲିଛି...
+            </p>
+        </div>
+
     </main>
+
+    <!-- --- JavaScript Logic --- -->
+    <script>
+        // Function to convert English numbers to Odia
+        function toOdiaNum(num) {
+            const odiaDigits = ['୦', '୧', '୨', '୩', '୪', '୫', '୬', '୭', '୮', '୯'];
+            return num.toString().replace(/\d/g, d => odiaDigits[d]);
+        }
+
+        function updateProgress() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+
+            // Logic to determine if we are in Dec (Start Year) or Jan (End Year)
+            let startYear = currentYear;
+            if (now.getMonth() === 0) { // If currently Jan
+                startYear = currentYear - 1;
+            } else if (now.getMonth() < 11) { // If before Dec
+                // Assuming upcoming project for end of this year
+                startYear = currentYear; 
+            }
+
+            // Start Date: Dec 1st at 00:00:00
+            const startDate = new Date(startYear, 11, 1); 
+            
+            // End Date: Jan 1st at 20:00:00 (8 PM)
+            // Month 0 is January, Day 1, Hour 20 (8PM)
+            const endDate = new Date(startYear + 1, 0, 1, 20, 0, 0); 
+
+            const totalDuration = endDate - startDate;
+            let timeElapsed = now - startDate;
+
+            // Calculate Percentage
+            let percentage = (timeElapsed / totalDuration) * 100;
+
+            // Clamp Percentage (0-100)
+            if (percentage < 0) percentage = 0;
+            if (percentage > 100) percentage = 100;
+
+            // Calculate days/time remaining
+            const msPerDay = 1000 * 60 * 60 * 24;
+            const msPerHour = 1000 * 60 * 60;
+            
+            let timeLeftMs = endDate - now;
+            let daysLeft = Math.floor(timeLeftMs / msPerDay);
+            let hoursLeft = Math.ceil((timeLeftMs % msPerDay) / msPerHour);
+
+            // DOM Elements
+            const bar = document.getElementById('progress-bar');
+            const percentText = document.getElementById('percent-display');
+            const statusMsg = document.getElementById('days-remaining');
+
+            // Update Width and Text
+            bar.style.width = percentage + "%";
+            percentText.innerText = toOdiaNum(Math.floor(percentage)) + "%";
+
+            // Status Message Logic
+            if (timeLeftMs <= 0) {
+                statusMsg.innerHTML = "ଆମର ଆପ୍ ଖୁବ ଶୀଘ୍ର <strong>ଲାଇଭ୍</strong> ହେବାକୁ ଯାଉଛି!";
+                percentText.innerText = "୧୦୦% ସମ୍ପୂର୍ଣ୍ଣ";
+                bar.style.width = "100%";
+            } else if (percentage === 0) {
+                 statusMsg.innerHTML = "ପ୍ରୋଜେକ୍ଟ ଆରମ୍ଭ ହେବାକୁ ଯାଉଛି।";
+            } else {
+                // If less than 1 day remains, show hours
+                if (daysLeft < 1) {
+                    statusMsg.innerHTML = "<strong>" + toOdiaNum(hoursLeft) + "</strong> ";
+                } else {
+                    statusMsg.innerHTML = "<strong>" + "</strong> ";
+                }
+            }
+        }
+
+        // Initialize
+        updateProgress();
+        // Update every minute to keep it accurate
+        setInterval(updateProgress, 60000);
+    </script>
 
 </body>
 </html>
