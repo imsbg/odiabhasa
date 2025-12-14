@@ -1,18 +1,30 @@
 [
-    {
+  {
     "image": "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
-    "text": "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର"
-  },
-    {
-    "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
-    "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ"
+    "text": "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
+    "paragraph": "ଓଡ଼ିଶାର ଗର୍ବ ଓ ଗୌରବ, ବିଶ୍ୱ ପ୍ରସିଦ୍ଧ ସୂର୍ଯ୍ୟ ମନ୍ଦିର ବିଷୟରେ ଜାଣନ୍ତୁ।",
+    "link": "",
+    "ad": "no"
   },
   {
-    "image": "https://imsbg.github.io/odiabhasa/images/banner/history_odisha.png",
-    "text": "କୋଣାର୍କର ରଥଚକ"
+    "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
+    "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ",
+    "paragraph": "ଚଳିତ ବର୍ଷର ରଥ ଯାତ୍ରା ଫଟୋ ଦେଖିବା ପାଇଁ ଏଠାରେ କ୍ଲିକ୍ କରନ୍ତୁ।",
+    "link": "https://en.wikipedia.org/wiki/Ratha_Yatra_(Puri)",
+    "ad": "no"
   },
   {
     "image": "https://imsbg.github.io/odiabhasa/images/banner/history_lang.png",
-    "text": "ଓଡ଼ିଆ ଲିପି"
+    "text": "ଓଡ଼ିଆ ବ୍ୟାକରଣ ବହି",
+    "paragraph": "ମାତ୍ର ୯୯ ଟଙ୍କାରେ ଓଡ଼ିଆ ବ୍ୟାକରଣ ଶିଖନ୍ତୁ। ଆଜି ହିଁ ଅର୍ଡର କରନ୍ତୁ।",
+    "link": "https://www.amazon.in/books",
+    "ad": "yes"
+  },
+  {
+    "image": "https://imsbg.github.io/odiabhasa/images/banner/history_odisha.png",
+    "text": "କୋଣାର୍କର ରଥଚକ",
+    "paragraph": "କୋଣାର୍କ ମନ୍ଦିରର ଐତିହାସିକ ରଥଚକର କାରୁକାର୍ଯ୍ୟ।",
+    "link": "",
+    "ad": "no"
   }
 ]
