@@ -2,7 +2,7 @@
   "title": "ଓଡ଼ିଆ ପ୍ରାର୍ଥନା",
   "author": " ବିଦ୍ୟାଳୟ ପ୍ରାର୍ଥନା",
   "source": "ବିଦ୍ୟାଳୟ ପ୍ରାର୍ଥନା",
-  "coverpage": "https://imsbg.github.io/odiabhasa/bahi/img/op.png", 
+  "coverpage": "https://imsbg.github.io/odiabhasa/bahi/img/op.png",
   "pages": [
     {
       "pageNumber": 1,
@@ -87,7 +87,16 @@
           "type": "paragraph",
           "spans": [
             {
-              "text": "୬. ଶ୍ରିତ କମଲା କୁଚ ମଣ୍ଡଲ",
+              "text": "୬. ତୁମେଟି ଜଗତ କରତା ଦୟାମୟ ଠାକୁର",
+              "style": "normal"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "spans": [
+            {
+              "text": "୭. ଶ୍ରିତ କମଲା କୁଚ ମଣ୍ଡଲ",
               "style": "normal"
             }
           ]
@@ -430,6 +439,10 @@
     {
       "pageNumber": 8,
       "content": [
+        {
+          "type": "header",
+          "text": "ତୁମେଟି ଜଗତ କରତା ଦୟାମୟ ଠାକୁର"
+        },
         {
           "type": "paragraph",
           "spans": [
