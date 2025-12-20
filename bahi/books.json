@@ -1,14 +1,14 @@
 [
     {
     "destination": "https://imsbg.github.io/odiabhasa/bahi/all/op.json",
-    "version": 1
+    "version": 2
   },
      {
     "destination": "https://imsbg.github.io/odiabhasa/bahi/all/amagouraba.json",
-    "version": 2
+    "version": 3
   }, 
      {
     "destination": "https://imsbg.github.io/odiabhasa/bahi/all/HasaKhusiGapa.json",
-    "version": 2
+    "version": 3
   }
 ]
