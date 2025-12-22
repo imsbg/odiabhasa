@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">DMCA Policy - Odia Bhasa</title>
+    <meta name="description" content="Digital Millennium Copyright Act (DMCA) Policy for Odia Bhasa App. Information regarding copyright infringement reporting and intellectual property rights.">
+    <meta name="keywords" content="Odia Bhasa DMCA, Copyright Policy, Intellectual Property, DMCA Notice">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;500;600;700&family=Noto+Sans+Oriya:wght@400;700&family=Anek+Odia:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Theme Variables - Warm Odia Theme */
+            --ios-bg: #FFF8F0;
+            --ios-card: #FFFFFF;
+            --ios-glass: rgba(255, 255, 255, 0.85);
+            --text-primary: #2D1B0E;
+            --text-secondary: #635045;
+            --brand-accent: #D35400;
+            --brand-dark: #8E44AD;
+            --brand-blue: #2980B9;
+            
+            --header-height: 60px;
+            --radius-l: 24px;
+            --radius-m: 16px;
+            
+            /* Default English Fonts */
+            --font-display: 'Nunito', 'Anek Odia', sans-serif;
+            --font-body: 'Nunito', 'Noto Sans Oriya', sans-serif;
+        }
+
+        /* Specific Font adjustments for Odia mode */
+        body.lang-od {
+            --font-display: 'Anek Odia', sans-serif;
+            --font-body: 'Noto Sans Oriya', sans-serif;
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-body);
+            background-color: var(--ios-bg);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding-top: calc(var(--header-height) + 20px);
+            transition: all 0.3s ease;
+        }
+
+        /* --- Glass Header --- */
+        .ios-header {
+            position: fixed; top: 0; left: 0; right: 0;
+            height: var(--header-height);
+            background: var(--ios-glass);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-inner {
+            width: 100%; max-width: 1000px; padding: 0 20px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo-area {
+            display: flex; align-items: center; gap: 10px;
+            text-decoration: none; z-index: 1002;
+        }
+
+        .app-icon {
+            width: 36px; height: 36px; border-radius: 8px;
+            background-color: var(--brand-accent);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo-text {
+            font-family: var(--font-display); padding-top: 5px;
+            font-weight: 700; font-size: 1.4rem; color: var(--brand-accent);
+        }
+
+        /* --- Language Button --- */
+        .lang-btn {
+            background: rgba(0,0,0,0.05); border: none;
+            border-radius: 20px; padding: 6px 12px;
+            display: flex; align-items: center; gap: 6px;
+            cursor: pointer; font-family: inherit; font-weight: 600;
+            color: var(--brand-dark); transition: background 0.2s;
+            margin-right: 15px;
+        }
+        .lang-btn:hover { background: rgba(0,0,0,0.1); }
+        .lang-icon { font-size: 1.2rem; }
+
+        /* --- Desktop Nav --- */
+        .desktop-nav { display: flex; align-items: center; gap: 25px; }
+        .nav-link {
+            text-decoration: none; color: var(--text-primary);
+            font-weight: 600; font-size: 1rem; opacity: 0.8;
+            transition: color 0.2s;
+        }
+        .nav-link:hover { color: var(--brand-accent); opacity: 1; }
+
+        /* --- Hamburger --- */
+        .hamburger-btn {
+            display: none; flex-direction: column; justify-content: space-between;
+            width: 24px; height: 18px; background: none; border: none;
+            cursor: pointer; z-index: 1002; padding: 0;
+        }
+        .hamburger-btn span {
+            width: 100%; height: 2px; background-color: var(--text-primary);
+            border-radius: 2px; transition: all 0.3s ease;
+        }
+        .hamburger-btn.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+        .hamburger-btn.open span:nth-child(2) { opacity: 0; }
+        .hamburger-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+        .mobile-menu {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(20px);
+            z-index: 1001; display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .mobile-menu.active { opacity: 1; pointer-events: all; }
+        .menu-close-btn {
+            position: absolute; top: 20px; right: 20px; width: 44px; height: 44px;
+            border-radius: 50%; background: rgba(0,0,0,0.05); border: none;
+            cursor: pointer; font-size: 28px; color: var(--text-primary);
+        }
+        .mobile-link {
+            font-size: 1.8rem; margin: 20px 0; text-decoration: none;
+            color: var(--text-primary); font-family: var(--font-display);
+            font-weight: 700; opacity: 0; transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        .mobile-menu.active .mobile-link { opacity: 1; transform: translateY(0); }
+
+        /* --- Layout --- */
+        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+
+        .hero { text-align: center; margin-bottom: 40px; animation: fadeIn 0.8s ease; padding-top: 20px; }
+        .hero h1 {
+            font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 10px; color: var(--brand-accent);
+        }
+        .hero p { color: var(--text-secondary); font-weight: 500; }
+
+        /* --- TOC --- */
+        .toc-widget {
+            background: var(--ios-card); border-radius: var(--radius-m);
+            padding: 20px; margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(211, 84, 0, 0.08);
+            border: 1px solid rgba(211, 84, 0, 0.1);
+        }
+        .toc-head { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+        .toc-title { font-weight: 700; font-size: 1.2rem; color: var(--brand-dark); }
+        .toc-body { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0,0,0,0.05); display: block; }
+        .toc-widget.collapsed .toc-body { display: none; }
+        .toc-body ul { list-style: none; padding: 0; margin: 0; }
+        .toc-body li { margin-bottom: 8px; }
+        .toc-body li a {
+            text-decoration: none; color: var(--text-secondary); font-weight: 500;
+            transition: color 0.2s; display: flex; align-items: center; gap: 10px;
+        }
+        .toc-body li a::before { content: "•"; color: var(--brand-accent); font-size: 1.5em; }
+        .toc-body li a:hover { color: var(--brand-accent); }
+
+        /* --- Content --- */
+        .content-card {
+            background: #fff; border-radius: var(--radius-l); padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 40px;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        h3 {
+            font-family: var(--font-display); font-size: 1.6rem; color: var(--text-primary);
+            margin-top: 0; padding-bottom: 12px; border-bottom: 2px solid #FDF2E9;
+        }
+        section { scroll-margin-top: 100px; margin-bottom: 50px; }
+        p, li { font-size: 1.05rem; text-align: justify; }
+
+        .highlight-box {
+            background-color: #FFF4E6; border-left: 4px solid var(--brand-accent);
+            padding: 15px 20px; border-radius: 8px; margin: 20px 0;
+            color: #D35400; font-weight: 600;
+        }
+
+        .contact-box {
+            background: var(--ios-bg); padding: 20px; border-radius: 12px;
+            text-align: center; text-decoration: none; color: var(--text-primary);
+            border: 1px solid rgba(0,0,0,0.05); display: block;
+            margin-top: 20px; transition: transform 0.2s;
+        }
+        .contact-box:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .contact-box span { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px; }
+        .contact-email { font-size: 1.2rem; font-weight: bold; color: var(--brand-blue); word-break: break-all; }
+
+        footer { text-align: center; padding: 40px 0; color: var(--text-secondary); border-top: 1px solid rgba(0,0,0,0.05); }
+
+        /* --- Language Modal Popup --- */
+        .lang-modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
+            z-index: 2000; display: none;
+            justify-content: center; align-items: center;
+        }
+        .lang-modal-overlay.active { display: flex; animation: fadeIn 0.3s; }
+        .lang-modal {
+            background: white; width: 90%; max-width: 350px;
+            border-radius: 20px; padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2); text-align: center;
+        }
+        .lang-modal h4 { margin-top: 0; margin-bottom: 20px; color: var(--text-primary); }
+        .lang-option {
+            display: block; width: 100%; padding: 15px; margin-bottom: 10px;
+            border: 2px solid #eee; border-radius: 12px; background: none;
+            font-size: 1.1rem; font-weight: 600; cursor: pointer;
+            transition: all 0.2s; color: var(--text-secondary);
+        }
+        .lang-option:hover { border-color: var(--brand-accent); color: var(--brand-accent); }
+        .lang-option.active { background: var(--brand-accent); border-color: var(--brand-accent); color: white; }
+
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .hamburger-btn { display: flex; }
+            .content-card { padding: 25px 20px; }
+            .hero h1 { font-size: 2.2rem; }
+            .lang-btn { margin-right: 15px; }
+        }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="ios-header">
+        <div class="header-inner">
+            <!-- Logo -->
+            <a href="https://imsbg.github.io/odiabhasa/" class="logo-area">
+                <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo" class="app-icon">
+                <span class="logo-text" data-i18n="app_name">Odia Bhasa</span>
+            </a>
+
+            <div style="display: flex; align-items: center;">
+                <!-- Language Trigger -->
+                <button class="lang-btn" onclick="openLangModal()">
+                    <span class="lang-icon"></span>
+                    <span id="curLangLabel">EN</span>
+                </button>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="https://imsbg.github.io/odiabhasa/" class="nav-link" data-i18n="nav_home">Home</a>
+                    <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="nav-link" data-i18n="nav_privacy">Privacy</a>
+                    <a href="https://imsbg.github.io/odiabhasa/terms" class="nav-link" data-i18n="nav_terms">Terms</a>
+                    <a href="#" class="nav-link" style="color:var(--brand-accent);" data-i18n="nav_dmca">DMCA</a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Open Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Fullscreen Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close Menu">&times;</button>
+        <a href="https://imsbg.github.io/odiabhasa/" class="mobile-link" data-i18n="nav_home">Home</a>
+        <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="mobile-link" data-i18n="nav_privacy">Privacy</a>
+        <a href="https://imsbg.github.io/odiabhasa/terms" class="mobile-link" data-i18n="nav_terms">Terms</a>
+        <a href="#" class="mobile-link" style="color:var(--brand-accent);" data-i18n="nav_dmca">DMCA</a>
+    </div>
+
+    <!-- Language Modal -->
+    <div class="lang-modal-overlay" id="langModal" onclick="closeLangModal(event)">
+        <div class="lang-modal">
+            <h4 data-i18n="select_language">Select Language</h4>
+            <button class="lang-option" onclick="switchLanguage('en')">English</button>
+            <button class="lang-option" onclick="switchLanguage('od')">ଓଡ଼ିଆ</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        
+        <div class="hero">
+            <h1 data-i18n="page_title">DMCA Policy</h1>
+            <p data-i18n="last_updated">Last Updated: December 2025</p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc-widget" id="tocWidget">
+            <div class="toc-head" onclick="toggleToc()">
+                <span class="toc-title" data-i18n="toc_title">Table of Contents</span>
+                <span style="font-size:1.2rem">▼</span>
+            </div>
+            <div class="toc-body">
+                <ul>
+                    <li><a href="#intro" data-i18n="toc_1">1. Introduction</a></li>
+                    <li><a href="#reporting" data-i18n="toc_2">2. Reporting Infringement</a></li>
+                    <li><a href="#requirements" data-i18n="toc_3">3. Notice Requirements</a></li>
+                    <li><a href="#action" data-i18n="toc_4">4. Our Action</a></li>
+                    <li><a href="#changes" data-i18n="toc_changes">5. Changes to This Policy</a></li>
+                    <li><a href="#contact" data-i18n="toc_5">6. Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-card">
+            
+            <section id="intro">
+                <h3 data-i18n="sec1_title">1. Introduction</h3>
+                <p data-i18n="sec1_p1">The "<strong>Odia Bhasa</strong>" app respects the intellectual property rights of others. In accordance with the Digital Millennium Copyright Act (DMCA), if you believe that any of your copyrighted material has been used in our app without your permission, you can notify us by following the procedure below.</p>
+            </section>
+
+            <section id="reporting">
+                <h3 data-i18n="sec2_title">2. Reporting Copyright Infringement</h3>
+                <div class="highlight-box" data-i18n="sec2_alert">
+                    We take complaints of copyright infringement seriously.
+                </div>
+                <p data-i18n="sec2_p1">If you are a copyright owner or their agent, and you believe that any content in our app infringes your copyright, please send us a written notice.</p>
+            </section>
+            
+            <section id="requirements">
+                <h3 data-i18n="sec3_title">3. Notice Requirements</h3>
+                <p data-i18n="sec3_p1">To be a valid DMCA Notice, it must contain the following information:</p>
+                <ul>
+                    <li data-i18n="sec3_li1"><strong>Signature:</strong> Electronic or physical signature of the copyright owner or authorized person.</li>
+                    <li data-i18n="sec3_li2"><strong>Description of Work:</strong> A clear description of the copyrighted work that you claim has been infringed.</li>
+                    <li data-i18n="sec3_li3"><strong>Location of Material:</strong> A clear description of where the infringing material is located in the app (e.g., Screenshot/Screen Recording or Name).</li>
+                    <li data-i18n="sec3_li4"><strong>Contact Info:</strong> Your address, telephone number, and email address.</li>
+                    <li data-i18n="sec3_li5"><strong>Good Faith Statement:</strong> A statement that you have a good faith belief that use of the material is not authorized by the copyright owner or the law.</li>
+                    <li data-i18n="sec3_li6"><strong>Affidavit:</strong> A statement that the information provided is accurate and that you are authorized to act on behalf of the copyright owner.</li>
+                </ul>
+            </section>
+
+            <section id="action">
+                <h3 data-i18n="sec4_title">4. Our Action</h3>
+                <p data-i18n="sec4_p1">Upon receipt of a valid DMCA Notice, we will immediately remove that infringing content from our app. If we remove any content, we may also notify the person who provided that content about this.</p>
+                <p data-i18n="sec4_p2">Our goal is to provide a safe and legal educational platform for children.</p>
+            </section>
+
+            <section id="changes">
+                <h3 data-i18n="sec_changes_title">5. Changes to This Policy</h3>
+                <p data-i18n="sec_changes_text">We may update our DMCA Policy from time to time. You are advised to review this page periodically for any changes.</p>
+            </section>
+
+            <section id="contact">
+                <h3 data-i18n="sec5_title">6. Contact</h3>
+                <p data-i18n="sec5_p1">For your DMCA Notice or any copyright-related questions, please contact us at the following email address:</p>
+                
+                <a href="mailto:message.sbg@gmail.com" class="contact-box">
+                    <span data-i18n="contact_btn">Send Copyright Complaint</span>
+                    <div class="contact-email">message.sbg@gmail.com</div>
+                </a>
+            </section>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_text">&copy; 2025 Odia Bhasa | All Rights Reserved | Sandip Biswal G Apps</p>
+        </div>
+    </footer>
+
+    <script>
+        /* --- Translations Object --- */
+        const resources = {
+            en: {
+                app_name: "Odia Bhasa",
+                nav_home: "Home",
+                nav_privacy: "Privacy",
+                nav_terms: "Terms",
+                nav_dmca: "DMCA",
+                page_title: "DMCA Policy",
+                meta_title: "DMCA Policy - Odia Bhasa",
+                last_updated: "Last Updated: December 2025",
+                toc_title: "Table of Contents",
+                toc_1: "1. Introduction",
+                toc_2: "2. Reporting Infringement",
+                toc_3: "3. Notice Requirements",
+                toc_4: "4. Our Action",
+                toc_changes: "5. Changes to Policy",
+                toc_5: "6. Contact",
+                sec1_title: "1. Introduction",
+                sec1_p1: "The \"<strong>Odia Bhasa</strong>\" app respects the intellectual property rights of others. In accordance with the Digital Millennium Copyright Act (DMCA), if you believe that any of your copyrighted material has been used in our app without your permission, you can notify us by following the procedure below.",
+                sec2_title: "2. Reporting Copyright Infringement",
+                sec2_alert: "We take complaints of copyright infringement seriously.",
+                sec2_p1: "If you are a copyright owner or their agent, and you believe that any content in our app infringes your copyright, please send us a written notice.",
+                sec3_title: "3. Notice Requirements",
+                sec3_p1: "To be a valid DMCA Notice, it must contain the following information:",
+                sec3_li1: "<strong>Signature:</strong> Electronic or physical signature of the copyright owner or authorized person.",
+                sec3_li2: "<strong>Description of Work:</strong> A clear description of the copyrighted work that you claim has been infringed.",
+                sec3_li3: "<strong>Location of Material:</strong> A clear description of where the infringing material is located in the app (e.g., Screenshot/Screen Recording or Name).",
+                sec3_li4: "<strong>Contact Info:</strong> Your address, telephone number, and email address.",
+                sec3_li5: "<strong>Good Faith Statement:</strong> A statement that you have a good faith belief that use of the material is not authorized by the copyright owner or the law.",
+                sec3_li6: "<strong>Affidavit:</strong> A statement that the information provided is accurate and that you are authorized to act on behalf of the copyright owner.",
+                sec4_title: "4. Our Action",
+                sec4_p1: "Upon receipt of a valid DMCA Notice, we will immediately remove that infringing content from our app. If we remove any content, we may also notify the person who provided that content about this.",
+                sec4_p2: "Our goal is to provide a safe and legal educational platform for children.",
+                sec_changes_title: "5. Changes to This Policy",
+                sec_changes_text: "We may update our DMCA Policy from time to time. You are advised to review this page periodically for any changes.",
+                sec5_title: "6. Contact",
+                sec5_p1: "For your DMCA Notice or any copyright-related questions, please contact us at the following email address:",
+                contact_btn: "Send Copyright Complaint",
+                footer_text: "&copy; 2025 Odia Bhasa | All Rights Reserved | Sandip Biswal G Apps",
+                select_language: "Select Language"
+            },
+            od: {
+                app_name: "ଓଡ଼ିଆ ଭାଷା",
+                nav_home: "ମୂଳ ପୃଷ୍ଠା",
+                nav_privacy: "ଗୋପନୀୟତା",
+                nav_terms: "ସର୍ତ୍ତାବଳୀ",
+                nav_dmca: "କପିରାଇଟ୍",
+                page_title: "ଡିଜିଟାଲ୍ କପିରାଇଟ୍ ସୁରକ୍ଷା",
+                meta_title: "DMCA ନୀତି - ଓଡ଼ିଆ ଭାଷା ",
+                last_updated: "ଅନ୍ତିମ ଅପଡେଟ୍: ଡିସେମ୍ବର ୨୦୨୫",
+                toc_title: "ବିଷୟବସ୍ତୁ ସୂଚୀ",
+                toc_1: "୧. ପରିଚୟ",
+                toc_2: "୨. କପିରାଇଟ୍ ଉଲ୍ଲଂଘନ ରିପୋର୍ଟ",
+                toc_3: "୩. ନୋଟିସ୍ ପାଇଁ ଆବଶ୍ୟକ ତଥ୍ୟ",
+                toc_4: "୪. ଆମର କାର୍ଯ୍ୟାନୁଷ୍ଠାନ",
+                toc_changes: "୫. ନୀତିରେ ପରିବର୍ତ୍ତନ",
+                toc_5: "୬. ଯୋଗାଯୋଗ",
+                sec1_title: "୧. ପରିଚୟ",
+                sec1_p1: "\"<strong>ଓଡ଼ିଆ ଭାଷା</strong>\" (Odia Bhasa) ଆପ୍ ସର୍ବଦା ଅନ୍ୟମାନଙ୍କର ବୌଦ୍ଧିକ ସମ୍ପତ୍ତି ଅଧିକାରକୁ ସମ୍ମାନ ଦିଏ । ଡିଜିଟାଲ୍ ମିଲେନିୟମ୍ କପିରାଇଟ୍ ଆକ୍ଟ (ଡିଜିଟାଲ୍ କପିରାଇଟ୍ ସୁରକ୍ଷା/DMCA) ଅନୁଯାୟୀ, ଯଦି ଆପଣ ବିଶ୍ୱାସ କରନ୍ତି ଯେ ଆପଣଙ୍କର କୌଣସି କପିରାଇଟ୍ ସାମଗ୍ରୀ ଆମ ଆପ୍‌ରେ ଆପଣଙ୍କ ଅନୁମତି ବିନା ବ୍ୟବହାର କରାଯାଇଛି, ତେବେ ଆପଣ ନିମ୍ନଲିଖିତ ପ୍ରକ୍ରିୟା ଅନୁସରଣ କରି ଆମକୁ ଜଣାଇ ପାରିବେ ।",
+                sec2_title: "୨. କପିରାଇଟ୍ ଉଲ୍ଲଂଘନ ରିପୋର୍ଟ",
+                sec2_alert: "ଆମେ କପିରାଇଟ୍ ଉଲ୍ଲଂଘନର ଅଭିଯୋଗକୁ ଗମ୍ଭୀରତାର ସହ ଗ୍ରହଣ କରୁ ।",
+                sec2_p1: "ଯଦି ଆପଣ ଜଣେ କପିରାଇଟ୍ ମାଲିକ କିମ୍ବା ତାଙ୍କର ପ୍ରତିନିଧି ଅଟନ୍ତି, ଏବଂ ଆପଣଙ୍କୁ ଲାଗୁଛି ଯେ ଆମ ଆପ୍‌ରେ ଥିବା କୌଣସି ବିଷୟବସ୍ତୁ ଆପଣଙ୍କ କପିରାଇଟ୍ ଉଲ୍ଲଂଘନ କରୁଛି, ତେବେ ଦୟାକରି ଆମକୁ ଏକ ଲିଖିତ ନୋଟିସ୍ ପଠାନ୍ତୁ ।",
+                sec3_title: "୩. ନୋଟିସ୍ ପାଇଁ ଆବଶ୍ୟକ ତଥ୍ୟ",
+                sec3_p1: "ଆପଣଙ୍କର ଅଭିଯୋଗ (DMCA Notice) ବୈଧ ହେବା ପାଇଁ, ଏଥିରେ ନିମ୍ନଲିଖିତ ତଥ୍ୟ ରହିବା ଆବଶ୍ୟକ:",
+                sec3_li1: "<strong>ଦସ୍ତଖତ:</strong> କପିରାଇଟ୍ ମାଲିକ କିମ୍ବା କ୍ଷମତାପ୍ରାପ୍ତ ବ୍ୟକ୍ତିଙ୍କ ଇଲେକ୍ଟ୍ରୋନିକ୍ କିମ୍ବା ଭୌତିକ ଦସ୍ତଖତ ।",
+                sec3_li2: "<strong>କପିରାଇଟ୍ କାର୍ଯ୍ୟର ବିବରଣୀ:</strong> ଯେଉଁ କପିରାଇଟ୍ କାର୍ଯ୍ୟର ଉଲ୍ଲଂଘନ ହୋଇଛି ବୋଲି ଆପଣ ଦାବି କରୁଛନ୍ତି, ତାର ସ୍ପଷ୍ଟ ବର୍ଣ୍ଣନା ।",
+                sec3_li3: "<strong>ବିଷୟବସ୍ତୁର ସ୍ଥାନ:</strong> ଆପ୍‌ର କେଉଁ ସ୍ଥାନରେ ଉଲ୍ଲଂଘନକାରୀ ସାମଗ୍ରୀ ଅଛି, ତାହାର ସ୍ପଷ୍ଟ ବିବରଣୀ (ଯଥା- ସ୍କ୍ରିନଶଟ୍ / ସ୍କ୍ରିନ୍ ରେକଡ଼ିଂ କିମ୍ବା ନାମ) ।",
+                sec3_li4: "<strong>ଯୋଗାଯୋଗ ତଥ୍ୟ:</strong> ଆପଣଙ୍କର ଠିକଣା, ଟେଲିଫୋନ୍ ନମ୍ବର ଏବଂ ଇମେଲ୍ ଠିକଣା ।",
+                sec3_li5: "<strong>ସଦ୍‌ଭାବନା ବିବୃତ୍ତି:</strong> ଏକ ବିବୃତ୍ତି ଯେ ଆପଣ ଦୃଢ଼ ବିଶ୍ୱାସ କରନ୍ତି ଯେ ଏହି ସାମଗ୍ରୀର ବ୍ୟବହାର କପିରାଇଟ୍ ମାଲିକ କିମ୍ବା ଆଇନ ଦ୍ୱାରା ଅନୁମୋଦିତ ନୁହେଁ ।",
+                sec3_li6: "<strong>ସତ୍ୟପାଠ:</strong> ଏକ ବିବୃତ୍ତି ଯେ ପ୍ରଦାନ କରାଯାଇଥିବା ସୂଚନା ସଠିକ୍ ଅଟେ ଏବଂ ଆପଣ କପିରାଇଟ୍ ମାଲିକଙ୍କ ପକ୍ଷରୁ କାର୍ଯ୍ୟ କରିବାକୁ କ୍ଷମତାପ୍ରାପ୍ତ ।",
+                sec4_title: "୪. ଆମର କାର୍ଯ୍ୟାନୁଷ୍ଠାନ",
+                sec4_p1: "ଏକ ବୈଧ DMCA ନୋଟିସ୍ ପାଇବା ପରେ, ଆମେ ତୁରନ୍ତ ସେହି ଉଲ୍ଲଂଘନକାରୀ ବିଷୟବସ୍ତୁକୁ ଆମ ଆପ୍‌ରୁ ହଟାଇ ଦେବୁ। ଯଦି ଆମେ କୌଣସି ବିଷୟବସ୍ତୁ ହଟାଇ ଦେଉ, ତେବେ ଆମେ ସେହି ବିଷୟବସ୍ତୁ ପ୍ରଦାନ କରିଥିବା ବ୍ୟକ୍ତିଙ୍କୁ ମଧ୍ୟ ଏ ବିଷୟରେ ଅବଗତ କରାଇ ପାରୁ ।",
+                sec4_p2: "ଆମର ଉଦ୍ଦେଶ୍ୟ ହେଉଛି ପିଲାମାନଙ୍କ ପାଇଁ ଏକ ସୁରକ୍ଷିତ ଏବଂ ଆଇନସମ୍ମତ ଶିକ୍ଷା ମଞ୍ଚ ପ୍ରଦାନ କରିବା ।",
+                sec_changes_title: "୫. DMCA ନୀତିରେ ପରିବର୍ତ୍ତନ",
+                sec_changes_text: "ଆମେ ସମୟ ସମୟରେ ଆମର DMCA ନୀତି ଅପଡେଟ୍ କରିପାରୁ । କୌଣସି ପରିବର୍ତ୍ତନ ପାଇଁ ଆପଣଙ୍କୁ ପର୍ଯ୍ୟାୟକ୍ରମେ ଏହି ପୃଷ୍ଠାକୁ ସମୀକ୍ଷା କରିବାକୁ ପରାମର୍ଶ ଦିଆଯାଇଛି ।",
+                sec5_title: "୬. ଯୋଗାଯୋଗ",
+                sec5_p1: "ଆପଣଙ୍କର DMCA ନୋଟିସ୍ କିମ୍ବା କପିରାଇଟ୍ ସମ୍ବନ୍ଧୀୟ କୌଣସି ପ୍ରଶ୍ନ ପାଇଁ ଦୟାକରି ନିମ୍ନଲିଖିତ ଇମେଲ୍ ଠିକଣାରେ ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ:",
+                contact_btn: "କପିରାଇଟ୍ ଅଭିଯୋଗ ପଠାନ୍ତୁ",
+                footer_text: "&copy; ୨୦୨୫ ଓଡ଼ିଆ ଭାଷା | ସର୍ବାଧିକାର ସୁରକ୍ଷିତ | ସନ୍ଦୀପ୍ ବିଶ୍ବାଳ ଜି ଆପ୍ସ",
+                select_language: "ଭାଷା ବାଛନ୍ତୁ"
+            }
+        };
+
+        // --- Logic --- //
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.has(param);
+        }
+
+        function setLanguage(lang) {
+            // Update Text Content
+            const texts = resources[lang];
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (texts[key]) {
+                    el.innerHTML = texts[key];
+                }
+            });
+
+            // Update Page Title
+            document.title = texts.meta_title;
+            
+            // Update HTML Lang Attribute
+            document.documentElement.lang = lang === 'od' ? 'or' : 'en';
+
+            // Update Body Class for Fonts
+            if(lang === 'od') {
+                document.body.classList.add('lang-od');
+            } else {
+                document.body.classList.remove('lang-od');
+            }
+
+            // Update Button Label
+            document.getElementById('curLangLabel').textContent = lang === 'od' ? 'ଓଡ଼ିଆ' : 'English';
+
+            // Save Preference
+            localStorage.setItem('preferredLang', lang);
+
+            // Update URL without reloading
+            const newUrl = new URL(window.location);
+            newUrl.searchParams.delete('od');
+            newUrl.searchParams.delete('en');
+            newUrl.searchParams.set(lang, '');
+            window.history.replaceState({}, '', newUrl);
+
+            // Close Modal if open
+            document.getElementById('langModal').classList.remove('active');
+        }
+
+        function initLanguage() {
+            // 1. Check URL
+            if (getQueryParam('od')) {
+                setLanguage('od');
+                return;
+            }
+            if (getQueryParam('en')) {
+                setLanguage('en');
+                return;
+            }
+
+            // 2. Check LocalStorage
+            const savedLang = localStorage.getItem('preferredLang');
+            if (savedLang === 'od') {
+                setLanguage('od');
+                return;
+            }
+
+            // 3. Default English
+            setLanguage('en'); 
+        }
+
+        // --- UI Interactions --- //
+
+        function openLangModal() {
+            document.getElementById('langModal').classList.add('active');
+        }
+
+        function closeLangModal(e) {
+            if (e.target.classList.contains('lang-modal-overlay')) {
+                document.getElementById('langModal').classList.remove('active');
+            }
+        }
+
+        function switchLanguage(lang) {
+            setLanguage(lang);
+        }
+
+        // Table of Contents Toggle
+        function toggleToc() {
+            document.getElementById('tocWidget').classList.toggle('collapsed');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger-btn');
+            
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('open');
+            
+            if(menu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+
+        // Initialize on Load
+        window.addEventListener('DOMContentLoaded', initLanguage);
+
+    </script>
+</body>
+</html>
