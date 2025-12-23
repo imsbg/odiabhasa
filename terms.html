@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- ଚେତାବନୀ: ଚୋରି କରିବା ଆଇନ ଅନୁଯାୟୀ ଏକ ଅପରାଧ।  ଯଦି ଆପଣ ଆମର ଆପ୍ କିମ୍ବା ୱେବସାଇଟ୍‌କୁ ନକଲ କରିବାକୁ ଚେଷ୍ଟା କରନ୍ତି, ତେବେ ଆପଣଙ୍କ ବିରୋଧରେ ଦୃଢ଼ ଆଇନଗତ କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ଗ୍ରହଣ କରାଯିବ। ଏହି ୱେବସାଇଟ୍ ଏବଂ ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ର ସମସ୍ତ ବିଷୟବସ୍ତୁ ଓ ଲୋଗୋ 'ସନ୍ଦୀପ୍ ବିଶ୍ୱାଳ ଜି ଆପ୍ସ' (Sandeep Biswal G Apps) ଦ୍ୱାରା ସଂରକ୍ଷିତ । -->
+    <!-- ଚେତାବନୀ: ଚୋରି କରିବା ଆଇନ ଅନୁଯାୟୀ ଏକ ଅପରାଧ।  ଯଦି ଆପଣ ଆମର ଆପ୍ କିମ୍ବା ୱେବସାଇଟ୍‌କୁ ନକଲ କରିବାକୁ ଚେଷ୍ଟା କରନ୍ତି, ତେବେ ଆପଣଙ୍କ ବିରୋଧରେ ଦୃଢ଼ ଆଇନଗତ କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ଗ୍ରହଣ କରାଯିବ। ଏହି ୱେବସାଇଟ୍ ଏବଂ ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ର ସମସ୍ତ ବିଷୟବସ୍ତୁ ଓ ଲୋଗୋ 'ସନ୍ଦୀପ୍ ବିଶ୍ୱାଳ ଜି ଆପ୍ସ' (Sandeep Biswal G Apps) ଦ୍ୱାରା ସଂରକ୍ଷିତ । -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Terms and Conditions - Odia Bhasa</title>
-    <meta name="description" content="Terms and Conditions for Odia Bhasa App. Understand user responsibilities, app usage rules, and policies for our educational platform.">
-    <meta name="keywords" content="Odia Bhasa Terms, Terms and Conditions, App Rules, Odia Learning App Policies">
-    
+    <meta name="description" content="Terms and Conditions for Odia Bhasa App. App usage rules, prohibited activities, and family policies.">
+    <link rel="icon" href="https://imsbg.github.io/odiabhasa/images/app.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://imsbg.github.io/odiabhasa/images/app.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,17 +25,16 @@
             --brand-accent: #D35400;
             --brand-dark: #8E44AD;
             --brand-blue: #2980B9;
+            --brand-red: #C0392B;
             
             --header-height: 60px;
             --radius-l: 24px;
             --radius-m: 16px;
             
-            /* Default English Fonts */
             --font-display: 'Nunito', 'Anek Odia', sans-serif;
             --font-body: 'Nunito', 'Noto Sans Oriya', sans-serif;
         }
 
-        /* Specific Font adjustments for Odia mode */
         body.lang-od {
             --font-display: 'Anek Odia', sans-serif;
             --font-body: 'Noto Sans Oriya', sans-serif;
@@ -43,8 +43,7 @@
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: var(--font-body);
             background-color: var(--ios-bg);
             color: var(--text-primary);
@@ -62,9 +61,7 @@
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid rgba(0,0,0,0.05);
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
         }
 
         .header-inner {
@@ -72,53 +69,28 @@
             display: flex; justify-content: space-between; align-items: center;
         }
 
-        .logo-area {
-            display: flex; align-items: center; gap: 10px;
-            text-decoration: none; z-index: 1002;
-        }
+        .logo-area { display: flex; align-items: center; gap: 10px; text-decoration: none; z-index: 1002; }
+        .app-icon { width: 36px; height: 36px; border-radius: 8px; background-color: var(--brand-accent); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .logo-text { font-family: var(--font-display); padding-top: 5px; font-weight: 700; font-size: 1.4rem; color: var(--brand-accent); }
 
-        .app-icon {
-            width: 36px; height: 36px; border-radius: 8px;
-            background-color: var(--brand-accent);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .logo-text {
-            font-family: var(--font-display); padding-top: 5px;
-            font-weight: 700; font-size: 1.4rem; color: var(--brand-accent);
-        }
-
-        /* --- Language Button --- */
-        .lang-btn {
-            background: rgba(0,0,0,0.05); border: none;
-            border-radius: 20px; padding: 6px 12px;
-            display: flex; align-items: center; gap: 6px;
-            cursor: pointer; font-family: inherit; font-weight: 600;
-            color: var(--brand-dark); transition: background 0.2s;
-            margin-right: 15px;
-        }
-        .lang-btn:hover { background: rgba(0,0,0,0.1); }
-        .lang-icon { font-size: 1.2rem; }
-
-        /* --- Desktop Nav --- */
         .desktop-nav { display: flex; align-items: center; gap: 25px; }
-        .nav-link {
-            text-decoration: none; color: var(--text-primary);
-            font-weight: 600; font-size: 1rem; opacity: 0.8;
-            transition: color 0.2s;
-        }
+        .nav-link { text-decoration: none; color: var(--text-primary); font-weight: 600; opacity: 0.8; transition: color 0.2s; }
         .nav-link:hover { color: var(--brand-accent); opacity: 1; }
 
-        /* --- Hamburger --- */
+        .lang-btn {
+            background: rgba(0,0,0,0.05); border: none; border-radius: 20px;
+            padding: 6px 12px; display: flex; align-items: center; gap: 6px;
+            cursor: pointer; font-family: inherit; font-weight: 600;
+            color: var(--brand-dark); margin-right: 15px; transition: background 0.2s;
+        }
+        .lang-btn:hover { background: rgba(0,0,0,0.1); }
+
+        /* Hamburger */
         .hamburger-btn {
             display: none; flex-direction: column; justify-content: space-between;
-            width: 24px; height: 18px; background: none; border: none;
-            cursor: pointer; z-index: 1002; padding: 0;
+            width: 24px; height: 18px; background: none; border: none; cursor: pointer; padding: 0; z-index: 1002;
         }
-        .hamburger-btn span {
-            width: 100%; height: 2px; background-color: var(--text-primary);
-            border-radius: 2px; transition: all 0.3s ease;
-        }
+        .hamburger-btn span { width: 100%; height: 2px; background-color: var(--text-primary); border-radius: 2px; transition: 0.3s; }
         .hamburger-btn.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
         .hamburger-btn.open span:nth-child(2) { opacity: 0; }
         .hamburger-btn.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
@@ -131,30 +103,17 @@
             opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
         }
         .mobile-menu.active { opacity: 1; pointer-events: all; }
-        .menu-close-btn {
-            position: absolute; top: 20px; right: 20px; width: 44px; height: 44px;
-            border-radius: 50%; background: rgba(0,0,0,0.05); border: none;
-            cursor: pointer; font-size: 28px; color: var(--text-primary);
-        }
-        .mobile-link {
-            font-size: 1.8rem; margin: 20px 0; text-decoration: none;
-            color: var(--text-primary); font-family: var(--font-display);
-            font-weight: 700; opacity: 0; transform: translateY(20px);
-            transition: all 0.4s ease;
-        }
+        .menu-close-btn { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: rgba(0,0,0,0.05); border: none; cursor: pointer; font-size: 28px; color: var(--text-primary); }
+        .mobile-link { font-size: 1.8rem; margin: 20px 0; text-decoration: none; color: var(--text-primary); font-family: var(--font-display); font-weight: 700; opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
         .mobile-menu.active .mobile-link { opacity: 1; transform: translateY(0); }
 
-        /* --- Layout --- */
+        /* Layout */
         .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-
-        .hero { text-align: center; margin-bottom: 40px; animation: fadeIn 0.8s ease; padding-top: 20px; }
-        .hero h1 {
-            font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 10px; color: var(--brand-accent);
-        }
+        .hero { text-align: center; margin-bottom: 40px; padding-top: 20px; animation: fadeIn 0.8s ease; }
+        .hero h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 10px; color: var(--brand-accent); }
         .hero p { color: var(--text-secondary); font-weight: 500; }
 
-        /* --- TOC --- */
+        /* TOC */
         .toc-widget {
             background: var(--ios-card); border-radius: var(--radius-m);
             padding: 20px; margin-bottom: 30px;
@@ -167,98 +126,79 @@
         .toc-widget.collapsed .toc-body { display: none; }
         .toc-body ul { list-style: none; padding: 0; margin: 0; }
         .toc-body li { margin-bottom: 8px; }
-        .toc-body li a {
-            text-decoration: none; color: var(--text-secondary); font-weight: 500;
-            transition: color 0.2s; display: flex; align-items: center; gap: 10px;
-        }
+        .toc-body li a { text-decoration: none; color: var(--text-secondary); font-weight: 500; display: flex; align-items: center; gap: 8px; transition: color 0.2s; }
         .toc-body li a::before { content: "•"; color: var(--brand-accent); font-size: 1.5em; }
         .toc-body li a:hover { color: var(--brand-accent); }
 
-        /* --- Content --- */
+        /* Content */
         .content-card {
-            background: #fff; border-radius: var(--radius-l); padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 40px;
-            border: 1px solid rgba(0,0,0,0.02);
+            background: #fff; border-radius: var(--radius-l);
+            padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            margin-bottom: 40px; border: 1px solid rgba(0,0,0,0.02);
         }
-        h3 {
-            font-family: var(--font-display); font-size: 1.6rem; color: var(--text-primary);
-            margin-top: 0; padding-bottom: 12px; border-bottom: 2px solid #FDF2E9;
-        }
+        h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--text-primary); margin-top: 0; padding-bottom: 12px; border-bottom: 2px solid #FDF2E9; }
         section { scroll-margin-top: 100px; margin-bottom: 50px; }
         p, li { font-size: 1.05rem; text-align: justify; }
 
-        .notice-box {
-            background-color: #fce4ec; border-left: 4px solid #c2185b;
-            padding: 15px 20px; border-radius: 8px; margin: 20px 0;
-            color: #880e4f; font-weight: 600;
-        }
+        .highlight-box { background-color: #FFF4E6; border-left: 4px solid var(--brand-accent); padding: 15px 20px; border-radius: 8px; margin: 20px 0; color: #D35400; font-weight: 600; }
+        .notice-box { background-color: #fce4ec; border-left: 4px solid #c2185b; padding: 15px 20px; border-radius: 8px; margin: 20px 0; color: #880e4f; font-weight: 600; }
+        
+        /* New Style for Prohibited Use */
+        .red-box { background-color: #FDEDEC; border-left: 4px solid var(--brand-red); padding: 15px 20px; border-radius: 8px; margin: 20px 0; color: #943126; font-weight: 600; }
 
         .contact-box {
             background: var(--ios-bg); padding: 20px; border-radius: 12px;
             text-align: center; text-decoration: none; color: var(--text-primary);
-            border: 1px solid rgba(0,0,0,0.05); display: block;
-            margin-top: 20px; transition: transform 0.2s;
+            border: 1px solid rgba(0,0,0,0.05); display: block; margin-top: 20px;
+            transition: transform 0.2s;
         }
         .contact-box:hover { transform: scale(1.02); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .contact-email { font-size: 1.2rem; font-weight: bold; color: var(--brand-blue); word-break: break-all; }
 
-        footer { text-align: center; padding: 40px 0; color: var(--text-secondary); border-top: 1px solid rgba(0,0,0,0.05); }
-
-        /* --- Language Modal Popup --- */
+        /* Modal */
         .lang-modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
-            z-index: 2000; display: none;
-            justify-content: center; align-items: center;
+            z-index: 2000; display: none; justify-content: center; align-items: center;
         }
         .lang-modal-overlay.active { display: flex; animation: fadeIn 0.3s; }
-        .lang-modal {
-            background: white; width: 90%; max-width: 350px;
-            border-radius: 20px; padding: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2); text-align: center;
-        }
+        .lang-modal { background: white; width: 90%; max-width: 350px; border-radius: 20px; padding: 25px; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
         .lang-modal h4 { margin-top: 0; margin-bottom: 20px; color: var(--text-primary); }
         .lang-option {
             display: block; width: 100%; padding: 15px; margin-bottom: 10px;
             border: 2px solid #eee; border-radius: 12px; background: none;
-            font-size: 1.1rem; font-weight: 600; cursor: pointer;
-            transition: all 0.2s; color: var(--text-secondary);
+            font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.2s;
+            color: var(--text-secondary);
         }
         .lang-option:hover { border-color: var(--brand-accent); color: var(--brand-accent); }
         .lang-option.active { background: var(--brand-accent); border-color: var(--brand-accent); color: white; }
+
+        footer { text-align: center; padding: 40px 0; color: var(--text-secondary); border-top: 1px solid rgba(0,0,0,0.05); }
 
         @media (max-width: 768px) {
             .desktop-nav { display: none; }
             .hamburger-btn { display: flex; }
             .content-card { padding: 25px 20px; }
             .hero h1 { font-size: 2.2rem; }
-            .lang-btn { margin-right: 15px; }
         }
-        
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
-        <!-- ଚେତାବନୀ: ଚୋରି କରିବା ଆଇନ ଅନୁଯାୟୀ ଏକ ଅପରାଧ।  ଯଦି ଆପଣ ଆମର ଆପ୍ କିମ୍ବା ୱେବସାଇଟ୍‌କୁ ନକଲ କରିବାକୁ ଚେଷ୍ଟା କରନ୍ତି, ତେବେ ଆପଣଙ୍କ ବିରୋଧରେ ଦୃଢ଼ ଆଇନଗତ କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ଗ୍ରହଣ କରାଯିବ। ଏହି ୱେବସାଇଟ୍ ଏବଂ ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ର ସମସ୍ତ ବିଷୟବସ୍ତୁ ଓ ଲୋଗୋ 'ସନ୍ଦୀପ୍ ବିଶ୍ୱାଳ ଜି ଆପ୍ସ' (Sandeep Biswal G Apps) ଦ୍ୱାରା ସଂରକ୍ଷିତ । -->
-
     <!-- Header -->
     <header class="ios-header">
         <div class="header-inner">
-            <!-- Logo -->
             <a href="https://imsbg.github.io/odiabhasa/" class="logo-area">
                 <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo" class="app-icon">
                 <span class="logo-text" data-i18n="app_name">Odia Bhasa</span>
             </a>
 
             <div style="display: flex; align-items: center;">
-                <!-- Language Trigger -->
                 <button class="lang-btn" onclick="openLangModal()">
-                    <span class="lang-icon"></span>
-                    <span id="curLangLabel">English</span>
+                    <span id="curLangLabel">EN</span>
                 </button>
 
-                <!-- Desktop Navigation -->
                 <nav class="desktop-nav">
                     <a href="https://imsbg.github.io/odiabhasa/" class="nav-link" data-i18n="nav_home">Home</a>
                     <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="nav-link" data-i18n="nav_privacy">Privacy</a>
@@ -266,7 +206,6 @@
                     <a href="https://imsbg.github.io/odiabhasa/dmca" class="nav-link" data-i18n="nav_dmca">DMCA</a>
                 </nav>
 
-                <!-- Mobile Hamburger Button -->
                 <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Open Menu">
                     <span></span><span></span><span></span>
                 </button>
@@ -274,7 +213,7 @@
         </div>
     </header>
 
-    <!-- Mobile Fullscreen Menu -->
+    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="menu-close-btn" onclick="toggleMenu()" aria-label="Close Menu">&times;</button>
         <a href="https://imsbg.github.io/odiabhasa/" class="mobile-link" data-i18n="nav_home">Home</a>
@@ -287,8 +226,8 @@
     <div class="lang-modal-overlay" id="langModal" onclick="closeLangModal(event)">
         <div class="lang-modal">
             <h4 data-i18n="select_language">Select Language</h4>
-            <button class="lang-option" onclick="switchLanguage('en')">English</button>
             <button class="lang-option" onclick="switchLanguage('od')">ଓଡ଼ିଆ</button>
+            <button class="lang-option" onclick="switchLanguage('en')">English</button>
         </div>
     </div>
 
@@ -297,7 +236,7 @@
         
         <div class="hero">
             <h1 data-i18n="page_title">Terms and Conditions</h1>
-            <p data-i18n="last_updated">Last Updated: December 2025</p>
+            <p data-i18n="last_updated">Last Updated: 23 December 2025</p>
         </div>
 
         <!-- Table of Contents -->
@@ -312,9 +251,11 @@
                     <li><a href="#usage" data-i18n="toc_2">2. Permission to Use</a></li>
                     <li><a href="#content" data-i18n="toc_3">3. Content and Ownership</a></li>
                     <li><a href="#family" data-i18n="toc_4">4. Family Policy</a></li>
-                    <li><a href="#disclaimer" data-i18n="toc_5">5. Disclaimer & Liability</a></li>
-                    <li><a href="#changes" data-i18n="toc_changes">6. Changes to Terms</a></li>
-                    <li><a href="#contact" data-i18n="toc_6">7. Contact</a></li>
+                    <li><a href="#prohibited" data-i18n="toc_5">5. Prohibited Use</a></li>
+                    <li><a href="#disclaimer" data-i18n="toc_6">6. Disclaimer & Liability</a></li>
+                    <li><a href="#termination" data-i18n="toc_7">7. Termination of Use</a></li>
+                    <li><a href="#changes" data-i18n="toc_8">8. Changes to Terms</a></li>
+                    <li><a href="#contact" data-i18n="toc_9">9. Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -328,12 +269,7 @@
 
             <section id="usage">
                 <h3 data-i18n="sec2_title">2. Permission to Use</h3>
-                <p data-i18n="sec2_p1">This app is designed for personal and educational use only. You are not permitted to do the following:</p>
-                <ul>
-                    <li data-i18n="sec2_li1">Modify or copy any part of the app.</li>
-                    <li data-i18n="sec2_li2">Attempt to decompile or reverse engineer the app's code.</li>
-                    <li data-i18n="sec2_li3">Use it for commercial purposes.</li>
-                </ul>
+                <p data-i18n="sec2_p1">This app is designed for personal and educational use only. You are permitted to use the app to learn and practice Odia.</p>
             </section>
             
             <section id="content">
@@ -345,29 +281,48 @@
 
             <section id="family">
                 <h3 data-i18n="sec4_title">4. Family Policy</h3>
-                <p data-i18n="sec4_p1">This app is primarily made for children. We strictly follow Google Play's Family Policy.</p>
+                <p data-i18n="sec4_p1">This app is primarily made for children. We strictly follow Google Play's Family Policy. </p>
                 <ul>
-                    <li data-i18n="sec4_li1">We do not collect any personal data.</li>
-                    <li data-i18n="sec4_li2">The ads displayed in the app are appropriate and safe for children.</li>
+                    <li data-i18n="sec4_li1">We do not knowingly collect any personal data from children.</li>
+                    <li data-i18n="sec4_li2">We strive to display advertisements that comply with Google Play’s Families Policy and are appropriate for children.</li>
+                      <li data-i18n="sec4_li3">Although this app is primarily designed for children, it may also be used by parents, teachers, and other users for educational purposes.</li>
                 </ul>
             </section>
 
+            <section id="prohibited">
+                <h3 data-i18n="sec5_title">5. Prohibited Use</h3>
+                <p data-i18n="sec5_p1">To ensure a safe environment for everyone, the following activities are strictly prohibited:</p>
+                <div class="red-box">
+                    <ul>
+                        <li data-i18n="sec5_li1"><strong>No Misuse:</strong> Do not use the app for any illegal or unauthorized purpose.</li>
+                        <li data-i18n="sec5_li2"><strong>No Copying:</strong> You are not allowed to modify, copy, reproduce, or reverse engineer any part of the app or its source code.</li>
+                        <li data-i18n="sec5_li3"><strong>No Commercial Use:</strong> You cannot sell, rent, or lease the app or its content for commercial profit.</li>
+                        <li data-i18n="sec5_li4"><strong>No Harmful Activity:</strong> Do not attempt to transmit viruses or harmful code that could damage the app or user devices.</li>
+                    </ul>
+                </div>
+            </section>
+
             <section id="disclaimer">
-                <h3 data-i18n="sec5_title">5. Disclaimer and Liability</h3>
-                <div class="notice-box" data-i18n="sec5_alert">
+                <h3 data-i18n="sec6_title">6. Disclaimer and Liability</h3>
+                <div class="notice-box" data-i18n="sec6_alert">
                     This app has no official connection with the Government of India or the Government of Odisha.
                 </div>
-                <p data-i18n="sec5_p1">The National Anthem or State Anthem contained herein is added from Wikipedia solely for educational purposes. We strive for the accuracy of the information in the app, but we will not be liable for any errors. We are not responsible for any damage caused by using the app.</p>
+                <p data-i18n="sec6_p1">The National Anthem or State Anthem included in this app is sourced from Wikipedia and is used solely for educational purposes. Ownership and rights remain with their respective sources. We strive for the accuracy of the information in the app, but we will not be liable for any errors. We are not responsible for any damage caused by using the app.</p>
+            </section>
+
+            <section id="termination">
+                <h3 data-i18n="sec7_title">7. Termination of Use</h3>
+                <p data-i18n="sec7_p1">We reserve the right to suspend or terminate your access to the app immediately, without prior notice, if you violate any of these Terms and Conditions.</p>
             </section>
 
             <section id="changes">
-                <h3 data-i18n="sec_changes_title">6. Changes to Terms</h3>
-                <p data-i18n="sec_changes_text">We may update our Terms and Conditions from time to time. You are advised to review this page periodically for any changes.</p>
+                <h3 data-i18n="sec8_title">8. Changes to Terms</h3>
+                <p data-i18n="sec8_p1">We may update our Terms and Conditions from time to time. You are advised to review this page periodically for any changes.</p>
             </section>
 
             <section id="contact">
-                <h3 data-i18n="sec6_title">7. Contact</h3>
-                <p data-i18n="sec6_p1">If you have any questions about these Terms, please contact us:</p>
+                <h3 data-i18n="sec9_title">9. Contact</h3>
+                <p data-i18n="sec9_p1">If you have any questions about these Terms, please contact us:</p>
                 
                 <a href="mailto:message.sbg@gmail.com" class="contact-box">
                     <span data-i18n="contact_btn">Email Us</span>
@@ -381,12 +336,11 @@
 
     <footer>
         <div class="container">
-            <p data-i18n="footer_text">&copy; 2025 Odia Bhasa | All Rights Reserved | Sandip Biswal G Apps</p>
+            <p data-i18n="footer_text">&copy; 2025 Odia Bhasa | All Rights Reserved | Sandeep Biswal G Apps</p>
         </div>
     </footer>
 
     <script>
-        /* --- Translations Object --- */
         const resources = {
             en: {
                 app_name: "Odia Bhasa",
@@ -396,42 +350,63 @@
                 nav_dmca: "DMCA",
                 page_title: "Terms and Conditions",
                 meta_title: "Terms and Conditions - Odia Bhasa",
-                last_updated: "Last Updated: December 2025",
+                last_updated: "Last Updated: 23 December 2025",
                 toc_title: "Table of Contents",
+                select_language: "Select Language",
+                
+                // TOC Items
                 toc_1: "1. Acceptance of Terms",
                 toc_2: "2. Permission to Use",
                 toc_3: "3. Content and Ownership",
                 toc_4: "4. Family Policy",
-                toc_5: "5. Disclaimer & Liability",
-                toc_changes: "6. Changes to Terms",
-                toc_6: "7. Contact",
+                toc_5: "5. Prohibited Use",
+                toc_6: "6. Disclaimer & Liability",
+                toc_7: "7. Termination of Use",
+                toc_8: "8. Changes to Terms",
+                toc_9: "9. Contact",
+
+                // Sections
                 sec1_title: "1. Acceptance of Terms",
                 sec1_p1: "Welcome to the \"Odia Bhasa\" app. By downloading or using this app, you agree to comply with all the following terms and conditions. If you do not agree with these terms, please do not use this app.",
+                
                 sec2_title: "2. Permission to Use",
-                sec2_p1: "This app is designed for personal and educational use only. You are not permitted to do the following:",
-                sec2_li1: "Modify or copy any part of the app.",
-                sec2_li2: "Attempt to decompile or reverse engineer the app's code.",
-                sec2_li3: "Use it for commercial purposes.",
+                sec2_p1: "This app is designed for personal and educational use only. You are permitted to use the app to learn and practice Odia.",
+                
                 sec3_title: "3. Content and Ownership",
                 sec3_p1: "All original content, graphics, and designs in the app are the property of the \"Odia Bhasa\" creator.",
                 sec3_bold1: "Chhabila Madhu Barnabodha:",
                 sec3_p2: "The digital version of the book 'Chhabila Madhu Barnabodha' has been included in this app solely for children's education. We do not claim ownership of this book. If you are the owner of this book and wish to remove it, please inform us via email, and we will remove it immediately.",
                 sec3_bold2: "User Contributions:",
-                sec3_p3: "If you send your book or writing to be added to our app, you must ensure that you are the owner of that content and that it should be available for free for children.",
+                sec3_p3: "If you send your book or writing to be added to our app, you must ensure that you are the owner of that content and that it should be available for free for children. Any content submission must be sent by a parent or legal guardian, and the submitted content must be original, copyright-free, and appropriate for children.",
+                
                 sec4_title: "4. Family Policy",
                 sec4_p1: "This app is primarily made for children. We strictly follow Google Play's Family Policy.",
-                sec4_li1: "We do not collect any personal data.",
-                sec4_li2: "The ads displayed in the app are appropriate and safe for children.",
-                sec5_title: "5. Disclaimer and Liability",
-                sec5_alert: "This app has no official connection with the Government of India or the Government of Odisha.",
-                sec5_p1: "The National Anthem or State Anthem contained herein is added from Wikipedia solely for educational purposes. We strive for the accuracy of the information in the app, but we will not be liable for any errors. We are not responsible for any damage caused by using the app.",
-                sec_changes_title: "6. Changes to Terms",
-                sec_changes_text: "We may update our Terms and Conditions from time to time. You are advised to review this page periodically for any changes.",
-                sec6_title: "7. Contact",
-                sec6_p1: "If you have any questions about these Terms, please contact us: message.sbg@gmail.com",
+                sec4_li1: "We do not knowingly collect any personal data from children.",
+                sec4_li2: "We strive to display advertisements that comply with Google Play’s Families Policy and are appropriate for children.",
+                sec4_li3: "Although this app is primarily designed for children, it may also be used by parents, teachers, and other users for educational purposes.",
+
+                sec5_title: "5. Prohibited Use",
+                sec5_p1: "To ensure a safe environment for everyone, the following activities are strictly prohibited:",
+                sec5_li1: "<strong>No Misuse:</strong> Do not use the app for any illegal or unauthorized purpose.",
+                sec5_li2: "<strong>No Copying:</strong> You are not allowed to modify, copy, reproduce, or reverse engineer any part of the app or its source code.",
+                sec5_li3: "<strong>No Commercial Use:</strong> You cannot sell, rent, or lease the app or its content for commercial profit.",
+                sec5_li4: "<strong>No Harmful Activity:</strong> Do not attempt to transmit viruses or harmful code that could damage the app or user devices.",
+
+                sec6_title: "6. Disclaimer and Liability",
+                sec6_alert: "This app has no official connection with the Government of India or the Government of Odisha.",
+                sec6_p1: "The National Anthem or State Anthem included in this app is sourced from Wikipedia and is used solely for educational purposes. Ownership and rights remain with their respective sources. We strive for the accuracy of the information in the app, but we will not be liable for any errors. We are not responsible for any damage caused by using the app.",
+                
+                sec7_title: "7. Termination of Use",
+                sec7_p1: "We may restrict access to certain features or discontinue availability of the app if these Terms and Conditions are violated.",
+
+                sec8_title: "8. Changes to Terms",
+                sec8_p1: "We may update our Terms and Conditions from time to time. You are advised to review this page periodically for any changes.",
+                
+                sec9_title: "9. Contact",
+                sec9_p1: "If you have any questions about these Terms, please contact us:",
+                
                 contact_btn: "Email Us",
-                footer_text: "&copy; 2025 Odia Bhasa | All Rights Reserved | Sandip Biswal G Apps",
-                select_language: "Select Language"
+                footer_text: "&copy; 2025 Odia Bhasa | All Rights Reserved | Sandeep Biswal G Apps"
             },
             od: {
                 app_name: "ଓଡ଼ିଆ ଭାଷା",
@@ -441,42 +416,63 @@
                 nav_dmca: "କପିରାଇଟ୍",
                 page_title: "ସର୍ତ୍ତାବଳୀ ଏବଂ ନିୟମାବଳୀ",
                 meta_title: "ସର୍ତ୍ତାବଳୀ ଏବଂ ନିୟମାବଳୀ - ଓଡ଼ିଆ ଭାଷା",
-                last_updated: "ଅନ୍ତିମ ଅପଡେଟ୍: ଡିସେମ୍ବର ୨୦୨୫",
+                last_updated: "ଅନ୍ତିମ ଅପଡେଟ୍: ୨୩ ଡିସେମ୍ବର ୨୦୨୫",
                 toc_title: "ବିଷୟବସ୍ତୁ ସୂଚୀ",
+                select_language: "ଭାଷା ବାଛନ୍ତୁ",
+                
+                // TOC Items Odia
                 toc_1: "୧. ନିୟମାବଳୀର ଗ୍ରହଣ",
                 toc_2: "୨. ବ୍ୟବହାର ଅନୁମତି",
                 toc_3: "୩. ବିଷୟବସ୍ତୁ ଏବଂ ମାଲିକାନା",
                 toc_4: "୪. ପାରିବାରିକ ନୀତି",
-                toc_5: "୫. ଅସ୍ୱୀକରଣ ଏବଂ ଦାୟିତ୍ୱ",
-                toc_changes: "୬. ନିୟମାବଳୀରେ ପରିବର୍ତ୍ତନ",
-                toc_6: "୭. ଯୋଗାଯୋଗ",
+                toc_5: "୫. ନିଷିଦ୍ଧ ବ୍ୟବହାର",
+                toc_6: "୬. ଅସ୍ୱୀକରଣ ଏବଂ ଦାୟିତ୍ୱ",
+                toc_7: "୭. ବ୍ୟବହାର ସମାପ୍ତି",
+                toc_8: "୮. ନିୟମାବଳୀରେ ପରିବର୍ତ୍ତନ",
+                toc_9: "୯. ଯୋଗାଯୋଗ",
+
+                // Sections Odia
                 sec1_title: "୧. ନିୟମାବଳୀର ଗ୍ରହଣ",
                 sec1_p1: "\"ଓଡ଼ିଆ ଭାଷା\" ଆପ୍ କୁ ସ୍ୱାଗତ । ଆପଣ ଏହି ଆପ୍ ଡାଉନଲୋଡ୍ କିମ୍ବା ବ୍ୟବହାର କରିବା ଅର୍ଥ ହେଉଛି ଆପଣ ନିମ୍ନଲିଖିତ ସମସ୍ତ ନିୟମ ଏବଂ ସର୍ତ୍ତାବଳୀ ମାନିବାକୁ ରାଜି ଅଛନ୍ତି । ଯଦି ଆପଣ ଏହି ନିୟମ ସହିତ ସହମତ ନୁହଁନ୍ତି, ତେବେ ଦୟାକରି ଏହି ଆପ୍ ବ୍ୟବହାର କରନ୍ତୁ ନାହିଁ ।",
+                
                 sec2_title: "୨. ବ୍ୟବହାର ଅନୁମତି",
-                sec2_p1: "ଏହି ଆପ୍ କେବଳ ବ୍ୟକ୍ତିଗତ ଏବଂ ଶିକ୍ଷାଗତ ବ୍ୟବହାର ପାଇଁ ପ୍ରସ୍ତୁତ କରାଯାଇଛି । ଆପଣଙ୍କୁ ନିମ୍ନଲିଖିତ କାର୍ଯ୍ୟ କରିବାକୁ ଅନୁମତି ନାହିଁ:",
-                sec2_li1: "ଆପ୍ ର କୌଣସି ଅଂଶକୁ ପରିବର୍ତ୍ତନ କରିବା କିମ୍ବା ନକଲ କରିବା ।",
-                sec2_li2: "ଆପ୍ ର କୋଡ୍ କୁ ଡିକମ୍ପାଇଲ୍ କିମ୍ବା ରିଭର୍ସ ଇଞ୍ଜିନିୟରିଂ କରିବାକୁ ଚେଷ୍ଟା କରିବା ।",
-                sec2_li3: "ଏହାକୁ ବ୍ୟବସାୟିକ ଉଦ୍ଦେଶ୍ୟରେ ବ୍ୟବହାର କରିବା ।",
+                sec2_p1: "ଏହି ଆପ୍ କେବଳ ବ୍ୟକ୍ତିଗତ ଏବଂ ଶିକ୍ଷାଗତ ବ୍ୟବହାର ପାଇଁ ପ୍ରସ୍ତୁତ କରାଯାଇଛି । ଆପଣ କେବଳ ଓଡିଆ ଶିଖିବା ଏବଂ ଅଭ୍ୟାସ କରିବା ପାଇଁ ଏହି ଆପ୍ ବ୍ୟବହାର କରିପାରିବେ ।",
+                
                 sec3_title: "୩. ବିଷୟବସ୍ତୁ ଏବଂ ମାଲିକାନା",
                 sec3_p1: "ଆପ୍ ରେ ଥିବା ସମସ୍ତ ମୂଳ ବିଷୟବସ୍ତୁ, ଗ୍ରାଫିକ୍ସ ଏବଂ ଡିଜାଇନ୍ \"ଓଡ଼ିଆ ଭାଷା\" ନିର୍ମାତାଙ୍କର ସମ୍ପତ୍ତି ଅଟେ ।",
                 sec3_bold1: "ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ:",
                 sec3_p2: "ଏହି ଆପ୍ ରେ 'ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ' ବହିର ଡିଜିଟାଲ୍ ସଂସ୍କରଣ କେବଳ ପିଲାମାନଙ୍କ ଶିକ୍ଷା ପାଇଁ ଯୋଡାଯାଇଛି । ଆମେ ଏହି ବହିର ମାଲିକାନା ଦାବି କରୁନାହୁଁ । ଯଦି ଆପଣ ଏହି ବହିର ମାଲିକ ଏବଂ ଏହାକୁ ହଟାଇବାକୁ ଚାହୁଁଛନ୍ତି, ତେବେ ଆମକୁ ଇମେଲ୍ ମାଧ୍ୟମରେ ଜଣାଇଲେ ଆମେ ତୁରନ୍ତ ଏହାକୁ ହଟାଇଦେବୁ ।",
                 sec3_bold2: "ଉପଯୋଗକର୍ତ୍ତାଙ୍କ ଯୋଗଦାନ:",
-                sec3_p3: "ଯଦି ଆପଣ ଆପଣଙ୍କର କୌଣସି ବହି କିମ୍ବା ଲେଖା ଆମ ଆପ୍ ରେ ଯୋଡିବାକୁ ପଠାନ୍ତି, ତେବେ ଆପଣ ନିଶ୍ଚିତ କରିବା ଆବଶ୍ୟକ ଯେ ଆପଣ ସେହି ବିଷୟବସ୍ତୁର ମାଲିକ ଅଟନ୍ତି ଏବଂ ଏହା ପିଲାମାନଙ୍କ ପାଇଁ ମାଗଣାରେ ଉପଲବ୍ଧ ହେବା ଉଚିତ୍ ।",
+                sec3_p3: "ଯଦି ଆପଣ ଆପଣଙ୍କର କୌଣସି ବହି କିମ୍ବା ଲେଖା ଆମ ଆପ୍ ରେ ଯୋଡିବାକୁ ପଠାନ୍ତି, ତେବେ ଆପଣ ନିଶ୍ଚିତ କରିବା ଆବଶ୍ୟକ ଯେ ଆପଣ ସେହି ବିଷୟବସ୍ତୁର ମାଲିକ ଅଟନ୍ତି ଏବଂ ଏହା ପିଲାମାନଙ୍କ ପାଇଁ ମାଗଣାରେ ଉପଲବ୍ଧ ହେବା ଉଚିତ୍ । ଯେକୌଣସି ବିଷୟବସ୍ତୁ ଜଣେ ଅଭିଭାବକ କିମ୍ବା ଆଇନଗତ ଅଭିଭାବକଙ୍କ ଦ୍ୱାରା ପଠାଯିବା ଆବଶ୍ୟକ, ଏବଂ ପଠାଯାଇଥିବା ବିଷୟବସ୍ତୁ ମୌଳିକ, କପିରାଇଟ୍-ମୁକ୍ତ ଏବଂ ପିଲାମାନଙ୍କ ପାଇଁ ଉପଯୁକ୍ତ ହେବା ଉଚିତ ।",
+                
                 sec4_title: "୪. ପାରିବାରିକ ନୀତି",
                 sec4_p1: "ଏହି ଆପ୍ ମୁଖ୍ୟତଃ ପିଲାମାନଙ୍କ ପାଇଁ ତିଆରି ହୋଇଛି । ଆମେ Google Play ର ପାରିବାରିକ ନୀତି କୁ କଡାକଡି ଭାବେ ପାଳନ କରୁ ।",
-                sec4_li1: "ଆମେ କୌଣସି ବ୍ୟକ୍ତିଗତ ତଥ୍ୟ ସଂଗ୍ରହ କରୁନାହୁଁ ।",
-                sec4_li2: "ଆପ୍ ରେ ପ୍ରଦର୍ଶିତ ହେଉଥିବା ବିଜ୍ଞାପନଗୁଡିକ ପିଲାମାନଙ୍କ ପାଇଁ ଉପଯୁକ୍ତ ଏବଂ ସୁରକ୍ଷିତ ଅଟେ ।",
-                sec5_title: "୫. ଅସ୍ୱୀକରଣ ଏବଂ ଦାୟିତ୍ୱ",
-                sec5_alert: "ଏହି ଆପ୍ ଭାରତ ସରକାର କିମ୍ବା ଓଡ଼ିଶା ସରକାରଙ୍କ ସହିତ କୌଣସି ସରକାରୀ ସମ୍ପର୍କ ରଖିନାହିଁ ।",
-                sec5_p1: "ଏଥିରେ ଥିବା ଜାତୀୟ ସଙ୍ଗୀତ କିମ୍ବା ରାଜ୍ୟ ସଙ୍ଗୀତ କେବଳ ଶିକ୍ଷାଗତ ଉଦ୍ଦେଶ୍ୟରେ ଉଇକିପିଡିଆ ରୁ ଯୋଗ କରାଯାଇଅଛି । ଆପ୍ ରେ ଥିବା ତଥ୍ୟର ସଠିକତା ପାଇଁ ଆମେ ଚେଷ୍ଟା କରୁ, କିନ୍ତୁ କୌଣସି ତ୍ରୁଟି ପାଇଁ ଆମେ ଦାୟୀ ରହିବୁ ନାହିଁ । ଆପ୍ ବ୍ୟବହାର କରିବା ଦ୍ୱାରା ହେଉଥିବା କୌଣସି କ୍ଷତି ପାଇଁ ଆମେ ଦାୟୀ ନୁହଁ ।",
-                sec_changes_title: "୬. ଏହି ନିୟମାବଳୀରେ ପରିବର୍ତ୍ତନ",
-                sec_changes_text: "ଆମେ ସମୟ ସମୟରେ ଆମର ସର୍ତ୍ତାବଳୀ ଏବଂ ନିୟମାବଳୀ ଅପଡେଟ୍ କରିପାରୁ । କୌଣସି ପରିବର୍ତ୍ତନ ପାଇଁ ଆପଣଙ୍କୁ ପର୍ଯ୍ୟାୟକ୍ରମେ ଏହି ପୃଷ୍ଠାକୁ ସମୀକ୍ଷା କରିବାକୁ ପରାମର୍ଶ ଦିଆଯାଇଛି ।",
-                sec6_title: "୭. ଯୋଗାଯୋଗ",
-                sec6_p1: "ଯଦି ଏହି ସର୍ତ୍ତାବଳୀ ବିଷୟରେ ଆପଣଙ୍କର କୌଣସି ପ୍ରଶ୍ନ ଥାଏ, ତେବେ ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ: message.sbg@gmail.com",
+                sec4_li1: "ଆମେ ଜାଣିଶୁଣି ପିଲାମାନଙ୍କଠାରୁ କୌଣସି ବ୍ୟକ୍ତିଗତ ତଥ୍ୟ ସଂଗ୍ରହ କରୁନାହୁଁ ।",
+                sec4_li2: "ଆମେ Google Play ର Families Policy ଅନୁଯାୟୀ ପିଲାମାନଙ୍କ ପାଇଁ ଉପଯୁକ୍ତ ବିଜ୍ଞାପନ ପ୍ରଦର୍ଶନ କରିବାକୁ ଚେଷ୍ଟା କରୁ ।",
+                sec4_li3: "ଯଦିଓ ଏହି ଆପ୍ ମୁଖ୍ୟତଃ ପିଲାମାନଙ୍କ ପାଇଁ ପ୍ରସ୍ତୁତ କରାଯାଇଛି, ଏହା ଶିକ୍ଷାଗତ ଉଦ୍ଦେଶ୍ୟରେ ପିତାମାତା, ଶିକ୍ଷକ ଏବଂ ଅନ୍ୟ ବ୍ୟବହାରକାରୀଙ୍କ ଦ୍ୱାରା ମଧ୍ୟ ବ୍ୟବହୃତ ହୋଇପାରିବ।",
+
+                sec5_title: "୫. ନିଷିଦ୍ଧ ବ୍ୟବହାର",
+                sec5_p1: "ସମସ୍ତଙ୍କ ପାଇଁ ଏକ ସୁରକ୍ଷିତ ପରିବେଶ ନିଶ୍ଚିତ କରିବାକୁ, ନିମ୍ନଲିଖିତ କାର୍ଯ୍ୟଗୁଡିକ ସମ୍ପୂର୍ଣ୍ଣ ନିଷେଧ:",
+                sec5_li1: "<strong>ଦୁରୁପଯୋଗ ମନା:</strong> କୌଣସି ବେଆଇନ କାର୍ଯ୍ୟ ପାଇଁ ଆପ୍ ବ୍ୟବହାର କରନ୍ତୁ ନାହିଁ ।",
+                sec5_li2: "<strong>ନକଲ କରିବା ମନା:</strong> ଆପଣଙ୍କୁ ଆପ୍ କିମ୍ବା ଏହାର କୋଡ୍ କୁ ନକଲ, ପରିବର୍ତ୍ତନ କିମ୍ବା ରିଭର୍ସ ଇଞ୍ଜିନିୟରିଂ କରିବାକୁ ଅନୁମତି ନାହିଁ ।",
+                sec5_li3: "<strong>ବ୍ୟବସାୟିକ ବ୍ୟବହାର ମନା:</strong> ଆପଣ ବ୍ୟବସାୟିକ ଲାଭ ପାଇଁ ଆପ୍ କୁ ବିକ୍ରୟ କିମ୍ବା ଭଡାରେ ଦେଇପାରିବେ ନାହିଁ ।",
+                sec5_li4: "<strong>କ୍ଷତିକାରକ କାର୍ଯ୍ୟ ମନା:</strong> ଆପ୍ କୁ କ୍ଷତି ପହଞ୍ଚାଇବା ଭଳି କୌଣସି ଭାଇରସ୍ କିମ୍ବା କୋଡ୍ ବ୍ୟବହାର କରନ୍ତୁ ନାହିଁ ।",
+
+                sec6_title: "୬. ଅସ୍ୱୀକରଣ ଏବଂ ଦାୟିତ୍ୱ",
+                sec6_alert: "ଏହି ଆପ୍ ଭାରତ ସରକାର କିମ୍ବା ଓଡ଼ିଶା ସରକାରଙ୍କ ସହିତ କୌଣସି ସରକାରୀ ସମ୍ପର୍କ ରଖିନାହିଁ ।",
+                sec6_p1: "ଏହି ଆପ୍‌ରେ ଅନ୍ତର୍ଭୁକ୍ତ ଜାତୀୟ ସଙ୍ଗୀତ କିମ୍ବା ରାଜ୍ୟ ସଙ୍ଗୀତ ଉଇକିପିଡ଼ିଆରୁ ଅଣାଯାଇଛି ଏବଂ ଏହା କେବଳ ଶିକ୍ଷାଗତ ଉଦ୍ଦେଶ୍ୟରେ ବ୍ୟବହୃତ ହେଉଛି । ଏହାର ମାଲିକାନା ଏବଂ ଅଧିକାର ସମ୍ପୃକ୍ତ ସ୍ରୋତଗୁଡ଼ିକ ପାଖରେ ସଂରକ୍ଷିତ । ଆପ୍ ରେ ଥିବା ତଥ୍ୟର ସଠିକତା ପାଇଁ ଆମେ ଚେଷ୍ଟା କରୁ, କିନ୍ତୁ କୌଣସି ତ୍ରୁଟି ପାଇଁ ଆମେ ଦାୟୀ ରହିବୁ ନାହିଁ । ଆପ୍ ବ୍ୟବହାର କରିବା ଦ୍ୱାରା ହେଉଥିବା କୌଣସି କ୍ଷତି ପାଇଁ ଆମେ ଦାୟୀ ନୁହଁ ।",
+                
+                sec7_title: "୭. ବ୍ୟବହାର ସମାପ୍ତି",
+                sec7_p1: "ଯଦି ଆପଣ ଏହି ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ ଉଲ୍ଲଂଘନ କରନ୍ତି, ତେବେ ଆମେ ବିନା ନୋଟିସରେ ତୁରନ୍ତ ଆପଣଙ୍କ ଆପ୍ ବ୍ୟବହାର କରିବାର ଅଧିକାରକୁ ବନ୍ଦ କରିପାରୁ ।",
+
+                sec8_title: "୮. ନିୟମାବଳୀରେ ପରିବର୍ତ୍ତନ",
+                sec8_p1: "ଆମେ ସମୟ ସମୟରେ ଆମର ସର୍ତ୍ତାବଳୀ ଏବଂ ନିୟମାବଳୀ ଅପଡେଟ୍ କରିପାରୁ । କୌଣସି ପରିବର୍ତ୍ତନ ପାଇଁ ଆପଣଙ୍କୁ ପର୍ଯ୍ୟାୟକ୍ରମେ ଏହି ପୃଷ୍ଠାକୁ ସମୀକ୍ଷା କରିବାକୁ ପରାମର୍ଶ ଦିଆଯାଇଛି ।",
+                
+                sec9_title: "୯. ଯୋଗାଯୋଗ",
+                sec9_p1: "ଯଦି ଏହି ସର୍ତ୍ତାବଳୀ ବିଷୟରେ ଆପଣଙ୍କର କୌଣସି ପ୍ରଶ୍ନ ଥାଏ, ତେବେ ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ:",
+                
                 contact_btn: "ଇମେଲ୍ କରନ୍ତୁ",
-                footer_text: "&copy; ୨୦୨୫ ଓଡ଼ିଆ ଭାଷା | ସର୍ବାଧିକାର ସୁରକ୍ଷିତ | ସନ୍ଦୀପ୍ ବିଶ୍ବାଳ ଜି ଆପ୍ସ",
-                select_language: "ଭାଷା ବାଛନ୍ତୁ"
+                footer_text: "&copy; ୨୦୨୫ ଓଡ଼ିଆ ଭାଷା | ସର୍ବାଧିକାର ସୁରକ୍ଷିତ | ସନ୍ଦୀପ୍ ବିଶ୍ବାଳ ଜି ଆପ୍ସ"
             }
         };
 
@@ -488,7 +484,6 @@
         }
 
         function setLanguage(lang) {
-            // Update Text Content
             const texts = resources[lang];
             const elements = document.querySelectorAll('[data-i18n]');
             
@@ -499,103 +494,58 @@
                 }
             });
 
-            // Update Page Title
             document.title = texts.meta_title;
-            
-            // Update HTML Lang Attribute
             document.documentElement.lang = lang === 'od' ? 'or' : 'en';
 
-            // Update Body Class for Fonts
             if(lang === 'od') {
                 document.body.classList.add('lang-od');
             } else {
                 document.body.classList.remove('lang-od');
             }
 
-            // Update Button Label
             document.getElementById('curLangLabel').textContent = lang === 'od' ? 'ଓଡ଼ିଆ' : 'English';
-
-            // Save Preference
             localStorage.setItem('preferredLang', lang);
 
-            // Update URL without reloading
             const newUrl = new URL(window.location);
             newUrl.searchParams.delete('od');
             newUrl.searchParams.delete('en');
             newUrl.searchParams.set(lang, '');
             window.history.replaceState({}, '', newUrl);
 
-            // Close Modal if open
             document.getElementById('langModal').classList.remove('active');
         }
 
         function initLanguage() {
-            // 1. Check URL
-            if (getQueryParam('od')) {
-                setLanguage('od');
-                return;
-            }
-            if (getQueryParam('en')) {
-                setLanguage('en');
-                return;
-            }
-
-            // 2. Check LocalStorage
+            if (getQueryParam('od')) { setLanguage('od'); return; }
+            if (getQueryParam('en')) { setLanguage('en'); return; }
+            
             const savedLang = localStorage.getItem('preferredLang');
-            if (savedLang === 'od') {
-                setLanguage('od');
-                return;
-            }
+            if (savedLang === 'od') { setLanguage('od'); return; }
 
-            // 3. Default English (Do nothing, as HTML is EN)
             setLanguage('en'); 
         }
 
-        // --- UI Interactions --- //
-
-        function openLangModal() {
-            document.getElementById('langModal').classList.add('active');
-        }
-
-        function closeLangModal(e) {
-            if (e.target.classList.contains('lang-modal-overlay')) {
-                document.getElementById('langModal').classList.remove('active');
-            }
-        }
-
-        function switchLanguage(lang) {
-            setLanguage(lang);
-        }
-
-        // Table of Contents Toggle
-        function toggleToc() {
-            document.getElementById('tocWidget').classList.toggle('collapsed');
-        }
-
-        // Mobile Menu Toggle
+        function openLangModal() { document.getElementById('langModal').classList.add('active'); }
+        function closeLangModal(e) { if (e.target.classList.contains('lang-modal-overlay')) { document.getElementById('langModal').classList.remove('active'); } }
+        function switchLanguage(lang) { setLanguage(lang); }
+        function toggleToc() { document.getElementById('tocWidget').classList.toggle('collapsed'); }
+        
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             const hamburger = document.querySelector('.hamburger-btn');
-            
             menu.classList.toggle('active');
             hamburger.classList.toggle('open');
-            
-            if(menu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
-            }
+            document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
         }
 
         document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                toggleMenu();
-            });
+            link.addEventListener('click', () => { toggleMenu(); });
         });
 
-        // Initialize on Load
         window.addEventListener('DOMContentLoaded', initLanguage);
 
     </script>
+
 </body>
+ 
 </html>
