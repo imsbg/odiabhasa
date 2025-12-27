@@ -19,20 +19,17 @@
     <!--
       ================================================================
       ENGLISH SOCIAL MEDIA META TAGS (Open Graph & Twitter)
-      For creating rich link previews on WhatsApp, Facebook, Twitter, etc.
       ================================================================
     -->
-    <!-- Open Graph (for Facebook, WhatsApp, etc.) -->
     <meta property="og:title" content="Odia Bhasa - The Complete Odia Learning App">
     <meta property="og:description" content="Learn Odia letters, numbers, and read classic literature. Click to open or install the app.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://odiabhasa.pages.dev/open">
     <meta property="og:site_name" content="Odia Bhasa App">
     <meta property="og:locale" content="en_US">
-        <link rel="icon" href="https://imsbg.github.io/odiabhasa/images/app.png" type="image/png">
+    <link rel="icon" href="https://imsbg.github.io/odiabhasa/images/app.png" type="image/png">
     <link rel="apple-touch-icon" href="https://imsbg.github.io/odiabhasa/images/app.png">
     
-    <!-- UPDATED: Using your specific app icon image -->
     <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
@@ -41,20 +38,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Odia Bhasa - The Complete Odia Learning App">
     <meta name="twitter:description" content="Learn Odia letters, numbers, and read classic literature. Click to open or install the app.">
-    <!-- UPDATED: Using your specific app icon image -->
     <meta name="twitter:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
 
-    <!--
-      ================================================================
-      FAVICONS
-      For browser tabs and bookmarks.
-      ================================================================
-    -->
-    <!-- UPDATED: Using your specific app icon image -->
+    <!-- FAvicons -->
     <link rel="icon" type="image/png" href="https://imsbg.github.io/odiabhasa/images/app.png">
     <link rel="apple-touch-icon" href="https://imsbg.github.io/odiabhasa/images/app.png">
 
-    <!-- Google Font for proper Odia rendering -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;700&display=swap" rel="stylesheet">
@@ -76,12 +66,11 @@
         .container {
             max-width: 450px;
         }
-        /* Style for the logo on the page */
         .app-logo {
             width: 80px;
             height: 80px;
             margin-bottom: 20px;
-            border-radius: 20%; /* Adds rounded corners to the visual display */
+            border-radius: 20%;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         h1 {
@@ -122,10 +111,11 @@
 <body>
 
     <div class="container">
-        <!-- Added your logo to the visual page as well -->
         <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo" class="app-logo">
         
-        <h1>ଓଡ଼ିଆ ଭାଷା ଆପ୍</h1>
+        <!-- The H1 will be updated by JavaScript based on the URL -->
+        <h1 id="page-title">ଓଡ଼ିଆ ଭାଷା ଆପ୍</h1>
+        
         <p>ଆପ୍‌ରେ କଣ୍ଟେଣ୍ଟ ଖୋଲିବାକୁ ଚେଷ୍ଟା କରାଯାଉଛି...</p>
         <div class="loader"></div>
         <div class="fallback-link">
@@ -136,11 +126,51 @@
 
     <script>
       (function() {
-        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa';
+        // --- 1. CONFIGURATION: Map URL parameters to Display Titles ---
+        const titleMap = {
+            "Swara": "ସ୍ଵରବର୍ଣ୍ଣ",
+            "Byanjana": "ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ",
+            "Sankhya": "୧ ରୁ ୧୦୦ ପର୍ଯ୍ୟନ୍ତ ସଂଖ୍ୟା",
+            "Yukta": "ଯୁକ୍ତାକ୍ଷର",
+            "Barna_Parichaya": "ବର୍ଣ୍ଣ ଗୁଡିକର ପରିଚୟ",
+            "Matra": "ମାତ୍ରା",
+            "Phala": "ସାତ ଟି ଫଳା",
+            "Bahi": "ଓଡ଼ିଆ ବହି",
+            "Book_Reader": "ବହି ପଢିବା ପୃଷ୍ଟା",
+            "Menu": "ମେନୁ",
+            "About": "ଆପ୍ ବିଷୟରେ",
+            "History_Odisha": "ଓଡ଼ିଶାର ଇତିହାସ",
+            "History_Lang": "ଓଡ଼ିଆ ଭାଷାର ଇତିହାସ",
+            "Lipyantara": "ଲିପ୍ୟନ୍ତର (ଲିପି ରୂପାନ୍ତର)",
+            "Odia_Calendar": "ଓଡ଼ିଆ କ୍ୟାଲେଣ୍ଡର",
+            "Madhu_Barnabodha": "ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ",
+            "Writing": "ଓଡ଼ିଆ ଅକ୍ଷର ଲେଖି ଶିଖନ୍ତୁ"
+        };
+
+        // --- 2. LOGIC: Identify Parameter & Update UI ---
+        const queryString = window.location.search;
+        let queryKey = queryString.substring(1); // Remove the '?'
         
+        // Handle cases like ?Bahi=amagouraba (remove content after =)
+        if (queryKey.includes('=')) {
+            queryKey = queryKey.split('=')[0];
+        }
+
+        // Check if the key exists in our map
+        if (titleMap[queryKey]) {
+            const displayTitle = titleMap[queryKey];
+            
+            // Update Page Title (<title>)
+            document.title = displayTitle + " | ଓଡ଼ିଆ ଭାଷା";
+            
+            // Update Visual Heading (<h1>)
+            document.getElementById('page-title').textContent = displayTitle;
+        }
+
+        // --- 3. DEEP LINKING: Redirect Logic ---
+        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa';
         document.getElementById('store-link').href = PLAY_STORE_URL;
         
-        const queryString = window.location.search;
         const customSchemeUrl = 'odiabhasa://open' + queryString;
         
         // Attempt to launch the app
