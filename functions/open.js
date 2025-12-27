@@ -35,7 +35,7 @@ export async function onRequest(context) {
   // If the key exists, update title and description
   if (titleMap[queryKey]) {
       newTitle = titleMap[queryKey];
-      newDesc =  + newTitle" ପାଇଁ ଏଠାରେ କ୍ଲିକ୍ କରନ୍ତୁ ";
+      newDesc =  newTitle + " ପାଇଁ ଏଠାରେ କ୍ଲିକ୍ କରନ୍ତୁ ";
   }
 
   // 1. Get the original open.html content
