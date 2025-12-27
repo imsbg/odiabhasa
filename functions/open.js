@@ -11,21 +11,21 @@ export async function onRequest(context) {
   const titleMap = {
       "Swara": "ସ୍ଵରବର୍ଣ୍ଣ",
       "Byanjana": "ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ",
-      "Sankhya": "୧ ରୁ ୧୦୦ ସଂଖ୍ୟା",
+      "Sankhya": "୧ ରୁ ୧୦୦ ପର୍ଯ୍ୟନ୍ତ ସଂଖ୍ୟା",
       "Yukta": "ଯୁକ୍ତାକ୍ଷର ",
       "Barna_Parichaya": "ବର୍ଣ୍ଣ ପରିଚୟ",
       "Matra": "ମାତ୍ରା",
       "Phala": "ଫଳା",
       "Bahi": "ଓଡ଼ିଆ ବହି ",
-      "Book_Reader": "ବହି ପଢନ୍ତୁ ",
+      "Book_Reader": "ବହି ପଢିବା ",
       "Menu": "ମେନୁ ",
-      "About": "ଆପ୍ ବିଷୟରେ ",
+      "About": "ଆପ୍ ବିଷୟ ଖୋଲିବା ",
       "History_Odisha": "ଓଡ଼ିଶାର ଇତିହାସ ",
       "History_Lang": "ଓଡ଼ିଆ ଭାଷାର ଇତିହାସ ",
       "Lipyantara": "ଲିପ୍ୟନ୍ତର ",
       "Odia_Calendar": "ଓଡ଼ିଆ କ୍ୟାଲେଣ୍ଡର ",
-      "Madhu_Barnabodha": "ମଧୁ ବର୍ଣ୍ଣବୋଧ ",
-      "Writing": "ଓଡ଼ିଆ ଅକ୍ଷର ଲେଖି ଶିଖନ୍ତୁ"
+      "Madhu_Barnabodha": "ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ ",
+      "Writing": "ଓଡ଼ିଆ ଅକ୍ଷର ଲେଖି ଶିଖିବା"
   };
 
   // Default values
@@ -35,7 +35,7 @@ export async function onRequest(context) {
   // If the key exists, update title and description
   if (titleMap[queryKey]) {
       newTitle = titleMap[queryKey];
-      newDesc = "ଏହାକୁ ଖୋଲିବା ପାଇଁ ଏଠାରେ କ୍ଲିକ୍ କରନ୍ତୁ: " + newTitle;
+      newDesc =  + newTitle" ପାଇଁ ଏଠାରେ କ୍ଲିକ୍ କରନ୍ତୁ ";
   }
 
   // 1. Get the original open.html content
