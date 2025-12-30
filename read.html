@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- 
+      ================================================================
+      SEO & METADATA 
+      ================================================================
+    -->
+    <title>Odia Bhasa Library | Read Books Online</title>
+    <meta name="description" content="The largest digital library of Odia literature. Read Madhu Barnabodha, classic stories, poems, and history books online. Powered by Odia Bhasa App.">
+    <meta name="keywords" content="Odia Library, Odia Books, Online Odia Reader, Madhu Barnabodha, Fakir Mohan Senapati, Odia Bhasa App, Odia Literature">
+    <meta name="author" content="Sandeep Biswal G">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#007ae6">
+    
+    <!-- Open Graph (Facebook/WhatsApp/LinkedIn) -->
+    <meta property="og:title" content="Odia Bhasa Books Library">
+    <meta property="og:description" content="Read classic Odia books online freely. Click to explore the library.">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Odia Bhasa">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Odia Bhasa Books Library">
+    <meta name="twitter:description" content="Read classic Odia books online freely.">
+    <meta name="twitter:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* 
+           ================================================================
+           CSS VARIABLES & RESET
+           ================================================================
+        */
+        :root {
+            --primary: #007ae6;          /* New Blue Color */
+            --primary-dark: #005bb5;     /* Darker Blue for hover */
+            --bg-color: #f0f4f8;         /* Light Blue-Grey Background */
+            --paper: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #607d8b;
+            --shadow: 0 4px 20px rgba(0, 122, 230, 0.1);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Noto Sans Oriya', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; padding: 0; margin: 0; }
+
+        /* 
+           ================================================================
+           HEADER & NAVIGATION
+           ================================================================
+        */
+        .site-header {
+            background-color: var(--paper);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primary);
+        }
+        .nav-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Desktop Menu */
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        .nav-link {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .nav-link:hover { color: var(--primary); }
+        
+        .btn-download {
+            background-color: var(--primary);
+            color: white !important;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            box-shadow: 0 4px 10px rgba(0, 122, 230, 0.3);
+        }
+        .btn-download:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--text-dark); }
+
+        /* 
+           ================================================================
+           LAYOUT CONTAINERS
+           ================================================================
+        */
+        .main-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+            min-height: 80vh;
+        }
+
+        /* 
+           ================================================================
+           LIBRARY VIEW (Search & Grid)
+           ================================================================
+        */
+        .library-header { text-align: center; margin-bottom: 30px; }
+        .library-header h1 { font-size: 28px; color: var(--primary); margin-bottom: 10px; }
+        .library-header p { color: var(--text-light); }
+
+        .search-wrapper {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+        }
+        .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 2px solid #e1e8ed;
+            border-radius: 50px;
+            font-size: 16px;
+            font-family: inherit;
+            outline: none;
+            transition: all 0.3s;
+            background: white;
+        }
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 122, 230, 0.1);
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 25px;
+        }
+
+        .book-card {
+            background: var(--paper);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+        
+        .card-cover-wrapper {
+            width: 100%;
+            aspect-ratio: 2/3;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+        .card-cover { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .book-card:hover .card-cover { transform: scale(1.05); }
+
+        .card-info { padding: 12px; }
+        .card-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+        .card-badge {
+            font-size: 11px;
+            background-color: #e3f2fd;
+            color: var(--primary);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        /* Skeleton Loading Animation */
+        .skeleton {
+            background: linear-gradient(90deg, #eee 25%, #fafafa 50%, #eee 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        /* 
+           ================================================================
+           READER VIEW
+           ================================================================
+        */
+        .reader-container {
+            background: var(--paper);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            position: relative;
+            min-height: 500px;
+        }
+        
+        /* Watermark */
+        .reader-container::before {
+            content: "Odia Bhasa App";
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 5vw;
+            color: rgba(0,0,0,0.02);
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 0;
+        }
+
+        .book-meta-header {
+            text-align: center;
+            border-bottom: 2px dashed #eee;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .meta-title { color: var(--primary); font-size: 26px; margin: 0 0 8px 0; }
+        .meta-author { color: var(--text-light); font-size: 16px; font-style: italic; }
+
+        /* Content Typography */
+        #page-content { position: relative; z-index: 1; min-height: 300px; }
+        .content-header {
+            font-size: 22px;
+            color: var(--text-dark);
+            margin: 25px 0 15px 0;
+            text-align: center;
+            font-weight: 700;
+        }
+        .content-p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #34495e;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .bold { font-weight: 700; color: #000; }
+        .italic { font-style: italic; color: #555; }
+
+        /* Pagination Controls */
+        .controls-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .btn-page {
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-family: inherit;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .btn-page:hover:not(:disabled) {
+            background: var(--primary);
+            color: white;
+        }
+        .btn-page:disabled {
+            border-color: #ddd;
+            color: #ccc;
+            cursor: not-allowed;
+        }
+        .page-indicator {
+            font-weight: bold;
+            color: var(--text-dark);
+            font-size: 18px;
+        }
+
+        /* 
+           ================================================================
+           RESPONSIVE & MOBILE
+           ================================================================
+        */
+        @media (max-width: 768px) {
+            .menu-toggle { display: block; }
+            .nav-menu {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                padding: 20px;
+                gap: 15px;
+                text-align: center;
+            }
+            .nav-menu.active { display: flex; }
+            
+            .book-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            .reader-container { padding: 20px; }
+            .meta-title { font-size: 22px; }
+            .content-p { font-size: 17px; }
+            .btn-page { padding: 8px 15px; font-size: 13px; }
+        }
+
+        /* Utils */
+        .hidden { display: none !important; }
+        .loader { display: flex; justify-content: center; padding: 50px; }
+        .spinner {
+            width: 40px; height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* Footer */
+        .site-footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+        .footer-links a { color: #bdc3c7; margin: 0 10px; font-size: 14px; }
+        .footer-links a:hover { color: white; }
+        .copyright { margin-top: 20px; font-size: 13px; color: #7f8c8d; }
+
+    </style>
+</head>
+<body oncontextmenu="return false;">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-brand">
+                <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa" class="nav-logo">
+                ଓଡ଼ିଆ ଭାଷା
+            </a>
+            
+            <div class="menu-toggle" id="mobile-menu-btn">☰</div>
+
+            <div class="nav-menu" id="nav-links">
+                <a href="index.html" class="nav-link">ମୂଳ ପୃଷ୍ଠା (Home)</a>
+                <a href="#" class="nav-link">ଗୋପନୀୟତା (Privacy)</a>
+                <a href="#" class="nav-link">ସର୍ତ୍ତାବଳୀ (Terms)</a>
+                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="nav-link btn-download">
+                    ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+
+        <!-- LOADER -->
+        <div id="loader" class="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <!-- VIEW 1: LIBRARY GRID -->
+        <section id="library-view" class="hidden">
+            <div class="library-header">
+                <h1>ପୁସ୍ତକାଳୟ</h1>
+                <p>ଆପଣଙ୍କ ପସନ୍ଦର ବହି ବାଛନ୍ତୁ ଏବଂ ପଢ଼ନ୍ତୁ</p>
+            </div>
+
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search-input" class="search-input" placeholder="ବହି ଖୋଜନ୍ତୁ ...">
+            </div>
+
+            <div id="book-grid" class="book-grid">
+                <!-- Javascript will inject books here -->
+            </div>
+            
+            <div id="no-results" class="hidden" style="text-align: center; color: var(--text-light); margin-top: 40px;">
+                କୌଣସି ବହି ମିଳିଲା ନାହିଁ
+            </div>
+        </section>
+
+        <!-- VIEW 2: BOOK READER -->
+        <section id="reader-view" class="hidden">
+            <div style="margin-bottom: 20px;">
+                <a href="read.html" style="color: var(--text-light); font-weight: bold; display: flex; align-items: center; gap: 5px;">
+                    &larr; ପୁସ୍ତକାଳୟକୁ ଫେରନ୍ତୁ
+                </a>
+            </div>
+
+            <article class="reader-container">
+                <div class="book-meta-header">
+                    <h1 id="meta-title" class="meta-title"></h1>
+                    <div id="meta-author" class="meta-author"></div>
+                </div>
+
+                <div id="page-content">
+                    <!-- Page content injected here -->
+                </div>
+
+                <div class="controls-wrapper">
+                    <button id="btn-prev" class="btn-page" onclick="changePage(-1)">&#10094; ପୂର୍ବ</button>
+                    <span id="page-indicator" class="page-indicator">୧ / ୧୦</span>
+                    <button id="btn-next" class="btn-page" onclick="changePage(1)">ପରବର୍ତ୍ତୀ &#10095;</button>
+                </div>
+            </article>
+
+            <!-- Mobile App Promo (Visible only on Mobile) -->
+            <div id="mobile-promo" class="hidden" style="margin-top:30px; padding:20px; background:#e3f2fd; border-radius:12px; text-align:center;">
+                <h3 style="color:var(--primary); margin:0 0 10px 0;">ସମ୍ପୂର୍ଣ୍ଣ ଅନୁଭୂତି ପାଇଁ</h3>
+                <p style="margin:0 0 15px 0; font-size:14px; color:#555;">ଆମର ଆପ୍ ବ୍ୟବହାର କରନ୍ତୁ, ଯେଉଁଠାରେ ଆପଣ ଅଡିଓ ଶୁଣିପାରିବେ</p>
+                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="btn-download" style="display:inline-block;">
+                    Google Play ରେ ଖୋଲନ୍ତୁ
+                </a>
+            </div>
+        </section>
+
+        <!-- ERROR MESSAGE -->
+        <div id="error-msg" class="hidden" style="text-align: center; padding: 50px;">
+            <h2 style="color: var(--primary);">କ୍ଷମା କରିବେ!</h2>
+            <p>କିଛି ଯାନ୍ତ୍ରିକ ତ୍ରୁଟି ଦେଖାଦେଇଛି । ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ ।</p>
+            <a href="read.html" class="btn-download" style="margin-top: 20px; display:inline-block;">ରିଫ୍ରେସ୍ କରନ୍ତୁ</a>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Odia Bhasa App. Built with ❤️ for Odisha.
+        </div>
+    </footer>
+
+    <script>
+        // --- 1. CONFIGURATION ---
+        const API = {
+            ALL_BOOKS: 'https://sbgb.pages.dev/ବହି/ସବୁ.json',
+            BOOK_BASE: 'https://sbgb.pages.dev/ବହି/ଖାତା/',
+            MOBILE_FREE_BOOK: 'amagouraba'
+        };
+        
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        // --- 2. SECURITY (DRM-Lite) ---
+        // Disable Right Click
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        // Disable DevTools shortcuts
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) return false;
+            if (e.ctrlKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0))) return false;
+        };
+        // Copy Protection
+        document.addEventListener('copy', e => {
+            e.preventDefault();
+            const promo = "ଓଡ଼ିଆ ବହି ପଢ଼ିବା ପାଇଁ ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ: https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa";
+            e.clipboardData.setData('text/plain', promo);
+        });
+
+        // --- 3. UI REFERENCES ---
+        const ui = {
+            loader: document.getElementById('loader'),
+            library: document.getElementById('library-view'),
+            grid: document.getElementById('book-grid'),
+            search: document.getElementById('search-input'),
+            reader: document.getElementById('reader-view'),
+            pageContent: document.getElementById('page-content'),
+            metaTitle: document.getElementById('meta-title'),
+            metaAuthor: document.getElementById('meta-author'),
+            btnPrev: document.getElementById('btn-prev'),
+            btnNext: document.getElementById('btn-next'),
+            indicator: document.getElementById('page-indicator'),
+            error: document.getElementById('error-msg'),
+            promo: document.getElementById('mobile-promo')
+        };
+
+        // --- 4. STATE MANAGEMENT ---
+        let currentBook = null;
+        let currentPage = 0;
+
+        // --- 5. INITIALIZATION ---
+        (function init() {
+            // Mobile Menu Toggle
+            document.getElementById('mobile-menu-btn').onclick = () => {
+                document.getElementById('nav-links').classList.toggle('active');
+            };
+
+            const params = new URLSearchParams(window.location.search);
+            const bookId = params.get('book');
+
+            if (bookId) {
+                loadReader(bookId);
+            } else {
+                loadLibrary();
+            }
+        })();
+
+        // --- 6. LIBRARY LOGIC ---
+        async function loadLibrary() {
+            try {
+                const res = await fetch(API.ALL_BOOKS);
+                const books = await res.json();
+
+                ui.loader.classList.add('hidden');
+                ui.library.classList.remove('hidden');
+
+                // Render Cards
+                books.forEach(book => {
+                    // Extract ID from full URL
+                    const filename = book.destination.substring(book.destination.lastIndexOf('/') + 1);
+                    const id = filename.replace('.json', '');
+                    createCard(id, book.destination);
+                });
+
+                // Search Listener
+                ui.search.addEventListener('input', (e) => filterBooks(e.target.value));
+
+            } catch (err) {
+                console.error(err);
+                ui.loader.classList.add('hidden');
+                ui.error.classList.remove('hidden');
+            }
+        }
+
+        function createCard(id, url) {
+            const card = document.createElement('div');
+            card.className = 'book-card';
+            card.setAttribute('data-search', ''); // Filled later
+            
+            card.innerHTML = `
+                <div class="card-cover-wrapper skeleton">
+                    <img class="card-cover hidden" alt="Book Cover">
+                </div>
+                <div class="card-info">
+                    <div class="card-title">Loading...</div>
+                    <span class="card-badge">ପଢ଼ନ୍ତୁ</span>
+                </div>
+            `;
+            
+            card.onclick = () => window.location.href = `read.html?book=${id}`;
+            ui.grid.appendChild(card);
+
+            // Lazy fetch details
+            fetch(url).then(r => r.json()).then(data => {
+                const img = card.querySelector('.card-cover');
+                const title = card.querySelector('.card-title');
+                const wrapper = card.querySelector('.card-cover-wrapper');
+                
+                title.textContent = data.title;
+                card.setAttribute('data-search', data.title.toLowerCase());
+                
+                if (data.coverpage) {
+                    img.src = data.coverpage;
+                    img.onload = () => {
+                        img.classList.remove('hidden');
+                        wrapper.classList.remove('skeleton');
+                    };
+                } else {
+                    wrapper.classList.remove('skeleton');
+                    wrapper.style.backgroundColor = '#ddd';
+                }
+            }).catch(() => {
+                card.style.display = 'none'; // Hide if JSON fails
+            });
+        }
+
+        function filterBooks(query) {
+            const term = query.toLowerCase();
+            const cards = document.querySelectorAll('.book-card');
+            let visible = 0;
+            
+            cards.forEach(card => {
+                const title = card.getAttribute('data-search');
+                if (title && title.includes(term)) {
+                    card.style.display = 'flex';
+                    visible++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            document.getElementById('no-results').classList.toggle('hidden', visible > 0);
+        }
+
+        // --- 7. READER LOGIC ---
+        async function loadReader(id) {
+            // Mobile Restriction Check
+            if (isMobile && id !== API.MOBILE_FREE_BOOK) {
+                window.location.replace(`https://odiabhasa.pages.dev/open?Bahi=${id}`);
+                return;
+            }
+
+            try {
+                const res = await fetch(`${API.BOOK_BASE}${id}.json`);
+                if (!res.ok) throw new Error("Book not found");
+                
+                currentBook = await res.json();
+                
+                // Set Metadata
+                document.title = `${currentBook.title} | Odia Bhasa`;
+                ui.metaTitle.textContent = currentBook.title;
+                ui.metaAuthor.textContent = currentBook.author;
+
+                if (isMobile) ui.promo.classList.remove('hidden');
+
+                ui.loader.classList.add('hidden');
+                ui.reader.classList.remove('hidden');
+
+                renderPage(0);
+
+            } catch (err) {
+                ui.loader.classList.add('hidden');
+                ui.error.classList.remove('hidden');
+            }
+        }
+
+        function renderPage(index) {
+            if (!currentBook || !currentBook.pages) return;
+            
+            currentPage = index;
+            const pageData = currentBook.pages[index];
+            let html = '';
+
+            if (pageData && pageData.content) {
+                pageData.content.forEach(item => {
+                    if (item.type === 'header') {
+                        html += `<div class="content-header">${item.text}</div>`;
+                    } else if (item.type === 'paragraph') {
+                        html += `<div class="content-p">`;
+                        item.spans.forEach(span => {
+                            const cls = (span.style === 'bold') ? 'bold' : (span.style === 'italic') ? 'italic' : '';
+                            html += `<span class="${cls}">${span.text}</span>`;
+                        });
+                        html += `</div>`;
+                    }
+                });
+            }
+
+            ui.pageContent.innerHTML = html;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Update Pagination UI
+            const total = currentBook.pages.length;
+            const odiaNum = n => n.toString().replace(/\d/g, d => "୦୧୨୩୪୫୬୭୮୯"[d]);
+            
+            ui.indicator.textContent = `${odiaNum(index + 1)} / ${odiaNum(total)}`;
+            ui.btnPrev.disabled = (index === 0);
+            ui.btnNext.disabled = (index === total - 1);
+        }
+
+        // --- 8. GLOBAL HELPERS ---
+        window.changePage = function(dir) {
+            const next = currentPage + dir;
+            if (next >= 0 && next < currentBook.pages.length) {
+                renderPage(next);
+            }
+        };
+
+    </script>
+</body>
+</html>
