@@ -9,17 +9,17 @@
       SEO & METADATA 
       ================================================================
     -->
-    <title>Odia Bhasa Library | Read Books Online</title>
-    <meta name="description" content="The largest digital library of Odia literature. Read Madhu Barnabodha, classic stories, poems, and history books online. Powered by Odia Bhasa App.">
-    <meta name="keywords" content="Odia Library, Odia Books, Online Odia Reader, Madhu Barnabodha, Fakir Mohan Senapati, Odia Bhasa App, Odia Literature">
+    <title>Odia Bhasa App Library | Read Books Online</title>
+    <meta name="description" content="Read, learn, and grow with our massive collection of kids' stories, poems, and the legendary Barnabodha. General Questions, all in one place.. Powered by Odia Bhasa App.">
+    <meta name="keywords" content="Odia Library, Odia Books, Online Odia Reader, Madhu Barnabodha, Fakir Mohan Senapati, Odia Bhasa App, Odia Literature, Sandeep Biswal G">
     <meta name="author" content="Sandeep Biswal G">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#007ae6">
     
     <!-- Open Graph (Facebook/WhatsApp/LinkedIn) -->
-    <meta property="og:title" content="Odia Bhasa Books Library">
-    <meta property="og:description" content="Read classic Odia books online freely. Click to explore the library.">
-    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+    <meta property="og:title" content="Odia Bhasa Books Library" id="og-title">
+    <meta property="og:description" content="Read Odia books online freely. Click to explore the library.">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png" id="og-image">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Odia Bhasa">
 
@@ -27,7 +27,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Odia Bhasa Books Library">
     <meta name="twitter:description" content="Read classic Odia books online freely.">
-    <meta name="twitter:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+    <meta name="twitter:image" content="https://imsbg.github.io/odiabhasa/images/app.png" id="tw-image">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,12 +41,13 @@
            ================================================================
         */
         :root {
-            --primary: #007ae6;          /* New Blue Color */
-            --primary-dark: #005bb5;     /* Darker Blue for hover */
-            --bg-color: #f0f4f8;         /* Light Blue-Grey Background */
+            --primary: #007ae6;
+            --primary-dark: #005bb5;
+            --bg-color: #f0f4f8;
             --paper: #ffffff;
             --text-dark: #2c3e50;
             --text-light: #607d8b;
+            --highlight: #fff3cd; /* Yellow highlight for reading */
             --shadow: 0 4px 20px rgba(0, 122, 230, 0.1);
         }
 
@@ -63,10 +64,15 @@
             -ms-user-select: none;
             user-select: none;
             overflow-x: hidden;
+            padding-bottom: 0px; /* Increased space for Audio Player */
         }
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
         ul { list-style: none; padding: 0; margin: 0; }
+
+        /* Icons */
+        .icon { width: 24px; height: 24px; fill: currentColor; }
+        .icon-sm { width: 18px; height: 18px; fill: currentColor; }
 
         /* 
            ================================================================
@@ -105,7 +111,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        /* Desktop Menu */
         .nav-menu {
             display: flex;
             gap: 25px;
@@ -131,12 +136,11 @@
             transform: translateY(-2px);
         }
 
-        /* Mobile Menu Toggle */
         .menu-toggle { display: none; font-size: 24px; cursor: pointer; color: var(--text-dark); }
 
         /* 
            ================================================================
-           LAYOUT CONTAINERS
+           LAYOUT
            ================================================================
         */
         .main-container {
@@ -148,7 +152,7 @@
 
         /* 
            ================================================================
-           LIBRARY VIEW (Search & Grid)
+           LIBRARY VIEW
            ================================================================
         */
         .library-header { text-align: center; margin-bottom: 30px; }
@@ -171,16 +175,10 @@
             transition: all 0.3s;
             background: white;
         }
-        .search-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(0, 122, 230, 0.1);
-        }
-        .search-icon {
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--text-light);
+        .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(0, 122, 230, 0.1); }
+        .search-icon-svg {
+            position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+            color: var(--text-light); width: 20px; height: 20px; fill: #999;
         }
 
         .book-grid {
@@ -190,58 +188,40 @@
         }
 
         .book-card {
-            background: var(--paper);
-            border-radius: 12px;
-            overflow: hidden;
+            background: var(--paper); border-radius: 12px; overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            position: relative;
+            cursor: pointer; display: flex; flex-direction: column; position: relative;
         }
-        .book-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
-        }
+        .book-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
         
         .card-cover-wrapper {
-            width: 100%;
-            aspect-ratio: 2/3;
-            background-color: #f0f0f0;
-            position: relative;
-            overflow: hidden;
+            width: 100%; aspect-ratio: 2/3; background-color: #f0f0f0;
+            position: relative; overflow: hidden;
         }
         .card-cover { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .book-card:hover .card-cover { transform: scale(1.05); }
 
-        .card-info { padding: 12px; }
+        .card-info { padding: 12px; position: relative; }
         .card-title {
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 5px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            line-height: 1.4;
+            font-size: 15px; font-weight: 700; color: var(--text-dark);
+            margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical; overflow: hidden; line-height: 1.4; padding-right: 25px;
         }
+        .card-share-btn {
+            position: absolute; right: 10px; bottom: 12px; background: transparent;
+            border: none; color: var(--primary); cursor: pointer; padding: 5px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s; z-index: 2;
+        }
+        .card-share-btn:hover { background: #e3f2fd; }
         .card-badge {
-            font-size: 11px;
-            background-color: #e3f2fd;
-            color: var(--primary);
-            padding: 4px 8px;
-            border-radius: 4px;
-            display: inline-block;
-            font-weight: bold;
+            font-size: 11px; background-color: #e3f2fd; color: var(--primary);
+            padding: 4px 8px; border-radius: 4px; display: inline-block; font-weight: bold;
         }
-
-        /* Skeleton Loading Animation */
         .skeleton {
             background: linear-gradient(90deg, #eee 25%, #fafafa 50%, #eee 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
+            background-size: 200% 100%; animation: shimmer 1.5s infinite;
         }
         @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
@@ -250,146 +230,139 @@
            READER VIEW
            ================================================================
         */
-        .reader-container {
-            background: var(--paper);
-            border-radius: 16px;
-            box-shadow: var(--shadow);
-            padding: 40px;
-            position: relative;
-            min-height: 500px;
+        .reader-nav-top {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;
         }
-        
-        /* Watermark */
+        .back-btn { color: var(--text-light); font-weight: bold; display: flex; align-items: center; gap: 5px; cursor: pointer; }
+        .reader-actions { display: flex; gap: 15px; }
+        .action-btn {
+            background: white; border: 1px solid #ddd; width: 36px; height: 36px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            cursor: pointer; color: var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: 0.3s;
+        }
+
+        .reader-container {
+            background: var(--paper); border-radius: 16px; box-shadow: var(--shadow);
+            padding: 40px; position: relative; min-height: 500px;
+        }
         .reader-container::before {
-            content: "Odia Bhasa App";
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%) rotate(-30deg);
-            font-size: 5vw;
-            color: rgba(0,0,0,0.02);
-            pointer-events: none;
-            white-space: nowrap;
-            z-index: 0;
+            content: "Odia Bhasa App"; position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg); font-size: 5vw;
+            color: rgba(0,0,0,0.02); pointer-events: none; white-space: nowrap; z-index: 0;
         }
 
         .book-meta-header {
-            text-align: center;
-            border-bottom: 2px dashed #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            text-align: center; border-bottom: 2px dashed #eee; padding-bottom: 20px; margin-bottom: 30px;
         }
         .meta-title { color: var(--primary); font-size: 26px; margin: 0 0 8px 0; }
         .meta-author { color: var(--text-light); font-size: 16px; font-style: italic; }
 
-        /* Content Typography */
         #page-content { position: relative; z-index: 1; min-height: 300px; }
-        .content-header {
-            font-size: 22px;
-            color: var(--text-dark);
-            margin: 25px 0 15px 0;
-            text-align: center;
-            font-weight: 700;
-        }
-        .content-p {
-            font-size: 19px;
-            line-height: 1.8;
-            color: #34495e;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
+        .content-header { font-size: 22px; color: var(--text-dark); margin: 25px 0 15px 0; text-align: center; font-weight: 700; transition: background 0.3s; }
+        .content-p { font-size: 19px; line-height: 1.8; color: #34495e; margin-bottom: 20px; text-align: justify; transition: background 0.3s; border-radius: 8px; padding: 5px; }
+        
+        /* Highlight Class for Reading */
+        .reading-active { background-color: var(--highlight); border-left: 4px solid var(--primary); }
+        
         .bold { font-weight: 700; color: #000; }
         .italic { font-style: italic; color: #555; }
 
-        /* Pagination Controls */
-        .controls-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+        /* Floating Nav Controls */
+        .floating-controls {
+            position: fixed; bottom: 100px; /* Above audio player */
+            left: 0; width: 100%; display: flex; justify-content: center;
+            align-items: center; gap: 20px; z-index: 900; pointer-events: none;
         }
-        .btn-page {
-            background: white;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-family: inherit;
-            cursor: pointer;
-            transition: 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        .float-btn {
+            pointer-events: auto; background: var(--primary); color: white; border: none;
+            width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 122, 230, 0.4); cursor: pointer; transition: 0.2s;
         }
-        .btn-page:hover:not(:disabled) {
-            background: var(--primary);
-            color: white;
-        }
-        .btn-page:disabled {
-            border-color: #ddd;
-            color: #ccc;
-            cursor: not-allowed;
-        }
-        .page-indicator {
-            font-weight: bold;
-            color: var(--text-dark);
-            font-size: 18px;
+        .float-btn:hover { background: var(--primary-dark); transform: scale(1.1); }
+        .float-btn:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; }
+        .page-badge {
+            pointer-events: auto; background: rgba(0,0,0,0.7); color: white;
+            padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 14px; backdrop-filter: blur(5px);
         }
 
         /* 
            ================================================================
-           RESPONSIVE & MOBILE
+           NEW AUDIO PLAYER UI
            ================================================================
         */
+        .audio-player-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: white; border-top: 1px solid #eee;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            padding: 10px 20px; z-index: 2000;
+            display: flex; flex-direction: column; gap: 8px;
+            transform: translateY(120%); transition: transform 0.4s ease;
+        }
+        .audio-player-bar.active { transform: translateY(0); }
+
+        .ap-top { display: flex; justify-content: space-between; align-items: center; }
+        .ap-info { flex: 1; }
+        .ap-title { font-weight: bold; font-size: 14px; color: var(--text-dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .ap-status { font-size: 11px; color: var(--primary); }
+        
+        .ap-controls { display: flex; gap: 15px; align-items: center; }
+        .ap-btn { background: none; border: none; cursor: pointer; color: var(--text-dark); padding: 5px; }
+        .ap-btn-main {
+            width: 40px; height: 40px; border-radius: 50%; background: var(--primary); color: white;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .ap-progress-container { width: 100%; display: flex; align-items: center; gap: 10px; }
+        .ap-slider {
+            flex: 1; -webkit-appearance: none; height: 4px; background: #ddd; border-radius: 2px; outline: none;
+        }
+        .ap-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: var(--primary); cursor: pointer;
+        }
+
+        /* Search Modal */
+        .search-modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); z-index: 3000;
+            display: flex; justify-content: center; padding-top: 80px;
+        }
+        .search-modal-content {
+            background: white; width: 90%; max-width: 500px; border-radius: 12px;
+            padding: 20px; height: max-content;
+        }
+        .in-book-search-input { width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px; margin-bottom: 10px; }
+        .search-results { max-height: 300px; overflow-y: auto; }
+        .search-result-item { padding: 10px; border-bottom: 1px solid #eee; cursor: pointer; }
+
+        /* Audio Alert */
+        #audio-alert {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            background: #333; color: white; padding: 12px 20px; border-radius: 30px;
+            z-index: 4000; font-size: 14px; text-align: center; width: 90%; max-width: 400px;
+        }
+
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
             .nav-menu {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-                padding: 20px;
-                gap: 15px;
-                text-align: center;
+                display: none; flex-direction: column; position: absolute; top: 70px; left: 0;
+                width: 100%; background: white; box-shadow: 0 10px 10px rgba(0,0,0,0.05); padding: 20px;
             }
             .nav-menu.active { display: flex; }
-            
             .book-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .reader-container { padding: 20px; }
-            .meta-title { font-size: 22px; }
-            .content-p { font-size: 17px; }
-            .btn-page { padding: 8px 15px; font-size: 13px; }
+            .floating-controls { justify-content: space-between; padding: 0 20px; bottom: 110px; }
         }
 
-        /* Utils */
         .hidden { display: none !important; }
         .loader { display: flex; justify-content: center; padding: 50px; }
         .spinner {
-            width: 40px; height: 40px;
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--primary);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
+            width: 40px; height: 40px; border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary); border-radius: 50%; animation: spin 1s linear infinite;
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* Footer */
-        .site-footer {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-        }
+        .site-footer { background-color: #2c3e50; color: white; text-align: center; padding: 40px 20px; margin-top: 60px; }
         .footer-links a { color: #bdc3c7; margin: 0 10px; font-size: 14px; }
-        .footer-links a:hover { color: white; }
-        .copyright { margin-top: 20px; font-size: 13px; color: #7f8c8d; }
 
     </style>
 </head>
@@ -398,58 +371,58 @@
     <!-- HEADER -->
     <header class="site-header">
         <nav class="navbar">
-            <a href="index.html" class="nav-brand">
+            <a href="https://imsbg.github.io/odiabhasa/" class="nav-brand">
                 <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa" class="nav-logo">
                 ଓଡ଼ିଆ ଭାଷା
             </a>
-            
-            <div class="menu-toggle" id="mobile-menu-btn">☰</div>
-
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg>
+            </div>
             <div class="nav-menu" id="nav-links">
                 <a href="https://imsbg.github.io/odiabhasa/" class="nav-link">ମୂଳ ପୃଷ୍ଠା</a>
                 <a href="https://imsbg.github.io/odiabhasa/privacy-policy?od=" class="nav-link">ଗୋପନୀୟତା </a>
                 <a href="https://imsbg.github.io/odiabhasa/terms?od=" class="nav-link">ସର୍ତ୍ତାବଳୀ </a>
-                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="nav-link btn-download">
-                    ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ
-                </a>
+                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="nav-link btn-download">ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</a>
             </div>
         </nav>
     </header>
 
     <main class="main-container">
 
-        <!-- LOADER -->
-        <div id="loader" class="loader">
-            <div class="spinner"></div>
-        </div>
+        <div id="loader" class="loader"><div class="spinner"></div></div>
 
-        <!-- VIEW 1: LIBRARY GRID -->
+        <!-- LIBRARY VIEW -->
         <section id="library-view" class="hidden">
             <div class="library-header">
-                <h1>ପୁସ୍ତକାଳୟ</h1>
+                <h1>ଓଡ଼ିଆ ବହି</h1>
                 <p>ଆପଣଙ୍କ ପସନ୍ଦର ବହି ବାଛନ୍ତୁ ଏବଂ ପଢ଼ନ୍ତୁ</p>
             </div>
-
             <div class="search-wrapper">
-                <span class="search-icon">🔍</span>
+                <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
                 <input type="text" id="search-input" class="search-input" placeholder="ବହି ଖୋଜନ୍ତୁ ...">
             </div>
-
-            <div id="book-grid" class="book-grid">
-                <!-- Javascript will inject books here -->
-            </div>
-            
-            <div id="no-results" class="hidden" style="text-align: center; color: var(--text-light); margin-top: 40px;">
-                କୌଣସି ବହି ମିଳିଲା ନାହିଁ
-            </div>
+            <div id="book-grid" class="book-grid"></div>
+            <div id="no-results" class="hidden" style="text-align: center; color: var(--text-light); margin-top: 40px;">କୌଣସି ବହି ମିଳିଲା ନାହିଁ</div>
         </section>
 
-        <!-- VIEW 2: BOOK READER -->
+        <!-- READER VIEW -->
         <section id="reader-view" class="hidden">
-            <div style="margin-bottom: 20px;">
-                <a href="read.html" style="color: var(--text-light); font-weight: bold; display: flex; align-items: center; gap: 5px;">
-                    &larr; ପୁସ୍ତକାଳୟକୁ ଫେରନ୍ତୁ
-                </a>
+            <div class="reader-nav-top">
+                <div class="back-btn" onclick="exitReader()">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                    ପୁସ୍ତକାଳୟ
+                </div>
+                <div class="reader-actions">
+                    <div id="btn-audio-launch" class="action-btn" onclick="startAudioPlayer()" title="ଶୁଣନ୍ତୁ">
+                        <svg class="icon-sm" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                    </div>
+                    <div class="action-btn" onclick="openInBookSearch()" title="ବହି ଭିତରେ ଖୋଜନ୍ତୁ">
+                         <svg class="icon-sm" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                    </div>
+                    <div class="action-btn" onclick="shareCurrentBook()" title="ବହି ସେୟାର କରନ୍ତୁ">
+                        <svg class="icon-sm" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                    </div>
+                </div>
             </div>
 
             <article class="reader-container">
@@ -457,33 +430,71 @@
                     <h1 id="meta-title" class="meta-title"></h1>
                     <div id="meta-author" class="meta-author"></div>
                 </div>
-
-                <div id="page-content">
-                    <!-- Page content injected here -->
-                </div>
-
-                <div class="controls-wrapper">
-                    <button id="btn-prev" class="btn-page" onclick="changePage(-1)">&#10094; ପୂର୍ବ</button>
-                    <span id="page-indicator" class="page-indicator">୧ / ୧୦</span>
-                    <button id="btn-next" class="btn-page" onclick="changePage(1)">ପରବର୍ତ୍ତୀ &#10095;</button>
+                <div id="page-content"></div>
+                
+                <div class="floating-controls">
+                    <button id="float-prev" class="float-btn" onclick="changePage(-1)"><svg class="icon" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+                    <div id="page-indicator" class="page-badge">୧ / ୧୦</div>
+                    <button id="float-next" class="float-btn" onclick="changePage(1)"><svg class="icon" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
                 </div>
             </article>
 
-            <!-- Mobile App Promo (Visible only on Mobile) -->
+            <!-- MOBILE PROMO -->
             <div id="mobile-promo" class="hidden" style="margin-top:30px; padding:20px; background:#e3f2fd; border-radius:12px; text-align:center;">
                 <h3 style="color:var(--primary); margin:0 0 10px 0;">ସମ୍ପୂର୍ଣ୍ଣ ଅନୁଭୂତି ପାଇଁ</h3>
                 <p style="margin:0 0 15px 0; font-size:14px; color:#555;">ଆମର ଆପ୍ ବ୍ୟବହାର କରନ୍ତୁ, ଯେଉଁଠାରେ ଆପଣ ଅଡିଓ ଶୁଣିପାରିବେ</p>
-                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="btn-download" style="display:inline-block;">
-                    Google Play ରେ ଖୋଲନ୍ତୁ
-                </a>
+                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="btn-download" style="display:inline-block;">Google Play ରେ ଖୋଲନ୍ତୁ</a>
             </div>
         </section>
 
-        <!-- ERROR MESSAGE -->
-        <div id="error-msg" class="hidden" style="text-align: center; padding: 50px;">
-            <h2 style="color: var(--primary);">କ୍ଷମା କରିବେ!</h2>
-            <p>କିଛି ଯାନ୍ତ୍ରିକ ତ୍ରୁଟି ଦେଖାଦେଇଛି । ଦୟାକରି ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ ।</p>
-            <a href="read.html" class="btn-download" style="margin-top: 20px; display:inline-block;">ରିଫ୍ରେସ୍ କରନ୍ତୁ</a>
+        <!-- AUDIO PLAYER BAR -->
+        <div id="audio-player" class="audio-player-bar">
+            <div class="ap-top">
+                <div class="ap-info">
+                    <div id="ap-title" class="ap-title">Book Title</div>
+                    <div class="ap-status">Odia Bhasa Audio</div>
+                </div>
+                <div class="ap-controls">
+                    <button class="ap-btn" onclick="seekAudioChunk(-1)">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                    </button>
+                    <button id="ap-play-pause" class="ap-btn-main" onclick="togglePlayPause()">
+                        <!-- Play Icon by default -->
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </button>
+                    <button class="ap-btn" onclick="seekAudioChunk(1)">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+                    </button>
+                    <button class="ap-btn" onclick="closeAudioPlayer()" style="color:#999">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="ap-progress-container">
+                <span style="font-size:10px; color:#666;"></span>
+                <input type="range" id="ap-seek" class="ap-slider" min="0" value="0" step="1" oninput="manualSeek(this.value)">
+                <span style="font-size:10px; color:#666;"></span>
+            </div>
+        </div>
+
+        <!-- SEARCH MODAL -->
+        <div id="search-modal" class="search-modal hidden">
+            <div class="search-modal-content">
+                <div class="modal-header" style="display:flex; justify-content:space-between; margin-bottom:15px;">
+                    <span style="font-weight:bold; font-size:18px;">ବହି ଭିତରେ ଖୋଜନ୍ତୁ</span>
+                    <span style="cursor:pointer; font-size:24px;" onclick="closeInBookSearch()">&times;</span>
+                </div>
+                <input type="text" id="in-book-input" class="in-book-search-input" placeholder="ଶବ୍ଦ ଲେଖନ୍ତୁ..." onkeyup="performBookSearch(this.value)">
+                <div id="in-book-results" class="search-results"></div>
+            </div>
+        </div>
+
+        <!-- ALERTS -->
+        <div id="audio-alert" class="hidden"></div>
+        <div id="error-msg" class="hidden" style="text-align:center; padding:50px;">
+            <h2 style="color:var(--primary);">କ୍ଷମା କରିବେ!</h2>
+            <p>କିଛି ଯାନ୍ତ୍ରିକ ତ୍ରୁଟି ଦେଖାଦେଇଛି ।</p>
+            <a href="read.html" class="btn-download" style="margin-top:20px; display:inline-block;">ରିଫ୍ରେସ୍ କରନ୍ତୁ</a>
         </div>
 
     </main>
@@ -495,9 +506,7 @@
             <a href="https://imsbg.github.io/odiabhasa/terms?od=">Terms & Conditions</a>
             <a href="mailto:message.sbg@gmail.com">Contact</a>
         </div>
-        <div class="copyright">
-            &copy; 2025 Odia Bhasa App. Built with ❤️ for Odisha.
-        </div>
+        <div class="copyright">&copy; 2025 Odia Bhasa App. Built with ❤️ for Odisha.</div>
     </footer>
 
     <script>
@@ -505,27 +514,20 @@
         const API = {
             ALL_BOOKS: 'https://sbgb.pages.dev/ବହି/ସବୁ.json',
             BOOK_BASE: 'https://sbgb.pages.dev/ବହି/ଖାତା/',
-            MOBILE_FREE_BOOK: 'amagouraba'
+            MOBILE_FREE_BOOK: 'amagouraba',
+            DEEP_LINK_BASE: 'https://odiabhasa.pages.dev/open?Bahi='
         };
-        
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-        // --- 2. SECURITY (DRM-Lite) ---
-        // Disable Right Click
+        // --- 2. SECURITY ---
         document.addEventListener('contextmenu', e => e.preventDefault());
-        // Disable DevTools shortcuts
-        document.onkeydown = function(e) {
-            if (e.keyCode == 123) return false;
-            if (e.ctrlKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'S'.charCodeAt(0))) return false;
-        };
-        // Copy Protection
+        document.onkeydown = function(e) { if(e.keyCode == 123 || (e.ctrlKey && "IUS".includes(String.fromCharCode(e.keyCode)))) return false; };
         document.addEventListener('copy', e => {
             e.preventDefault();
-            const promo = "ଓଡ଼ିଆ ବହି ପଢ଼ିବା ପାଇଁ ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ: https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa";
-            e.clipboardData.setData('text/plain', promo);
+            e.clipboardData.setData('text/plain', "Download Odia Bhasa App: https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa");
         });
 
-        // --- 3. UI REFERENCES ---
+        // --- 3. STATE ---
         const ui = {
             loader: document.getElementById('loader'),
             library: document.getElementById('library-view'),
@@ -535,194 +537,347 @@
             pageContent: document.getElementById('page-content'),
             metaTitle: document.getElementById('meta-title'),
             metaAuthor: document.getElementById('meta-author'),
-            btnPrev: document.getElementById('btn-prev'),
-            btnNext: document.getElementById('btn-next'),
+            btnPrev: document.getElementById('float-prev'),
+            btnNext: document.getElementById('float-next'),
             indicator: document.getElementById('page-indicator'),
             error: document.getElementById('error-msg'),
-            promo: document.getElementById('mobile-promo')
+            promo: document.getElementById('mobile-promo'),
+            modal: document.getElementById('search-modal'),
+            modalResults: document.getElementById('in-book-results'),
+            audioAlert: document.getElementById('audio-alert'),
+            player: document.getElementById('audio-player'),
+            apTitle: document.getElementById('ap-title'),
+            apPlayBtn: document.getElementById('ap-play-pause'),
+            apSeek: document.getElementById('ap-seek')
         };
 
-        // --- 4. STATE MANAGEMENT ---
         let currentBook = null;
+        let currentBookId = null;
         let currentPage = 0;
+        
+        // Audio State
+        let synth = window.speechSynthesis;
+        let currentUtterance = null;
+        let audioChunks = []; // Array of {text: string, elementId: string}
+        let currentChunkIndex = 0;
+        let isPlaying = false;
+        let voicesLoaded = false;
 
-        // --- 5. INITIALIZATION ---
+        // --- 4. INIT ---
         (function init() {
-            // Mobile Menu Toggle
-            document.getElementById('mobile-menu-btn').onclick = () => {
-                document.getElementById('nav-links').classList.toggle('active');
-            };
+            document.getElementById('mobile-menu-btn').onclick = () => document.getElementById('nav-links').classList.toggle('active');
+            
+            // Wait for voices (PC fix)
+            if (speechSynthesis.onvoiceschanged !== undefined) {
+                speechSynthesis.onvoiceschanged = () => { voicesLoaded = true; };
+            }
+
+            // Setup Media Session Hooks
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.setActionHandler('play', () => { if(audioChunks.length) resumeAudio(); });
+                navigator.mediaSession.setActionHandler('pause', () => { pauseAudio(); });
+                navigator.mediaSession.setActionHandler('previoustrack', () => { seekAudioChunk(-1); });
+                navigator.mediaSession.setActionHandler('nexttrack', () => { seekAudioChunk(1); });
+            }
 
             const params = new URLSearchParams(window.location.search);
-            const bookId = params.get('book');
-
-            if (bookId) {
-                loadReader(bookId);
-            } else {
-                loadLibrary();
-            }
+            if (params.get('book')) loadReader(params.get('book'));
+            else loadLibrary();
         })();
 
-        // --- 6. LIBRARY LOGIC ---
+        // --- 5. AUDIO ENGINE (UPDATED FOR PC & HIGHLIGHTING) ---
+        
+        function prepareAudioChunks() {
+            // Converts DOM elements into a readable list
+            audioChunks = [];
+            currentChunkIndex = 0;
+            const elements = ui.pageContent.children;
+            
+            for(let i=0; i<elements.length; i++) {
+                const el = elements[i];
+                const text = el.innerText.trim();
+                if(text.length > 0) {
+                    el.id = `chunk-${i}`; // Assign ID for highlighting
+                    audioChunks.push({ text: text, id: `chunk-${i}` });
+                }
+            }
+            
+            // Setup Slider
+            ui.apSeek.max = audioChunks.length - 1;
+            ui.apSeek.value = 0;
+        }
+
+        function startAudioPlayer() {
+            if(!currentBook) return;
+            
+            // Show Player
+            ui.player.classList.add('active');
+            ui.apTitle.textContent = currentBook.title;
+            prepareAudioChunks();
+            
+            if(audioChunks.length === 0) {
+                showAudioAlert("ଏହି ପୃଷ୍ଠାରେ ପଢ଼ିବା ପାଇଁ କିଛି ନାହିଁ ।");
+                return;
+            }
+
+            playChunk(0);
+        }
+
+        function playChunk(index) {
+            if(index >= audioChunks.length) {
+                // End of page
+                isPlaying = false;
+                updatePlayIcon();
+                return;
+            }
+            if(index < 0) index = 0;
+
+            currentChunkIndex = index;
+            ui.apSeek.value = index;
+            highlightChunk(index);
+
+            // Cancel previous
+            synth.cancel();
+
+            const chunk = audioChunks[index];
+            const utterance = new SpeechSynthesisUtterance(chunk.text);
+            
+            // Voice Selection (PC Compatible)
+            const voices = synth.getVoices();
+            // Try to find Odia, then Hindi/Bengali (Indic), then Google
+            let voice = voices.find(v => v.lang.includes('or') || v.name.toLowerCase().includes('odia'));
+            if(!voice) voice = voices.find(v => v.lang.includes('hi') || v.lang.includes('bn')); // Fallback Indic
+            
+            if(voice) utterance.voice = voice;
+            utterance.rate = 0.9;
+
+            utterance.onstart = () => {
+                isPlaying = true;
+                updatePlayIcon();
+                updateMediaSession();
+            };
+            
+            utterance.onend = () => {
+                // Auto play next chunk
+                if(isPlaying) playChunk(currentChunkIndex + 1);
+            };
+
+            utterance.onerror = (e) => {
+                console.log("Audio Error", e);
+                isPlaying = false;
+                updatePlayIcon();
+            };
+
+            currentUtterance = utterance;
+            synth.speak(utterance);
+        }
+
+        function highlightChunk(index) {
+            // Remove old highlights
+            document.querySelectorAll('.reading-active').forEach(el => el.classList.remove('reading-active'));
+            // Add new
+            const id = audioChunks[index].id;
+            const el = document.getElementById(id);
+            if(el) {
+                el.classList.add('reading-active');
+                el.scrollIntoView({behavior: "smooth", block: "center"});
+            }
+        }
+
+        function togglePlayPause() {
+            if(isPlaying) {
+                pauseAudio();
+            } else {
+                resumeAudio();
+            }
+        }
+
+        function pauseAudio() {
+            synth.cancel();
+            isPlaying = false;
+            updatePlayIcon();
+        }
+
+        function resumeAudio() {
+            playChunk(currentChunkIndex);
+        }
+
+        function seekAudioChunk(dir) {
+            let next = currentChunkIndex + dir;
+            if(next >= 0 && next < audioChunks.length) {
+                playChunk(next);
+            }
+        }
+
+        function manualSeek(val) {
+            playChunk(parseInt(val));
+        }
+
+        function closeAudioPlayer() {
+            synth.cancel();
+            isPlaying = false;
+            ui.player.classList.remove('active');
+            document.querySelectorAll('.reading-active').forEach(el => el.classList.remove('reading-active'));
+        }
+
+        function updatePlayIcon() {
+            // SVG Paths
+            const playPath = "M8 5v14l11-7z";
+            const pausePath = "M6 19h4V5H6v14zm8-14v14h4V5h-4z";
+            ui.apPlayBtn.querySelector('path').setAttribute('d', isPlaying ? pausePath : playPath);
+        }
+
+        function updateMediaSession() {
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                    title: currentBook.title,
+                    artist: "Odia Bhasa App",
+                    album: "Odia Library",
+                    artwork: [
+                        { src: currentBook.coverpage || 'https://imsbg.github.io/odiabhasa/images/app.png', sizes: '512x512', type: 'image/png' }
+                    ]
+                });
+                navigator.mediaSession.playbackState = "playing";
+            }
+        }
+
+        function showAudioAlert(msg) {
+            ui.audioAlert.textContent = msg;
+            ui.audioAlert.classList.remove('hidden');
+            setTimeout(() => ui.audioAlert.classList.add('hidden'), 4000);
+        }
+
+        // --- 6. LIBRARY & READER CORE ---
+        
         async function loadLibrary() {
             try {
                 const res = await fetch(API.ALL_BOOKS);
                 const books = await res.json();
-
                 ui.loader.classList.add('hidden');
                 ui.library.classList.remove('hidden');
-
-                // Render Cards
+                
                 books.forEach(book => {
-                    // Extract ID from full URL
-                    const filename = book.destination.substring(book.destination.lastIndexOf('/') + 1);
-                    const id = filename.replace('.json', '');
+                    const id = book.destination.split('/').pop().replace('.json','');
                     createCard(id, book.destination);
                 });
-
-                // Search Listener
+                
                 ui.search.addEventListener('input', (e) => filterBooks(e.target.value));
-
-            } catch (err) {
-                console.error(err);
-                ui.loader.classList.add('hidden');
-                ui.error.classList.remove('hidden');
-            }
+            } catch(e) { ui.loader.classList.add('hidden'); ui.error.classList.remove('hidden'); }
         }
 
         function createCard(id, url) {
             const card = document.createElement('div');
             card.className = 'book-card';
-            card.setAttribute('data-search', ''); // Filled later
-            
             card.innerHTML = `
-                <div class="card-cover-wrapper skeleton">
-                    <img class="card-cover hidden" alt="Book Cover">
-                </div>
+                <div class="card-cover-wrapper skeleton" onclick="openBook('${id}')"><img class="card-cover hidden" alt="cover"></div>
                 <div class="card-info">
-                    <div class="card-title">Loading...</div>
-                    <span class="card-badge">ପଢ଼ନ୍ତୁ</span>
-                </div>
-            `;
-            
-            card.onclick = () => window.location.href = `read.html?book=${id}`;
+                    <div class="card-title" onclick="openBook('${id}')">Loading...</div>
+                    <span class="card-badge" onclick="openBook('${id}')">ପଢ଼ନ୍ତୁ</span>
+                    <button class="card-share-btn" onclick="shareBook('${id}', this.dataset.title); event.stopPropagation();">
+                        <svg class="icon-sm" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/></svg>
+                    </button>
+                </div>`;
             ui.grid.appendChild(card);
-
-            // Lazy fetch details
-            fetch(url).then(r => r.json()).then(data => {
-                const img = card.querySelector('.card-cover');
-                const title = card.querySelector('.card-title');
-                const wrapper = card.querySelector('.card-cover-wrapper');
-                
-                title.textContent = data.title;
-                card.setAttribute('data-search', data.title.toLowerCase());
-                
-                if (data.coverpage) {
-                    img.src = data.coverpage;
-                    img.onload = () => {
-                        img.classList.remove('hidden');
-                        wrapper.classList.remove('skeleton');
-                    };
-                } else {
-                    wrapper.classList.remove('skeleton');
-                    wrapper.style.backgroundColor = '#ddd';
-                }
-            }).catch(() => {
-                card.style.display = 'none'; // Hide if JSON fails
-            });
+            fetch(url).then(r=>r.json()).then(d=>{
+                const img = card.querySelector('img');
+                card.querySelector('.card-title').textContent = d.title;
+                card.querySelector('.card-share-btn').dataset.title = d.title;
+                card.setAttribute('data-search', d.title.toLowerCase());
+                if(d.coverpage) { img.src = d.coverpage; img.onload = ()=>{ img.classList.remove('hidden'); card.querySelector('.skeleton').classList.remove('skeleton'); }; }
+            }).catch(()=>{ card.style.display='none'; });
         }
 
-        function filterBooks(query) {
-            const term = query.toLowerCase();
-            const cards = document.querySelectorAll('.book-card');
-            let visible = 0;
-            
-            cards.forEach(card => {
-                const title = card.getAttribute('data-search');
-                if (title && title.includes(term)) {
-                    card.style.display = 'flex';
-                    visible++;
-                } else {
-                    card.style.display = 'none';
-                }
+        function filterBooks(q) {
+            const term = q.toLowerCase();
+            let count = 0;
+            document.querySelectorAll('.book-card').forEach(c => {
+                const match = c.getAttribute('data-search').includes(term);
+                c.style.display = match ? 'flex' : 'none';
+                if(match) count++;
             });
-            
-            document.getElementById('no-results').classList.toggle('hidden', visible > 0);
+            document.getElementById('no-results').classList.toggle('hidden', count>0);
         }
 
-        // --- 7. READER LOGIC ---
         async function loadReader(id) {
-            // Mobile Restriction Check
-            if (isMobile && id !== API.MOBILE_FREE_BOOK) {
-                window.location.replace(`https://odiabhasa.pages.dev/open?Bahi=${id}`);
-                return;
-            }
-
+            if (isMobile && id !== API.MOBILE_FREE_BOOK) { window.location.replace(`${API.DEEP_LINK_BASE}${id}`); return; }
             try {
                 const res = await fetch(`${API.BOOK_BASE}${id}.json`);
-                if (!res.ok) throw new Error("Book not found");
-                
+                if(!res.ok) throw new Error();
                 currentBook = await res.json();
+                currentBookId = id;
                 
-                // Set Metadata
                 document.title = `${currentBook.title} | Odia Bhasa`;
                 ui.metaTitle.textContent = currentBook.title;
                 ui.metaAuthor.textContent = currentBook.author;
-
-                if (isMobile) ui.promo.classList.remove('hidden');
-
+                
+                if(isMobile) ui.promo.classList.remove('hidden');
                 ui.loader.classList.add('hidden');
                 ui.reader.classList.remove('hidden');
-
                 renderPage(0);
-
-            } catch (err) {
-                ui.loader.classList.add('hidden');
-                ui.error.classList.remove('hidden');
-            }
+            } catch(e) { ui.loader.classList.add('hidden'); ui.error.classList.remove('hidden'); }
         }
 
-        function renderPage(index) {
-            if (!currentBook || !currentBook.pages) return;
-            
-            currentPage = index;
-            const pageData = currentBook.pages[index];
+        function renderPage(idx) {
+            closeAudioPlayer(); // Stop audio on page turn
+            currentPage = idx;
+            const page = currentBook.pages[idx];
             let html = '';
-
-            if (pageData && pageData.content) {
-                pageData.content.forEach(item => {
-                    if (item.type === 'header') {
-                        html += `<div class="content-header">${item.text}</div>`;
-                    } else if (item.type === 'paragraph') {
+            if(page && page.content) {
+                page.content.forEach(item => {
+                    if(item.type==='header') html += `<div class="content-header">${item.text}</div>`;
+                    else if(item.type==='paragraph') {
                         html += `<div class="content-p">`;
-                        item.spans.forEach(span => {
-                            const cls = (span.style === 'bold') ? 'bold' : (span.style === 'italic') ? 'italic' : '';
-                            html += `<span class="${cls}">${span.text}</span>`;
-                        });
+                        item.spans.forEach(s => html += `<span class="${s.style||''}">${s.text}</span>`);
                         html += `</div>`;
                     }
                 });
             }
-
             ui.pageContent.innerHTML = html;
             window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // Update Pagination UI
+            
             const total = currentBook.pages.length;
             const odiaNum = n => n.toString().replace(/\d/g, d => "୦୧୨୩୪୫୬୭୮୯"[d]);
-            
-            ui.indicator.textContent = `${odiaNum(index + 1)} / ${odiaNum(total)}`;
-            ui.btnPrev.disabled = (index === 0);
-            ui.btnNext.disabled = (index === total - 1);
+            ui.indicator.textContent = `${odiaNum(idx+1)} / ${odiaNum(total)}`;
+            ui.btnPrev.disabled = idx===0;
+            ui.btnNext.disabled = idx===total-1;
         }
 
-        // --- 8. GLOBAL HELPERS ---
-        window.changePage = function(dir) {
-            const next = currentPage + dir;
-            if (next >= 0 && next < currentBook.pages.length) {
-                renderPage(next);
-            }
+        window.openBook = (id) => window.location.href = `read.html?book=${id}`;
+        window.exitReader = () => { closeAudioPlayer(); window.location.href = 'read.html'; };
+        window.changePage = (d) => { if(currentPage+d >= 0 && currentPage+d < currentBook.pages.length) renderPage(currentPage+d); };
+        
+        // --- 7. UTILS & SEARCH ---
+        async function shareBook(id, title) {
+            const url = `${API.DEEP_LINK_BASE}${id}`;
+            if(navigator.share) try { await navigator.share({title, text:`Read ${title} on Odia Bhasa`, url}); } catch(e){}
+            else prompt("Copy Link:", url);
+        }
+        window.shareCurrentBook = () => currentBook && shareBook(currentBookId, currentBook.title);
+        
+        window.openInBookSearch = () => { ui.modal.classList.remove('hidden'); document.getElementById('in-book-input').focus(); };
+        window.closeInBookSearch = () => ui.modal.classList.add('hidden');
+        window.performBookSearch = (q) => {
+            if(!currentBook || q.length<2) { ui.modalResults.innerHTML=''; return; }
+            const term = q.toLowerCase();
+            let html = '', count=0;
+            const odiaNum = n => n.toString().replace(/\d/g, d => "୦୧୨୩୪୫୬୭୮୯"[d]);
+            
+            currentBook.pages.forEach((p, pi) => {
+                if(!p.content) return;
+                let match = false, txt = "";
+                p.content.forEach(i => {
+                    if(i.type==='header') txt+=i.text;
+                    if(i.type==='paragraph') txt+=i.spans.map(s=>s.text).join(' ');
+                });
+                if(txt.toLowerCase().includes(term)) {
+                    const snip = txt.substring(Math.max(0, txt.toLowerCase().indexOf(term)-20), Math.min(txt.length, txt.toLowerCase().indexOf(term)+40));
+                    html += `<div class="search-result-item" onclick="goToPageAndClose(${pi})"><div class="res-page">Page ${odiaNum(pi+1)}</div><div class="res-text">...${snip.replace(new RegExp(term,'gi'),'<b>$&</b>')}...</div></div>`;
+                    count++;
+                }
+            });
+            ui.modalResults.innerHTML = count ? html : '<div style="padding:10px;color:#777">No results</div>';
         };
+        window.goToPageAndClose = (i) => { renderPage(i); closeInBookSearch(); };
 
     </script>
 </body>
