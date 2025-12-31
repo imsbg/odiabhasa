@@ -1,12 +1,12 @@
 {
-  "version": 5,
+  "version": 6,
   "banners": [
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/neww2026.png",
       "text": "",
       "paragraph": "ଆପଣଙ୍କୁ ଓ ଆପଣଙ୍କ ପ୍ରିୟଜନଙ୍କୁ ନୂତନ ବର୍ଷର ଶୁଭେଚ୍ଛା",
       "link": "",
-      "promo": "no"
+      "promo": "yes"
     },
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
