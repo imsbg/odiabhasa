@@ -1,0 +1,33 @@
+{
+  "version": 6,
+  "banners": [
+    {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/neww2026.png",
+      "text": "",
+      "paragraph": "ଆପଣଙ୍କୁ ଓ ଆପଣଙ୍କ ପ୍ରିୟଜନଙ୍କୁ ନୂତନ ବର୍ଷର ଶୁଭେଚ୍ଛା",
+      "link": "",
+      "promo": "yes"
+    },
+    {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
+      "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ",
+      "paragraph": "ଜୟ ଜଗନ୍ନାଥ",
+      "link": "",
+      "promo": "no"
+    },
+    {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
+      "text": "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
+      "paragraph": "ଓଡ଼ିଶାର ଗର୍ବ ଓ ଗୌରବ, ବିଶ୍ୱ ପ୍ରସିଦ୍ଧ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
+      "link": "",
+      "promo": "no"
+    },
+    {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/history_odisha.png",
+      "text": "କୋଣାର୍କର ରଥଚକ",
+      "paragraph": "କୋଣାର୍କ ମନ୍ଦିରର ଐତିହାସିକ ରଥଚକର କାରୁକାର୍ଯ୍ୟ।",
+      "link": "",
+      "promo": "no"
+    }
+  ]
+}
