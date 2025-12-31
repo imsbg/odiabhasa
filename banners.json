@@ -1,10 +1,10 @@
 {
-  "version": 3,
+  "version": 4,
   "banners": [
     {
-      "image": "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
-      "text": "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
-      "paragraph": "ଓଡ଼ିଶାର ଗର୍ବ ଓ ଗୌରବ, ବିଶ୍ୱ ପ୍ରସିଦ୍ଧ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/new2026.png",
+      "text": "",
+      "paragraph": "",
       "link": "",
       "promo": "no"
     },
@@ -16,9 +16,9 @@
       "promo": "no"
     },
     {
-      "image": "https://imsbg.github.io/odiabhasa/images/banner/history_lang.png",
-      "text": "ଓଡ଼ିଆ ଲିପି",
-      "paragraph": "ଓଡ଼ିଆ ଲିପି",
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
+      "text": "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
+      "paragraph": "ଓଡ଼ିଶାର ଗର୍ବ ଓ ଗୌରବ, ବିଶ୍ୱ ପ୍ରସିଦ୍ଧ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
       "link": "",
       "promo": "no"
     },
