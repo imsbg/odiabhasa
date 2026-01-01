@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & METADATA - DYNAMICALLY FILLED -->
+    <title>__BOOK_TITLE__ | Odia Bhasa App Library</title>
+    <meta name="description" content="Read __BOOK_TITLE__ by __BOOK_AUTHOR__ online. An initiative by Odia Bhasa App.">
+    <meta name="author" content="__BOOK_AUTHOR__">
+    <meta name="keywords" content="__BOOK_TITLE__, __BOOK_AUTHOR__, Odia Book, Odia Bhasa App">
+    
+    <!-- Open Graph (for Social Sharing) -->
+    <meta property="og:title" content="__BOOK_TITLE__">
+    <meta property="og:description" content="Read the full book '__BOOK_TITLE__' by __BOOK_AUTHOR__ online.">
+    <meta property="og:image" content="__BOOK_COVER__">
+    <meta property="og:url" content="__BOOK_URL__">
+    <meta property="og:type" content="article">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="__BOOK_TITLE__">
+    <meta name="twitter:description" content="Read '__BOOK_TITLE__' online.">
+    <meta name="twitter:image" content="__BOOK_COVER__">
+
+    <!-- Link to our stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body oncontextmenu="return false;">
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="../index.html" class="nav-brand">
+                <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa" class="nav-logo">
+                ଓଡ଼ିଆ ଭାଷା
+            </a>
+            <div class="nav-menu">
+                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="nav-link btn-download">ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <!-- READER VIEW - STATICALLY GENERATED -->
+        <section id="reader-view">
+            <div class="reader-nav-top">
+                <a class="back-btn" href="../index.html">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                    ଓଡ଼ିଆ ବହି
+                </a>
+            </div>
+
+            <article class="reader-container">
+                <div class="book-meta-header">
+                    <h1 id="meta-title" class="meta-title">__BOOK_TITLE__</h1>
+                    <div id="meta-author" class="meta-author">__BOOK_AUTHOR__</div>
+                </div>
+                <!-- The entire book content will be injected here -->
+                <div id="page-content">
+                    __BOOK_CONTENT_HTML__
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="copyright">&copy; 2026 Odia Bhasa App. Built with ❤️ for Odisha.</div>
+    </footer>
+</body>
+</html>
