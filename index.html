@@ -828,6 +828,66 @@
         .lightbox-image { max-width: 80vw; }
       }
 
+      /* --- FAQ SECTION --- */
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .faq-item {
+        border: 1px solid #e5e5e5;
+        border-radius: 16px;
+        background-color: #fff;
+        transition: all 0.2s ease-in-out;
+      }
+      .faq-item[open] {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-color: #ddd;
+      }
+      .faq-question {
+        padding: 20px 25px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        cursor: pointer;
+        list-style: none; /* Remove default marker */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--headline-font);
+        color: var(--text-main);
+      }
+      .faq-question::-webkit-details-marker {
+        display: none; /* Hide for Safari */
+      }
+      .faq-question::after {
+        content: '+';
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #999;
+        transition: transform 0.2s;
+      }
+      .faq-item[open] .faq-question::after {
+        transform: rotate(45deg);
+        content: '×';
+      }
+      .faq-answer {
+        padding: 0 25px 20px 25px;
+        color: var(--text-sub);
+        line-height: 1.7;
+      }
+      .faq-answer p {
+          margin-bottom: 10px;
+      }
+      .faq-answer ul {
+          padding-left: 20px;
+          margin-top: 10px;
+      }
+      .faq-answer li {
+          margin-bottom: 8px;
+      }
+
       /* Footer */
       footer {
         text-align: center;
@@ -1040,13 +1100,140 @@
       </div>
     </section>
 
+    <!-- FAQ SECTION -->
+    <section class="section-wrapper" id="faq">
+      <h2 class="section-heading">❓ Frequently Asked Questions (FAQ)</h2>
+      <div class="faq-container">
+        
+        <details class="faq-item">
+          <summary class="faq-question">What is Odia Bhasa app?</summary>
+          <div class="faq-answer">
+            <p>Odia Bhasa is a fully Odia language learning app designed especially for children and beginners. The app helps users learn Odia alphabets, numbers, writing, stories, prayers, and cultural content in a simple and engaging way.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Is Odia Bhasa completely in Odia language?</summary>
+          <div class="faq-answer">
+            <p>Yes ✅ <br> The app is 100% in Odia language, making it ideal for kids, parents, and anyone who wants to learn Odia in its pure form.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Is the app free? Are there any ads?</summary>
+          <div class="faq-answer">
+            <p>Yes, the app is completely free and 100% ad-free 🚫📢 <br> There are no advertisements, ensuring a safe and distraction-free learning experience for children.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Who developed the Odia Bhasa app?</summary>
+          <div class="faq-answer">
+            <p>The app is developed by Sandeep Biswal G, with the aim of promoting Odia language, culture, and education digitally.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What can kids learn from this app?</summary>
+          <div class="faq-answer">
+            <p>Children can learn:</p>
+            <ul>
+              <li>Swarabarna (ସ୍ୱରବର୍ଣ୍ଣ) with voice pronunciation</li>
+              <li>Byanjanabarna (ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ) with voice pronunciation</li>
+              <li>Juktakhyara (ଯୁକ୍ତାକ୍ଷର)</li>
+              <li>Phala (ଫଳା)</li>
+              <li>Odia Sankhya (ଓଡ଼ିଆ ସଂଖ୍ୟା)</li>
+              <li>Chhabila Madhu Barnabodha</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Does the app have writing practice?</summary>
+          <div class="faq-answer">
+            <p>Yes ✍️ The app includes writing practice / digital slate, where kids can practice writing Odia letters just like writing on a slate.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Are Odia story books available in the app?</summary>
+          <div class="faq-answer">
+            <p>Yes 📚 The app contains many Odia story books suitable for children, helping them improve reading skills and moral learning.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Does the app include school prayers and songs?</summary>
+          <div class="faq-answer">
+            <p>Yes 🙏🎶 The app includes:</p>
+            <ul>
+              <li>Odia school prarthana</li>
+              <li>National Anthem</li>
+              <li>Odisha State Song / Anthem</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Is there an Odia calendar in the app?</summary>
+          <div class="faq-answer">
+            <p>Yes 📅 The app has a detailed Odia Calendar, which shows:</p>
+            <ul>
+              <li>Odia month names</li>
+              <li>Seasons (Rutu / ଋତୁ)</li>
+              <li>All important festivals and holidays</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Is this app suitable for small children?</summary>
+          <div class="faq-answer">
+            <p>Absolutely 👍 The app is kid-friendly, easy to use, ad-free, and designed especially for early learners and school-going children.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Where can I download the Odia Bhasa app?</summary>
+          <div class="faq-answer">
+            <p>You can download the app from:</p>
+            <ul>
+              <li>Google Play Store</li>
+              <li>Indus App Store</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Does the app require internet?</summary>
+          <div class="faq-answer">
+            <p>Most learning content works offline, so children can learn anytime, anywhere.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Why should I choose Odia Bhasa app?</summary>
+          <div class="faq-answer">
+            <p>Because it is:</p>
+            <ul>
+              <li>100% Odia</li>
+              <li>Ad-free & safe for kids</li>
+              <li>Rich in language, culture, and education</li>
+              <li>Designed with love for Odia language ❤️</li>
+            </ul>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer>
       <div class="container">
         <h3>ଓଡ଼ିଆ ଭାଷା ଆପ୍</h3>
         <p>ସ୍ଵରବର୍ଣ୍ଣ, ବ୍ୟଞ୍ଜନବର୍ଣ, ଯୁକ୍ତାକ୍ଷର, ସଂଖ୍ୟା, କ୍ୟାଲେଣ୍ଡର, ପର୍ବପର୍ବାଣୀ ଓ ଛୁଟିଦିନ ସବୁକିଛି ଗୋଟିଏ ଆପ୍‌ରେ ।</p>
         <br>
-        <p>&copy; ୨୦୨୫-୨୬ ଓଡ଼ିଆ ଭାଷା | ସମସ୍ତ ଅଧିକାର ସୁରକ୍ଷିତ | ସନ୍ଦୀପ୍ ବିଶ୍ବାଳ ଜି ଆପ୍ସ୍</p>
+        <p>&copy; ୨୦୨୬ ଓଡ଼ିଆ ଭାଷା | ସମସ୍ତ ଅଧିକାର ସୁରକ୍ଷିତ | ସନ୍ଦୀପ୍ ବିଶ୍ବାଳ ଜି ଆପ୍ସ୍</p>
       </div>
     </footer>
 
@@ -1071,6 +1258,107 @@
   </div>
 
   <!-- ସତର୍କ ସୂଚନା: ଏହି ଆପ୍ ଏବଂ ୱେବସାଇଟ୍‌ର କୌଣସି ଅଂଶକୁ ନକଲ କରିବା ବେଆଇନ । ଏହାର ଉଲ୍ଲଂଘନ କଲେ ଆଇନ ଅନୁଯାୟୀ କଠୋର କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ନିଆଯିବ। ଏହି ପ୍ଲାଟଫର୍ମର ସମସ୍ତ ସତ୍ତ୍ୱ ଏବଂ ଲୋଗୋ 'ସନ୍ଦୀପ୍ ବିଶ୍ୱାଳ ଜି ଆପ୍ସ'ର ଅଧୀନ ଅଟେ । -->
+  
+  <!-- FAQ Schema for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [{
+      "@type": "Question",
+      "name": "What is Odia Bhasa app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Odia Bhasa is a fully Odia language learning app designed especially for children and beginners. The app helps users learn Odia alphabets, numbers, writing, stories, prayers, and cultural content in a simple and engaging way."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is Odia Bhasa completely in Odia language?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The app is 100% in Odia language, making it ideal for kids, parents, and anyone who wants to learn Odia in its pure form."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is the app free? Are there any ads?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the app is completely free and 100% ad-free. There are no advertisements, ensuring a safe and distraction-free learning experience for children."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Who developed the Odia Bhasa app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The app is developed by Sandeep Biswal G, with the aim of promoting Odia language, culture, and education digitally."
+      }
+    }, {
+      "@type": "Question",
+      "name": "What can kids learn from this app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Children can learn:\n- Swarabarna (ସ୍ୱରବର୍ଣ୍ଣ) with voice pronunciation\n- Byanjanabarna (ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ) with voice pronunciation\n- Juktakhyara (ଯୁକ୍ତାକ୍ଷର)\n- Phala (ଫଳା)\n- Odia Sankhya (ଓଡ଼ିଆ ସଂଖ୍ୟା)\n- Chhabila Madhu Barnabodha"
+      }
+    }, {
+      "@type": "Question",
+      "name": "Does the app have writing practice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The app includes writing practice / digital slate, where kids can practice writing Odia letters just like writing on a slate."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Are Odia story books available in the app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The app contains many Odia story books suitable for children, helping them improve reading skills and moral learning."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Does the app include school prayers and songs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The app includes:\n- Odia school prarthana\n- National Anthem\n- Odisha State Song / Anthem"
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is there an Odia calendar in the app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The app has a detailed Odia Calendar, which shows:\n- Odia month names\n- Seasons (Rutu)\n- All important festivals and holidays"
+      }
+    }, {
+      "@type": "Question",
+      "name": "Is this app suitable for small children?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. The app is kid-friendly, easy to use, ad-free, and designed especially for early learners and school-going children."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Where can I download the Odia Bhasa app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can download the app from:\n- Google Play Store\n- Indus App Store"
+      }
+    }, {
+      "@type": "Question",
+      "name": "Does the app require internet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most learning content works offline, so children can learn anytime, anywhere."
+      }
+    }, {
+      "@type": "Question",
+      "name": "Why should I choose Odia Bhasa app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because it is:\n- 100% Odia\n- Ad-free & safe for kids\n- Rich in language, culture, and education\n- Designed with love for Odia language."
+      }
+    }]
+  }
+  </script>
+
 <!-- JS LOGIC -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
