@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odia Bhasa App Library | Read Books Online</title>
+    <meta name="description" content="Read, learn, and grow with our massive collection of kids' stories, poems, and the legendary Barnabodha. General Questions, all in one place.. Powered by Odia Bhasa App.">
+    <meta name="keywords" content="Odia Library, Odia Books, Online Odia Reader, Madhu Barnabodha, Fakir Mohan Senapati, Odia Bhasa App, Odia Literature, Sandeep Biswal G">
+    
+    <!-- Link to our new CSS file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="/" class="nav-brand">
+                <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa" class="nav-logo">
+                ଓଡ଼ିଆ ଭାଷା
+            </a>
+            <div class="nav-menu">
+                <a href="https://imsbg.github.io/odiabhasa/" class="nav-link">ମୂଳ ପୃଷ୍ଠା</a>
+                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="nav-link btn-download">ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        <!-- LIBRARY VIEW -->
+        <section id="library-view">
+            <div class="library-header">
+                <h1>ଓଡ଼ିଆ ବହି</h1>
+                <p>ଆପଣଙ୍କ ପସନ୍ଦର ବହି ବାଛନ୍ତୁ ଏବଂ ପଢ଼ନ୍ତୁ</p>
+            </div>
+            <div class="search-wrapper">
+                <svg class="search-icon-svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                <input type="text" id="search-input" class="search-input" placeholder="ବହି ଖୋଜନ୍ତୁ ...">
+            </div>
+            <div id="book-grid" class="book-grid">
+                 <!-- Skeletons for loading effect -->
+                <script>for(let i=0; i<12; i++) document.write('<div class="book-card"><div class="card-cover-wrapper skeleton"></div><div class="card-info"><div class="card-title skeleton" style="height:20px; width:80%; margin-bottom:10px;"></div><div class="card-badge skeleton" style="height:15px; width:50px;"></div></div></div>')</script>
+            </div>
+            <div id="no-results" class="hidden" style="text-align: center; color: var(--text-light); margin-top: 40px;">କୌଣସି ବହି ମିଳିଲା ନାହିଁ</div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="copyright">&copy; 2025 Odia Bhasa App. Built with ❤️ for Odisha.</div>
+    </footer>
+
+    <script>
+        const API_ALL_BOOKS = 'https://sbgb.pages.dev/ବହି/ସବୁ.json';
+
+        // Function to open the new static book pages
+        function openBook(id) {
+            window.location.href = `books/${id}.html`;
+        }
+
+        async function loadLibrary() {
+            try {
+                const res = await fetch(API_ALL_BOOKS);
+                const books = await res.json();
+                const grid = document.getElementById('book-grid');
+                grid.innerHTML = ''; // Clear skeletons
+
+                books.forEach(book => {
+                    const id = book.destination.split('/').pop().replace('.json','');
+                    createCard(id, book.destination);
+                });
+                
+                document.getElementById('search-input').addEventListener('input', (e) => filterBooks(e.target.value));
+            } catch(e) { console.error("Failed to load library", e); }
+        }
+
+        function createCard(id, url) {
+            const grid = document.getElementById('book-grid');
+            const card = document.createElement('a');
+            card.className = 'book-card';
+            card.href = `books/${id}.html`;
+            card.setAttribute('data-search', '');
+            card.innerHTML = `
+                <div class="card-cover-wrapper skeleton"><img class="card-cover hidden" alt="cover"></div>
+                <div class="card-info">
+                    <div class="card-title">Loading...</div>
+                    <span class="card-badge">ପଢ଼ନ୍ତୁ</span>
+                </div>`;
+            grid.appendChild(card);
+            
+            fetch(url).then(r=>r.json()).then(d=>{
+                const img = card.querySelector('img');
+                card.querySelector('.card-title').textContent = d.title;
+                card.setAttribute('data-search', d.title.toLowerCase());
+                if(d.coverpage) { 
+                    img.src = d.coverpage; 
+                    img.onload = ()=>{ 
+                        img.classList.remove('hidden'); 
+                        card.querySelector('.skeleton').classList.remove('skeleton'); 
+                    }; 
+                } else {
+                    card.querySelector('.skeleton').classList.remove('skeleton'); 
+                }
+            }).catch(()=>{ card.style.display='none'; });
+        }
+
+        function filterBooks(q) {
+            const term = q.toLowerCase();
+            let count = 0;
+            document.querySelectorAll('.book-card').forEach(c => {
+                const match = c.getAttribute('data-search').includes(term);
+                c.style.display = match ? 'flex' : 'none';
+                if(match) count++;
+            });
+            document.getElementById('no-results').classList.toggle('hidden', count>0);
+        }
+
+        // Load the library when the page opens
+        loadLibrary();
+    </script>
+</body>
+</html>
