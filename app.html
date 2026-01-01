@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <!-- ============== Primary Meta Tags (SEO for Odia Bhasa) ============== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Odia Bhasa : Learn Odia Alphabet, Barnabodha & Writing</title>
+    <meta name="description" content="The best free platform to learn the Odia language. Master Odia Swarabarna, Byanjanabarna, Juktakhyara, and Numbers with our Digital Slate. Read Madhu Barnabodha, Odia stories, school prayers, and access the 2026 Odia calendar. Perfect for kids and beginners learning Odia offline.">
+    <meta name="keywords" content="Odia Bhasa, Learn Odia Online, Odia Alphabet App, Odia Barnabodha, Madhu Barnabodha, Digital Slate, Odia Swarabarna, Byanjanabarna, Odia Juktakhyara, Odia Stories for Kids, Odia School Prayers, Odia Calendar 2026, Odia Learning App, Odia Book Library, Odia Handwriting Practice, ଓଡ଼ିଆ ଭାଷା, ଓଡ଼ିଆ ଶିକ୍ଷା, ବର୍ଣ୍ଣବୋଧ">
+    <meta name="author" content="Sandeep Biswal G">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://imsbg.github.io/odiabhasa/">
+
+    <!-- ============== Open Graph / Facebook Meta Tags ============== -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Odia Bhasa - Learn Odia Alphabet & Barnabodha Online">
+    <meta property="og:description" content="The comprehensive app for learning Odia. Practice writing on the Digital Slate, read stories, learn prayers, and check the Odia Calendar. Download for free.">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/banner.png">
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/">
+    <meta property="og:site_name" content="Odia Bhasa Learning">
+    <meta property="og:locale" content="or_IN">
+
+    <!-- ============== Twitter Meta Tags ============== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Odia Bhasa - Learn Odia Alphabet & Barnabodha">
+    <meta name="twitter:description" content="Master Odia Swarabarna, Byanjanabarna, and Juktakhyara. Explore fun stories, prayers, and digital slate.">
+    <meta name="twitter:image" content="https://imsbg.github.io/odiabhasa/images/banner.png">
+    <meta name="twitter:site" content="@SandeepBiswalG">
+
+    <!-- ============== Favicon and App Icons ============== -->
+    <link rel="icon" href="https://imsbg.github.io/odiabhasa/images/app.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://imsbg.github.io/odiabhasa/images/app.png">
+
+    <!-- ============== Google Fonts & Icons ============== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons (like the book icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #F4F7F6;
+            --text-dark: #1a1a1a;
+            --font-odia: 'Baloo Bhaina 2', cursive;
+            --font-eng: 'Fredoka', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: var(--font-odia);
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        
+        /* --- NEW HEADER STYLES --- */
+        .nav-wrapper {
+            position: sticky; top: 0; z-index: 100;
+            padding: 15px 0;
+            background: rgba(244, 247, 246, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .nav-inner {
+            max-width: 1280px; margin: 0 auto; padding: 0 24px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo-text {
+            font-size: 1.8rem; font-weight: 700; color: #000;
+            display: flex; align-items: center; gap: 12px; text-decoration: none;
+        }
+        .logo-text img { width: 48px; height: 48px; border-radius: 12px; }
+        .nav-links-desktop { display: none; gap: 25px; align-items: center; }
+        .nav-link { text-decoration: none; color: #444; font-weight: 600; font-size: 1rem; transition: color 0.2s; }
+        .nav-link:hover { color: #000; }
+        .nav-cta {
+            background: #000; color: #fff; padding: 8px 20px;
+            border-radius: 50px; transition: all 0.2s; font-family: var(--font-eng);
+        }
+        .nav-cta:hover { transform: scale(1.05); color: #fff; }
+        .mobile-toggle { display: block; background: none; border: none; cursor: pointer; padding: 5px; }
+        .mobile-toggle svg { width: 28px; height: 28px; color: #000; }
+        .mobile-menu {
+            position: fixed; top: 80px; /* Adjusted for header height */
+            left: 0; width: 100%; background: #fff;
+            padding: 20px; flex-direction: column; gap: 15px;
+            display: none; box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            z-index: 99;
+        }
+        .mobile-menu.active { display: flex; }
+        .mobile-link { font-size: 1.1rem; font-weight: 600; color: #333; text-decoration: none; padding: 10px; border-bottom: 1px solid #f5f5f5; }
+
+        @media (min-width: 960px) {
+            .nav-links-desktop { display: flex; }
+            .mobile-toggle { display: none; }
+            .mobile-menu { display: none !important; }
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: flex; align-items: center; justify-content: space-between;
+            min-height: 90vh; padding: 40px 0; overflow: hidden;
+        }
+        .hero-text { flex: 1; max-width: 550px; z-index: 10; }
+        .hero-title { font-size: 3.8rem; line-height: 1.1; margin-bottom: 24px; color: #111; letter-spacing: -1px; }
+        .hero-subtitle { font-size: 1.2rem; color: #555; margin-bottom: 40px; line-height: 1.6; max-width: 480px; }
+        
+        /* --- BUTTONS --- */
+        .btn-group { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+
+        /* General Button Style */
+        .btn-base {
+            padding: 14px 28px; border-radius: 16px; font-weight: 700;
+            font-size: 1.1rem; text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        .btn-base:hover { transform: translateY(-4px); }
+
+        /* Specific Button Styles */
+        .btn-primary { background-color: #000; color: #fff; }
+        .btn-primary:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .play-btn { transition: transform 0.2s; display: inline-block; }
+        .play-btn img { height: 180px; display: block; }
+        .play-btn:hover { transform: translateY(-4px); }
+        
+
+        /* --- DUAL SCROLLING COLUMNS --- */
+        .visual-container {
+            flex: 1; height: 100vh; display: flex; gap: 20px;
+            justify-content: center; align-items: center;
+            perspective: 1500px;
+            transform: rotateY(-15deg) rotateZ(5deg) translateX(50px);
+            mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+        }
+        .scrolling-col { width: 240px; display: flex; flex-direction: column; gap: 20px; }
+        .scrolling-col img { width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); display: block; }
+        #col-1 { animation: scrollUp 60s linear infinite; }
+        @keyframes scrollUp { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
+        #col-2 { animation: scrollDown 60s linear infinite; }
+        @keyframes scrollDown { 0% { transform: translateY(-50%); } 100% { transform: translateY(0); } }
+
+        /* --- FEATURES GRID --- */
+        .features { padding: 60px 0 100px; }
+        .section-head { text-align: center; margin-bottom: 70px; }
+        .section-head h2 { font-size: 2.5rem; margin-bottom: 10px; color: #222; }
+        .section-head p { color: #555; font-size: 1.1rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { padding: 40px 30px; border-radius: 35px; transition: transform 0.3s, box-shadow 0.3s; min-height: 260px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .card h3 { font-size: 1.6rem; margin-bottom: 12px; text-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .card p { font-size: 1.1rem; font-weight: 500; line-height: 1.5; opacity: 0.95; }
+        .card:nth-child(1) { background: linear-gradient(135deg, #4DB6AC 0%, #00897B 100%); box-shadow: 0 15px 30px rgba(0, 137, 123, 0.3); }
+        .card:nth-child(2) { background: linear-gradient(135deg, #4FC3F7 0%, #039BE5 100%); box-shadow: 0 15px 30px rgba(3, 155, 229, 0.3); }
+        .card:nth-child(3) { background: linear-gradient(135deg, #9575CD 0%, #5E35B1 100%); box-shadow: 0 15px 30px rgba(94, 53, 177, 0.3); }
+        .card:nth-child(4) { background: linear-gradient(135deg, #81C784 0%, #43A047 100%); box-shadow: 0 15px 30px rgba(67, 160, 71, 0.3); }
+        .card:nth-child(5) { background: linear-gradient(135deg, #FF8A65 0%, #E64A19 100%); box-shadow: 0 15px 30px rgba(230, 74, 25, 0.3); }
+        .card:nth-child(6) { background: linear-gradient(135deg, #F06292 0%, #C2185B 100%); box-shadow: 0 15px 30px rgba(194, 24, 91, 0.3); }
+
+        /* --- FOOTER --- */
+        .footer { text-align: center; padding: 40px; color: #888; border-top: 1px solid #eaeaea; font-size: 0.9rem; }
+        .footer-links { margin-bottom: 10px; }
+        .footer a { color: inherit; text-decoration: none; font-weight: bold; transition: opacity 0.3s; }
+        .footer a:hover { text-decoration: underline; opacity: 0.8; }
+        .separator { margin: 0 10px; opacity: 0.5; }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 3rem; }
+            .visual-container { transform: none; perspective: none; margin-left: 0; }
+        }
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; justify-content: center; padding-top: 60px; min-height: auto; }
+            .visual-container { display: none; }
+            .hero-text { max-width: 100%; margin-bottom: 40px; }
+            .hero-subtitle { margin: 0 auto 40px; }
+            .btn-group { justify-content: center; flex-direction: column; }
+            .btn-base, .play-btn { width: 100%; justify-content: center; max-width: 350px; }
+            .grid { grid-template-columns: 1fr; }
+            .card { min-height: auto; padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="nav-wrapper">
+      <div class="nav-inner">
+        <a href="https://imsbg.github.io/odiabhasa/" class="logo-text">
+          <img src="https://imsbg.github.io/odiabhasa/images/logo.png" alt="Odia Bhasa Logo" />
+          <span>ଓଡ଼ିଆ ଭାଷା</span>
+        </a>
+
+        <!-- Hamburger Toggle (Mobile) -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+
+        <!-- Desktop Links -->
+        <div class="nav-links-desktop">
+          <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="nav-link">ଗୋପନୀୟତା ନୀତି</a>
+          <a href="https://imsbg.github.io/odiabhasa/terms" class="nav-link">ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ</a>
+          <a href="mailto:message.sbg@gmail.com" class="nav-link nav-cta">ଯୋଗାଯୋଗ</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="mobile-link">ଗୋପନୀୟତା ନୀତି</a>
+      <a href="https://imsbg.github.io/odiabhasa/terms" class="mobile-link">ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ</a>
+      <a href="mailto:message.sbg@gmail.com" class="mobile-link">ଯୋଗାଯୋଗ</a>
+    </div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-text">
+                <h2 class="hero-title">ଶିଖିବା ଓ ପଢିବାପାଇଁ ସର୍ବଶ୍ରେଷ୍ଠ ଓଡ଼ିଆ ଆପ୍</h2>
+                <p class="hero-subtitle">ସ୍ଵରବର୍ଣ୍ଣ ଠାରୁ ଆରମ୍ଭ କରି ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ ପର୍ଯ୍ୟନ୍ତ ସବୁକିଛି ଏବେ ଗୋଟିଏ ସ୍ଥାନରେ । ଆପଣଙ୍କ ପିଲାଙ୍କ ପାଇଁ ଶିକ୍ଷା ହେବ ଏବେ ଅତି ମଜାଦାର ।</p>
+                
+                <div class="btn-group">
+              <center>      <!-- Google Play Store Image Button -->
+                    <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="play-btn" target="_blank">
+                        <img src="https://imsbg.github.io/odiabhasa/images/gp.png" alt="Get it on Google Play" />
+                    </a> </center>
+                    <!-- Read Book Button -->
+                    <a href="https://imsbg.github.io/odiabhasa/read" class="btn-base btn-primary">
+                      <i class="fas fa-book-open"></i> ଓଡ଼ିଆ ବହି
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dual Column Image Gallery (Desktop Only) -->
+            <div class="visual-container">
+                <div class="scrolling-col" id="col-1"></div>
+                <div class="scrolling-col" id="col-2"></div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="section-head">
+                <h2>ଆପ୍ ର ବିଶେଷତା</h2>
+                <p>ସବୁକିଛି ଯାହା ଆପଣଙ୍କ ପିଲାଙ୍କୁ ଓଡ଼ିଆ ଭାଷାରେ ଧୁରନ୍ଧର କରିବ</p>
+            </div>
+            <div class="grid" id="features-grid"></div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="https://imsbg.github.io/odiabhasa/">ମୁଖ୍ୟ ପୃଷ୍ଠା</a>
+                <span class="separator">|</span>
+                <a href="https://imsbg.github.io/odiabhasa/privacy-policy">ଗୋପନୀୟତା ନୀତି</a>
+                <span class="separator">|</span>
+                <a href="https://imsbg.github.io/odiabhasa/terms">ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ</a>
+            </div>
+            <p>&copy; ୨୦୨୫-୨୬ ଓଡ଼ିଆ ଭାଷା | ସନ୍ଦୀପ୍ ବିଶ୍ବାଳ ଜି ଆପ୍ସ୍</p>
+            <p>Made with ❤️ in Odisha, India</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // --- 1. MOBILE MENU TOGGLE ---
+            const mobileToggle = document.getElementById("mobile-toggle");
+            const mobileMenu = document.getElementById("mobile-menu");
+            mobileToggle.addEventListener("click", () => {
+                mobileMenu.classList.toggle("active");
+            });
+
+            // --- 2. ODIA BHASA APP FEATURES DATA ---
+            const appFeatures = [
+                { title: "ବର୍ଣ୍ଣମାଳା ଓ ମାତ୍ରା", desc: "ସ୍ଵରବର୍ଣ୍ଣ, ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ, ମାତ୍ରା, ଫଳା ଓ ଯୁକ୍ତାକ୍ଷର ଶିଖିବାର ସବୁଠାରୁ ସହଜ ଉପାୟ ।" },
+                { title: "ଡିଜିଟାଲ୍ ସ୍ଲେଟ୍", desc: "କାଗଜ କଲମ ବିନା ନିଜ ଆଙ୍ଗୁଠିରେ ସ୍କ୍ରିନ୍ ଉପରେ ଅକ୍ଷର ଲେଖିବା ଅଭ୍ୟାସ କରନ୍ତୁ ।" },
+                { title: "ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ", desc: "ସମ୍ପୂର୍ଣ୍ଣ ମଧୁସୂଦନ ରାଓଙ୍କ ବର୍ଣ୍ଣବୋଧ ବହିକୁ ଡିଜିଟାଲ୍ ଭାବରେ ପଢନ୍ତୁ ଏବଂ ଶିଖନ୍ତୁ ।" },
+                { title: "ଓଡ଼ିଆ ବହି ଲାଇବ୍ରେରୀ", desc: "ପିଲାମାନଙ୍କ ପାଇଁ ମଜାଦାର ଗଳ୍ପ, କବିତା, ଏବଂ ପୁରାଣ କାହାଣୀ ପଢନ୍ତୁ ଓ ନୂଆ କଥା ଶିଖନ୍ତୁ ।" },
+                { title: "ବିଦ୍ୟାଳୟ ପ୍ରାର୍ଥନା", desc: "ଆହେ ଦୟାମୟ ବିଶ୍ୱ ବିହାରୀ ସମେତ ସମସ୍ତ ପ୍ରମୁଖ ବିଦ୍ୟାଳୟ ପ୍ରାର୍ଥନା ଓ ସଙ୍ଗୀତ ଶୁଣନ୍ତୁ ।" },
+                { title: "ସମ୍ପୂର୍ଣ୍ଣ ବିଜ୍ଞାପନ ମୁକ୍ତ", desc: "ବିନା କୌଣସି ବିଜ୍ଞାପନରେ ଏକ ନିରବଚ୍ଛିନ୍ନ ଶିକ୍ଷଣ ଅନୁଭୂତି ପାଆନ୍ତୁ ।" }
+            ];
+
+            const featuresGrid = document.getElementById('features-grid');
+            featuresGrid.innerHTML = appFeatures.map(f => `
+                <div class="card">
+                    <h3>${f.title}</h3>
+                    <p>${f.desc}</p>
+                </div>
+            `).join('');
+
+            // --- 3. DUAL COLUMN IMAGE LOGIC ---
+            const col1 = document.getElementById('col-1');
+            const col2 = document.getElementById('col-2');
+            
+            const totalImages = 9;
+            const imageBasePath = "https://imsbg.github.io/odiabhasa/images/ss/";
+            let normalOrder = '';
+            let reverseOrder = '';
+
+            for(let i = 1; i <= totalImages; i++) {
+                normalOrder += `<img src="${imageBasePath}${i}.png" alt="Odia Bhasa App Screen ${i}" loading="lazy">`;
+            }
+
+            for(let i = totalImages; i >= 1; i--) {
+                 reverseOrder += `<img src="${imageBasePath}${i}.png" alt="Odia Bhasa App Screen ${i}" loading="lazy">`;
+            }
+
+            if (col1 && col2) {
+                col1.innerHTML = normalOrder + normalOrder;
+                col2.innerHTML = reverseOrder + reverseOrder;
+            }
+        });
+    </script>
+</body>
+</html>
