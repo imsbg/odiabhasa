@@ -6,14 +6,14 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <!-- ଚେତାବନୀ: ଚୋରି କରିବା ଆଇନ ଅନୁଯାୟୀ ଏକ ଅପରାଧ।  ଯଦି ଆପଣ ଆମର ଆପ୍ କିମ୍ବା ୱେବସାଇଟ୍‌କୁ ନକଲ କରିବାକୁ ଚେଷ୍ଟା କରନ୍ତି, ତେବେ ଆପଣଙ୍କ ବିରୋଧରେ ଦୃଢ଼ ଆଇନଗତ କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ଗ୍ରହଣ କରାଯିବ। ଏହି ୱେବସାଇଟ୍ ଏବଂ ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ର ସମସ୍ତ ବିଷୟବସ୍ତୁ ଓ ଲୋଗୋ 'ସନ୍ଦୀପ୍ ବିଶ୍ୱାଳ ଜି ଆପ୍ସ' (Sandeep Biswal G Apps) ଦ୍ୱାରା ସଂରକ୍ଷିତ । -->
+    <!--1. ଚେତାବନୀ: ଚୋରି କରିବା ଆଇନ ଅନୁଯାୟୀ ଏକ ଅପରାଧ।  ଯଦି ଆପଣ ଆମର ଆପ୍ କିମ୍ବା ୱେବସାଇଟ୍‌କୁ ନକଲ କରିବାକୁ ଚେଷ୍ଟା କରନ୍ତି, ତେବେ ଆପଣଙ୍କ ବିରୋଧରେ ଦୃଢ଼ ଆଇନଗତ କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ଗ୍ରହଣ କରାଯିବ। ଏହି ୱେବସାଇଟ୍ ଏବଂ ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ର ସମସ୍ତ ବିଷୟବସ୍ତୁ ଓ ଲୋଗୋ 'ସନ୍ଦୀପ୍ ବିଶ୍ୱାଳ ଜି ଆପ୍ସ' (Sandeep Biswal G Apps) ଦ୍ୱାରା ସଂରକ୍ଷିତ । -->
         <!-- 2. Search Engine ପାଇଁ କେବଳ-->
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="googlebot" content="index, follow">
     <!-- Replace this with your actual website URL -->
     <link rel="canonical" href="https://imsbg.github.io/odiabhasa/" />
 
-    <!-- 3. Title and Meta Description (SEO IMPROVED) -->
+    <!-- 3. Title and Meta Description-->
     <title>Odia Bhasa : Learn Odia Alphabet, Barnabodha & Writing</title>
     <meta
       name="description"
@@ -210,6 +210,13 @@
         }
       }
 
+      .prayer-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
       /* --- HERO SECTION --- */
       .hero-wrapper {
         position: relative;
@@ -296,7 +303,57 @@
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
       }
+      /* Animated Gradient 2 Text Class */
+      .gradient-text2 {
+        background: linear-gradient(
+          45deg,
+#0066ff,
+#00a8ff,
+#00c896,
+#00b36b,
+#0066ff,
+#00a8ff
 
+
+
+        );
+        background-size: 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientAnimate 14s linear infinite;
+      }
+
+      @keyframes gradientAnimate {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+            /* Animated Gradient 0 Text Class */
+      .gradient-text0 {
+        background: linear-gradient(
+          45deg,
+#6a00ff,
+#9b5cff,
+#ff7a00,
+#ff9f45,
+#6a00ff,
+#9b5cff
+
+        );
+        background-size: 400%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientAnimate 10s linear infinite;
+      }
+
+      @keyframes gradientAnimate {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
       /* Buttons */
       .hero-cta-group {
         display: flex;
@@ -972,7 +1029,7 @@
         </div>
 
         <h1 class="hero-headline">
-          ଶିଖିବା ଓ <span class="gradient-text">ପଢିବାପାଇଁ</span> ସର୍ବଶ୍ରେଷ୍ଠ ଓଡ଼ିଆ ଆପ୍
+          <span class="gradient-text0">ଶିଖିବା</span> ଓ <span class="gradient-text">ପଢିବାପାଇଁ </span> ସର୍ବଶ୍ରେଷ୍ଠ <span class="gradient-text2">ଓଡ଼ିଆ ଆପ୍ ‎ </span>
         </h1>
         <p class="hero-subhead">
           ସ୍ଵରବର୍ଣ୍ଣ ଠାରୁ ଆରମ୍ଭ କରି ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ ପର୍ଯ୍ୟନ୍ତ ସବୁକିଛି ଏବେ ଗୋଟିଏ ସ୍ଥାନରେ । ଆପଣଙ୍କ ପିଲାଙ୍କ ପାଇଁ ଶିକ୍ଷା ହେବ ଏବେ ଅତି ମଜାଦାର ।
@@ -1044,11 +1101,14 @@
         <p style="padding-left: 25px; font-size: 1.1rem; color: #555;">୧ ରୁ ୧୦୦ ପର୍ଯ୍ୟନ୍ତ ଓଡ଼ିଆ ଅଙ୍କ ଗଣିବା ଏବଂ ପଢ଼ିବା ଶିଖନ୍ତୁ ।</p>
         
         <br>
-  
+  <hr>
         <div class="final-points">
+          <p>ସ୍ଵରବର୍ଣ୍ଣ ଓ ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ ରେ ଅକ୍ଷରର ଉଚ୍ଚାରଣ ଶୁଣନ୍ତୁ ।</p>
+          <p>ଅକ୍ଷର ଲେଖିବା ଅଭ୍ୟାସ କରନ୍ତୁ ।</p>
+          <p>ଉଦାହରଣ ଶବ୍ଦ ସହ ବାକ୍ୟ :<br>(ଯେପରି- "ଅରଟ ରେ ସୂତା ବୁଣା ଯାଏ") ।</p>
+          <p>ଓଡ଼ିଆ କ୍ଯାଲେଣ୍ଡର ରେ ଓଡ଼ିଆ ମାସ , ଋତୁ ଓ ଛୁଟି ଦିନ ଦେଖନ୍ତୁ । (ଓଡ଼ିଆ ପାଞ୍ଜି) </p>
           <p>ସମ୍ପୂର୍ଣ୍ଣ ମାଗଣା ଏବଂ ବ୍ୟବହାର କରିବାକୁ ଅତି ସହଜ ।</p>
           <p>ସମ୍ପୂର୍ଣ୍ଣ ବିଜ୍ଞାପନ ମୁକ୍ତ</p>
-          <p>ଉଦାହରଣ ଶବ୍ଦ ସହ ବାକ୍ୟ (ଯେପରି- "ଅରଟ ରେ ସୂତା ବୁଣା ଯାଏ") ।</p>
           <p>ଛୋଟ ପିଲାଙ୍କ ଠାରୁ ବୟସ୍କଙ୍କ ପର୍ଯ୍ୟନ୍ତ ସମସ୍ତଙ୍କ ପାଇଁ ଉପଯୋଗୀ ।</p>
         </div>
       </div>
@@ -1078,21 +1138,50 @@
     </section>
     
     <!-- PRAYERS SECTION -->
-    <section class="section-wrapper" id="prayers">
-      <h2 class="section-heading">ବିଦ୍ୟାଳୟ ପ୍ରାର୍ଥନା ଓ ସଙ୍ଗୀତ</h2>
-      <div class="prayer-list">
-        <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଆହେ ଦୟାମୟ ବିଶ୍ୱ ବିହାରୀ</div>
-        <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଭବ ସାଗର ତାରଣ କାରଣ ହେ</div>
-        <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଶ୍ରୀ ଗୁରୁ ବନ୍ଦନା</div>
-        <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ହେ ଆନନ୍ଦମୟ କୋଟି</div>
-        <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> କରୁଣା ସାଗର ପ୍ରଭୁ ହେ</div>
-        <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ତୁମେଟି ଜଗତ କରତା</div>
-        <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> କି ସୁନ୍ଦର ଆହା କି ଆନନ୍ଦମୟ</div>
-        <div class="prayer-item"><i class="fas fa-flag prayer-icon"></i> ଜାତୀୟ ସଙ୍ଗୀତ ଓ ରାଷ୍ଟ୍ର ଗାନ</div>
-        <div class="prayer-item"><i class="fas fa-map-marker-alt prayer-icon"></i> ରାଜ୍ୟ ସଙ୍ଗୀତ (ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ)</div>
-       <center> <p> -- ସମ୍ପୂର୍ଣ୍ଣ ପ୍ରାର୍ଥନା ଓ ସଙ୍ଗୀତ ପାଇଁ ଆପ୍ କୁ ଡାଉନଲୋଡ୍ କରନ୍ତୁ --</p> </center>
-      </div>
-    </section>
+<section class="section-wrapper" id="prayers">
+  <h2 class="section-heading">ବିଦ୍ୟାଳୟ ପ୍ରାର୍ଥନା ଓ ସଙ୍ଗୀତ</h2>
+
+  <div class="prayer-list">
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଆହେ ଦୟାମୟ ବିଶ୍ୱ ବିହାରୀ</div>
+    </a>
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଭବ ସାଗର ତାରଣ କାରଣ ହେ</div>
+    </a>
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଶ୍ରୀ ଗୁରୁ ବନ୍ଦନା</div>
+    </a>
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ହେ ଆନନ୍ଦମୟ କୋଟି</div>
+    </a>
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> କରୁଣା ସାଗର ପ୍ରଭୁ ହେ</div>
+    </a>
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ତୁମେଟି ଜଗତ କରତା</div>
+    </a>
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> କି ସୁନ୍ଦର ଆହା କି ଆନନ୍ଦମୟ</div>
+    </a>
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-flag prayer-icon"></i> ଜାତୀୟ ସଙ୍ଗୀତ ଓ ରାଷ୍ଟ୍ର ଗାନ</div>
+    </a>
+
+    <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-link">
+      <div class="prayer-item"><i class="fas fa-map-marker-alt prayer-icon"></i> ରାଜ୍ୟ ସଙ୍ଗୀତ (ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ)</div>
+    </a>
+
+  </div>
+</section>
+
 
     <!-- FAQ SECTION -->
     <section class="section-wrapper" id="faq">
