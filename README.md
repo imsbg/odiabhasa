@@ -24,10 +24,6 @@
     <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa">
       <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="220" alt="Get it on Google Play"/>
     </a>
-    <br>
-    <a href="#">
-      <img src="https://docstore.indusappstore.com/public/external/developerdashboard-static/badge-black-background-oriya.png" width="190" alt="Get it on Indus App Store" />
-    </a>
   </p>
 
 </div>
@@ -85,7 +81,7 @@ This app is built using modern Android development standards to ensure performan
 You can download the app from the following stores:
 
 *   [**ଗୁଗଲ ପ୍ଲେ ଷ୍ଟୋର | Google Play Store**](https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa)
-*   [**ଇଣ୍ଡସ ଆପ୍ ଷ୍ଟୋର | Indus App Store**](https://www.indusappstore.com/) *(Coming Soon)*
+
 
 ---
 
