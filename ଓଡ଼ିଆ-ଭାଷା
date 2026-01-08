@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ଓଡ଼ିଆ ଭାଷା - Odia Bhasa App</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ସ୍ଵରବର୍ଣ୍ଣ ଠାରୁ ଆରମ୍ଭ କରି ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ ପର୍ଯ୍ୟନ୍ତ ସବୁକିଛି ଏବେ ଗୋଟିଏ ସ୍ଥାନରେ । ଓଡ଼ିଆ ଭାଷା ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ ।">
+    <meta name="keywords" content="Odia Bhasa, Learn Odia, Odia Alphabet, Odia Barnabodha, Odia App, ଓଡ଼ିଆ ଭାଷା, ଓଡ଼ିଆ ଶିକ୍ଷା">
+    <meta name="author" content="Odia Bhasa">
+    <meta name="theme-color" content="#E1F5FE">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="ଓଡ଼ିଆ ଭାଷା - Odia Bhasa">
+    <meta property="og:description" content="ଆପଣଙ୍କ ପିଲାଙ୍କ ପାଇଁ ଶିକ୍ଷା ହେବ ଏବେ ଅତି ମଜାଦାର।">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/">
+
+    <!-- Google Fonts (Noto Sans Oriya & Material Symbols) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        /* --- Blue & Yellow Material Theme Tokens --- */
+        :root {
+            /* Palette */
+            --primary-blue: #0288D1;        /* Buttons, Icons Text */
+            --primary-container: #E1F5FE;   /* Light Blue Header/Active */
+            --secondary-yellow: #FFF9C4;    /* Cards Highlight */
+            --accent-yellow: #FFEB3B;       /* Icon Backgrounds */
+            --background-color: #FFFDE7;    /* Main Background (Creamy Yellow) */
+            --surface-color: #FFFFFF;       /* Card Surface */
+            --text-color: #1D1B20;
+            --text-secondary: #455A64;
+            
+            --elevation-1: 0px 2px 8px rgba(2, 136, 209, 0.15);
+            --elevation-2: 0px 4px 12px rgba(2, 136, 209, 0.25);
+            
+            --font-family: 'Noto Sans Oriya', sans-serif;
+            --border-radius-lg: 24px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent; /* No blue highlight on mobile */
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- Header --- */
+        .top-app-bar {
+            background-color: var(--primary-container);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            color: var(--text-color);
+        }
+
+        .menu-btn {
+            background: #FFFFFF;
+            border: none;
+            cursor: pointer;
+            color: var(--primary-blue);
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: background 0.2s;
+        }
+        
+        .menu-btn:active {
+            background: var(--secondary-yellow);
+        }
+
+        .app-title-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        .app-logo-small {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .app-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        /* --- Drawer --- */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(2px);
+        }
+
+        .drawer-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-drawer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background-color: var(--surface-color);
+            z-index: 201;
+            transform: translateX(-100%);
+            transition: transform 0.3s cubic-bezier(0.2, 0.0, 0, 1.0);
+            border-top-right-radius: 24px;
+            border-bottom-right-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 24px rgba(0,0,0,0.1);
+        }
+
+        .nav-drawer.open {
+            transform: translateX(0);
+        }
+
+        .drawer-header {
+            padding: 32px 24px;
+            background-color: var(--primary-container);
+            border-top-right-radius: 24px;
+        }
+
+        .drawer-logo {
+            width: 72px;
+            height: 72px;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .drawer-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .nav-links {
+            padding: 24px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            height: 56px;
+            padding: 0 16px 0 24px;
+            border-radius: 28px;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+            transition: background 0.2s;
+        }
+
+        .nav-item span {
+            margin-right: 16px;
+            color: var(--primary-blue);
+        }
+
+        .nav-item:active {
+            background-color: var(--secondary-yellow);
+        }
+
+        /* --- Main Content --- */
+        main {
+            padding: 90px 16px 30px 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        .hero-section {
+            background-color: var(--surface-color);
+            border-radius: 24px;
+            padding: 24px;
+            margin-bottom: 32px;
+            text-align: center;
+            box-shadow: var(--elevation-1);
+            border: 2px solid #FFFDE7;
+        }
+
+        .hero-text h2 {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .hero-text h2 strong {
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @media (min-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* --- Cards --- */
+        .card {
+            background-color: var(--surface-color);
+            border-radius: var(--border-radius-lg);
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: var(--elevation-1);
+            transition: all 0.2s ease;
+            position: relative;
+            height: 170px;
+            border-bottom: 4px solid var(--secondary-yellow);
+        }
+
+        .card:hover {
+            box-shadow: var(--elevation-2);
+            transform: translateY(-2px);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .card:active {
+            transform: scale(0.96);
+            background-color: var(--secondary-yellow);
+        }
+
+        /* Custom Text Icons wrapper */
+        .icon-container {
+            width: 64px;
+            height: 64px;
+            background-color: var(--primary-container);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            color: var(--primary-blue);
+        }
+
+        .text-icon {
+            font-family: 'Noto Sans Oriya', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .material-icon-large {
+            font-size: 32px;
+            color: var(--primary-blue);
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #FFFFFF;
+            padding: 40px 16px;
+            margin-top: 20px;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            text-align: center;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.05);
+        }
+
+        .playstore-btn {
+            display: inline-block;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .playstore-btn img {
+            height: 130px;
+            width: auto;
+            max-width: 100%;
+        }
+
+        .playstore-btn:active {
+            opacity: 0.8;
+            transform: scale(0.98);
+        }
+
+        .footer-text {
+            margin-top: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Drawer Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleMenu()"></div>
+
+    <!-- Navigation Drawer -->
+    <nav class="nav-drawer" id="navDrawer">
+        <div class="drawer-header">
+            <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo" class="drawer-logo">
+            <div class="drawer-title">ଓଡ଼ିଆ ଭାଷା</div>
+        </div>
+        <div class="nav-links">
+            <a href="https://imsbg.github.io/odiabhasa/" class="nav-item">
+                <span class="material-symbols-rounded">home</span>
+                ମୂଳ ପୃଷ୍ଠା
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="nav-item">
+                <span class="material-symbols-rounded">star</span>
+                ମୂଲ୍ୟାୟନ କରନ୍ତୁ
+            </a>
+            <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="nav-item">
+                <span class="material-symbols-rounded">security</span>
+                ଗୋପନୀୟତା ନୀତି
+            </a>
+            <a href="https://imsbg.github.io/odiabhasa/terms" class="nav-item">
+                <span class="material-symbols-rounded">gavel</span>
+                ନିୟମ ଓ ସର୍ତ୍ତ
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="top-app-bar">
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Open Menu">
+            <span class="material-symbols-rounded" style="font-size: 26px;">menu</span>
+        </button>
+        <div class="app-title-container">
+            <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Logo" class="app-logo-small">
+            <h1 class="app-title">ଓଡ଼ିଆ ଭାଷା</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section with new text -->
+        <div class="hero-section">
+            <div class="hero-text">
+                <h2>ସ୍ଵରବର୍ଣ୍ଣ ଠାରୁ ଆରମ୍ଭ କରି ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ ପର୍ଯ୍ୟନ୍ତ ସବୁକିଛି ଏବେ ଗୋଟିଏ ସ୍ଥାନରେ । ଆପଣଙ୍କ ପିଲାଙ୍କ ପାଇଁ ଶିକ୍ଷା ହେବ ଏବେ ଅତି ମଜାଦାର ।</h2>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <!-- Swarabarna (অ আ) -->
+            <a href="https://odiabhasa.pages.dev/open?Swara" class="card">
+                <div class="icon-container">
+                    <span class="text-icon">ଅ ଆ</span>
+                </div>
+                <span class="card-title">ସ୍ଵରବର୍ଣ୍ଣ</span>
+            </a>
+
+            <!-- Byanjanabarna (କ ଖ) -->
+            <a href="https://odiabhasa.pages.dev/open?Byanjana" class="card">
+                <div class="icon-container">
+                    <span class="text-icon">କ ଖ</span>
+                </div>
+                <span class="card-title">ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ</span>
+            </a>
+
+            <!-- Barna Parichaya (< ।) -->
+            <a href="https://odiabhasa.pages.dev/open?Barna_Parichaya" class="card">
+                <div class="icon-container">
+                    <span class="text-icon">< ।</span>
+                </div>
+                <span class="card-title">ବର୍ଣ୍ଣ ପରିଚୟ</span>
+            </a>
+
+            <!-- Phala (ା) -->
+            <a href="https://odiabhasa.pages.dev/open?Phala" class="card">
+                <div class="icon-container">
+                    <span class="text-icon">୍ୟ</span>
+                </div>
+                <span class="card-title">ଫଳା</span>
+            </a>
+
+            <!-- Matra (Standard Icon) -->
+            <a href="https://odiabhasa.pages.dev/open?Matra" class="card">
+                <div class="icon-container">
+                    <span class="text-icon">। ି</span>
+                </div>
+                <span class="card-title">ମାତ୍ରା</span>
+            </a>
+
+            <!-- Yuktakshara (ଙ୍କ ଙ୍ଖ) -->
+            <a href="https://odiabhasa.pages.dev/open?Yukta" class="card">
+                <div class="icon-container">
+                    <span class="text-icon" style="font-size: 20px;">ଙ୍କ ଙ୍ଖ</span>
+                </div>
+                <span class="card-title">ଯୁକ୍ତାକ୍ଷର</span>
+            </a>
+
+            <!-- Sankhya (୧ ୨) -->
+            <a href="https://odiabhasa.pages.dev/open?Sankhya" class="card">
+                <div class="icon-container">
+                    <span class="text-icon">୧ ୨</span>
+                </div>
+                <span class="card-title">ସଂଖ୍ୟା</span>
+            </a>
+
+            <!-- Writing Practice -->
+            <a href="https://odiabhasa.pages.dev/open?Writing" class="card">
+                <div class="icon-container">
+                    <span class="material-symbols-rounded material-icon-large">draw</span>
+                </div>
+                <span class="card-title">ଅକ୍ଷର ଲେଖା</span>
+            </a>
+
+            <!-- Odia Books -->
+            <a href="https://odiabhasa.pages.dev/open?Bahi" class="card">
+                <div class="icon-container">
+                    <span class="material-symbols-rounded material-icon-large">library_books</span>
+                </div>
+                <span class="card-title">ଓଡ଼ିଆ ବହି</span>
+            </a>
+
+            <!-- Madhu Barnabodha -->
+            <a href="https://odiabhasa.pages.dev/open?Madhu_Barnabodha" class="card">
+                <div class="icon-container">
+                    <span class="material-symbols-rounded material-icon-large">auto_stories</span>
+                </div>
+                <span class="card-title">ମଧୁବର୍ଣ୍ଣବୋଧ</span>
+            </a>
+
+            <!-- Calendar -->
+            <a href="https://odiabhasa.pages.dev/open?Odia_Calendar" class="card">
+                <div class="icon-container">
+                    <span class="material-symbols-rounded material-icon-large">calendar_month</span>
+                </div>
+                <span class="card-title">କ୍ଯାଲେଣ୍ଡର</span>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="playstore-btn">
+            <img src="https://imsbg.github.io/odiabhasa/images/gp-odia.png" alt="Get it on Google Play">
+        </a>
+        <p>ସ୍ଵରବର୍ଣ୍ଣ, ବ୍ୟଞ୍ଜନବର୍ଣ, ଯୁକ୍ତାକ୍ଷର, ସଂଖ୍ୟା, କ୍ୟାଲେଣ୍ଡର, ପର୍ବପର୍ବାଣୀ ଓ ଛୁଟିଦିନ ସବୁକିଛି ଗୋଟିଏ ଆପ୍‌ରେ ।</p>
+        <p>ସନ୍ଦୀପ୍ ବିଶ୍ବାଳ ଜି</p>
+    </footer>
+
+    <script>
+        const drawer = document.getElementById('navDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+
+        function toggleMenu() {
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        // Close menu on swipe
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchStartX - touchEndX > 50 && drawer.classList.contains('open')) {
+                toggleMenu();
+            }
+        }
+    </script>
+</body>
+</html>
