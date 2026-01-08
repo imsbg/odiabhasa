@@ -167,6 +167,7 @@
             padding: 32px 24px;
             background-color: var(--primary-container);
             border-top-right-radius: 24px;
+            position: relative; /* Needed for close button positioning */
         }
 
         .drawer-logo {
@@ -180,6 +181,28 @@
         .drawer-title {
             font-size: 24px;
             font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        /* NEW Close Button Style */
+        .close-drawer-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(255,255,255,0.6);
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+            padding: 6px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .close-drawer-btn:active {
+            background-color: var(--secondary-yellow);
             color: var(--primary-blue);
         }
 
@@ -365,6 +388,10 @@
     <!-- Navigation Drawer -->
     <nav class="nav-drawer" id="navDrawer">
         <div class="drawer-header">
+            <!-- New Close Button -->
+            <button class="close-drawer-btn" onclick="toggleMenu()" aria-label="Close Menu">
+                <span class="material-symbols-rounded">close</span>
+            </button>
             <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo" class="drawer-logo">
             <div class="drawer-title">ଓଡ଼ିଆ ଭାଷା</div>
         </div>
@@ -509,6 +536,9 @@
     </footer>
 
     <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
         const drawer = document.getElementById('navDrawer');
         const overlay = document.getElementById('drawerOverlay');
 
@@ -534,6 +564,18 @@
             if (touchStartX - touchEndX > 50 && drawer.classList.contains('open')) {
                 toggleMenu();
             }
+        }
+
+        // --- SERVICE WORKER REGISTRATION (Offline Cache) ---
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registered with scope:', registration.scope);
+                    }, err => {
+                        console.log('ServiceWorker registration failed:', err);
+                    });
+            });
         }
     </script>
 </body>
