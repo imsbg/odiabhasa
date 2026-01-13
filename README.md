@@ -93,6 +93,8 @@ You can download the app from the following stores:
 
 ---
 
+<a href="https://www.producthunt.com/products/odia-bhasa-read-write?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-odia-bhasa" target="_blank" rel="noopener noreferrer"><img alt="Odia Bhasa - Learn to read and write Odia in one simple app | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1062123&amp;theme=light&amp;t=1768303843245"></a>
+
 <div align="center">
   <p>Made with ❤️ in Odisha</p>
   <p>&copy; 2025-26 Sandeep Biswal G Apps. All Rights Reserved.</p>
