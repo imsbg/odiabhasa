@@ -1,13 +1,7 @@
 {
-  "version": 12,
+  "version": 13,
   "banners": [
-      {
-      "image": "https://imsbg.github.io/odiabhasa/images/banner/mkrsnk2026.jpg",
-      "text": "",
-      "paragraph": "ପବିତ୍ର ମକର ସଂକ୍ରାନ୍ତି ଉପଲକ୍ଷେ ସମସ୍ତଙ୍କୁ ଅନେକ ଅନେକ ଶୁଭେଚ୍ଛା ଓ ଶୁଭକାମନା",
-      "link": "",
-      "promo": "yes"
-    },
+     
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
       "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ",
