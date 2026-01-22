@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    
+    <!-- SEO & Meta Data -->
+    <title>Odia Bhasa - Read & Write</title>
+    <meta
+      name="description"
+      content="Learn Odia offline! Master all alphabets with clear pronunciation for free. Download the Odia Bhasa App now and start your journey."
+    />
+    <meta name="keywords" content="Odia Bhasa, Learn Odia, Odia Alphabet, Odia Bhasa App, Learn Odia Offline, Digital Slate, Odia Handwriting, Odia E-Learning, Madhu Barnabodha, Odia Calendar" />
+    <meta name="author" content="Sandeep Biswal G" />
+    
+    
+    <link rel="canonical" href="https://imsbg.github.io/odiabhasa/" />
+    <link rel="icon" href="https://imsbg.github.io/odiabhasa/images/app.png" type="image/png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Odia Bhasa - Read & Write" />
+    <meta property="og:description" content="Experience the future of Odia learning. Digital slate, audio pronunciations, and a vast library of stories." />
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/" />
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/banner.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Noto+Sans+Oriya:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+      :root {
+        --glass-bg: rgba(255, 255, 255, 0.65);
+        --glass-border: rgba(255, 255, 255, 0.5);
+        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        --accent-primary: #2575fc;
+        --accent-secondary: #6a11cb;
+        --text-dark: #1a1a1a;
+        --text-light: #555;
+        --font-main: "Google Sans", sans-serif;
+        --font-odia: "Noto Sans Oriya", sans-serif;
+      }
+
+      /* --- ANIMATED LIQUID BACKGROUND --- */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: var(--font-main);
+        background: #f0f2f5;
+        color: var(--text-dark);
+        overflow-x: hidden;
+        position: relative;
+        min-height: 100vh;
+      }
+
+      .bg-blob {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(80px);
+        z-index: -1;
+        opacity: 0.7;
+        animation: float 10s infinite alternate;
+      }
+      .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #a8edea; animation-duration: 15s; }
+      .blob-2 { bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: #fed6e3; animation-duration: 20s; }
+      .blob-3 { top: 40%; left: 40%; width: 40vw; height: 40vw; background: #e2d1c3; transform: translate(-50%, -50%); animation: pulse 12s infinite; }
+
+      @keyframes float {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        100% { transform: translate(30px, 50px) rotate(10deg); }
+      }
+      @keyframes pulse {
+        0% { transform: translate(-50%, -50%) scale(1); }
+        50% { transform: translate(-50%, -50%) scale(1.1); }
+        100% { transform: translate(-50%, -50%) scale(1); }
+      }
+
+      /* --- UTILITIES --- */
+      .glass-panel {
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid var(--glass-border);
+        box-shadow: var(--glass-shadow);
+        border-radius: 24px;
+      }
+
+      .btn-glass {
+        background: rgba(255,255,255, 0.4);
+        border: 1px solid rgba(255,255,255, 0.6);
+        padding: 12px 30px;
+        border-radius: 50px;
+        color: var(--text-dark);
+        font-weight: 600;
+        text-decoration: none;
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .btn-glass:hover {
+        background: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+
+      /* --- NAVIGATION --- */
+      nav {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 850px; /* Reduced width */
+        padding: 12px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+      }
+      
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #000;
+        text-decoration: none;
+      }
+      .logo img {
+        width: 32px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+
+      .nav-links {
+        display: none;
+        gap: 25px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+      }
+      .nav-links a:hover { color: var(--accent-primary); }
+
+      /* Mobile Menu Animation */
+      .menu-btn { display: block; font-size: 1.3rem; cursor: pointer; color: #000; }
+      .mobile-menu {
+        
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px; 
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        pointer-events: none;
+      }
+      .mobile-menu.active {
+        max-height: 300px;
+        opacity: 1;
+        padding: 20px;
+        pointer-events: auto;
+      }
+      .mobile-menu a {
+        padding: 12px 0;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+
+      @media(min-width: 768px) {
+        .nav-links { display: flex; align-items: center; }
+        .menu-btn { display: none; }
+        .mobile-menu { display: none; }
+      }
+
+      /* --- HERO SECTION --- */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 140px 20px 60px;
+        perspective: 1000px;
+      }
+      .hero-content { max-width: 800px; margin: 0 auto; }
+      
+      .main-title {
+        font-size: clamp(1rem, 3vw, 2.5rem);
+        line-height: 1.1;
+        font-weight: 800;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .hero-icon-3d {
+        width: 120px; height: 120px;
+        margin: 0 auto 30px;
+        border-radius: 30px;
+        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+        animation: floatIcon 6s ease-in-out infinite;
+      }
+      .hero-icon-3d img { width: 100%; height: 100%; border-radius: 30px; object-fit: cover; }
+      @keyframes floatIcon {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-15px); }
+      }
+
+      /* Eye-Catchy Play Store Card */
+      .play-store-card {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 30px;
+        background: rgba(255, 255, 255, 0.85);
+        border: 2px solid rgba(255,255,255,1);
+        border-radius: 20px;
+        text-decoration: none;
+        transition: transform 0.3s;
+        margin-bottom: 30px;
+        animation: pulseBorder 3s infinite;
+      }
+      .play-store-card:hover { transform: scale(1.05); background: #fff; }
+      
+      /* --- UPDATED: INCREASED SIZE HERE --- */
+      .play-store-card img { width: 80px; height: 60px; }
+      
+      .play-store-text { text-align: left; line-height: 1.2; color: #333; }
+      .play-store-text small { display: block; font-size: 0.75rem; text-transform: uppercase; font-weight: 600; opacity: 0.7; }
+      .play-store-text span { display: block; font-size: 1.1rem; font-weight: 800; }
+      
+      @keyframes pulseBorder {
+        0% { box-shadow: 0 0 0 0 rgba(37, 117, 252, 0.4); }
+        70% { box-shadow: 0 0 0 15px rgba(37, 117, 252, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(37, 117, 252, 0); }
+      }
+
+      /* --- SECTIONS --- */
+      .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+      .section-header { text-align: center; margin-bottom: 50px; }
+      .section-header h2 { font-size: 2.2rem; margin-bottom: 10px; }
+      
+      .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+      .feature-card { padding: 35px; transition: 0.3s; }
+      .feature-card:hover { transform: translateY(-8px); }
+      
+      /* --- SLATE --- */
+      .slate-wrapper { text-align: center; }
+      .letter-select { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 30px; }
+      .letter-tag {
+        width: 45px; height: 45px;
+        display: flex; align-items: center; justify-content: center;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.6);
+        border: 1px solid #fff;
+        font-family: var(--font-odia);
+        font-weight: bold; cursor: pointer; transition: 0.2s;
+      }
+      .letter-tag:hover { background: var(--accent-primary); color: white; transform: scale(1.1); }
+
+      /* --- PRAYERS LIST --- */
+      .prayer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 15px;
+        margin-top: 30px;
+      }
+      .prayer-card {
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        text-decoration: none;
+        color: var(--text-dark);
+        transition: 0.3s;
+      }
+      .prayer-card:hover { background: #fff; transform: translateX(5px); }
+      .prayer-icon { 
+        width: 40px; height: 40px; 
+        background: rgba(106, 17, 203, 0.1); 
+        color: var(--accent-secondary);
+        border-radius: 10px;
+        display: flex; align-items: center; justify-content: center;
+      }
+
+      /* --- FOOTER BTS CARD --- */
+      .bts-card-wrapper { max-width: 800px; margin: 0 auto 60px auto; }
+      .bts-card {
+        position: relative; overflow: hidden;
+        background: linear-gradient(45deg, #000, #222);
+        color: white; padding: 50px 30px; border-radius: 30px;
+        text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+      }
+      .bts-card h3 {
+        font-size: 2rem; margin-bottom: 10px;
+        background: linear-gradient(to right, #fff, #aaa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* --- MODAL & SLIDER (Existing Logic) --- */
+      .slate-modal {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.7); backdrop-filter: blur(10px);
+        z-index: 2000; display: none; align-items: center; justify-content: center;
+        opacity: 0; transition: opacity 0.3s;
+      }
+      .slate-modal.active { display: flex; opacity: 1; }
+      .slate-content { background: #fff; padding: 20px; border-radius: 30px; width: 90%; max-width: 500px; text-align: center; }
+      canvas { border: 2px dashed #ddd; border-radius: 20px; cursor: crosshair; background: #ffffff; width: 100%; touch-action: none; }
+      
+      .mockup-container { position: relative; overflow: hidden; padding: 20px 0; }
+      .slider-track { display: flex; gap: 20px; padding-left: 20px; overflow-x: auto; scroll-behavior: smooth; -webkit-overflow-scrolling: touch; }
+      .slider-track::-webkit-scrollbar { display: none; }
+      .slide-img { width: 220px; border-radius: 20px; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); flex-shrink: 0; }
+
+      .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+      .reveal.active { opacity: 1; transform: translateY(0); }
+
+    </style>
+  </head>
+  <body>
+
+    <!-- Background Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-panel">
+      <a href="https://imsbg.github.io/odiabhasa/" class="logo">
+        <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Logo">
+        <span>Odia Bhasa</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://imsbg.github.io/odiabhasa/">Home</a>
+        <a href="#features">Features</a>
+        <a href="#slate">Digital Slate</a>
+        <a href="#prayers">Prayers</a>
+        <a href="#gallery">Gallery</a>
+      </div>
+      <div class="menu-btn"><i class="fas fa-bars"></i></div>
+      
+      <!-- Mobile Menu (Animated) -->
+      <div class="mobile-menu glass-panel">
+        <a href="https://imsbg.github.io/odiabhasa/">Home</a>
+        <a href="#features">Features</a>
+        <a href="#slate">Digital Slate</a>
+        <a href="#prayers">Prayers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="https://imsbg.github.io/odiabhasa/privacy-policy">Privacy Policy</a>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content reveal">
+        <div class="hero-icon-3d">
+          <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="App Icon">
+        </div>
+        
+        <h1 class="main-title">Odia Bhasa - Read & Write</h1>
+        
+        <!-- Eye-Catchy Play Store Card -->
+        <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank" class="play-store-card glass-panel">
+          
+          <div class="play-store-text">
+            <small>Download from</small>
+            <span>Google Play</span>
+          </div>
+        </a>
+
+        <br>
+        <a href="https://imsbg.github.io/odiabhasa/read" class="btn-glass" style="font-size: 0.9rem;">
+          <i class="fas fa-book-reader"></i> Read free books online
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+      <div class="section-header reveal">
+        <h2>Why Odia Bhasa?</h2>
+        <p style="color: var(--text-light);">Everything you need to master the language.</p>
+      </div>
+      
+      <div class="grid-3">
+        <div class="feature-card glass-panel reveal">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">✍️</div>
+          <h3 style="font-family: var(--font-odia);">Handwriting</h3>
+          <p>Practice writing letters on our digital slate with stylus or finger support.</p>
+        </div>
+        <div class="feature-card glass-panel reveal" style="transition-delay: 0.1s;">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">📚</div>
+          <h3 style="font-family: var(--font-odia);">Barnabodha</h3>
+          <p>Complete Madhu Barnabodha book digitised with audio pronunciations.</p>
+        </div>
+        <div class="feature-card glass-panel reveal" style="transition-delay: 0.2s;">
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">📅</div>
+          <h3 style="font-family: var(--font-odia);">Calendar 2026</h3>
+          <p>Built-in Odia Panji with all festivals, holidays, and seasons (Rutu).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Digital Slate -->
+    <section class="section" id="slate">
+      <div class="glass-panel reveal" style="padding: 40px; text-align: center;">
+        <h2>Digital Slate (ଡିଜିଟାଲ୍ ସିଲଟ)</h2>
+        <p style="margin: 10px auto; color: var(--text-light);">Select a letter to start practicing.</p>
+        
+        <div class="letter-select" id="letter-grid">
+          <!-- JS will populate this -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PRAYERS SECTION (FULL LIST) -->
+    <section class="section" id="prayers">
+      <div class="section-header reveal">
+        <h2>School Prayers & Anthems</h2>
+        <p>Listen and read daily prayers.</p>
+      </div>
+
+      <div class="prayer-grid reveal">
+        <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-card glass-panel">
+          <div class="prayer-icon"><i class="fas fa-om"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">ଆହେ ଦୟାମୟ ବିଶ୍ୱ ବିହାରୀ</span>
+        </a>
+        <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-card glass-panel">
+          <div class="prayer-icon"><i class="fas fa-om"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">ଭବ ସାଗର ତାରଣ କାରଣ ହେ</span>
+        </a>
+        <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-card glass-panel">
+          <div class="prayer-icon"><i class="fas fa-hands-praying"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">ଶ୍ରୀ ଗୁରୁ ବନ୍ଦନା</span>
+        </a>
+        <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-card glass-panel">
+          <div class="prayer-icon"><i class="fas fa-sun"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">ହେ ଆନନ୍ଦମୟ କୋଟି</span>
+        </a>
+        <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-card glass-panel">
+          <div class="prayer-icon"><i class="fas fa-heart"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">କରୁଣା ସାଗର ପ୍ରଭୁ ହେ</span>
+        </a>
+        <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-card glass-panel">
+          <div class="prayer-icon"><i class="fas fa-globe"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">ତୁମେଟି ଜଗତ କରତା</span>
+        </a>
+        <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-card glass-panel">
+          <div class="prayer-icon"><i class="fas fa-cloud-sun"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">କି ସୁନ୍ଦର ଆହା କି ଆନନ୍ଦମୟ</span>
+        </a>
+        <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-card glass-panel">
+          <div class="prayer-icon" style="background: rgba(255, 153, 51, 0.1); color: #FF9933;"><i class="fas fa-flag"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">ଜାତୀୟ ସଙ୍ଗୀତ (National Anthem)</span>
+        </a>
+        <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-card glass-panel">
+          <div class="prayer-icon" style="background: rgba(106, 17, 203, 0.1); color: var(--accent-secondary);"><i class="fas fa-map-marker-alt"></i></div>
+          <span style="font-family: var(--font-odia); font-weight: 600;">ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ (State Anthem)</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- App Gallery Slider -->
+    <section class="section" id="gallery">
+      <div class="section-header reveal">
+        <h2>App Interface</h2>
+      </div>
+      <div class="mockup-container reveal">
+        <div class="slider-track">
+           <img src="https://imsbg.github.io/odiabhasa/images/ss/1.png" class="slide-img">
+           <img src="https://imsbg.github.io/odiabhasa/images/ss/2.png" class="slide-img">
+           <img src="https://imsbg.github.io/odiabhasa/images/ss/3.png" class="slide-img">
+           <img src="https://imsbg.github.io/odiabhasa/images/ss/4.png" class="slide-img">
+           <img src="https://imsbg.github.io/odiabhasa/images/ss/5.png" class="slide-img">
+           <img src="https://imsbg.github.io/odiabhasa/images/ss/6.png" class="slide-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer & BTS -->
+    <footer class="glass-panel" style="margin-top: 80px; padding: 60px 20px; text-align: center; border-radius: 40px 40px 0 0; border-bottom: none;">
+      
+      <!-- BTS CARD -->
+      <div class="bts-card-wrapper reveal">
+        <div class="bts-card">
+           <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+           <h3>Behind The Scenes</h3>
+           <p>Explore the journey, the making, and the unreleased photos of the Odia Bhasa App development.</p>
+           <a href="https://imsbg.github.io/Odia-Bhasa-App-Photos/" target="_blank" class="btn-glass" style="background: rgba(255,255,255,0.9); color: #000; border: none;">
+             <i class="fas fa-camera"></i> Explore Gallery
+           </a>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:30px;">
+        <a href="https://imsbg.github.io/odiabhasa/privacy-policy" style="text-decoration:none; color:#555;">Privacy Policy</a>
+        <a href="https://imsbg.github.io/odiabhasa/terms" style="text-decoration:none; color:#555;">Terms</a>
+        <a href="https://imsbg.github.io/odiabhasa/dmca" style="text-decoration:none; color:#555;">DMCA</a>
+        <a href="mailto:message.sbg@gmail.com" style="text-decoration:none; color:#555;">Support</a>
+      </div>
+      
+      <p style="font-size: 0.9rem; color: #666;">&copy; 2026 Odia Bhasa | Created by Sandeep Biswal G</p>
+    </footer>
+
+    <!-- 1. Slate Modal -->
+    <div class="slate-modal" id="slate-modal">
+        <div class="slate-content">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                <h3>Practice: <span id="current-letter"></span></h3>
+                <button onclick="closeModal()" style="background:none; border:none; font-size: 1.5rem; cursor:pointer;">&times;</button>
+            </div>
+            <canvas id="drawing-canvas"></canvas>
+            <div style="margin-top: 15px; display: flex; gap: 10px; justify-content: center;">
+                <button class="btn-glass" style="background: #eee;" id="clear-btn">Clear</button>
+                <div style="display:flex; gap:5px; align-items: center;">
+                    <div style="width:20px; height:20px; background:black; border-radius:50%; cursor:pointer;" onclick="setColor('#000')"></div>
+                    <div style="width:20px; height:20px; background:red; border-radius:50%; cursor:pointer;" onclick="setColor('#e74c3c')"></div>
+                    <div style="width:20px; height:20px; background:blue; border-radius:50%; cursor:pointer;" onclick="setColor('#2575fc')"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Lightbox -->
+    <div style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:3000; display:none; align-items:center; justify-content:center;" id="lightbox">
+        <span style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;" class="lb-close">&times;</span>
+        <img src="" id="lb-img" style="max-height:90vh; max-width:90vw; border-radius:10px;">
+    </div>
+
+    <script>
+      /* --- OBSERVER --- */
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('active');
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      /* --- MOBILE MENU --- */
+      const menuBtn = document.querySelector('.menu-btn');
+      const mobileMenu = document.querySelector('.mobile-menu');
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        // Toggle Icon
+        const icon = menuBtn.querySelector('i');
+        if(mobileMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+      });
+      // Close menu on link click
+      document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+            menuBtn.querySelector('i').classList.add('fa-bars');
+        });
+      });
+
+      /* --- SLATE LOGIC --- */
+      const letters = ["ଅ", "ଆ", "ଇ", "ଈ", "ଉ", "ଊ", "ଋ", "ଏ", "ଐ", "ଓ", "ଔ", "କ", "ଖ", "ଗ", "ଘ"];
+      const grid = document.getElementById('letter-grid');
+      const modal = document.getElementById('slate-modal');
+      const canvas = document.getElementById('drawing-canvas');
+      const ctx = canvas.getContext('2d');
+      let isDrawing = false;
+      let strokeColor = '#000';
+      let currentTraceLetter = '';
+
+      letters.forEach(l => {
+        const btn = document.createElement('div');
+        btn.className = 'letter-tag glass-panel';
+        btn.innerText = l;
+        btn.onclick = () => openSlate(l);
+        grid.appendChild(btn);
+      });
+
+      function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.width * 0.7;
+        canvas.style.height = (rect.width * 0.7) + 'px';
+        drawTrace();
+      }
+
+      function drawTrace() {
+        ctx.clearRect(0,0, canvas.width, canvas.height);
+        ctx.fillStyle = "#f0f0f0";
+        ctx.font = `bold ${canvas.height * 0.7}px "Noto Sans Oriya"`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(currentTraceLetter, canvas.width/2, canvas.height/2);
+      }
+
+      function openSlate(letter) {
+        currentTraceLetter = letter;
+        document.getElementById('current-letter').innerText = letter;
+        modal.classList.add('active');
+        setTimeout(resizeCanvas, 50);
+      }
+
+      function closeModal() { modal.classList.remove('active'); }
+      function setColor(c) { strokeColor = c; }
+      document.getElementById('clear-btn').onclick = drawTrace;
+
+      const getPos = (e) => {
+        const r = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return { x: clientX - r.left, y: clientY - r.top };
+      }
+
+      const startDraw = (e) => {
+        if(e.target !== canvas) return;
+        isDrawing = true;
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+      };
+      
+      const moveDraw = (e) => {
+        if(!isDrawing) return;
+        e.preventDefault();
+        const pos = getPos(e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.strokeStyle = strokeColor;
+        ctx.lineWidth = 6;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+      };
+      
+      const endDraw = () => isDrawing = false;
+
+      canvas.addEventListener('mousedown', startDraw);
+      canvas.addEventListener('mousemove', moveDraw);
+      canvas.addEventListener('mouseup', endDraw);
+      canvas.addEventListener('touchstart', startDraw, {passive: false});
+      canvas.addEventListener('touchmove', moveDraw, {passive: false});
+      canvas.addEventListener('touchend', endDraw);
+
+      /* --- LIGHTBOX --- */
+      const lightbox = document.getElementById('lightbox');
+      document.querySelectorAll('.slide-img').forEach(img => {
+        img.addEventListener('click', () => {
+          document.getElementById('lb-img').src = img.src;
+          lightbox.style.display = 'flex';
+        });
+      });
+      document.querySelector('.lb-close').onclick = () => lightbox.style.display = 'none';
+      lightbox.onclick = (e) => { if(e.target === lightbox) lightbox.style.display = 'none'; }
+    </script>
+  </body>
+</html>
