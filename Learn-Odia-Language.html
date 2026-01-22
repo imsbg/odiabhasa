@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Data -->
+    <title>Learn Odia Language</title>
+    <meta name="description" content="The best way to Learn Odia Language for free. Master the Odia alphabet, practice handwriting, read Madhu Barnabodha, and listen to daily prayers." />
+    <meta name="keywords" content="Learn Odia Language, Speak Odia, Odia Alphabet, Odia Grammar, Odia Handwriting, Odia Bhasa App, Madhu Barnabodha, Odia Panji 2026, Odia Bhasa app, Learn Odia Language Offline, Learn Odia Offline, Learn Odia Bhasa" />
+    <meta name="author" content="Sandeep Biswal G" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Learn Odia Language" />
+    <meta property="og:description" content="Start your journey to Learn Odia Language today with digital slate and audio guides." />
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/banner.png" />
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/" />
+
+    <!-- Icons & Fonts -->
+    <link rel="icon" href="https://imsbg.github.io/odiabhasa/images/app.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Sans for UI, Noto Sans Oriya for Content -->
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans+Oriya:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        :root {
+            /* Material 3 Color Tokens (Blue/Teal Theme) */
+            --md-sys-color-primary: #006492;
+            --md-sys-color-on-primary: #ffffff;
+            --md-sys-color-primary-container: #cae6ff;
+            --md-sys-color-on-primary-container: #001e30;
+            
+            --md-sys-color-secondary: #50606e;
+            --md-sys-color-secondary-container: #d3e5f5;
+            --md-sys-color-on-secondary-container: #0c1d29;
+            
+            --md-sys-color-surface: #f8f9ff;
+            --md-sys-color-on-surface: #191c1e;
+            --md-sys-color-surface-container: #eceee8;
+            --md-sys-color-surface-container-high: #e2e2e2;
+            
+            --md-sys-color-outline: #72787e;
+
+            /* Typography */
+            --font-ui: 'Google Sans', sans-serif;
+            --font-odia: 'Noto Sans Oriya', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-ui);
+            background-color: var(--md-sys-color-surface);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.6;
+        }
+
+        /* --- COMPONENTS --- */
+        
+        /* App Bar */
+        .top-app-bar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 249, 255, 0.9);
+            backdrop-filter: blur(12px);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--md-sys-color-on-surface);
+        }
+
+        .brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+        }
+
+        .brand span {
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        /* Buttons (MD3 Filled & Tonal) */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 0 24px;
+            height: 48px;
+            border-radius: 24px; /* Pill shape */
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            box-shadow: 0 4px 8px rgba(0, 100, 146, 0.15);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 6px 12px rgba(0, 100, 146, 0.25);
+            transform: translateY(-1px);
+        }
+
+        .btn-tonal {
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+        }
+        .btn-tonal:hover {
+            background-color: #c0d8ed;
+        }
+
+        /* Cards (MD3 Elevated) */
+        .card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Section Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--md-sys-color-on-surface);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 80px 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            font-weight: 700;
+            max-width: 800px;
+            background: linear-gradient(135deg, var(--md-sys-color-primary), #004a6f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--md-sys-color-secondary);
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 16px;
+        }
+
+        /* Play Store Button Custom */
+        .play-store-btn {
+            background: #000;
+            color: #fff;
+            padding: 8px 24px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: opacity 0.2s;
+        }
+        .play-store-btn:hover { opacity: 0.85; }
+        .play-store-text { text-align: left; line-height: 1.2; }
+        .play-store-text span { font-size: 0.7rem; text-transform: uppercase; }
+        .play-store-text strong { font-size: 1.1rem; display: block; }
+
+        /* --- FEATURES GRID --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            background: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* --- PRAYERS SECTION --- */
+        .prayer-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        .prayer-item {
+            background: #fff;
+            padding: 16px 24px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--md-sys-color-on-surface);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: background 0.2s;
+        }
+        
+        .prayer-item:hover {
+            background: var(--md-sys-color-primary-container);
+        }
+
+        .prayer-text {
+            font-family: var(--font-odia);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--md-sys-color-surface-container-high);
+            padding: 40px 24px;
+            margin-top: 60px;
+            border-radius: 40px 40px 0 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--md-sys-color-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover { color: var(--md-sys-color-primary); }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-actions { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="top-app-bar">
+        <a href="#" class="brand">
+            <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo">
+            <span>Odia Bhasa</span>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span style="color: var(--md-sys-color-primary); font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">The Ultimate Odia Learning Platform</span>
+            <h1>Odia Bhasa</h1>
+            <p>Master reading, writing, and speaking Odia. From the digital slate to the classic Barnabodha, access everything you need offline.</p>
+            
+            <div class="hero-actions">
+                <!-- Play Store Button -->
+                <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank" class="play-store-btn">
+                    <img src="https://imsbg.github.io/odiabhasa/images/app.png" style="width: 30px; height: 30px; border-radius: 5px;" alt="icon">
+                    <div class="play-store-text">
+                        <span>Get it on</span>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+                
+                <!-- Web Read Button -->
+                <a href="https://imsbg.github.io/odiabhasa/read" class="btn btn-tonal">
+                    <span class="material-symbols-rounded">menu_book</span>
+                    Read Books Online
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" style="background: var(--md-sys-color-surface-container);">
+        <div class="container">
+            <h2>Core Features</h2>
+            <div class="grid-3">
+                
+                <!-- Feature 1 -->
+                <div class="card">
+                    <div class="feature-icon">
+                        <span class="material-symbols-rounded">draw</span>
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Alphabet and Diacritics</h3>
+                    <p style="color: var(--md-sys-color-secondary);">An easy way to learn Vowels, Consonants, Matras (Vowel signs), Phalas (Consonant signs), and Conjuncts. </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card">
+                    <div class="feature-icon">
+                        <span class="material-symbols-rounded">record_voice_over</span>
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Odia Books</h3>
+                    <p style="color: var(--md-sys-color-secondary);">Read new stories, poems, and more, listen to the audio, and learn something new.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card">
+                    <div class="feature-icon">
+                        <span class="material-symbols-rounded">calendar_month</span>
+                    </div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Odia Calendar 2026</h3>
+                    <p style="color: var(--md-sys-color-secondary);">Built-in Odia Panji including all festivals, holidays, and seasons (Rutu) to keep you connected to the culture.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayers Section -->
+    <section id="prayers">
+        <div class="container">
+            <h2>School Prayers & Anthems</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: var(--md-sys-color-secondary);">Daily recitations for students and learners.</p>
+            
+            <div class="prayer-list">
+                <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-item">
+                    <span class="prayer-text">ଆହେ ଦୟାମୟ ବିଶ୍ୱ ବିହାରୀ</span>
+                    <span class="material-symbols-rounded">play_circle</span>
+                </a>
+                
+                <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-item">
+                    <span class="prayer-text">ଭବ ସାଗର ତାରଣ କାରଣ ହେ</span>
+                    <span class="material-symbols-rounded">play_circle</span>
+                </a>
+                
+                <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-item">
+                    <span class="prayer-text">ଶ୍ରୀ ଗୁରୁ ବନ୍ଦନା</span>
+                    <span class="material-symbols-rounded">play_circle</span>
+                </a>
+
+                <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-item">
+                    <span class="prayer-text">ହେ ଆନନ୍ଦମୟ କୋଟି</span>
+                    <span class="material-symbols-rounded">play_circle</span>
+                </a>
+
+                <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-item">
+                    <span class="prayer-text">କରୁଣା ସାଗର ପ୍ରଭୁ ହେ</span>
+                    <span class="material-symbols-rounded">play_circle</span>
+                </a>
+
+                <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-item">
+                    <span class="prayer-text">ତୁମେଟି ଜଗତ କରତା</span>
+                    <span class="material-symbols-rounded">play_circle</span>
+                </a>
+
+                <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-item">
+                    <span class="prayer-text">କି ସୁନ୍ଦର ଆହା କି ଆନନ୍ଦମୟ</span>
+                    <span class="material-symbols-rounded">play_circle</span>
+                </a>
+
+                <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-item" style="border-left: 4px solid orange;">
+                    <span class="prayer-text">ଜାତୀୟ ସଙ୍ଗୀତ (National Anthem)</span>
+                    <span class="material-symbols-rounded">flag</span>
+                </a>
+
+                <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-item" style="border-left: 4px solid var(--md-sys-color-primary);">
+                    <span class="prayer-text">ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ (State Anthem)</span>
+                    <span class="material-symbols-rounded">map</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <img src="https://imsbg.github.io/odiabhasa/images/app.png" width="50" style="border-radius: 12px; margin-bottom: 15px;" alt="Logo">
+            <h3 style="margin-bottom: 5px;">Odia Bhasa</h3>
+            <p style="font-size: 0.9rem; color: var(--md-sys-color-secondary);">Developed by Sandeep Biswal G</p>
+            
+            <div class="footer-links">
+                <a href="https://imsbg.github.io/odiabhasa/">Home</a>
+                <a href="https://imsbg.github.io/odiabhasa/privacy-policy">Privacy Policy</a>
+                <a href="https://imsbg.github.io/odiabhasa/terms">Terms of Service</a>
+                <a href="https://imsbg.github.io/odiabhasa/dmca">DMCA</a>
+                <a href="mailto:message.sbg@gmail.com">Support</a>
+            </div>
+
+            <p style="font-size: 0.8rem; color: #999;">&copy; 2026 Odia Bhasa. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
