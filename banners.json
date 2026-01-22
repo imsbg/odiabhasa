@@ -1,7 +1,13 @@
 {
-  "version": 13,
+  "version": 14,
   "banners": [
-     
+    {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/sspuja2026.jpg",
+      "text": "",
+      "paragraph": "ସମସ୍ତ କୁନି କୁନି ସାଙ୍ଗମାନଙ୍କୁ ସରସ୍ଵତୀ ପୂଜାର ହାର୍ଦ୍ଦିକ ଅଭିନନ୍ଦନ",
+      "link": "",
+      "promo": "yes"
+    },
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
       "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ",
