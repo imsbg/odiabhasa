@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ଓଡ଼ିଆ ବହି ସଂଗ୍ରହ</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ରେ ଉପଲବ୍ଧ ଥିବା ସମସ୍ତ ଓଡ଼ିଆ ବହି ଏବଂ ସେଗୁଡ଼ିକର ଅଧ୍ୟାୟଗୁଡ଼ିକୁ ଅନୁସନ୍ଧାନ କରନ୍ତୁ ।">
+    <meta name="keywords" content="Odia Books, Odia Bhasa, Learn Odia, Odia Stories, ଓଡ଼ିଆ ବହି, ଓଡ଼ିଆ ଗପ, ଓଡ଼ିଆ ଭାଷା, ଆମ ଗୌରବ, ସାଧାରଣ ଜ୍ଞାନ">
+    <meta name="author" content="Sandeep Biswal G">
+    <meta name="theme-color" content="#E1F5FE">
+    <link rel="canonical" href="https://imsbg.github.io/odiabhasa/all-books">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Odia Bhasa All Books - ଓଡ଼ିଆ ଭାଷା ସମସ୍ତ ବହି">
+    <meta property="og:description" content="Explore the Odia Books and their chapters available on the Odia Bhasa app.">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/all-books">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Odia Bhasa All Books">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+    <style>
+        :root {
+            --primary-color: #0d8de9;
+            --primary-container: #e8f4fe;
+            --background-color: #f7f9fc;
+            --surface-color: #FFFFFF;
+            --on-surface-color: #1A1C1E;
+            --on-surface-variant: #455A64;
+            --elevation-1: 0 4px 15px rgba(0, 0, 0, 0.06);
+            --font-family: 'Noto Sans Oriya', sans-serif;
+            --border-radius-card: 20px;
+            --border-radius-modal: 24px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body { font-family: var(--font-family); background-color: var(--background-color); color: var(--on-surface-color); line-height: 1.6; }
+        body.modal-open { overflow: hidden; }
+        a { text-decoration: none; color: inherit; }
+
+        /* --- Header --- */
+        .top-app-bar { background-color: var(--primary-container); height: 70px; display: flex; align-items: center; padding: 0 16px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .menu-btn { background: transparent; border: none; cursor: pointer; color: #333; padding: 8px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 16px; }
+        .app-title-container { display: flex; align-items: center; gap: 12px; flex-grow: 1; }
+        .app-logo-small { width: 40px; height: 40px; border-radius: 12px; }
+        .app-title { font-size: 20px; font-weight: 700; color: var(--primary-color); }
+
+        /* --- Drawer (Menu) --- */
+        .drawer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 200; opacity: 0; visibility: hidden; transition: opacity 0.3s ease; backdrop-filter: blur(2px); }
+        .drawer-overlay.open { opacity: 1; visibility: visible; }
+        .nav-drawer { position: fixed; top: 0; left: 0; width: 280px; height: 100%; background-color: var(--surface-color); z-index: 201; transform: translateX(-100%); transition: transform 0.3s cubic-bezier(0.2, 0.0, 0, 1.0); display: flex; flex-direction: column; box-shadow: 4px 0 24px rgba(0,0,0,0.1); }
+        .nav-drawer.open { transform: translateX(0); }
+        .drawer-header { padding: 32px 24px; background-color: var(--primary-container); position: relative; }
+        .close-drawer-btn { position: absolute; top: 16px; right: 16px; background: transparent; border: none; cursor: pointer; color: var(--on-surface-variant); padding: 6px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .drawer-logo { width: 72px; height: 72px; margin-bottom: 16px; border-radius: 16px; }
+        .drawer-title { font-size: 24px; font-weight: 700; color: var(--primary-color); }
+        .nav-links { padding: 24px 12px; display: flex; flex-direction: column; gap: 8px; }
+        .nav-item { display: flex; align-items: center; height: 56px; padding: 0 16px 0 24px; border-radius: 28px; font-size: 16px; font-weight: 600; transition: background 0.2s; }
+        .nav-item span { margin-right: 16px; color: var(--primary-color); }
+        .nav-item:hover { background-color: var(--primary-container); }
+
+        /* --- Main Content & Book Grid --- */
+        main { padding: 32px 16px; max-width: 1200px; margin: 0 auto; width: 100%; }
+        .page-header { margin-bottom: 32px; text-align: center; }
+        .page-header h1 { font-size: 32px; font-weight: 700; color: var(--primary-color); }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 24px; }
+        .book-card { background-color: var(--surface-color); border-radius: var(--border-radius-card); box-shadow: var(--elevation-1); transition: all 0.25s ease; cursor: pointer; overflow: hidden; display: flex; flex-direction: column; }
+        .book-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); }
+        .book-cover { width: 100%; height: auto; aspect-ratio: 2 / 2.8; object-fit: cover; background-color: #f0f0f0; }
+        .book-info { padding: 12px; text-align: center; border-top: 1px solid #f0f0f0; }
+        .book-title { font-weight: 600; font-size: 16px; line-height: 1.4; color: #333; }
+        .loader { border: 5px solid #f3f3f3; border-top: 5px solid var(--primary-color); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 80px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        /* --- Book Detail Fullscreen View --- */
+        .book-detail-view {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100dvh;
+            background-color: var(--background-color); z-index: 300;
+            transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.2, 0.0, 0, 1.0);
+            display: flex; flex-direction: column;
+            opacity: 0; visibility: hidden;
+        }
+        .book-detail-view.open { transform: translateX(0); opacity: 1; visibility: visible; }
+        .detail-top-bar {
+            display: flex; align-items: center; padding: 0 16px;
+            height: 70px; flex-shrink: 0; border-bottom: 1px solid #e0e0e0;
+            background-color: var(--surface-color);
+        }
+        .back-btn {
+            background: transparent; border: none; cursor: pointer;
+            padding: 8px; margin-right: 16px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .detail-book-title {
+            font-size: 20px; font-weight: 700; color: var(--on-surface-color);
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .detail-content-wrapper { display: flex; flex-grow: 1; overflow: hidden; }
+        .detail-left-pane {
+            flex: 1 1 340px; max-width: 340px; padding: 32px 24px;
+            border-right: 1px solid #e0e0e0; background-color: var(--surface-color);
+            height: 100%; overflow-y: auto; display: flex; flex-direction: column;
+        }
+        .detail-left-pane img {
+            width: 100%; border-radius: var(--border-radius-card);
+            box-shadow: var(--elevation-1); cursor: pointer; transition: transform 0.2s ease;
+        }
+        .detail-left-pane img:hover { transform: scale(1.03); }
+        .detail-book-meta { margin-top: 24px; font-size: 15px; color: var(--on-surface-variant); }
+        .detail-book-meta p { margin-bottom: 8px; line-height: 1.5; }
+        .detail-book-meta strong { font-weight: 600; color: var(--on-surface-color); }
+        .detail-right-pane {
+            flex: 2 1 600px; padding: 32px; overflow-y: auto; height: 100%;
+        }
+        .detail-right-pane h3 { font-size: 22px; font-weight: 700; margin-bottom: 16px; color: var(--primary-color); }
+        .detail-chapter-list { list-style: none; padding-left: 0; }
+        .detail-chapter-list li {
+            padding: 10px 0; border-bottom: 1px solid #f0f0f0; display: flex;
+            align-items: center; font-size: 16px;
+        }
+        .detail-chapter-list li .material-symbols-rounded { color: var(--primary-color); font-size: 22px; margin-right: 16px; }
+        
+        /* --- Footer Buttons Styling --- */
+        .detail-left-pane .detail-footer { margin-top: auto; padding-top: 24px; }
+        .detail-right-pane .detail-footer { margin-top: 24px; }
+        .view-book-btn {
+            display: block; width: 100%; padding: 14px; background-color: var(--primary-color);
+            color: white; text-align: center; font-size: 18px; font-weight: 700;
+            border-radius: 28px; transition: background-color 0.2s;
+        }
+        .view-book-btn:hover { opacity: 0.9; }
+
+        @media (max-width: 800px) {
+            .detail-content-wrapper { flex-direction: column; overflow-y: auto; }
+            .detail-left-pane {
+                max-width: none; width: 100%; border-right: none;
+                border-bottom: 1px solid #e0e0e0; padding: 24px 16px; height: auto;
+            }
+            .detail-left-pane img { max-width: 200px; display: block; margin: 0 auto; }
+            .detail-right-pane { height: auto; overflow-y: visible; padding: 24px 16px; }
+            .detail-left-pane .detail-footer, .detail-right-pane .detail-footer {
+                margin-top: 24px; padding-top: 0;
+            }
+        }
+        
+        /* --- Fullscreen Image Viewer --- */
+        .image-viewer-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); display: flex; align-items: center; justify-content: center; z-index: 400; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.3s ease; }
+        .image-viewer-overlay.open { opacity: 1; visibility: visible; }
+        .image-viewer-overlay img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: var(--border-radius-card); box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+    <!-- Drawer and Overlay -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="toggleMenu()"></div>
+    <nav class="nav-drawer" id="navDrawer">
+        <div class="drawer-header">
+            <button class="close-drawer-btn" onclick="toggleMenu()" aria-label="Close Menu"><span class="material-symbols-rounded">close</span></button>
+            <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo" class="drawer-logo">
+            <div class="drawer-title">ଓଡ଼ିଆ ଭାଷା</div>
+        </div>
+        <div class="nav-links">
+            <a href="https://imsbg.github.io/odiabhasa/" class="nav-item"><span class="material-symbols-rounded">home</span> ମୂଳ ପୃଷ୍ଠା</a>
+            <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="nav-item"><span class="material-symbols-rounded">star</span> ମୂଲ୍ୟାୟନ କରନ୍ତୁ</a>
+            <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="nav-item"><span class="material-symbols-rounded">security</span> ଗୋପନୀୟତା ନୀତି</a>
+            <a href="https://imsbg.github.io/odiabhasa/terms" class="nav-item"><span class="material-symbols-rounded">gavel</span> ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ</a>
+        </div>
+    </nav>
+
+    <header class="top-app-bar">
+        <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu"><span class="material-symbols-rounded" style="font-size: 28px;">menu</span></button>
+        <div class="app-title-container">
+            <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Logo" class="app-logo-small">
+            <h1 class="app-title">ସମସ୍ତ ବହି</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header"><h1>ଓଡ଼ିଆ ବହି ସଂଗ୍ରହ</h1></div>
+        <div id="book-grid" class="grid-container"></div>
+    </main>
+
+    <!-- Fullscreen Detail View Container -->
+    <div id="book-detail-screen" class="book-detail-view">
+        <!-- Content will be injected by JavaScript -->
+    </div>
+
+    <div id="image-viewer" class="image-viewer-overlay" onclick="closeImageViewer()">
+        <img id="fullscreen-image" src="" alt="ବହିର କଭର୍ ପେଜ୍">
+    </div>
+
+    <script>
+        const MASTER_LIST_URL = 'https://sbgb.pages.dev/ବହି/ସବୁ.json';
+        const DEEP_LINK_BASE = 'https://odiabhasa.pages.dev/open?Bahi=';
+
+        // DOM Elements
+        const bookGrid = document.getElementById('book-grid');
+        const bookDetailScreen = document.getElementById('book-detail-screen');
+        const imageViewer = document.getElementById('image-viewer');
+        const fullscreenImage = document.getElementById('fullscreen-image');
+        const drawer = document.getElementById('navDrawer');
+        const overlay = document.getElementById('drawerOverlay');
+
+        function getFilenameFromUrl(url) {
+            const filenameWithExt = url.substring(url.lastIndexOf('/') + 1);
+            return filenameWithExt.replace('.json', '');
+        }
+
+        async function renderBookGrid() {
+            bookGrid.innerHTML = '<div class="loader"></div>';
+            try {
+                const masterResponse = await fetch(MASTER_LIST_URL);
+                if (!masterResponse.ok) throw new Error('Master list fetch failed');
+                const bookList = await masterResponse.json();
+
+                const bookDetailPromises = bookList.map(book =>
+                    fetch(book.destination)
+                    .then(res => res.ok ? res.json() : null)
+                    .then(data => {
+                        if (data) data.sourceJsonUrl = book.destination;
+                        return data;
+                    })
+                );
+                
+                const booksWithDetails = (await Promise.all(bookDetailPromises)).filter(Boolean);
+                bookGrid.innerHTML = ''; 
+
+                booksWithDetails.forEach(bookData => {
+                    const card = document.createElement('div');
+                    card.className = 'book-card';
+                    card.innerHTML = `
+                        <img src="${bookData.coverpage}" alt="${bookData.title}" class="book-cover" loading="lazy">
+                        <div class="book-info">
+                            <span class="book-title">${bookData.title}</span>
+                        </div>
+                    `;
+                    card.addEventListener('click', () => openBookDetailView(bookData));
+                    bookGrid.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Failed to load book list:', error);
+                bookGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center;">ବହି ତାଲିକା ଲୋଡ୍ କରିବାରେ ତ୍ରୁଟି ।</p>`;
+            }
+        }
+        
+        function openBookDetailView(bookData) {
+            document.body.classList.add('modal-open');
+            bookDetailScreen.classList.add('open');
+            populateDetailView(bookData);
+        }
+        
+        function populateDetailView(data) {
+            const filename = getFilenameFromUrl(data.sourceJsonUrl);
+            const deepLink = `${DEEP_LINK_BASE}${filename}`;
+
+            let chapters = [];
+            const tocPage = data.pages.find(page => 
+                page.content.some(item => item.type === 'header' && item.text === 'ବିଷୟସୂଚୀ')
+            );
+            
+            if (tocPage) {
+                chapters = tocPage.content
+                    .filter(item => item.type === 'paragraph')
+                    .map(item => item.spans.map(span => span.text).join(''))
+                    .filter(text => text.trim() !== '');
+            } else {
+                chapters = data.pages
+                    .flatMap(page => page.content.filter(item => item.type === 'header'))
+                    .map(header => header.text)
+                    .filter(text => text !== data.title);
+            }
+
+            bookDetailScreen.innerHTML = `
+                <div class="detail-top-bar">
+                    <button class="back-btn" onclick="closeBookDetailView()" aria-label="Close Details">
+                        <span class="material-symbols-rounded" style="font-size: 28px;">arrow_back</span>
+                    </button>
+                    <h2 class="detail-book-title">${data.title}</h2>
+                </div>
+                <div class="detail-content-wrapper">
+                    <aside class="detail-left-pane">
+                        <div>
+                            <img src="${data.coverpage}" alt="${data.title}" onclick="openImageViewer('${data.coverpage}')">
+                            <div class="detail-book-meta">
+                                <p><strong>ଲେଖକ:</strong> ${data.author || 'ଜଣା ନାହିଁ'}</p>
+                                <p><strong>ମୋଟ ପୃଷ୍ଠା:</strong> ${data.pages.length}</p>
+                                ${data.source && data.source.trim() ? `<p><strong>ଉତ୍ସ:</strong> ${data.source}</p>` : ''}
+                            </div>
+                        </div>
+                        <div class="detail-footer">
+                            <a href="${deepLink}" target="_blank" class="view-book-btn">ବର୍ତ୍ତମାନ ଦେଖନ୍ତୁ</a>
+                        </div>
+                    </aside>
+                    <div class="detail-right-pane">
+                        <h3>ଏଥିରେ ଅଛି :</h3>
+                        <ul class="detail-chapter-list">
+                            ${chapters.length > 0 ? chapters.map(ch => `<li><span class="material-symbols-rounded">menu_book</span>${ch}</li>`).join('') : '<li>କୌଣସି ଅଧ୍ୟାୟ ମିଳିଲା ନାହିଁ ।</li>'}
+                        </ul>
+                        <div class="detail-footer">
+                            <a href="${deepLink}" target="_blank" class="view-book-btn">ବର୍ତ୍ତମାନ ପଢନ୍ତୁ</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function closeBookDetailView() {
+            document.body.classList.remove('modal-open');
+            bookDetailScreen.classList.remove('open');
+        }
+
+        function openImageViewer(src) {
+            fullscreenImage.src = src;
+            imageViewer.classList.add('open');
+        }
+        function closeImageViewer() {
+            imageViewer.classList.remove('open');
+        }
+        
+        function toggleMenu() {
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                if (imageViewer.classList.contains('open')) {
+                    closeImageViewer();
+                } else if (bookDetailScreen.classList.contains('open')) {
+                    closeBookDetailView();
+                }
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', renderBookGrid);
+    </script>
+</body>
+</html>
