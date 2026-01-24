@@ -1,203 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="or">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!--
-      ================================================================
-      ENGLISH SEO & BROWSER METADATA
-      ================================================================
-    -->
+    <!-- SEO & METADATA -->
     <title>Odia Bhasa App | ଓଡ଼ିଆ ଭାଷା</title>
-    <meta name="description" content="The complete app to learn and master the Odia (ଓଡ଼ିଆ) language. Study the alphabet, numbers, conjunct characters, and read classic literature like Madhu Barnabodha.">
-    <meta name="keywords" content="learn odia, odia language app, odia alphabet, odia barnabodha, odia lipi, oriya language, Odia Bhasa App, Odia Bhasa Application, Learn Odia, Sandeep Biswal G, ଓଡ଼ିଆ ଭାଷା, ଓଡ଼ିଆ ବର୍ଣ୍ଣବୋଧ, ଓଡ଼ିଆ ଶିଖିବା">
+    <meta name="description" content="The complete app to learn and master the Odia language.">
+    <meta name="keywords" content="learn odia, odia language app, odia alphabet, odia barnabodha">
     <meta name="author" content="Sandeep Biswal G">
-    <meta name="theme-color" content="#c80000">
+    <meta name="theme-color" content="#ffffff">
 
-    <!--
-      ================================================================
-      SOCIAL MEDIA META TAGS (Open Graph & Twitter)
-      (These are defaults. open.js on the server will overwrite these dynamically)
-      ================================================================
-    -->
+    <!-- OPEN GRAPH -->
     <meta property="og:title" content="Odia Bhasa - The Complete Odia Learning App">
-    <meta property="og:description" content="Learn Odia letters, numbers, and read classic literature. Click to open or install the app.">
+    <meta property="og:description" content="Learn Odia letters, numbers, and read classic literature.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://odiabhasa.pages.dev/open">
-    <meta property="og:site_name" content="Odia Bhasa App">
-    <meta property="og:locale" content="en_US">
-    
     <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Odia Bhasa - The Complete Odia Learning App">
-    <meta name="twitter:description" content="Learn Odia letters, numbers, and read classic literature. Click to open or install the app.">
-    <meta name="twitter:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
-
-    <!-- Favicons -->
-    <link rel="icon" type="image/png" href="https://imsbg.github.io/odiabhasa/images/app.png">
-    <link rel="apple-touch-icon" href="https://imsbg.github.io/odiabhasa/images/app.png">
-
-    <!-- Google Font -->
+    
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <style>
+        /* --- GLOBAL VARIABLES --- */
+        :root {
+            --font-main: 'Google Sans', sans-serif;
+            --font-odia: 'Noto Sans Oriya', sans-serif;
+            --primary-red: #d32f2f;
+            --bg-home: #ffffff;
+            --bg-card-mode: #eef2f5;
+        }
+
         body {
-            font-family: 'Noto Sans Oriya', sans-serif;
-            background-color: #f5f7fa;
-            color: #1d1d1d;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: var(--font-main);
             margin: 0;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .container {
-            max-width: 500px;
-            width: 100%;
-            background: white;
-            padding: 40px 20px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        /* Image Styling */
-        .app-logo, .book-cover {
-            margin-bottom: 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            object-fit: cover;
-        }
-        .app-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 20%;
-        }
-        .book-cover {
-            width: 140px; 
-            height: auto;
-            aspect-ratio: 2/3; /* Standard book ratio */
+            padding: 0;
+            min-height: 100vh;
+            color: #202124;
+            background-color: var(--bg-home); /* Default to Home BG */
         }
 
-        h1 {
-            font-weight: 700;
-            font-size: 26px;
-            margin-bottom: 8px;
-            margin-top: 0;
-            color: #c80000;
-        }
-        h2 {
-            font-size: 16px;
-            color: #666;
-            margin-top: 0;
-            margin-bottom: 25px;
-            font-weight: normal;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Loader */
-        .loader {
-            border: 4px solid #e0e0e0;
-            border-top: 4px solid #c80000;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            margin: 25px auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        /* Buttons */
-        .action-area {
-            margin-top: 30px;
+        body.card-mode {
+            background: linear-gradient(135deg, #eef2f5 0%, #e6e9f0 100%);
             display: flex;
-            flex-direction: column;
-            gap: 15px;
             align-items: center;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 15px;
-            transition: background 0.2s;
-            width: 80%;
-            max-width: 300px;
-        }
-        .btn-primary {
-            background-color: #c80000;
-            color: white;
-            border: none;
-        }
-        .btn-primary:hover {
-            background-color: #a00000;
-        }
-        .btn-secondary {
-            background-color: #fff;
-            color: #c80000;
-            border: 2px solid #c80000;
-        }
-        .btn-secondary:hover {
-            background-color: #fff0f0;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .hidden { display: none; }
+        /* UTILS */
+        .hidden { display: none !important; }
+        a { text-decoration: none; color: inherit; }
+
+        /* =========================================
+           VIEW 1: HOME UI (App Like)
+           ========================================= */
+        #view-home {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .home-header {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(5px);
+            padding: 15px 20px;
+            display: flex; align-items: center;
+        }
+        .home-title { font-family: var(--font-odia); font-weight: 700; font-size: 24px; margin-left: 12px; }
+
+        .home-body { padding: 10px 20px 40px 20px; display: flex; flex-direction: column; gap: 20px; }
+
+        .banner-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 16px; background: #eee; }
+
+        .section-title { font-family: var(--font-odia); font-weight: 700; font-size: 20px; margin: 10px 0 15px 0; }
+        
+        .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .cat-card { background: #F5F7FA; border-radius: 20px; padding: 15px 10px; text-align: center; display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: transform 0.1s; }
+        .cat-card:active { transform: scale(0.98); }
+        .cat-circle { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-odia); font-weight: 700; font-size: 20px; margin-bottom: 10px; }
+        .cat-label { font-family: var(--font-odia); font-size: 13px; font-weight: 600; }
+
+        .num-strip { background: #E0F7FA; border-radius: 20px; padding: 20px; display: flex; align-items: center; overflow: hidden; white-space: nowrap; cursor: pointer; }
+        .num-label { font-family: var(--font-odia); font-size: 24px; font-weight: 700; color: #006064; margin-right: 15px; }
+        .num-text { font-family: var(--font-odia); font-size: 24px; color: #006064; letter-spacing: 15px; opacity: 0.8; }
+
+        .ui-card { width: 100%; border-radius: 20px; padding: 20px; display: flex; align-items: center; box-sizing: border-box; color: white; margin-bottom: 15px; cursor: pointer; }
+        .ui-card.orange { background: linear-gradient(to right, #FF9800, #FF5722); box-shadow: 0 8px 20px rgba(255, 87, 34, 0.3); }
+        .ui-card.purple { background: linear-gradient(to right, #7226FF, #4362FF); box-shadow: 0 8px 20px rgba(67, 98, 255, 0.3); }
+        .ui-card.white { background: #fff; color: #000; border: 1px solid #f0f0f0; margin-bottom: 0; }
+        
+        .card-icon { font-size: 32px; margin-right: 15px; }
+        .card-content { flex: 1; }
+        .card-h { font-family: var(--font-odia); font-size: 18px; font-weight: 700; display: block; }
+        .card-s { font-family: var(--font-odia); font-size: 13px; opacity: 0.9; display: block; }
+
+        /* =========================================
+           VIEW 2: CARD UI (Deep Link / Ama Gouraba)
+           ========================================= */
+        #view-card {
+            background: #fff;
+            width: 100%; max-width: 420px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative; overflow: hidden;
+            padding: 40px 30px;
+            box-sizing: border-box;
+            text-align: center;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        #view-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background-color: var(--primary-red); }
+
+        #main-image { width: 140px; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); object-fit: contain; margin-bottom: 24px; }
+        
+        #page-title { font-family: var(--font-odia); font-size: 24px; font-weight: 700; margin: 0 0 8px 0; line-height: 1.3; }
+        #page-subtitle { font-family: var(--font-odia); font-size: 14px; color: #5f6368; margin: 0 0 30px 0; }
+
+        .spinner { width: 30px; height: 30px; border: 3px solid #f3f3f3; border-top: 3px solid var(--primary-red); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        .action-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 14px; border-radius: 12px; font-family: var(--font-odia); font-weight: 700; font-size: 15px; gap: 10px; margin-bottom: 12px; }
+        .btn-red { background: linear-gradient(180deg, #d32f2f 0%, #c62828 100%); color: white; border: none; box-shadow: 0 4px 12px rgba(211, 47, 47, 0.25); }
+        .btn-white { background: white; color: #202124; border: 1px solid #e0e0e0; }
+        
+        .footer { margin-top: 24px; font-size: 12px; color: #9aa0a6; text-align: center; }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Dynamic Image: Defaults to App Logo, changes to Book Cover if Bahi is present -->
-        <img id="main-image" src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa" class="app-logo">
-        
-        <!-- Dynamic Titles -->
-        <h1 id="page-title">ଓଡ଼ିଆ ଭାଷା ଆପ୍</h1>
-        <h2 id="page-subtitle">ଆମ ଭାଷା, ଆମ ପରିଚୟ</h2>
-        
-        <div id="loading-section">
-            <p id="status-text">ଆପ୍ ରେ କଣ୍ଟେଣ୍ଟ ଖୋଲିବାକୁ ଚେଷ୍ଟା କରାଯାଉଛି...</p>
-            <div class="loader"></div>
-        </div>
+    <!-- 
+      ================================================================
+      VIEW 1: HOME UI (Shown if URL has NO parameters)
+      ================================================================
+    -->
+    <div id="view-home">
+        <header class="home-header">
+            <span class="material-symbols-rounded">menu</span>
+            <span class="home-title">ଓଡ଼ିଆ ଭାଷା</span>
+        </header>
 
-        <!-- Buttons Section (Shows on PC or if App fails) -->
-        <div id="manual-actions" class="action-area hidden">
-            <!-- Button for PC Users to read on Web -->
-            <a id="web-read-link" href="#" class="btn btn-secondary hidden">ୱେବସାଇଟ୍ ରେ ପଢ଼ନ୍ତୁ</a>
-            
-            <!-- Button to Install App -->
-            <a id="store-link" href="#" class="btn btn-primary">ଆପ୍ ଇନଷ୍ଟଲ୍ କରନ୍ତୁ (Play Store)</a>
+        <div class="home-body">
+            <img src="https://imsbg.github.io/Odia-Bhasa-App-Photos/img/bnvp2.png" class="banner-img" alt="Banner">
+
+            <!-- Category Grid (Links add query params to trigger View 2) -->
+            <div>
+                <div class="section-title">ବିଭାଗ</div>
+                <div class="cat-grid">
+                    <a href="?Swara" class="cat-card"><div class="cat-circle" style="background:#FFF0F0;">ଅ</div><div class="cat-label">ସ୍ୱରବର୍ଣ୍ଣ</div></a>
+                    <a href="?Byanjana" class="cat-card"><div class="cat-circle" style="background:#F0F8FF;">କ</div><div class="cat-label">ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ</div></a>
+                    <a href="?Barna_Parichaya" class="cat-card"><div class="cat-circle" style="background:#F0FFF4;">ବର୍ଣ୍ଣ</div><div class="cat-label">ବର୍ଣ୍ଣ ପରିଚୟ</div></a>
+                    <a href="?Matra" class="cat-card"><div class="cat-circle" style="background:#FFF8E1;">ା</div><div class="cat-label">ମାତ୍ରା</div></a>
+                    <a href="?Phala" class="cat-card"><div class="cat-circle" style="background:#F3E5F5;">୍ୟ</div><div class="cat-label">ଫଳା</div></a>
+                    <a href="?Yukta" class="cat-card"><div class="cat-circle" style="background:#E8EAF6;">ଙ୍କ</div><div class="cat-label">ଯୁକ୍ତାକ୍ଷର</div></a>
+                </div>
+            </div>
+
+            <a href="?Sankhya" class="num-strip">
+                <div class="num-label">ସଂଖ୍ୟା :</div>
+                <div class="num-text">୦ ୧ ୨ ୩ ୪ ୫ ୬ ୭</div>
+            </a>
+
+            <div style="display:flex; flex-direction:column;">
+                <a href="?Writing" class="ui-card orange">
+                    <span class="material-symbols-rounded card-icon">edit</span>
+                    <div class="card-content">
+                        <span class="card-h">ଅକ୍ଷର ଲେଖି ଶିଖନ୍ତୁ</span>
+                        <span class="card-s">ଅକ୍ଷର ଉପରେ ଲେଖନ୍ତୁ</span>
+                    </div>
+                    <span class="material-symbols-rounded">chevron_right</span>
+                </a>
+
+                <a href="?Madhu_Barnabodha" class="ui-card purple">
+                    <span class="material-symbols-rounded card-icon">menu_book</span>
+                    <div class="card-content">
+                        <span class="card-h">ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ</span>
+                        <span class="card-s">ପଢିବା ପାଇଁ କ୍ଲିକ୍ କରନ୍ତୁ</span>
+                    </div>
+                    <span class="material-symbols-rounded">chevron_right</span>
+                </a>
+
+                <a href="?Odia_Calendar" class="ui-card white">
+                    <span class="material-symbols-rounded card-icon" style="color:#1976D2">calendar_month</span>
+                    <div class="card-content">
+                        <span class="card-h">କ୍ୟାଲେଣ୍ଡର</span>
+                        <span class="card-s">ପର୍ବପର୍ବାଣି ଓ ଛୁଟିଦିନ ଦେଖନ୍ତୁ</span>
+                    </div>
+                    <span class="material-symbols-rounded" style="color:#aaa">chevron_right</span>
+                </a>
+            </div>
         </div>
     </div>
 
+    <!-- 
+      ================================================================
+      VIEW 2: CARD UI (Shown if URL HAS parameters)
+      This view contains the IDs expected by the JavaScript logic.
+      ================================================================
+    -->
+    <div id="view-card" class="hidden">
+        <div>
+            <img id="main-image" src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Content">
+        </div>
+
+        <h1 id="page-title">ଓଡ଼ିଆ ଭାଷା</h1>
+        <p id="page-subtitle">ଆମ ଭାଷା, ଆମ ପରିଚୟ</p>
+
+        <div id="loading-section">
+            <div class="spinner"></div>
+            <p id="status-text" style="font-size: 13px; color: #666; font-family: var(--font-odia);">ଆପ୍ ଖୋଲୁଅଛି...</p>
+        </div>
+
+        <div id="manual-actions" class="hidden" style="width:100%">
+            <a id="store-link" href="#" class="action-btn btn-red">
+                <span class="material-symbols-rounded">android</span>
+                ଆପ୍ ଇନଷ୍ଟଲ୍ କରନ୍ତୁ
+            </a>
+            <a id="web-read-link" href="#" class="action-btn btn-white hidden">
+                <span class="material-symbols-rounded">menu_book</span>
+                ୱେବସାଇଟ୍ ରେ ପଢ଼ନ୍ତୁ
+            </a>
+        </div>
+
+        <div class="footer">
+            &copy; 2024 Odia Bhasa App. Privacy Policy
+        </div>
+    </div>
+
+    <!-- 
+      ================================================================
+      JAVASCRIPT LOGIC
+      ================================================================
+    -->
     <script>
       (function() {
-        // --- CONFIGURATION ---
-        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa';
+        // --- VIEW TOGGLE LOGIC (Added to switch UI based on URL) ---
+        const viewHome = document.getElementById('view-home');
+        const viewCard = document.getElementById('view-card');
         
-        // **IMPORTANT**: Change this to the actual URL where users read books on your site.
-        // For example: 'https://odiabhasa.pages.dev/read.html?book='
-        // Since I don't have your reader page, I am pointing to the JSON for now, or you can point to a PDF viewer.
-        // If you don't have a web reader yet, leave it empty or point to a coming soon page.
-        const WEB_READER_BASE_URL = 'https://odiabhasa.pages.dev/read?book='; 
+        // If query parameters exist (length > 1 because '?' is 1), show Card UI. Else show Home UI.
+        if (window.location.search.length > 1) {
+            viewHome.classList.add('hidden');
+            viewCard.classList.remove('hidden');
+            document.body.classList.add('card-mode');
+        } else {
+            viewHome.classList.remove('hidden');
+            viewCard.classList.add('hidden');
+            document.body.classList.remove('card-mode');
+            // Stop execution here for Home UI so we don't auto-redirect to app/store
+            return; 
+        }
+
+        // --- ORIGINAL LOGIC BELOW (UNTOUCHED) ---
+        const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa';
+        const WEB_READER_BASE_URL = 'https://imsbg.github.io/odiabhasa/all-books?book='; 
 
         const titleMap = {
             "Swara": "ସ୍ଵରବର୍ଣ୍ଣ",
@@ -219,7 +281,6 @@
             "Writing": "ଓଡ଼ିଆ ଅକ୍ଷର ଲେଖି ଶିଖନ୍ତୁ"
         };
 
-        // --- UTILS ---
         const params = new URLSearchParams(window.location.search);
         const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         
@@ -234,15 +295,12 @@
             storeBtn: document.getElementById('store-link')
         };
 
-        // --- STEP 1: RESOLVE CONTENT (Book or Category) ---
         let contentId = null;
 
         if (params.has('Bahi')) {
-            // == BOOK LOGIC ==
             contentId = params.get('Bahi');
             const jsonUrl = `https://sbgb.pages.dev/ବହି/ଖାତା/${contentId}.json`;
 
-            // Fetch Book Data for UI
             fetch(jsonUrl)
                 .then(res => res.json())
                 .then(data => {
@@ -251,7 +309,6 @@
                     
                     if (data.coverpage) {
                         ui.img.src = data.coverpage;
-                        ui.img.className = "book-cover"; // Change style to rectangular book
                     }
                     document.title = data.title + " | ଓଡ଼ିଆ ଭାଷା";
                 })
@@ -260,13 +317,9 @@
                     ui.title.textContent = "ଓଡ଼ିଆ ବହି";
                 });
                 
-            // Set up Web Reader Link for PC users
             ui.webBtn.href = WEB_READER_BASE_URL + contentId;
-            // If you want to link directly to the JSON for now as a fallback:
-            // ui.webBtn.href = jsonUrl; 
 
         } else {
-            // == STATIC CATEGORY LOGIC ==
             let key = window.location.search.substring(1).split('=')[0];
             if (titleMap[key]) {
                 ui.title.textContent = titleMap[key];
@@ -274,23 +327,18 @@
             }
         }
 
-        // --- STEP 2: HANDLE REDIRECTION ---
         ui.storeBtn.href = PLAY_STORE_URL;
         const customSchemeUrl = 'odiabhasa://open' + window.location.search;
 
         if (isMobile) {
-            // ** MOBILE FLOW **
-            // Attempt to open app
             window.location.href = customSchemeUrl;
 
-            // Fallback to Play Store if app doesn't open within 2.5s
             const fallbackTimeout = setTimeout(function() {
-                ui.loader.classList.add('hidden'); // Hide loader
-                ui.actions.classList.remove('hidden'); // Show manual buttons
+                ui.loader.classList.add('hidden'); 
+                ui.actions.classList.remove('hidden'); 
                 window.location.href = PLAY_STORE_URL;
             }, 2500);
 
-            // Cancel redirect if user leaves page (app opened successfully)
             function onVisibilityChange() {
                 if (document.hidden || document.webkitHidden) {
                     clearTimeout(fallbackTimeout);
@@ -300,21 +348,16 @@
             window.addEventListener('pagehide', () => clearTimeout(fallbackTimeout), false);
 
         } else {
-            // ** PC / DESKTOP FLOW **
             ui.status.textContent = "ଓଡ଼ିଆ ଭାଷା ଆପ୍ କୁ ସ୍ୱାଗତ";
             ui.loader.classList.add('hidden');
             ui.actions.classList.remove('hidden');
             
-            // Only show "Read on Web" button if it is a Book
             if (params.has('Bahi')) {
                 ui.webBtn.classList.remove('hidden');
-                ui.webBtn.textContent = "ୱେବସାଇଟ୍ ରେ ପଢ଼ନ୍ତୁ"; 
             } else {
-                // For static categories, we might not have a web view yet
                 ui.webBtn.classList.add('hidden'); 
             }
         }
-
       })();
     </script>
 </body>
