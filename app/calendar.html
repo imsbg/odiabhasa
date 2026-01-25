@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="or" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Odia Calendar 2026 | Odia Bhasa App | ଓଡ଼ିଆ କ୍ୟାଲେଣ୍ଡର ୨୦୨୬</title>
+    <meta name="description" content="View the complete Odia Calendar with festivals, holidays, and events. Powered by Odia Bhasa App. Download now.">
+    <meta name="keywords" content="Odia Calendar, Odisha Panji, Odia Festivals, Odia Bhasa App, Odia Kohinoor Calendar, Odia Calender 2026, Odia Calender 2027">
+    <meta name="author" content="Sandeep Biswal G">
+    <meta name="theme-color" content="#6750A4">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/app/calendar/">
+    <meta property="og:title" content="Odia Calendar | Odia Bhasa App">
+    <meta property="og:description" content="Beautiful digital Odia Calendar. Check dates, festivals and download the Odia Bhasa App.">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://imsbg.github.io/odiabhasa/images/app.png">
+    <link rel="apple-touch-icon" href="https://imsbg.github.io/odiabhasa/images/app.png">
+
+    <!-- Fonts: Noto Sans Oriya for Odia, Google Sans for English Interface -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/google-sans" rel="stylesheet">
+    
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <style>
+        /* --- Material 3 Design System Variables --- */
+        :root {
+            /* Light Theme */
+            --md-sys-color-primary: #6750A4;
+            --md-sys-color-on-primary: #FFFFFF;
+            --md-sys-color-primary-container: #EADDFF;
+            --md-sys-color-on-primary-container: #21005D;
+            --md-sys-color-secondary: #625B71;
+            --md-sys-color-secondary-container: #E8DEF8;
+            --md-sys-color-on-secondary-container: #1D192B;
+            --md-sys-color-background: #FFFBFE;
+            --md-sys-color-surface: #FFFBFE;
+            --md-sys-color-surface-variant: #F3F0F5; 
+            --md-sys-color-on-surface: #1C1B1F;
+            --md-sys-color-on-surface-variant: #49454F;
+            --md-sys-color-outline: #79747E;
+            --md-sys-color-error: #D32F2F;
+            --md-elevation-1: 0px 4px 12px rgba(0, 0, 0, 0.08);
+            --md-elevation-3: 0px 8px 24px rgba(0, 0, 0, 0.12);
+            --border-radius-lg: 20px;
+            --font-odia: 'Noto Sans Oriya', sans-serif;
+            --font-english: 'Product Sans', 'Google Sans', sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --md-sys-color-primary: #D0BCFF;
+            --md-sys-color-on-primary: #381E72;
+            --md-sys-color-primary-container: #4F378B;
+            --md-sys-color-on-primary-container: #EADDFF;
+            --md-sys-color-secondary: #CCC2DC;
+            --md-sys-color-secondary-container: #4A4458;
+            --md-sys-color-on-secondary-container: #E8DEF8;
+            --md-sys-color-background: #1C1B1F;
+            --md-sys-color-surface: #1C1B1F;
+            --md-sys-color-surface-variant: #2B2930;
+            --md-sys-color-on-surface: #E6E1E5;
+            --md-sys-color-on-surface-variant: #CAC4D0;
+            --md-sys-color-outline: #938F99;
+            --md-sys-color-error: #FFB4AB;
+            --md-elevation-1: 0px 4px 12px rgba(0, 0, 0, 0.4);
+            --md-elevation-3: 0px 8px 24px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-english);
+            background-color: var(--md-sys-color-background);
+            color: var(--md-sys-color-on-surface);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            overflow: hidden; /* Prevent global scroll on desktop */
+        }
+
+        /* --- App Bar --- */
+        header {
+            background-color: var(--md-sys-color-surface);
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 100;
+            box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+            height: 64px;
+            border-bottom: 1px solid var(--md-sys-color-surface-variant);
+            flex-shrink: 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--md-sys-color-on-surface);
+        }
+
+        .brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .brand h1 {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--md-sys-color-on-surface);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .theme-toggle:hover {
+            background-color: var(--md-sys-color-surface-variant);
+        }
+        .theme-toggle .material-icons-round {
+            font-size: 24px;
+            transition: transform 0.5s ease;
+        }
+
+        .app-btn {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            padding: 6px 16px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .app-btn:hover {
+            box-shadow: var(--md-elevation-1);
+            opacity: 0.9;
+        }
+
+        /* --- Layout Container --- */
+        main {
+            flex: 1;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            /* Height calc to fit exactly in viewport minus header */
+            height: calc(100vh - 64px); 
+            padding: 16px 24px;
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 20px;
+            align-items: stretch; /* Stretch to fill height */
+        }
+
+        /* --- Calendar Section (Left) --- */
+        .calendar-section {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Calendar Card */
+        .calendar-card {
+            background: var(--md-sys-color-surface);
+            border-radius: var(--border-radius-lg);
+            padding: 16px 20px; /* Tighter padding */
+            box-shadow: var(--md-elevation-1);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--md-sys-color-surface-variant);
+            overflow: hidden;
+        }
+
+        /* Controls Area */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-shrink: 0;
+        }
+
+        .nav-btn {
+            background: var(--md-sys-color-surface-variant);
+            border: none;
+            color: var(--md-sys-color-on-surface);
+            cursor: pointer;
+            width: 36px; 
+            height: 36px;
+            border-radius: 50%;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+        }
+
+        .current-date {
+            font-family: var(--font-odia);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--md-sys-color-on-surface);
+            text-align: center;
+            background: linear-gradient(45deg, var(--md-sys-color-primary), var(--md-sys-color-secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 0 var(--md-sys-color-on-surface);
+        }
+        
+        [data-theme="light"] .current-date { text-shadow: none; }
+
+        /* Grid System */
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            margin-bottom: 8px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .weekdays div {
+            font-family: var(--font-odia);
+            font-weight: 700;
+            color: var(--md-sys-color-secondary);
+            font-size: 1rem;
+        }
+        .weekdays div:first-child { color: var(--md-sys-color-error); }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            /* This ensures rows take equal remaining height */
+            grid-auto-rows: 1fr; 
+            gap: 6px;
+            flex: 1; /* Fill remaining vertical space */
+        }
+
+        .day {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+            font-family: var(--font-odia);
+            font-size: 1.1rem;
+            color: var(--md-sys-color-on-surface);
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+            user-select: none;
+            height: 100%; /* Fill the grid cell */
+            min-height: 0; /* Allow shrinking */
+        }
+
+        .day:hover {
+            background-color: var(--md-sys-color-secondary-container);
+            color: var(--md-sys-color-on-secondary-container);
+            transform: translateY(-2px);
+            z-index: 2;
+        }
+
+        .day.is-sunday { color: var(--md-sys-color-error) !important; font-weight: 600; }
+        .day.other-month { color: var(--md-sys-color-outline) !important; opacity: 0.4; cursor: default; }
+        .day.other-month:hover { background-color: transparent; transform: none; }
+
+        .day.today {
+            border: 2px solid var(--md-sys-color-primary);
+            color: var(--md-sys-color-primary) !important;
+            font-weight: 700;
+            background-color: rgba(103, 80, 164, 0.05);
+        }
+
+        .day.has-event {
+            background-color: var(--md-sys-color-surface-variant);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* --- Animations --- */
+        .animate-enter {
+            animation: fadeScaleIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        @keyframes fadeScaleIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- Sidebar Section (Right) --- */
+        .sidebar-section {
+            background: var(--md-sys-color-surface);
+            border-radius: var(--border-radius-lg);
+            padding: 20px;
+            box-shadow: var(--md-elevation-1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--md-sys-color-surface-variant);
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            font-family: var(--font-odia);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--md-sys-color-primary);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--md-sys-color-surface-variant);
+            flex-shrink: 0;
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            padding-right: 6px;
+            flex: 1;
+        }
+        
+        .events-list::-webkit-scrollbar { width: 4px; }
+        .events-list::-webkit-scrollbar-track { background: transparent; }
+        .events-list::-webkit-scrollbar-thumb { background: var(--md-sys-color-outline); border-radius: 4px; opacity: 0.5; }
+
+        .event-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px;
+            border-radius: 12px;
+            background: var(--md-sys-color-surface-variant);
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            flex-shrink: 0;
+        }
+
+        .event-item:hover {
+            background: var(--md-sys-color-secondary-container);
+            transform: translateX(2px);
+        }
+
+        .event-date-badge {
+            min-width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--md-sys-color-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-odia);
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .event-details { flex: 1; }
+        .event-item-title {
+            font-family: var(--font-odia);
+            font-weight: 600;
+            color: var(--md-sys-color-on-surface);
+            font-size: 0.95rem;
+        }
+        .event-item-desc {
+            font-family: var(--font-odia);
+            font-size: 0.75rem;
+            color: var(--md-sys-color-on-surface-variant);
+            margin-top: 2px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .event-item-desc:empty { display: none; }
+
+        /* --- Modal --- */
+        .event-sheet-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            display: none;
+            z-index: 200;
+            opacity: 0;
+            transition: opacity 0.3s;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .event-sheet-overlay.active { display: flex; opacity: 1; }
+
+        .event-sheet {
+            background: var(--md-sys-color-surface);
+            width: 90%;
+            max-width: 360px;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--md-elevation-3);
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .event-sheet-overlay.active .event-sheet { transform: translateY(0) scale(1); }
+
+        .event-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--md-sys-color-primary-container);
+            color: var(--md-sys-color-on-primary-container);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+        }
+
+        .modal-date {
+            font-family: var(--font-odia);
+            font-size: 0.9rem;
+            color: var(--md-sys-color-secondary);
+            font-weight: 500;
+        }
+
+        .modal-title {
+            font-family: var(--font-odia);
+            font-size: 1.4rem;
+            color: var(--md-sys-color-on-surface);
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 4px 0 12px;
+        }
+
+        .modal-desc {
+            font-family: var(--font-odia);
+            font-size: 0.95rem;
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.5;
+            background: var(--md-sys-color-surface-variant);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: left;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .modal-desc:empty { display: none; }
+
+        .modal-actions {
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+            border: none;
+            padding: 10px;
+            border-radius: 100px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--md-sys-color-primary);
+            border: 1px solid var(--md-sys-color-outline);
+            padding: 8px;
+            border-radius: 100px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-secondary:hover { background: var(--md-sys-color-secondary-container); }
+        .btn-primary:hover { opacity: 0.9; }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            body { overflow: auto; /* Re-enable scroll on mobile */ }
+            
+            main {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                height: auto; /* Auto height for scrolling */
+                padding: 16px;
+                padding-bottom: 40px;
+            }
+            .sidebar-section {
+                height: auto;
+                max-height: 500px;
+            }
+            .calendar-card {
+                min-height: 420px; /* Keep reasonable height on mobile */
+            }
+            .days {
+                /* Reset to explicit rows on mobile */
+                grid-auto-rows: minmax(50px, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .event-sheet-overlay.active { align-items: flex-end; }
+            .event-sheet {
+                width: 100%;
+                max-width: 100%;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                padding-bottom: 40px;
+            }
+            .day { font-size: 1rem; }
+            .weekdays div { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="https://imsbg.github.io/odiabhasa/" class="brand">
+            <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo">
+            <h1>ଓଡ଼ିଆ କ୍ୟାଲେଣ୍ଡର</h1>
+        </a>
+        <div class="header-actions">
+            <!-- Dark Mode Toggle -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                <span class="material-icons-round" id="themeIcon">light_mode</span>
+            </button>
+            
+            <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="app-btn" target="_blank">
+                <span class="material-icons-round" style="font-size: 18px;">download</span>
+                <span style="display: none; @media(min-width:400px){display:inline;}">Download App</span>
+                <span style="@media(min-width:400px){display:none;}">App</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Left: Calendar Section -->
+        <div class="calendar-section">
+            <div class="calendar-card">
+                <div class="controls">
+                    <button class="nav-btn" id="prevMonth">
+                        <span class="material-icons-round">chevron_left</span>
+                    </button>
+                    <div class="current-date" id="monthYearDisplay">ଲୋଡ୍ ହେଉଛି...</div>
+                    <button class="nav-btn" id="nextMonth">
+                        <span class="material-icons-round">chevron_right</span>
+                    </button>
+                </div>
+
+                <div class="weekdays">
+                    <div>ରବି</div>
+                    <div>ସୋମ</div>
+                    <div>ମଙ୍ଗଳ</div>
+                    <div>ବୁଧ</div>
+                    <div>ଗୁରୁ</div>
+                    <div>ଶୁକ୍ର</div>
+                    <div>ଶନି</div>
+                </div>
+                <div class="days" id="calendarDays">
+                    <!-- Days inserted via JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Right: Monthly Events Sidebar -->
+        <div class="sidebar-section">
+            <h2 class="sidebar-header">
+                <span class="material-icons-round" style="color:var(--md-sys-color-primary);">event_note</span>
+                ଏହି ମାସର ପର୍ବ
+            </h2>
+            <div class="events-list" id="eventsList">
+                <div class="no-events">ଲୋଡ୍ ହେଉଛି...</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Event Detail Modal -->
+    <div class="event-sheet-overlay" id="eventOverlay">
+        <div class="event-sheet" id="eventSheet">
+            <div class="event-icon">
+                <span class="material-icons-round">celebration</span>
+            </div>
+            <div class="modal-date" id="modalDate"></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <p class="modal-desc" id="modalDesc"></p>
+            
+            <div class="modal-actions">
+                <a href="#" target="_blank" id="addToCalBtn" class="btn-primary">
+                    <span class="material-icons-round">edit_calendar</span>
+                    କ୍ୟାଲେଣ୍ଡର ରେ ଯୋଡନ୍ତୁ
+                </a>
+                <button class="btn-secondary" onclick="closeModal()">ବନ୍ଦ କରନ୍ତୁ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- State ---
+        let currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = currentDate.getMonth(); // 0-11
+        let calendarData = {};
+
+        // --- Constants ---
+        const odiaMonths = [
+            "ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଏପ୍ରିଲ", "ମେ", "ଜୁନ",
+            "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"
+        ];
+        const odiaDigits = ['୦','୧','୨','୩','୪','୫','୬','୭','୮','୯'];
+
+        // --- Elements ---
+        const daysContainer = document.getElementById('calendarDays');
+        const monthYearDisplay = document.getElementById('monthYearDisplay');
+        const eventsListContainer = document.getElementById('eventsList');
+        const overlay = document.getElementById('eventOverlay');
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            fetchData();
+            
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                currentMonth--;
+                if(currentMonth < 0) { currentMonth = 11; currentYear--; }
+                renderAll();
+            });
+
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                currentMonth++;
+                if(currentMonth > 11) { currentMonth = 0; currentYear++; }
+                renderAll();
+            });
+
+            overlay.addEventListener('click', (e) => {
+                if(e.target === overlay) closeModal();
+            });
+
+            themeToggle.addEventListener('click', toggleTheme);
+        });
+
+        // --- Theme Logic ---
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const target = current === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', target);
+            localStorage.setItem('theme', target);
+            updateThemeIcon(target);
+        }
+
+        function updateThemeIcon(theme) {
+            themeIcon.style.transform = "rotate(180deg)";
+            setTimeout(() => {
+                themeIcon.textContent = theme === 'light' ? 'light_mode' : 'dark_mode';
+                themeIcon.style.transform = "rotate(0deg)";
+            }, 150);
+        }
+
+        // --- Fetch Data ---
+        async function fetchData() {
+            try {
+                const response = await fetch('https://imsbg.github.io/odiabhasa/calendar/parba.json');
+                const json = await response.json();
+                calendarData = json.data || {};
+                renderAll();
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                daysContainer.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--md-sys-color-error);">ତଥ୍ୟ ଆଣିବାରେ ତ୍ରୁଟି ହୋଇଛି (Error loading data).</div>';
+                eventsListContainer.innerHTML = '<div class="no-events">Error loading events.</div>';
+            }
+        }
+
+        // --- Utility ---
+        function getOdiaNumerals(num) {
+            return num.toString().split('').map(d => odiaDigits[d]).join('');
+        }
+        function formatFullDate(year, month, day) {
+            const m = (month + 1).toString().padStart(2, '0');
+            const d = day.toString().padStart(2, '0');
+            return `${year}-${m}-${d}`;
+        }
+        function hexToRgba(hex, alpha) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? `rgba(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}, ${alpha})` : null;
+        }
+
+        // --- Rendering ---
+        function renderAll() {
+            // Trigger Animation
+            const elementsToAnimate = [daysContainer, eventsListContainer];
+            elementsToAnimate.forEach(el => {
+                el.classList.remove('animate-enter');
+                void el.offsetWidth; // Trigger Reflow
+                el.classList.add('animate-enter');
+            });
+
+            renderCalendar();
+            renderEventsSidebar();
+        }
+
+        function renderCalendar() {
+            daysContainer.innerHTML = '';
+            monthYearDisplay.textContent = `${odiaMonths[currentMonth]} ${getOdiaNumerals(currentYear)}`;
+
+            const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
+            const lastDay = new Date(currentYear, currentMonth + 1, 0).getDate(); 
+            const prevMonthLastDay = new Date(currentYear, currentMonth, 0).getDate();
+            const today = new Date();
+
+            // Prev Month Days
+            for (let i = firstDayIndex; i > 0; i--) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('day', 'other-month');
+                dayDiv.textContent = getOdiaNumerals(prevMonthLastDay - i + 1);
+                daysContainer.appendChild(dayDiv);
+            }
+
+            // Current Month Days
+            for (let i = 1; i <= lastDay; i++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('day');
+                dayDiv.textContent = getOdiaNumerals(i); 
+                
+                // Sunday Check
+                const currentDayOfWeek = new Date(currentYear, currentMonth, i).getDay();
+                if (currentDayOfWeek === 0) dayDiv.classList.add('is-sunday');
+
+                // Today Check
+                if (i === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
+                    dayDiv.classList.add('today');
+                }
+
+                // Event Check
+                const dateKey = formatFullDate(currentYear, currentMonth, i);
+                const eventData = calendarData[dateKey];
+
+                if (eventData) {
+                    dayDiv.classList.add('has-event');
+                    // Styling
+                    const color = eventData.color || '#3949AB';
+                    dayDiv.style.color = color;
+                    dayDiv.style.backgroundColor = hexToRgba(color, 0.08); // Very subtle bg
+                    dayDiv.style.borderColor = hexToRgba(color, 0.3);
+
+                    dayDiv.addEventListener('click', () => openModal(dateKey, eventData));
+                }
+
+                daysContainer.appendChild(dayDiv);
+            }
+
+            // Next Month Days (Fill grid to 42)
+            const totalDaysRendered = firstDayIndex + lastDay;
+            const nextDays = 42 - totalDaysRendered; 
+            for(let i = 1; i <= nextDays; i++) {
+                const dayDiv = document.createElement('div');
+                dayDiv.classList.add('day', 'other-month');
+                dayDiv.textContent = getOdiaNumerals(i);
+                daysContainer.appendChild(dayDiv);
+            }
+        }
+
+        function renderEventsSidebar() {
+            eventsListContainer.innerHTML = '';
+            const currentMonthEvents = [];
+
+            for (const [dateStr, eventObj] of Object.entries(calendarData)) {
+                const [y, m, d] = dateStr.split('-');
+                if (parseInt(y) === currentYear && parseInt(m) - 1 === currentMonth) {
+                    currentMonthEvents.push({ dateStr, day: parseInt(d), ...eventObj });
+                }
+            }
+            currentMonthEvents.sort((a, b) => a.day - b.day);
+
+            if (currentMonthEvents.length === 0) {
+                eventsListContainer.innerHTML = '<div class="no-events">ଏହି ମାସରେ କୌଣସି ପର୍ବ ନାହିଁ।</div>';
+                return;
+            }
+
+            currentMonthEvents.forEach(event => {
+                const item = document.createElement('div');
+                item.classList.add('event-item');
+                item.addEventListener('click', () => openModal(event.dateStr, event));
+
+                const color = event.color || '#3949AB';
+                const description = event.ct ? event.ct : '';
+
+                item.innerHTML = `
+                    <div class="event-date-badge" style="color: ${color}; border: 1px solid ${hexToRgba(color, 0.2)}">
+                        ${getOdiaNumerals(event.day)}
+                    </div>
+                    <div class="event-details">
+                        <div class="event-item-title" style="color: ${color}">${event.name}</div>
+                        <div class="event-item-desc">${description}</div>
+                    </div>
+                    <span class="material-icons-round" style="color: var(--md-sys-color-outline); font-size: 18px;">chevron_right</span>
+                `;
+                eventsListContainer.appendChild(item);
+            });
+        }
+
+        // --- Modal & Calendar Feature ---
+        function openModal(dateStr, data) {
+            const dateObj = new Date(dateStr);
+            const d = dateObj.getDate();
+            const m = dateObj.getMonth();
+            const y = dateObj.getFullYear();
+            
+            // Set Text
+            document.getElementById('modalDate').textContent = `${getOdiaNumerals(d)} ${odiaMonths[m]} ${getOdiaNumerals(y)}`;
+            document.getElementById('modalTitle').textContent = data.name;
+            document.getElementById('modalTitle').style.color = data.color || 'var(--md-sys-color-primary)';
+            document.getElementById('modalDesc').textContent = data.ct || '';
+
+            // Generate Google Calendar Link
+            const googleCalUrl = generateGoogleCalendarLink(dateObj, data.name, data.ct);
+            document.getElementById('addToCalBtn').href = googleCalUrl;
+
+            overlay.classList.add('active');
+        }
+
+        function closeModal() {
+            overlay.classList.remove('active');
+        }
+
+        function generateGoogleCalendarLink(dateObj, title, desc) {
+            // Format: YYYYMMDD
+            const year = dateObj.getFullYear();
+            const month = (dateObj.getMonth() + 1).toString().padStart(2, '0');
+            const day = dateObj.getDate().toString().padStart(2, '0');
+            const dateString = `${year}${month}${day}`;
+
+            // Create All Day Event (Start: YYYYMMDD, End: YYYYMMDD+1)
+            const nextDay = new Date(dateObj);
+            nextDay.setDate(dateObj.getDate() + 1);
+            const nextYear = nextDay.getFullYear();
+            const nextMonth = (nextDay.getMonth() + 1).toString().padStart(2, '0');
+            const nextDayStr = nextDay.getDate().toString().padStart(2, '0');
+            const endDateString = `${nextYear}${nextMonth}${nextDayStr}`;
+
+            const baseUrl = "https://www.google.com/calendar/render?action=TEMPLATE";
+            const text = `&text=${encodeURIComponent(title)}`;
+            const dates = `&dates=${dateString}/${endDateString}`; 
+            const details = desc ? `&details=${encodeURIComponent(desc)}` : "";
+            const location = "&location=Odisha";
+
+            return `${baseUrl}${text}${dates}${details}${location}`;
+        }
+    </script>
+</body>
+</html>
