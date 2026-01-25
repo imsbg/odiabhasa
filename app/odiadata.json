@@ -1,0 +1,835 @@
+{
+  "swarabarna": [
+    {
+      "char": "ଅ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଅରଟ", "ଅଜା"],
+        "sentences": ["ଅରଟ ରେ ସୂତା ବୁଣା ଯାଏ ।", "ମୋ ଅଜା ମୋତେ ବହୁତ ଭଲ ପାଆନ୍ତି ।"]
+      }
+    },
+    {
+      "char": "ଆ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଆକାଶ", "ଆମ"],
+        "sentences": ["ଆକାଶର ରଙ୍ଗ ନୀଳ ।", "ଆମ ଦେଶର ନାମ ଭାରତ ।"]
+      }
+    },
+    {
+      "char": "ଇ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ହର୍ଷ ଇ", "ଇଟା", "ଇଛା"],
+        "sentences": ["ଇଟାରେ ଘର ତିଆରି ହୁଏ ।", "ମୋର ପଢିବାକୁ ଇଛା ଅଛି ।"]
+      }
+    },
+    {
+      "char": "ଈ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ଦୀର୍ଘ ଈ", "ଈଶ୍ୱର", "ଈର୍ଷା"],
+        "sentences": ["ଈଶ୍ୱର ସବୁଠାରେ ଅଛନ୍ତି ।", "କାହା ପ୍ରତି ଈର୍ଷା କରିବା ଉଚିତ୍ ନୁହେଁ ।"]
+      }
+    },
+    {
+      "char": "ଉ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ହର୍ଷ ଉ", "ଉପର", "ଉଠ"],
+        "sentences": ["ଟେବୁଲ ଉପରେ ବହି ଅଛି ।", "ସକାଳୁ ଜଲଦି ଉଠ ।"]
+      }
+    },
+    {
+      "char": "ଊ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ଦୀର୍ଘ ଊ", "ଊଣା"],
+        "sentences": ["ତରକାରୀରେ ଲୁଣ ଊଣା ହେଲା ।"]
+      }
+    },
+    {
+      "char": "ଋ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ହର୍ଷ ଋ", "ଋଷି", "ଋତୁ"],
+        "sentences": ["ବନରେ ଋଷି ତପସ୍ୟା କରନ୍ତି ।", "ଶୀତ ଋତୁ ରେ ଧାନ ଅମଳ ହୁଏ ।"]
+      }
+    },
+    {
+      "char": "ୠ",
+      "deprecated": true,
+      "data": {
+        "words": ["ନାମ: ଦୀର୍ଘ ୠ", "ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    },
+    {
+      "char": "ଏ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଏକ", "ଏବେ"],
+        "sentences": ["ରବି ଏକ ଭଲ ପିଲା ।", "ମୁଁ ଏବେ ପାଠ ପଢୁଛି ।"]
+      }
+    },
+    {
+      "char": "ଐ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଐକ୍ୟ", "ଐରାବତ"],
+        "sentences": ["ଜାତୀୟ ଐକ୍ୟ ବଜାୟ ରଖ ।", "ଇନ୍ଦ୍ରଙ୍କ ବାହନର ନାମ ଐରାବତ ।"]
+      }
+    },
+    {
+      "char": "ଓ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଓଟ", "ଓଜନ"],
+        "sentences": ["ଓଟ ହେଉଛି ମରୁଭୂମିର ଜାହାଜ ।", "ଦୋକାନୀ ଜିନିଷ ଗୁଡିକ ଓଜନ କରେ ।"]
+      }
+    },
+    {
+      "char": "ଔ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଔଷଧ"],
+        "sentences": ["ଦେହ ଖରାପ ହେଲେ ଔଷଧ ଖାଅ ।", "ଠିକ୍ ସମୟରେ ଔଷଧ ସେବନ କର ।"]
+      }
+    },
+    {
+      "char": "ଌ",
+      "deprecated": true,
+      "data": {
+        "words": ["ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    },
+    {
+      "char": "ୡ",
+      "deprecated": true,
+      "data": {
+        "words": ["ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    }
+  ],
+  "matra": [
+    {
+      "char": "ା",
+      "deprecated": false,
+      "data": {
+        "words": ["ବାପା", "ମା", "ରାଜା", "ଭାଇ"],
+        "sentences": ["ବାପା ମୋତେ ପାଠ ପଢ଼ାଉଛନ୍ତି ।", "ମା ଘରେ ରୋଷେଇ କରୁଛନ୍ତି ।", "ସେ ଜଣେ ଦୟାଳୁ ରାଜା ଥିଲେ ।", "ମୋ ଭାଇ ବହୁତ ଭଲ ଖେଳେ ।"]
+      }
+    },
+    {
+      "char": "ି",
+      "deprecated": false,
+      "data": {
+        "words": ["ଦିନ", "ଚିଲ"],
+        "sentences": ["ଆଜି ଏକ ସୁନ୍ଦର ଦିନ ।", "ଆକାଶରେ ଏକ ଚିଲ ଉଡୁଛି ।"]
+      }
+    },
+    {
+      "char": "ୀ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନଦୀ", "ଗୀତ"],
+        "sentences": ["ନଦୀ କୂଳରେ ଗାଁ'ଟିଏ ଅଛି ।", "ସେ ସୁନ୍ଦର ଗୀତ ଗାଏ ।"]
+      }
+    },
+    {
+      "char": "ୁ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଫୁଲ", "ପୁଅ"],
+        "sentences": ["ବଗିଚାରେ ଏକ ଗୋଲାପ ଫୁଲ ଫୁଟିଛି ।", "ତାଙ୍କ ପୁଅ ଭଲ କବାଡି ଖେଳେ ।"]
+      }
+    },
+    {
+      "char": "ୂ",
+      "deprecated": false,
+      "data": {
+        "words": ["ମୂଳ", "ଦୂର"],
+        "sentences": ["ଗଛ ମୂଳରେ ପ୍ରତିଦିନ ପାଣି ଦିଅ ।", "ସେହି ସହରଟି ଏଠାରୁ ବହୁତ ଦୂରରେ ଅଛି ।"]
+      }
+    },
+    {
+      "char": "ୃ",
+      "deprecated": false,
+      "data": {
+        "words": ["କୃଷକ", "ଗୃହ"],
+        "sentences": ["କୃଷକ ବିଲରେ କାମ କରେ ।", "ଆମେ ଏକ ସୁନ୍ଦର ଗୃହରେ ରହୁ ।"]
+      }
+    },
+    {
+      "char": "େ",
+      "deprecated": false,
+      "data": {
+        "words": ["ତେଲ", "ଦେଶ"],
+        "sentences": ["ବଜାରରେ ତେଲର ଦାମ୍ ବଢ଼ିଯାଇଛି ।", "ଆମ ଦେଶର ନାମ ଭାରତ ।"]
+      }
+    },
+    {
+      "char": "ୈ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଦୈନିକ"],
+        "sentences": ["ସ୍ୱାସ୍ଥ୍ୟ ପାଇଁ ଦୈନିକ ବ୍ୟାୟାମ ଆବଶ୍ୟକ ।"]
+      }
+    },
+    {
+      "char": "ୋ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଲୋକ", "ଭୋକ"],
+        "sentences": ["ବାଟରେ ବହୁତ ଲୋକ ଯାଉଛନ୍ତି ।", "ମୋତେ ଭୋକ ଲାଗୁଛି କ'ଣ ଖାଇବି?"]
+      }
+    },
+    {
+      "char": "ୌ",
+      "deprecated": false,
+      "data": {
+        "words": ["ମୌନ", "ଚୌକି"],
+        "sentences": ["ଶ୍ରେଣୀରେ ମୌନ ରୁହ ।", "ଆମ ଘରେ ଏକ କାଠର ଚୌକି ଅଛି ।"]
+      }
+    },
+    {
+      "char": "ୖ",
+      "deprecated": true,
+      "data": {
+        "words": ["ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    },
+    {
+      "char": "ୗ",
+      "deprecated": true,
+      "data": {
+        "words": ["ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    },
+    {
+      "char": "୍",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ହଳନ୍ତ"],
+        "sentences": ["ଦାମ୍ ଭଲି ଶବ୍ଦ", "ପ+ତ୍+ର= ପତ୍ର", "ଯୁକ୍ତାକ୍ଷର ପାଇଁ ମଧ୍ୟ ବ୍ୟବହାର କରାଯାଏ ।"]
+      }
+    },
+    {
+      "char": "଼",
+      "deprecated": false,
+      "data": {
+        "words": ["ଓଡ଼ିଆ", "ପଡ଼ିଲା"],
+        "sentences": ["ଏହା ଡ ଓ ଢ ଧ୍ୱନି ପାଇଁ ବ୍ୟବହୃତ ହୁଏ ।", "ଗଛରୁ ଫଳଟି ପଡ଼ିଲା ।"]
+      }
+    },
+    {
+      "char": "ୄ",
+      "deprecated": true,
+      "data": {
+        "words": ["ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    },
+    {
+      "char": "ୢ",
+      "deprecated": true,
+      "data": {
+        "words": ["ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    },
+    {
+      "char": "ୣ",
+      "deprecated": true,
+      "data": {
+        "words": ["ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    }
+  ],
+  "byanjanabarna": [
+    {
+      "char": "କ",
+      "deprecated": false,
+      "data": {
+        "words": ["କମଳା", "କଦଳୀ"],
+        "sentences": ["ମୋତେ କମଳା ଖାଇବାକୁ ଭଲ ଲାଗେ ।", "ମୁଁ କଦଳୀ ଖାଇବାକୁ ଭଲପାଏ ।"]
+      }
+    },
+    {
+      "char": "ଖ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଖବର", "ଖରା"],
+        "sentences": ["ଖବର କାଗଜ ପଢିବା ଭଲ ।", "ଆଜି ବହୁତ ଖରା ହେଉଛି ।"]
+      }
+    },
+    {
+      "char": "ଗ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଗାଈ", "ଗଛ"],
+        "sentences": ["ଗାଈ ଆମକୁ କ୍ଷୀର ଦିଏ ।", "ଗଛ ଆମକୁ ଛାଇ ଦିଏ ।"]
+      }
+    },
+    {
+      "char": "ଘ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଘର", "ଘଣ୍ଟା"],
+        "sentences": ["ଆମ ଘର ଆଗରେ ଆମ୍ବ ଗଛଟିଏ ଅଛି ।", "ଆମ ବିଦ୍ୟାଳୟ ରେ ଏକ କାନ୍ଥ ଘଣ୍ଟା ଅଛି ।"]
+      }
+    },
+    {
+      "char": "ଙ",
+      "deprecated": false,
+      "data": {
+        "words": ["ରଙ୍ଗ"],
+        "sentences": ["ଆମ ଜାତୀୟ ପତାକାରେ ତିନୋଟି ରଙ୍ଗ ଅଛି ।", "ଙ ବର୍ଣ୍ଣର ସ୍ୱତନ୍ତ୍ର ବ୍ୟବହାର ନାହିଁ ।"]
+      }
+    },
+    {
+      "char": "ଚ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଚକ", "ଚଷମା", "ଚଢ଼େଇ"],
+        "sentences": ["ଗାଡିର ଚକ ଗୋଲ ଅଟେ ।", "ବାପା ଚଷମା ପିନ୍ଧନ୍ତି ।", "ଚଢ଼େଇ ଆକାଶରେ ଉଡ଼େ ।"]
+      }
+    },
+    {
+      "char": "ଛ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଛତା", "ଛବି"],
+        "sentences": ["ବର୍ଷା ହେଲେ ଛତା ଦରକାର ।", "ଛବିଟି ସୁନ୍ଦର ଦିଶୁଛି ।"]
+      }
+    },
+    {
+      "char": "ଜ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଜଳ", "ଜାମୁକୋଳି"],
+        "sentences": ["ଜଳ ବିନା ଜୀବନ ଅସମ୍ଭବ ।", "ଜାମୁକୋଳି ଖାଇବାକୁ ସ୍ୱାଦିଷ୍ଟ ।"]
+      }
+    },
+    {
+      "char": "ଝ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଝରକା", "ଝରଣା"],
+        "sentences": ["ଝରକା ଦେଇ ପବନ ଆସେ ।", "ଝରଣା ପାଣି ଥଣ୍ଡା ।"]
+      }
+    },
+    {
+      "char": "ଞ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଞ"],
+        "sentences": ["ଞ ବର୍ଣ୍ଣର ସ୍ୱତନ୍ତ୍ର ବ୍ୟବହାର ନାହିଁ । ।"]
+      }
+    },
+    {
+      "char": "ଟ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଟଗର", "ଟଙ୍କା"],
+        "sentences": ["ଟଗର ଫୁଲର ରଙ୍ଗ ଧଳା ।", "ଟଙ୍କା ସଞ୍ଚୟ କର ।"]
+      }
+    },
+    {
+      "char": "ଠ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଠକ", "ଠାକୁର"],
+        "sentences": ["ଠକ ଲୋକଙ୍କୁ ବିଶ୍ୱାସ କରନି ।", "ଆମେ ଠାକୁରଙ୍କୁ ପୂଜା କରୁ ।"]
+      }
+    },
+    {
+      "char": "ଡ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଡର", "ଡାକ୍ତର"],
+        "sentences": ["ମିଛ କହିବାକୁ ଡର ଲାଗେ ।", "ଅସୁସ୍ଥ ହେଲେ ଡାକ୍ତରଙ୍କ ପାଖକୁ ଯାଅ ।"]
+      }
+    },
+    {
+      "char": "ଢ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଢଗ", "ଢାଙ୍କୁଣୀ"],
+        "sentences": ["ଢଗ ଢମାଳି ମଜାଦାର ଅଟେ ।", "ଖାଦ୍ୟକୁ ଢାଙ୍କୁଣୀ ଦେଇ ରଖ ।"]
+      }
+    },
+    {
+      "char": "ଣ",
+      "deprecated": false,
+      "data": {
+        "words": ["ହରିଣ", "କ'ଣ"],
+        "sentences": ["ହରିଣ ଜଙ୍ଗଲରେ ରହେ ।", "ତୁମେ କ'ଣ କରୁଛ?"]
+      }
+    },
+    {
+      "char": "ତ",
+      "deprecated": false,
+      "data": {
+        "words": ["ତରାଜୁ", "ତାରା"],
+        "sentences": ["ଦୋକାନୀ ତରାଜୁରେ ଓଜନ କରେ ।", "ରାତି ଆକାଶରେ ତାରା ଝଲକେ ।"]
+      }
+    },
+    {
+      "char": "ଥ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଥଣ୍ଡା", "ଥାଳି"],
+        "sentences": ["ଆଜି ବହୁତ ଥଣ୍ଡା ଲାଗୁଛି ।", "ଆମେ ଥାଳିରେ ଖାଉ ।"]
+      }
+    },
+    {
+      "char": "ଦ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଦହି", "ଦରଜା"],
+        "sentences": ["ଦହି ଖାଇବା ସ୍ୱାସ୍ଥ୍ୟ ପାଇଁ ଭଲ ।", "ଘରର ଦରଜା ବନ୍ଦ କର ।"]
+      }
+    },
+    {
+      "char": "ଧ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଧାନ", "ଧନ"],
+        "sentences": ["ଧାନରୁ ଚାଉଳ ହୁଏ ।", "ବିଦ୍ୟା ଅଟଇ ମହା ଧନ ।"]
+      }
+    },
+    {
+      "char": "ନ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନଦୀ", "ନଖ"],
+        "sentences": ["ମହାନଦୀ ଓଡ଼ିଶାର ବଡ ନଦୀ ।", "ନଖକୁ ସଫା ରଖ ।"]
+      }
+    },
+    {
+      "char": "ପ",
+      "deprecated": false,
+      "data": {
+        "words": ["ପତ୍ର", "ପାଣି"],
+        "sentences": ["ଗଛରେ ପତ୍ର ଥାଏ ।", "ପାଣି ଆମ ଜୀବନ ଅଟେ ।"]
+      }
+    },
+    {
+      "char": "ଫ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଫଳ", "ଫୁଲ"],
+        "sentences": ["ଫଳ ଖାଇବା ଶରୀର ପାଇଁ ଲାଭଦାୟକ ।", "ବଗିଚାରେ ଫୁଲ ଫୁଟିଛି ।"]
+      }
+    },
+    {
+      "char": "ବ",
+      "deprecated": false,
+      "data": {
+        "words": ["ବହି", "ବଗ"],
+        "sentences": ["ମୁଁ ବହି ପଢୁଛି ।", "ବଗ ପୋଖରୀରେ ମାଛ ଧରେ ।"]
+      }
+    },
+    {
+      "char": "ଭ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଭଉଣୀ", "ଭାତ"],
+        "sentences": ["ମୋର ସାନ ଭଉଣୀ ଅଛି ।", "ଆମେ ପ୍ରତିଦିନ ଭାତ ଖାଉ ।"]
+      }
+    },
+    {
+      "char": "ମ",
+      "deprecated": false,
+      "data": {
+        "words": ["ମନ୍ଦିର", "ମା"],
+        "sentences": ["ପୁରୀରେ ଶ୍ରୀ ଜଗନ୍ନାଥ ମନ୍ଦିର ଅଛି ।", "ମା'ଙ୍କୁ ସମ୍ମାନ କର ।"]
+      }
+    },
+    {
+      "char": "ଯ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଯଜ୍ଞ", "ଯମ"],
+        "sentences": ["ଋଷିମାନେ ଯଜ୍ଞ କରନ୍ତି ।", "ଯମ ଗୋଟିଏ ରାଜା ।"]
+      }
+    },
+    {
+      "char": "ର",
+      "deprecated": false,
+      "data": {
+        "words": ["ରଥ", "ରଜ"],
+        "sentences": ["ରଥଯାତ୍ରା ଓଡ଼ିଶାର ଏକ ବଡ ପର୍ବ ।", "ରଜରେ ମୁଁ ଦୋଳି ଖେଳିଲି ।"]
+      }
+    },
+    {
+      "char": "ଳ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଫଳ", "ଖେଳ"],
+        "sentences": ["ଗଛରେ ଫଳ ଫଳେ ।", "ହକି ଆମର ଜାତୀୟ ଖେଳ ।"]
+      }
+    },
+    {
+      "char": "ୱ",
+      "deprecated": false,
+      "data": {
+        "words": ["ୱିକେଟ"],
+        "sentences": ["କ୍ରିକେଟ ଖେଳରେ ୱିକେଟ୍ ଏକ ଗୁରୁତ୍ୱପୂର୍ଣ୍ଣ ଅଂଶ ।"]
+      }
+    },
+    {
+      "char": "ଶ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ତାଲବ୍ୟ ଶ", "ଶିକ୍ଷକ"],
+        "sentences": ["ଏହା ହେଉଛି : ତାଲବ୍ୟ ଶ", "ଆମ ଶିକ୍ଷକ ବହୁତ ଭଲ ପଢ଼ାନ୍ତି ।"]
+      }
+    },
+    {
+      "char": "ଷ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ମୂର୍ଦ୍ଧନ୍ୟ ଷ", "ଭାଷା"],
+        "sentences": ["ଏହା ହେଉଛି : ମୂର୍ଦ୍ଧନ୍ୟ ଷ", "ଓଡ଼ିଆ ଆମର ମାତୃଭାଷା ।"]
+      }
+    },
+    {
+      "char": "ସ",
+      "deprecated": false,
+      "data": {
+        "words": ["ନାମ: ଦନ୍ତ୍ୟ ସ", "ସମୟ"],
+        "sentences": ["ଏହା ହେଉଛି : ଦନ୍ତ୍ୟ ସ", "ସମୟ କାହାରିକୁ ଅପେକ୍ଷା କରେ ନାହିଁ ।"]
+      }
+    },
+    {
+      "char": "ହ",
+      "deprecated": false,
+      "data": {
+        "words": ["ହଳ", "ହାତ"],
+        "sentences": ["ଚାଷୀ ବିଲରେ ହଳ କରେ ।", "ଖାଇବା ପୂର୍ବରୁ ହାତ ଧୋଅ ।"]
+      }
+    },
+    {
+      "char": "କ୍ଷ",
+      "deprecated": false,
+      "data": {
+        "words": ["କ୍ଷମା", "ଶିକ୍ଷକ"],
+        "sentences": ["ଭୁଲ୍ ହେଲେ କ୍ଷମା ମାଗିବା ଉଚିତ୍ ।", "ଶିକ୍ଷକ ଆମକୁ ଭଲ ଜ୍ଞାନ ଦିଅନ୍ତି ।"]
+      }
+    },
+    {
+      "char": "ୟ",
+      "deprecated": false,
+      "data": {
+        "words": ["ସମୟ", "ବିଜୟ"],
+        "sentences": ["ସମୟ ମୂଲ୍ୟବାନ ଅଟେ ।", "ପରିଶ୍ରମ କଲେ ନିଶ୍ଚୟ ବିଜୟ ମିଳେ ।"]
+      }
+    },
+    {
+      "char": "ଲ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଲତା", "ଲୁଣ"],
+        "sentences": ["ଲତା ଗଛରେ ଗୁଡେଇ ହୁଏ ।", "ଲୁଣ ବିନା ଖାଦ୍ୟ ଫିକା ଲାଗେ ।"]
+      }
+    },
+    {
+      "char": "ଡ଼",
+      "deprecated": false,
+      "data": {
+        "words": ["ବଡ଼", "ପାହାଡ଼"],
+        "sentences": ["ହାତୀ ଏକ ବଡ଼ ଜୀବ ।", "ପାହାଡ଼ ଉପରେ ମନ୍ଦିର ଅଛି ।"]
+      }
+    },
+    {
+      "char": "ଢ଼",
+      "deprecated": false,
+      "data": {
+        "words": ["ଗାଢ଼"],
+        "sentences": ["ନୀଳ ରଙ୍ଗ ଗାଢ଼ ଦିଶୁଛି ।"]
+      }
+    },
+    {
+      "char": "ଵ",
+      "deprecated": true,
+      "data": {
+        "words": ["ପୁରାତନ ବର୍ଣ୍ଣ"],
+        "sentences": ["ଏହା ଏକ ପୁରାତନ ବର୍ଣ୍ଣ ।"]
+      }
+    }
+  ],
+  "sankhya": [
+    { "char": "୦", "deprecated": false, "data": { "words": ["ଶୂନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧", "deprecated": false, "data": { "words": ["ଏକ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨", "deprecated": false, "data": { "words": ["ଦୁଇ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩", "deprecated": false, "data": { "words": ["ତିନି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪", "deprecated": false, "data": { "words": ["ଚାରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫", "deprecated": false, "data": { "words": ["ପାଞ୍ଚ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬", "deprecated": false, "data": { "words": ["ଛଅ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭", "deprecated": false, "data": { "words": ["ସାତ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮", "deprecated": false, "data": { "words": ["ଆଠ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯", "deprecated": false, "data": { "words": ["ନଅ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୦", "deprecated": false, "data": { "words": ["ଦଶ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୧", "deprecated": false, "data": { "words": ["ଏଗାର"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୨", "deprecated": false, "data": { "words": ["ବାର"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୩", "deprecated": false, "data": { "words": ["ତେର"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୪", "deprecated": false, "data": { "words": ["ଚଉଦ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୫", "deprecated": false, "data": { "words": ["ପନ୍ଦର"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୬", "deprecated": false, "data": { "words": ["ଷୋହଳ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୭", "deprecated": false, "data": { "words": ["ସତର"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୮", "deprecated": false, "data": { "words": ["ଅଠର"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୯", "deprecated": false, "data": { "words": ["ଉଣେଇଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୦", "deprecated": false, "data": { "words": ["କୋଡ଼ିଏ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୧", "deprecated": false, "data": { "words": ["ଏକୋଇଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୨", "deprecated": false, "data": { "words": ["ବାଇଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୩", "deprecated": false, "data": { "words": ["ତେଇଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୪", "deprecated": false, "data": { "words": ["ଚବିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୫", "deprecated": false, "data": { "words": ["ପଚିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୬", "deprecated": false, "data": { "words": ["ଛବିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୭", "deprecated": false, "data": { "words": ["ସତେଇଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୮", "deprecated": false, "data": { "words": ["ଅଠେଇଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୨୯", "deprecated": false, "data": { "words": ["ଅଣତିରିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩୦", "deprecated": false, "data": { "words": ["ତିରିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩୧", "deprecated": false, "data": { "words": ["ଏକତିରିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩୨", "deprecated": false, "data": { "words": ["ବତିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩୩", "deprecated": false, "data": { "words": ["ତେତିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩୪", "deprecated": false, "data": { "words": ["ଚଉତିରିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩୫", "deprecated": false, "data": { "words": ["ପଞ୍ଚତିରିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩୬", "deprecated": false, "data": { "words": ["ଛତିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    {
+      "char": "୩୭",
+      "deprecated": false,
+      "data": { "words": ["ସଇଁତିରିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] }
+    },
+    { "char": "୩୮", "deprecated": false, "data": { "words": ["ଅଠତିରିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୩୯", "deprecated": false, "data": { "words": ["ଅଣଚାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୦", "deprecated": false, "data": { "words": ["ଚାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୧", "deprecated": false, "data": { "words": ["ଏକଚାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୨", "deprecated": false, "data": { "words": ["ବୟାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୩", "deprecated": false, "data": { "words": ["ତେୟାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୪", "deprecated": false, "data": { "words": ["ଚଉରାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୫", "deprecated": false, "data": { "words": ["ପଞ୍ଚଚାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୬", "deprecated": false, "data": { "words": ["ଛୟାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୭", "deprecated": false, "data": { "words": ["ସତଚାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୮", "deprecated": false, "data": { "words": ["ଅଠଚାଳିଶି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୪୯", "deprecated": false, "data": { "words": ["ଅଣଚାଶ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୦", "deprecated": false, "data": { "words": ["ପଚାଶ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୧", "deprecated": false, "data": { "words": ["ଏକାବନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୨", "deprecated": false, "data": { "words": ["ବାଉନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୩", "deprecated": false, "data": { "words": ["ତେପନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୪", "deprecated": false, "data": { "words": ["ଚଉବନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୫", "deprecated": false, "data": { "words": ["ପଞ୍ଚାବନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୬", "deprecated": false, "data": { "words": ["ଛପନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୭", "deprecated": false, "data": { "words": ["ସତାବନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୮", "deprecated": false, "data": { "words": ["ଅଠାବନ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୫୯", "deprecated": false, "data": { "words": ["ଅଣଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୦", "deprecated": false, "data": { "words": ["ଷାଠିଏ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୧", "deprecated": false, "data": { "words": ["ଏକଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୨", "deprecated": false, "data": { "words": ["ବାଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୩", "deprecated": false, "data": { "words": ["ତେଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୪", "deprecated": false, "data": { "words": ["ଚଉଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୫", "deprecated": false, "data": { "words": ["ପଞ୍ଚଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୬", "deprecated": false, "data": { "words": ["ଛଅଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୭", "deprecated": false, "data": { "words": ["ସତଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୮", "deprecated": false, "data": { "words": ["ଅଠଷଠି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୬୯", "deprecated": false, "data": { "words": ["ଅଣସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୦", "deprecated": false, "data": { "words": ["ସତୁରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୧", "deprecated": false, "data": { "words": ["ଏକସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୨", "deprecated": false, "data": { "words": ["ବାସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୩", "deprecated": false, "data": { "words": ["ତେସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୪", "deprecated": false, "data": { "words": ["ଚଉସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୫", "deprecated": false, "data": { "words": ["ପଞ୍ଚସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୬", "deprecated": false, "data": { "words": ["ଛଅସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୭", "deprecated": false, "data": { "words": ["ସତସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୮", "deprecated": false, "data": { "words": ["ଅଠସ୍ତରି"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୭୯", "deprecated": false, "data": { "words": ["ଅଣାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୦", "deprecated": false, "data": { "words": ["ଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୧", "deprecated": false, "data": { "words": ["ଏକାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୨", "deprecated": false, "data": { "words": ["ବୟାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୩", "deprecated": false, "data": { "words": ["ତେୟାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୪", "deprecated": false, "data": { "words": ["ଚଉରାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୫", "deprecated": false, "data": { "words": ["ପଞ୍ଚାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୬", "deprecated": false, "data": { "words": ["ଛୟାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୭", "deprecated": false, "data": { "words": ["ସତାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୮", "deprecated": false, "data": { "words": ["ଅଠାଅଶୀ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୮୯", "deprecated": false, "data": { "words": ["ଅଣାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୦", "deprecated": false, "data": { "words": ["ନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୧", "deprecated": false, "data": { "words": ["ଏକାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୨", "deprecated": false, "data": { "words": ["ବୟାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୩", "deprecated": false, "data": { "words": ["ତେୟାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୪", "deprecated": false, "data": { "words": ["ଚଉରାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୫", "deprecated": false, "data": { "words": ["ପଞ୍ଚାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୬", "deprecated": false, "data": { "words": ["ଛୟାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୭", "deprecated": false, "data": { "words": ["ସତାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୮", "deprecated": false, "data": { "words": ["ଅଠାନବେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୯୯", "deprecated": false, "data": { "words": ["ଅନେଶୋତ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } },
+    { "char": "୧୦୦", "deprecated": false, "data": { "words": ["ଶହେ"], "sentences": ["ଉଦାହରଣ ନାହିଁ"] } }
+  ],
+  "juktakhyara": [
+    { "char": "ଙ୍କ", "deprecated": false, "data": { "words": ["ଅଙ୍କ", "ଡଙ୍କ"], "sentences": ["ଗଣିତରେ ଅଙ୍କ କଷାଯାଏ ।", "କଖାରୁ ଡଙ୍କରେ ତରକାରୀ କରାଯାଏ ।"] } },
+    { "char": "ଙ୍ଖ", "deprecated": false, "data": { "words": ["ଶଙ୍ଖ"], "sentences": ["ମନ୍ଦିରରେ ପୂଜାରୀ ଶଙ୍ଖ ଫୁଙ୍କୁଛନ୍ତି ।"] } },
+    { "char": "ଙ୍ଗ", "deprecated": false, "data": { "words": ["ରଙ୍ଗ", "ଜଙ୍ଗଲ"], "sentences": ["ହୋଲି ଏକ ରଙ୍ଗର ପର୍ବ ଅଟେ ।", "ଜଙ୍ଗଲରେ ବାଘ ରହେ ।"] } },
+    { "char": "ଙ୍ଘ", "deprecated": false, "data": { "words": ["ସଙ୍ଘର୍ଷ"], "sentences": ["ଜୀବନରେ ସଫଳତା ପାଇଁ ସଙ୍ଘର୍ଷ କରିବାକୁ ପଡେ ।"] } },
+    { "char": "ଞ୍ଚ", "deprecated": false, "data": { "words": ["ପାଞ୍ଚ", "ମଞ୍ଚ"], "sentences": ["ମୋ ପାଖରେ ପାଞ୍ଚଟି ଆମ୍ବ ଅଛି ।", "କଳାକାରମାନେ ମଞ୍ଚ ଉପରେ ଅଭିନୟ କରୁଛନ୍ତି ।"] } },
+    { "char": "ଞ୍ଛ", "deprecated": false, "data": { "words": ["ଲାଞ୍ଛନା"], "sentences": ["କାହାକୁ ଲାଞ୍ଛନା ଦେବା ଏକ ଖରାପ ଅଭ୍ୟାସ ।"] } },
+    { "char": "ଞ୍ଜ", "deprecated": false, "data": { "words": ["ପଞ୍ଜୁରୀ"], "sentences": ["ପଞ୍ଜୁରୀ ଭିତରେ ଶୁଆଟି ରାମ-ରାମ ଡାକୁଛି ।"] } },
+    { "char": "ଞ୍ଝ", "deprecated": false, "data": { "words": ["ପଞ୍ଝା"], "sentences": ["ବାଘର ପଞ୍ଝା ବହୁତ ଶକ୍ତ ।"] } },
+    { "char": "ଣ୍ଟ", "deprecated": false, "data": { "words": ["ଘଣ୍ଟି", "କଣ୍ଟା"], "sentences": ["ବିଦ୍ୟାଳୟରେ ଛୁଟି ଘଣ୍ଟି ବାଜିଲା ।", "ମୋ ପଦରେ କଣ୍ଟା ଟିଏ ଫୁଟି ଗଲା ।"] } },
+    { "char": "ଣ୍ଠ", "deprecated": false, "data": { "words": ["କଣ୍ଠ", "ଉତ୍କଣ୍ଠା"], "sentences": ["ମୋ ବନ୍ଧୁ ସୁନ୍ଦର କଣ୍ଠରେ ଗୀତ ଗାଇଲା ।", "ମୁଁ ଉତ୍କଣ୍ଠାର ସହ କାର୍ଯ୍ୟ କରେ ।"] } },
+    { "char": "ଣ୍ଡ", "deprecated": false, "data": { "words": ["ଦଣ୍ଡ", "ଅଣ୍ଡା"], "sentences": ["ବିନା ହେଲମେଟରେ ଗାଡି ଚଳାଇବା ଦଣ୍ଡନୀୟ ଅପରାଧ ।", "ମୋତେ ଅଣ୍ଡା ଖାଇବାକୁ ଭଲ ଲାଗେ ।"] } },
+    { "char": "ଣ୍ଢ", "deprecated": false, "data": { "words": ["ଷଣ୍ଢ"], "sentences": ["ରାସ୍ତା ଉପରେ ଏକ ଷଣ୍ଢ ଠିଆ ହୋଇଛି ।"] } },
+    { "char": "ନ୍ତ", "deprecated": false, "data": { "words": ["ଅନ୍ତ", "ଶାନ୍ତ"], "sentences": ["ସମୟର ଅନ୍ତ ନାହିଁ ।", "ପିଲାଟି ବହୁତ ଶାନ୍ତ ସ୍ୱଭାବର ।"] } },
+    { "char": "ନ୍ଥ", "deprecated": false, "data": { "words": ["ଗ୍ରନ୍ଥ", "ପନ୍ଥା"], "sentences": ["ଭାଗବତ ଏକ ପବିତ୍ର ଗ୍ରନ୍ଥ ଅଟେ ।", "ମୋ ପାଖରେ ଅନ୍ୟ କିଛି ପନ୍ଥା ନାହିଁ ।"] } },
+    { "char": "ନ୍ଦ", "deprecated": false, "data": { "words": ["ଚନ୍ଦନ", "ଆନନ୍ଦ"], "sentences": ["ପୂଜାରେ ଚନ୍ଦନ କାଠ ବ୍ୟବହାର ହୁଏ ।", "ମୋ ସାଙ୍ଗମାନଙ୍କ ସହିତ ମୁଁ ଆନନ୍ଦରେ ଖେଳେ ।"] } },
+    { "char": "ନ୍ଧ", "deprecated": false, "data": { "words": ["ଅନ୍ଧ", "ବନ୍ଧ"], "sentences": ["ସାହାଯ୍ୟ ପାଇଁ ଅନ୍ଧ ଲୋକଟି ରାସ୍ତାରେ ଠିଆ ହୋଇଥିଲା ।"] } },
+    { "char": "ମ୍ପ", "deprecated": false, "data": { "words": ["କମ୍ପ", "ଚମ୍ପା"], "sentences": ["ଭୂମିକମ୍ପ ସମୟରେ ଘର କମ୍ପି ଉଠିଲା ।"] } },
+    { "char": "ମ୍ଫ", "deprecated": false, "data": { "words": ["ବାମ୍ଫ", "ଲମ୍ଫ"], "sentences": ["ଗରମ ପାଣିରୁ ବାମ୍ଫ ବାହାରୁଛି ।"] } },
+    { "char": "ମ୍ବ", "deprecated": false, "data": { "words": ["ଆମ୍ବ", "କମ୍ବଳ"], "sentences": ["ଆମ୍ବ ଏକ ସୁଆଦିଆ ଫଳ ।"] } },
+    { "char": "ମ୍ଭ", "deprecated": false, "data": { "words": ["ଆରମ୍ଭ", "ସ୍ତମ୍ଭ"], "sentences": ["କାମ ଆରମ୍ଭ କରିବା ପୂର୍ବରୁ ଭଗବାନଙ୍କୁ ସ୍ମରଣ କର ।"] } },
+    { "char": "କ୍କ", "deprecated": false, "data": { "words": ["ଟକ୍କର"], "sentences": ["ଗାଡ଼ି ଦୁଇଟି ମଧ୍ୟରେ ଟକ୍କର ହେଲା ।"] } },
+    { "char": "କ୍ତ", "deprecated": false, "data": { "words": ["ଭକ୍ତ", "ରକ୍ତ"], "sentences": ["ଭକ୍ତମାନେ ମନ୍ଦିରରେ ଭଗବାନଙ୍କୁ ଦର୍ଶନ କରୁଛନ୍ତି ।"] } },
+    { "char": "ତ୍କ", "deprecated": false, "data": { "words": ["ଉତ୍କଳ", "ଚମତ୍କାର"], "sentences": ["ଉତ୍କଳ ଦିବସ ଏପ୍ରିଲ ୧ ତାରିଖ ଦିନ ପାଳନ କରାଯାଏ ।"] } },
+    { "char": "ଚ୍ଚ", "deprecated": false, "data": { "words": ["ଉଚ୍ଚ", "ସଚ୍ଚା"], "sentences": ["ହିମାଳୟ ପୃଥିବୀର ସବୁଠାରୁ ଉଚ୍ଚ ପର୍ବତମାଳା ।"] } },
+    { "char": "ଚ୍ଛ", "deprecated": false, "data": { "words": ["ସ୍ୱଚ୍ଛ", "ଇଚ୍ଛା"], "sentences": ["ଆମେ ଆମ ପରିବେଶକୁ ସ୍ୱଚ୍ଛ ରଖିବା ଉଚିତ୍ ।"] } },
+    { "char": "ଜ୍ଜ", "deprecated": false, "data": { "words": ["ସଜ୍ଜା", "ନିର୍ଲଜ୍ଜ"], "sentences": ["ବରଯାତ୍ରୀ ପାଇଁ ଗାଡ଼ିଟି ଫୁଲରେ ସଜ୍ଜା ହୋଇଛି ।"] } },
+    { "char": "ଜ୍ଞ", "deprecated": false, "data": { "words": ["ବିଜ୍ଞ", "ଅଜ୍ଞ"], "sentences": ["ବିଜ୍ଞ ଲୋକମାନେ ସବୁବେଳେ ଜ୍ଞାନ ଅର୍ଜନ କରନ୍ତି ।"] } },
+    { "char": "ଟ୍ଟ", "deprecated": false, "data": { "words": ["ଭଟ୍ଟା"], "sentences": ["ସମୁଦ୍ରରେ ଭଟ୍ଟା ସୃଷ୍ଟି ହୁଏ ।"] } },
+    { "char": "ଡ୍ଗ", "deprecated": false, "data": { "words": ["ଖଡ୍ଗଧାରୀ"], "sentences": ["ଖଡ୍ଗଧାରୀ ଯୋଦ୍ଧା ଯୁଦ୍ଧ ପାଇଁ ପ୍ରସ୍ତୁତ ହେଲେ ।"] } },
+    { "char": "ଡ୍ଡ", "deprecated": false, "data": { "words": ["ଉଡ୍ଡୟନ"], "sentences": ["ଗଛରୁ ପକ୍ଷୀଗୁଡିକ ଦୂରକୁ ଉଡ୍ଡୟନ କଲେ ।"] } },
+    { "char": "ତ୍ତ", "deprecated": false, "data": { "words": ["ଉତ୍ତର", "ଚିତ୍ତ"], "sentences": ["ପ୍ରଶ୍ନର ଉତ୍ତର ସଠିକ୍ ଭାବେ ଦିଅ ।"] } },
+    { "char": "ତ୍ଥ", "deprecated": false, "data": { "words": ["ଉତ୍ଥାନ"], "sentences": ["ସୂର୍ଯ୍ୟଙ୍କ ଉତ୍ଥାନ ସକାଳୁ ହୁଏ ।"] } },
+    { "char": "ଦ୍ୱ", "deprecated": false, "data": { "words": ["ଦ୍ୱାର", "ଦ୍ୱନ୍ଦ"], "sentences": ["ମନ୍ଦିରର ଦ୍ୱାର ସବୁବେଳେ ଖୋଲା ଥାଏ ।"] } },
+    { "char": "ଗ୍ଧ", "deprecated": false, "data": { "words": ["ଦୁଗ୍ଧ", "ସ୍ନିଗ୍ଧ"], "sentences": ["ଗାଈ ଦୁଗ୍ଧ ଶିଶୁମାନଙ୍କ ପାଇଁ ଉପକାରୀ ।"] } },
+    { "char": "ଦ୍ଘ", "deprecated": false, "data": { "words": ["ଉଦ୍ଘାଟନ"], "sentences": ["ମନ୍ତ୍ରୀ ନୂଆ ପୋଲର ଉଦ୍ଘାଟନ କଲେ ।"] } },
+    { "char": "ଦ୍ଦ", "deprecated": false, "data": { "words": ["ଉଦ୍ଦେଶ୍ୟ"], "sentences": ["ପାଠ ପଢିବାର ମୂଳ ଉଦ୍ଦେଶ୍ୟ ହେଉଛି ଜ୍ଞାନ ଆହରଣ ।"] } },
+    { "char": "ଦ୍ଧ", "deprecated": false, "data": { "words": ["ଯୁଦ୍ଧ", "ବୁଦ୍ଧ"], "sentences": ["ଯୁଦ୍ଧ କରିବା ଦ୍ୱାରା କେବଳ କ୍ଷତି ହୁଏ ।"] } },
+    { "char": "ବ୍ଦ", "deprecated": false, "data": { "words": ["ଶବ୍ଦ", "ଶତାବ୍ଦୀ"], "sentences": ["ଜୋରରେ ଶବ୍ଦ କରିବା ଅନୁଚିତ୍ ।"] } },
+    { "char": "ବ୍ବ", "deprecated": false, "data": { "words": ["ମୁରବ୍ବା"], "sentences": ["ମୁରବ୍ବା ଖାଇବାକୁ ଭାରି ମିଠା ଲାଗେ ।"] } },
+    { "char": "ଦ୍ଭ", "deprecated": false, "data": { "words": ["ଉଦ୍ଭବ", "ଅଦ୍ଭୁତ"], "sentences": ["ଗଙ୍ଗା ନଦୀର ଉଦ୍ଭବ ହିମାଳୟରୁ ହୋଇଛି ।"] } },
+    { "char": "ପ୍ପ", "deprecated": false, "data": { "words": ["ପିପ୍ପଳୀ"], "sentences": ["ପିପ୍ପଳୀ ଏକ ଔଷଧୀୟ ଗଛ ।"] } },
+    { "char": "ପ୍ତ", "deprecated": false, "data": { "words": ["ସପ୍ତ", "ଗୁପ୍ତ"], "sentences": ["ଇନ୍ଦ୍ରଧନୁରେ ସପ୍ତ ରଙ୍ଗ ଥାଏ ।"] } },
+    { "char": "ତ୍ମ", "deprecated": false, "data": { "words": ["ଆତ୍ମନିର୍ଭର"], "sentences": ["ମୁଁ କାହା ଉପରେ ଆତ୍ମନିର୍ଭର କରେ ନାହିଁ ।"] } },
+    { "char": "ଳ୍କ", "deprecated": false, "data": { "words": ["ଉଲ୍କା"], "sentences": ["ରାତିରେ ଆକାଶରୁ ଉଲ୍କା ପିଣ୍ଡ ଖସିବାର ଦେଖାଯାଏ ।"] } },
+    { "char": "ଳ୍ପ", "deprecated": false, "data": { "words": ["ଗଳ୍ପ", "ସ୍ୱଳ୍ପ"], "sentences": ["ଆଈମା ଛୋଟ ପିଲାଙ୍କୁ ଗଳ୍ପ ଶୁଣାନ୍ତି ।"] } },
+    { "char": "ଶ୍ଚ", "deprecated": false, "data": { "words": ["ପଶ୍ଚିମ", "ନିଶ୍ଚୟ"], "sentences": ["ସୂର୍ଯ୍ୟ ପଶ୍ଚିମ ଦିଗରେ ଅସ୍ତ ହୁଅନ୍ତି ।"] } },
+    { "char": "ଶ୍ନ", "deprecated": false, "data": { "words": ["ପ୍ରଶ୍ନ"], "sentences": ["ଶିକ୍ଷକ ଛାତ୍ରଙ୍କୁ କଠିନ ପ୍ରଶ୍ନ ପଚାରିଲେ ।"] } },
+    { "char": "ଷ୍କ", "deprecated": false, "data": { "words": ["ଶୁଷ୍କ", "ପୁଷ୍କରିଣୀ"], "sentences": ["ଖରାଦିନେ ନଦୀ ପୋଖରୀ ଶୁଷ୍କ ହୋଇଯାଏ ।"] } },
+    { "char": "ଷ୍ଟ", "deprecated": false, "data": { "words": ["କଷ୍ଟ", "ନଷ୍ଟ"], "sentences": ["ପରିଶ୍ରମ କଲେ କଷ୍ଟର ଫଳ ମିଳେ ।"] } },
+    { "char": "ଷ୍ଠ", "deprecated": false, "data": { "words": ["ଷଷ୍ଠ", "ଓଷ୍ଠ"], "sentences": ["ସେ ଷଷ୍ଠ ଶ୍ରେଣୀରେ ପାଠ ପଢ଼େ ।"] } },
+    { "char": "ଷ୍ଣ", "deprecated": false, "data": { "words": ["କୃଷ୍ଣ", "ଉଷ୍ଣ"], "sentences": ["ଭଗବାନ ଶ୍ରୀକୃଷ୍ଣଙ୍କୁ ସମସ୍ତେ ପୂଜା କରନ୍ତି ।"] } },
+    { "char": "ଷ୍ମ", "deprecated": false, "data": { "words": ["ଗ୍ରୀଷ୍ମ"], "sentences": ["ଗ୍ରୀଷ୍ମ ଋତୁରେ ପ୍ରବଳ ଗରମ ହୁଏ ।"] } },
+    { "char": "ସ୍କ", "deprecated": false, "data": { "words": ["ପୁରସ୍କାର", "ଭାସ୍କର"], "sentences": ["ଭଲ କାମ ପାଇଁ ତାଙ୍କୁ ପୁରସ୍କାର ମିଳିଲା ।"] } },
+    { "char": "ସ୍ତ", "deprecated": false, "data": { "words": ["ଅସ୍ତ", "ସମସ୍ତ"], "sentences": ["ସୂର୍ଯ୍ୟ ସନ୍ଧ୍ୟାରେ ଅସ୍ତ ଯାଆନ୍ତି ।"] } },
+    { "char": "ସ୍ଥ", "deprecated": false, "data": { "words": ["ସ୍ଥାନ", "ସୁସ୍ଥ"], "sentences": ["ଏହି ସ୍ଥାନ ବୁଲିବା ପାଇଁ ବହୁତ ସୁନ୍ଦର ।"] } },
+    { "char": "ସ୍ନ", "deprecated": false, "data": { "words": ["ସ୍ନାନ", "ସ୍ନେହ"], "sentences": ["ସକାଳୁ ଉଠି ସ୍ନାନ କରିବା ଉଚିତ୍ ।"] } },
+    { "char": "ସ୍ପ", "deprecated": false, "data": { "words": ["ପରସ୍ପର", "ସ୍ପର୍ଶ"], "sentences": ["ଆମେ ପରସ୍ପରକୁ ସାହାଯ୍ୟ କରିବା ଉଚିତ୍ ।"] } },
+    { "char": "ସ୍ଫ", "deprecated": false, "data": { "words": ["ସ୍ଫଟିକ"], "sentences": ["ସ୍ଫଟିକ ପରି ମନକୁ ସ୍ୱଚ୍ଛ ରଖିବା ଉଚିତ୍ ।"] } },
+    { "char": "ସ୍ତ୍ର", "deprecated": false, "data": { "words": ["ବସ୍ତ୍ର", "ଅସ୍ତ୍ର"], "sentences": ["ଗରିବ ଲୋକଙ୍କୁ ବସ୍ତ୍ର ଦାନ କରିବା ଏକ ପୁଣ୍ୟ କାମ ।"] } },
+    { "char": "ତ୍ସ", "deprecated": false, "data": { "words": ["ଉତ୍ସବ", "ବତ୍ସ"], "sentences": ["ଦୀପାବଳି ଏକ ଆଲୋକର ଉତ୍ସବ ।"] } },
+    { "char": "କ୍ଷ୍ଣ", "deprecated": false, "data": { "words": ["ତୀକ୍ଷ୍ଣ"], "sentences": ["ଛୁରୀଟି ବହୁତ ତୀକ୍ଷ୍ଣ ଅଟେ ।"] } },
+    { "char": "କ୍ଷ୍ମ", "deprecated": false, "data": { "words": ["ସୂକ୍ଷ୍ମ", "ଯକ୍ଷ୍ମା", "ଲକ୍ଷ୍ମୀ"], "sentences": ["ଲକ୍ଷ୍ମୀ ପୂଜାରେ ଘରକୁ ସଜାଯାଏ ।"] } },
+    { "char": "କ୍ଷ୍ୟ", "deprecated": false, "data": { "words": ["ଲକ୍ଷ୍ୟ", "ସାକ୍ଷ୍ୟ"], "sentences": ["ଜୀବନରେ ଏକ ବଡ ଲକ୍ଷ୍ୟ ରଖିବା ଉଚିତ୍ ।"] } },
+    { "char": "ଙ୍\u200cକ୍ତ", "deprecated": false, "data": { "words": ["ପଙ୍\u200cକ୍ତି"], "sentences": [""] } },
+    { "char": "ଙ୍କ୍ଷ", "deprecated": false, "data": { "words": ["ଆକାଙ୍କ୍ଷା"], "sentences": ["ସମସ୍ତଙ୍କର ବଡ ହେବାର ଆକାଙ୍କ୍ଷା ଥାଏ ।"] } },
+    { "char": "ଜ୍ଜ୍ଵ", "deprecated": false, "data": { "words": ["ଉଜ୍ଜ୍ୱଳ"], "sentences": ["ଚନ୍ଦ୍ର ରାତିରେ ଉଜ୍ଜ୍ୱଳ ଆଲୋକ ଦିଏ ।"] } },
+    { "char": "ତ୍ତ୍ବ", "deprecated": false, "data": { "words": ["ମହତ୍ତ୍ୱ"], "sentences": ["ସମୟର ମହତ୍ତ୍ୱ ବୁଝିବା ଦରକାର ।"] } },
+    { "char": "ତ୍ତ୍ର", "deprecated": false, "data": { "words": ["ଛତ୍ତ୍ର"], "sentences": ["ବର୍ଷା ଦିନେ ଛତୁଗୁଡିକ ରାଜାଙ୍କ ଛତ୍ତ୍ର ପରି ଦେଖାଯାଏ ।"] } },
+    { "char": "ତ୍ମ୍ୟ", "deprecated": false, "data": { "words": ["ଦୌରାତ୍ମ୍ୟ"], "sentences": ["ଦୁଷ୍ଟ ଲୋକର ଦୌରାତ୍ମ୍ୟ ବଢିଗଲାଣି ।"] } },
+    { "char": "ଣ୍ଡ୍ର", "deprecated": false, "data": { "words": ["ପୁଣ୍ଡ୍ର"], "sentences": ["ସାଧୁମାନେ କପାଳରେ ପୁଣ୍ଡ୍ର ଧାରଣ କରନ୍ତି ।"] } },
+    { "char": "ତ୍ସ୍ନ", "deprecated": false, "data": { "words": ["ଜ୍ୟୋତ୍ସ୍ନା"], "sentences": ["ପୂର୍ଣ୍ଣମୀ ରାତିରେ ଜ୍ୟୋତ୍ସ୍ନା ପଡେ ।"] } },
+    { "char": "ତ୍ସ୍ୟ", "deprecated": false, "data": { "words": ["ମତ୍ସ୍ୟ"], "sentences": ["ମତ୍ସ୍ୟ ଜଳରେ ବାସ କରେ ।"] } },
+    { "char": "ନ୍ତ୍ୟ", "deprecated": false, "data": { "words": ["ଅନ୍ତ୍ୟ"], "sentences": ["ଅନ୍ତ୍ୟ ସମୟରେ ସତ୍ୟ କୁହ ।"] } },
+    { "char": "ନ୍ତ୍ର", "deprecated": false, "data": { "words": ["ମନ୍ତ୍ର", "ଯନ୍ତ୍ର"], "sentences": ["ପୂଜାରେ ବ୍ରାହ୍ମଣ ମନ୍ତ୍ର ପାଠ କରୁଛନ୍ତି ।"] } },
+    { "char": "ନ୍ତ୍ଵ", "deprecated": false, "data": { "words": ["ସାନ୍ତ୍ଵନା"], "sentences": ["ଦୁଃଖୀ ଲୋକକୁ ସାନ୍ତ୍ଵନା ଦିଅ ।"] } },
+    { "char": "ନ୍ଦ୍ର", "deprecated": false, "data": { "words": ["ଚନ୍ଦ୍ର", "ଇନ୍ଦ୍ର"], "sentences": ["ରାତି ଆକାଶରେ ଚନ୍ଦ୍ର ଦେଖାଯାଏ ।"] } },
+    { "char": "ନ୍ଦ୍ବ", "deprecated": false, "data": { "words": ["ଦ୍ୱନ୍ଦ୍ୱ"], "sentences": ["ମନରୁ ସବୁ ଦ୍ୱନ୍ଦ୍ୱ ଦୂର କର ।"] } },
+    { "char": "ନ୍ଧ୍ର", "deprecated": false, "data": { "words": ["ରନ୍ଧ୍ର"], "sentences": ["ଆମ ଚର୍ମରେ ଛୋଟ ଛୋଟ ଲୋମ ରନ୍ଧ୍ର ଥାଏ ।"] } },
+    { "char": "ନ୍ଧ୍ୟ", "deprecated": false, "data": { "words": ["ସନ୍ଧ୍ୟା"], "sentences": ["ସନ୍ଧ୍ୟା ସମୟରେ ତୁଳସୀ ଚଉରା ମୂଳେ ଦୀପ ଜଳାଯାଏ ।"] } },
+    { "char": "ନ୍ନ୍ୟ", "deprecated": false, "data": { "words": ["ସନ୍ନ୍ୟାସୀ"], "sentences": ["ସନ୍ନ୍ୟାସୀ ହିମାଳୟରେ ତପସ୍ୟା କରନ୍ତି ।"] } },
+    { "char": "ମ୍ପ୍ର", "deprecated": false, "data": { "words": ["ସମ୍ପ୍ରଦାୟ"], "sentences": ["ସବୁ ସମ୍ପ୍ରଦାୟର ଲୋକ ମିଳିମିଶି ରହିବା ଉଚିତ୍ ।"] } },
+    { "char": "ମ୍ଭ୍ର", "deprecated": false, "data": { "words": ["ସମ୍ଭ୍ରାନ୍ତ"], "sentences": ["ସେ ଏକ ସମ୍ଭ୍ରାନ୍ତ ପରିବାରର ଲୋକ ।"] } },
+    { "char": "ର୍ଚ୍ଚ", "deprecated": false, "data": { "words": ["ଚର୍ଚ୍ଚା", "ଅର୍ଚ୍ଚନା"], "sentences": ["ଗାଁରେ ମେଳା ବିଷୟରେ ଚର୍ଚ୍ଚା ହେଉଛି ।"] } },
+    { "char": "ର୍ଚ୍ଛ", "deprecated": false, "data": { "words": ["ମୂର୍ଚ୍ଛା"], "sentences": ["ଅତ୍ୟଧିକ ଗରମ ଯୋଗୁଁ ସେ ମୂର୍ଚ୍ଛା ହୋଇଗଲେ ।"] } },
+    { "char": "ର୍ଣ୍ଣ", "deprecated": false, "data": { "words": ["ବର୍ଣ୍ଣ", "ପୂର୍ଣ୍ଣ"], "sentences": ["ଓଡ଼ିଆ ଭାଷାରେ ଅନେକ ବର୍ଣ୍ଣ ଅଛି ।"] } },
+    { "char": "ର୍ତ୍ତ", "deprecated": false, "data": { "words": ["ଗର୍ତ୍ତ", "ନର୍ତ୍ତକୀ"], "sentences": ["ସେ ଜଣେ ଭଲ ନର୍ତ୍ତକୀ ।"] } },
+    { "char": "ର୍ଦ୍ଧ", "deprecated": false, "data": { "words": ["ଅର୍ଦ୍ଧ"], "sentences": ["ମହାଦେବ ଅର୍ଦ୍ଧ ଚନ୍ଦ୍ରକୁ ନିଜ ଜଟାରେ ଧାରଣ କରଛନ୍ତି ।"] } },
+    { "char": "ର୍ଦ୍ଦ", "deprecated": false, "data": { "words": ["ମାର୍ଦ୍ଦଳ"], "sentences": ["ଓଡ଼ିଶୀ ନୃତ୍ୟ ପରିବେଷଣ ସମୟରେ ମାର୍ଦ୍ଦଳର ତାଳ ଏକ ସ୍ୱତନ୍ତ୍ର ମାଧୁର୍ଯ୍ୟ ସୃଷ୍ଟି କରିଥାଏ ।"] } },
+    { "char": "ର୍ତ୍ସ", "deprecated": false, "data": { "words": ["ଭର୍ତ୍ସନା"], "sentences": ["ଭୁଲ କାମ ପାଇଁ ଗୁରୁ ଭର୍ତ୍ସନା କଲେ ।"] } },
+    { "char": "ର୍ଦ୍ର", "deprecated": false, "data": { "words": ["ଆର୍ଦ୍ର"], "sentences": ["ବର୍ଷା ଦିନେ ପାଗ ଆର୍ଦ୍ର ଥାଏ ।"] } },
+    { "char": "ର୍ଯ୍ୟ", "deprecated": false, "data": { "words": ["ସୂର୍ଯ୍ୟ", "କାର୍ଯ୍ୟ"], "sentences": ["ସୂର୍ଯ୍ୟ ପୂର୍ବ ଦିଗରେ ଉଦୟ ହୁଅନ୍ତି ।"] } },
+    { "char": "ର୍ଶ୍ଵ", "deprecated": false, "data": { "words": ["ପାର୍ଶ୍ଵ"], "sentences": ["ରାସ୍ତାର ବାମ ପାର୍ଶ୍ଵରେ ଚାଲିବା ଉଚିତ୍ ।"] } },
+    { "char": "ଷ୍କ୍ର", "deprecated": false, "data": { "words": ["ନିଷ୍କ୍ରିୟ"], "sentences": ["ଯନ୍ତ୍ରଟି ନିଷ୍କ୍ରିୟ ହୋଇ ପଡିଛି ।"] } },
+    { "char": "ଷ୍ଟ୍ର", "deprecated": false, "data": { "words": ["ରାଷ୍ଟ୍ର"], "sentences": ["ଭାରତ ଆମର ରାଷ୍ଟ୍ର ଅଟେ ।"] } },
+    { "char": "ଷ୍ପ୍ର", "deprecated": false, "data": { "words": ["ଦୁଷ୍ପ୍ରାପ୍ୟ"], "sentences": ["ଏହି ଔଷଧ ବହୁତ ଦୁଷ୍ପ୍ରାପ୍ୟ ଅଟେ ।"] } },
+    { "char": "ସ୍ଥ୍ୟ", "deprecated": false, "data": { "words": ["ସ୍ୱାସ୍ଥ୍ୟ"], "sentences": ["ସ୍ୱାସ୍ଥ୍ୟ ହିଁ ସମ୍ପଦ ।"] } },
+    { "char": "ନ୍ତ୍ର୍ୟ", "deprecated": false, "data": { "words": ["ସ୍ୱାତନ୍ତ୍ର୍ୟ"], "sentences": ["ଓଡ଼ିଶାର କଳାର ସ୍ୱାତନ୍ତ୍ର୍ୟ ରହିଛି ।"] } },
+    { "char": "ର୍ତ୍ତ୍ୟ", "deprecated": false, "data": { "words": ["ମର୍ତ୍ତ୍ୟ"], "sentences": ["ମର୍ତ୍ତ୍ୟ ମଣ୍ଡଳେ ଦେହ ବହି, ଦେବତା ହେଲେ ମରଇ ।"] } },
+    { "char": "ର୍ତ୍ତ୍ର", "deprecated": false, "data": { "words": ["କର୍ତ୍ତ୍ରୀ"], "sentences": ["ସେ ହେଉଛନ୍ତି ଘରର କର୍ତ୍ତ୍ରୀ ।"] } },
+    { "char": "ର୍ଦ୍ଧ୍ୱ", "deprecated": false, "data": { "words": ["ଊର୍ଦ୍ଧ୍ୱ"], "sentences": ["ପକ୍ଷୀଟି ଆକାଶର ଊର୍ଦ୍ଧ୍ୱକୁ ଉଡିଗଲା ।"] } }
+  ],
+  "phala": [
+    {
+      "char": "୍ୟ",
+      "deprecated": false,
+      "data": {
+        "words": ["ସୂର୍ଯ୍ୟ", "ସତ୍ୟ"],
+        "sentences": ["ସୂର୍ଯ୍ୟ ପୂର୍ବ ଦିଗରେ ଉଦୟ ହୁଅନ୍ତି ।", "ସଦା ସର୍ବଦା ସତ୍ୟ କୁହ ।"]
+      }
+    },
+    {
+      "char": "୍ର",
+      "deprecated": false,
+      "data": {
+        "words": ["ଗ୍ରାମ", "ଚକ୍ର"],
+        "sentences": ["ଆମ ଗ୍ରାମର ନାମ ମହୁଲି ।", "ଜାତୀୟ ପତାକାରେ ଅଶୋକ ଚକ୍ର ଅଛି ।"]
+      }
+    },
+    {
+      "char": "୍ୱ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଦ୍ୱାର", "ସ୍ୱାଧୀନ"],
+        "sentences": ["ମନ୍ଦିରର ଦ୍ୱାର ଖୋଲା ଅଛି ।", "ଭାରତ ଏକ ସ୍ୱାଧୀନ ଦେଶ ।"]
+      }
+    },
+    {
+      "char": "୍ମ",
+      "deprecated": false,
+      "data": {
+        "words": ["ପଦ୍ମ", "ଜନ୍ମ"],
+        "sentences": ["ପଦ୍ମ ଆମର ଜାତୀୟ ଫୁଲ ।"]
+      }
+    },
+    {
+      "char": "୍ନ",
+      "deprecated": false,
+      "data": {
+        "words": ["ରତ୍ନ", "ଯତ୍ନ"],
+        "sentences": ["ପରିଶ୍ରମ ହିଁ ପ୍ରକୃତ ରତ୍ନ ।", "ଶରୀରର ଯତ୍ନ ନେବା ଉଚିତ୍ ।"]
+      }
+    },
+    {
+      "char": "୍ଳ",
+      "deprecated": false,
+      "data": {
+        "words": ["ଶୁକ୍ଳ", "ବିପ୍ଳବ"],
+        "sentences": ["ଅମାବାସ୍ୟା ରୁ ପୂର୍ଣ୍ଣମୀ ଯାଏ ଶୁକ୍ଳପକ୍ଷ ।"]
+      }
+    },
+    {
+      "char": "୍ଲ",
+      "deprecated": false,
+      "data": {
+        "words": ["ପଲ୍ଲୀ"],
+        "sentences": ["ଆମ ପଲ୍ଲୀ ବହୁତ ସୁନ୍ଦର ।"]
+      }
+    }
+  ]
+}
