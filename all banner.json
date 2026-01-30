@@ -1,19 +1,14 @@
 {
-  "version": 6,
+  "version": 18,
   "banners": [
-    {
-      "image": "https://imsbg.github.io/odiabhasa/images/banner/neww2026.png",
-      "text": "",
-      "paragraph": "ଆପଣଙ୍କୁ ଓ ଆପଣଙ୍କ ପ୍ରିୟଜନଙ୍କୁ ନୂତନ ବର୍ଷର ଶୁଭେଚ୍ଛା",
-      "link": "",
-      "promo": "yes"
-    },
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
       "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ",
       "paragraph": "ଜୟ ଜଗନ୍ନାଥ",
       "link": "",
-      "promo": "no"
+      "promo": "no",
+      "start": "30-01-2026 08:22",
+      "end": "30-01-2026 08:25"
     },
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
