@@ -361,14 +361,14 @@
       })();
     </script>
 
-    <script>
-  (function () {
-    if (sessionStorage.getItem("deeplink_tried")) return;
-    sessionStorage.setItem("deeplink_tried", "1");
+<script>
+(function () {
+  if (!/Android/i.test(navigator.userAgent)) return;
 
-    window.location.href = "odiabhasa://open";
-  })();
+  window.location.href =
+    "intent://open#Intent;scheme=odiabhasa;package=in.sandeep.odiabhasa;end";
+})();
 </script>
-    
+
 </body>
 </html>
