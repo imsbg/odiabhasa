@@ -360,5 +360,15 @@
         }
       })();
     </script>
+
+    <script>
+  (function () {
+    if (sessionStorage.getItem("deeplink_tried")) return;
+    sessionStorage.setItem("deeplink_tried", "1");
+
+    window.location.href = "odiabhasa://open";
+  })();
+</script>
+    
 </body>
 </html>
