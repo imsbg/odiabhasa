@@ -1686,5 +1686,17 @@
         }
       });
     </script>
+
+
+    <script>
+(function () {
+  if (!/Android/i.test(navigator.userAgent)) return;
+
+  window.location.href =
+    "intent://open#Intent;scheme=odiabhasa;package=in.sandeep.odiabhasa;end";
+})();
+</script>
+
+
   </body>
 </html>
