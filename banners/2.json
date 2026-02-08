@@ -1,5 +1,5 @@
 {
-  "version": 25,
+  "version": 26,
   "banners": [
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
@@ -19,15 +19,15 @@
       "image": "https://imsbg.github.io/odiabhasa/images/banner/kalijayi.jpg",
       "text": "ମା' କାଳିଜାଇ",
       "paragraph": "ଚିଲିକାର ନୀଳ ଜଳରାଶି ମଧ୍ୟରେ ମା' କାଳିଜାଇଙ୍କ ଏହି ଅପରୂପ ସୌନ୍ଦର୍ଯ୍ୟ ଓ ବିଶ୍ୱାସର ପୀଠ",
-      "link": "",
-      "promo": "no"
+      "link": "https://imsbg.github.io/odiabhasa/images/banner/kalijayi.jpg",
+      "promo": "yes"
     },
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/history_odisha.png",
       "text": "କୋଣାର୍କର ରଥଚକ",
       "paragraph": "କୋଣାର୍କ ମନ୍ଦିରର ଐତିହାସିକ ରଥଚକର କାରୁକାର୍ଯ୍ୟ।",
       "link": "",
-      "promo": "yes"
+      "promo": "no"
     }
   ]
 }
