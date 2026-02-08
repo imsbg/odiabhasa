@@ -1,5 +1,5 @@
 {
-  "version": 23,
+  "version": 24,
   "banners": [
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
@@ -12,6 +12,13 @@
       "image": "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
       "text": "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
       "paragraph": "ଓଡ଼ିଶାର ଗର୍ବ ଓ ଗୌରବ, ବିଶ୍ୱ ପ୍ରସିଦ୍ଧ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
+      "link": "",
+      "promo": "no"
+    },
+        {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/kalijayi.jpg",
+      "text": "ମା' କାଳିଜାଇ",
+      "paragraph": "ଚିଲିକାର ନୀଳ ଜଳରାଶି ମଧ୍ୟରେ ମା' କାଳିଜାଇଙ୍କ ଏହି ଅପରୂପ ସୌନ୍ଦର୍ଯ୍ୟ ଓ ବିଶ୍ୱାସର ପୀଠ",
       "link": "",
       "promo": "no"
     },
