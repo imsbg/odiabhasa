@@ -1,6 +1,13 @@
 {
-  "version": 21,
+  "version": 22,
   "banners": [
+        {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/newupdate.jpg",
+      "text": "",
+      "paragraph": "ଖୁସିର ଖବର! ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ରେ ଏବେ ନୂଆ କ୍ୟାଲେଣ୍ଡର ୱିଜେଟ୍ ଉପଲବ୍ଧ । ଏବେ ହିଁ ଅପଡେଟ୍ କରନ୍ତୁ",
+      "link": "https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa",
+      "promo": "yes"
+    },
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
       "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ",
