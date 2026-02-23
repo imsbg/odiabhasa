@@ -1,12 +1,12 @@
 {
-  "version": 28,
+  "version": 29,
   "banners": [
     {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/holi2026.jpg",
   "text": "",
   "paragraph": "ରଙ୍ଗର ଏହି ପବିତ୍ର ପର୍ବ ଆପଣଙ୍କ ଜୀବନରେ ଅନେକ ଖୁସି ଓ ସମୃଦ୍ଧି ଆଣିଦେଉ",
-  "link": "https://play.google.com/store/apps/details?id=in.sandeep.plyxogames",
-  "promo": "yes",
+  "link": "",
+  "promo": "no",
   "start": "03-03-2026 00:01",
   "end": "04-03-2026 23:59"
 },
