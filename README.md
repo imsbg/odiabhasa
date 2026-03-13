@@ -100,4 +100,7 @@ You can download the app from the following stores:
   <p>&copy; 2025-26 Sandeep Biswal G Apps. All Rights Reserved.</p>
   <p>ଜୟ ଜଗନ୍ନାଥ ସ୍ବାମୀ ନୟନପଥଗାମୀ <p>
   <p>ସ୍ଵରବର୍ଣ୍ଣ, ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ, ଯୁକ୍ତାକ୍ଷର, ସଂଖ୍ୟା, କ୍ୟାଲେଣ୍ଡର, ପର୍ବପର୍ବାଣୀ ଓ ଛୁଟିଦିନ ସବୁକିଛି ଗୋଟିଏ ଆପ୍‌ରେ ।</p>
+  <p>Learning a language especially one's mother tongue should not depend on subscriptions or ads.</p>
+  <p>mail: message.sbg@gmail.com</p>
+  <p>@SandeepBiswalG</p>
 </div>
