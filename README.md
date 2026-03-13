@@ -24,13 +24,19 @@
     <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa">
       <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" width="220" alt="Get it on Google Play"/>
     </a>
+    </p>
+    <p align="center">
+        <a href="https://www.indusappstore.com/apps/education/ଓଡ଼ିଆ-ଭାଷା/in.sandeep.odiabhasa/?page=details&id=in.sandeep.odiabhasa">
+      <img src="https://docstore.indusappstore.com/public/external/developerdashboard-static/badge-black-full-color-oriya.png" width="180" alt="Get it on Indus Appstore"/>
+    </a>
   </p>
+  
 
 </div>
 
 ---
 
-## 📖 ଆପ୍ ବିଷୟରେ (About the App)
+## 📖 ଆପ୍ ବିଷୟରେ
 
 **ଓଡ଼ିଆ ଭାଷା** ଆପ୍ ହେଉଛି ଓଡ଼ିଆ ଶିଖୁଥିବା ପିଲାମାନଙ୍କ ପାଇଁ ଏକ ସମ୍ପୂର୍ଣ୍ଣ ମାଧ୍ୟମ । ସ୍ଵରବର୍ଣ୍ଣ ଠାରୁ ଆରମ୍ଭ କରି ଛବିଳ ମଧୁ ବର୍ଣ୍ଣବୋଧ ପର୍ଯ୍ୟନ୍ତ ସବୁକିଛି ଏବେ ଗୋଟିଏ ସ୍ଥାନରେ । ଏହା ସମ୍ପୂର୍ଣ୍ଣ **ବିଜ୍ଞାପନ ମୁକ୍ତ** ଏବଂ ଅଫ୍‌ଲାଇନ୍‌ରେ ମଧ୍ୟ କାମ କରେ ।
 
@@ -38,9 +44,9 @@
 
 ---
 
-## ✨ ମୁଖ୍ୟ ବିଶେଷତ୍ୱ (Key Features)
+## ✨ ମୁଖ୍ୟ ବିଶେଷତ୍ୱ
 
-| ଓଡ଼ିଆ (Odia) | English |
+| ଓଡ଼ିଆ| English |
 | :--- | :--- |
 | **📚 ବର୍ଣ୍ଣମାଳା ଶିକ୍ଷା:** ସ୍ୱରବର୍ଣ୍ଣ, ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ, ମାତ୍ରା ଓ ଯୁକ୍ତାକ୍ଷର ଶିଖନ୍ତୁ - ଶୁଦ୍ଧ ଉଚ୍ଚାରଣ ସହିତ । | **Alphabet Learning:** Learn Swarabarna, Byanjanabarna, Matras, and Juktakhyara with clear voice pronunciation. |
 | **✍️ ଡିଜିଟାଲ୍ ସ୍ଲେଟ୍:** ନିଜ ଆଙ୍ଗୁଠି ବ୍ୟବହାର କରି ସ୍କ୍ରିନ୍ ଉପରେ ଅକ୍ଷର ଲେଖିବା ଅଭ୍ୟାସ କରନ୍ତୁ । | **Digital Slate:** Practice handwriting directly on the screen using your finger or stylus. |
@@ -51,7 +57,7 @@
 
 ---
 
-## 📱 ଆପ୍ ର ଝଲକ (Screenshots)
+## 📱 ଆପ୍ ର ଝଲକ
 
 <div align="center">
   <img src="https://imsbg.github.io/odiabhasa/images/ss/1.png" width="200" alt="Home Screen" style="border-radius:10px; margin:5px;" />
@@ -62,8 +68,8 @@
 
 ---
 
-## 🛠️ ବ୍ୟବହୃତ ଟେକ୍ନୋଲୋଜି (Tech Stack)
-
+## 🛠️ ବ୍ୟବହୃତ ଟେକ୍ନୋଲୋଜି
+ଏହି ଆପ୍‌ଟିକୁ ଅତ୍ୟାଧୁନିକ ଆଣ୍ଡ୍ରଏଡ୍ ବିକାଶ ଶୈଳୀରେ ତିଆରି କରାଯାଇଛି, ଯାହାଦ୍ୱାରା ଏହାର କାର୍ଯ୍ୟଦକ୍ଷତା ଉନ୍ନତ ରହିବା ସହ ବ୍ୟବହାରକାରୀଙ୍କୁ ଏକ ସହଜ ଓ ସୁନ୍ଦର ଅନୁଭୂତି ମିଳିପାରିବ ।
 This app is built using modern Android development standards to ensure performance and a smooth user experience.
 
 *   **Language:** [Kotlin](https://kotlinlang.org/)
@@ -74,13 +80,14 @@ This app is built using modern Android development standards to ensure performan
 
 ---
 
-## 📥 ଡାଉନଲୋଡ୍ କରନ୍ତୁ (Download)
+## 📥 ଡାଉନଲୋଡ୍ କରନ୍ତୁ 
 
 ଆପଣ ଏହି ଆପ୍ କୁ ଗୁଗଲ ପ୍ଲେ ଷ୍ଟୋର ଏବଂ ଇଣ୍ଡସ ଆପ୍ ଷ୍ଟୋର ରୁ ଡାଉନଲୋଡ୍ କରିପାରିବେ ।
 
 You can download the app from the following stores:
 
 *   [**ଗୁଗଲ ପ୍ଲେ ଷ୍ଟୋର | Google Play Store**](https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa)
+*   [**ଇଣ୍ଡସ ଆପ୍‌ଷ୍ଟୋର୍ | Indus Appstore**](https://www.indusappstore.com/apps/education/ଓଡ଼ିଆ-ଭାଷା/in.sandeep.odiabhasa/?page=details&id=in.sandeep.odiabhasa)
 
 
 ---
