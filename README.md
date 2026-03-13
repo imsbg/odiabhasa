@@ -92,7 +92,7 @@ You can download the app from the following stores:
 
 ---
 
-## 📄 ନୀତି ଓ ନିୟମାବଳୀ (Legal)
+## 📄 ନୀତି ଓ ନିୟମାବଳୀ
 
 *   [ଗୋପନୀୟତା ନୀତି (Privacy Policy)](https://imsbg.github.io/odiabhasa/privacy-policy)
 *   [ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ (Terms & Conditions)](https://imsbg.github.io/odiabhasa/terms)
