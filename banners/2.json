@@ -1,6 +1,15 @@
 {
-  "version": 30,
+  "version": 31,
   "banners": [
+        {
+  "image": "https://imsbg.github.io/odiabhasa/images/banner/pakhala.jpg",
+  "text": "",
+  "paragraph": "ପଖାଳ କଂସାଏ, ଶାଗ ଭଜା ଓ ଚୁନା ମାଛ ଭଜା... ଓଡ଼ିଆର ସବୁଠୁ ବଡ଼ ସୁଖ",
+  "link": "",
+  "promo": "no",
+  "start": "20-03-2026 00:01",
+  "end": "21-03-2026 23:59"
+},
     {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/holi2026.jpg",
   "text": "",
