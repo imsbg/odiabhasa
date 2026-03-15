@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "banners": [
+        {
+  "image": "https://imsbg.github.io/odiabhasa/images/banner/pakhala.jpg",
+  "text": "",
+  "paragraph": "ପଖାଳ କଂସାଏ, ଶାଗ ଭଜା ଓ ଚୁନା ମାଛ ଭଜା... ଓଡ଼ିଆର ସବୁଠୁ ବଡ଼ ସୁଖ",
+  "link": "",
+  "promo": "no",
+  "start": "20-03-2026 00:01",
+  "end": "21-03-2026 23:59"
+}
+    {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/home_banner.png",
+      "text": "କୋଣାର୍କ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
+      "paragraph": "ଓଡ଼ିଶାର ଗର୍ବ ଓ ଗୌରବ, ବିଶ୍ୱ ପ୍ରସିଦ୍ଧ ସୂର୍ଯ୍ୟ ମନ୍ଦିର",
+      "link": "",
+      "promo": "no"
+    }
+  ]
+}
