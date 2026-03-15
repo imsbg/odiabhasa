@@ -19,7 +19,7 @@
       name="description"
       content="The best free platform to learn the Odia language. Master Odia Swarabarna, Byanjanabarna, Juktakhyara, and Numbers with our Digital Slate. Read Madhu Barnabodha, Odia stories, school prayers, and access the 2026 Odia calendar. Perfect for kids and beginners learning Odia offline."
     />
-    <meta name="keywords" content="Odia Bhasa, Learn Odia Online, Odia Alphabet App, Odia Barnabodha, Madhu Barnabodha, Digital Slate, Odia Swarabarna, Byanjanabarna, Odia Juktakhyara, Odia Stories for Kids, Odia School Prayers, Odia Calendar 2026, Odia Learning App, Odia Book Library, Odia Handwriting Practice, ଓଡ଼ିଆ ଭାଷା, ଓଡ଼ିଆ ଶିକ୍ଷା, ବର୍ଣ୍ଣବୋଧ" />
+    <meta name="keywords" content="Odia Bhasa, Learn Odia Online, Learn Odia Offline, Odia Alphabet App, Odia Barnabodha, Madhu Barnabodha, Digital Slate, Odia Swarabarna, Byanjanabarna, Odia Juktakhyara, Odia Stories for Kids, Odia School Prayers, Odia Calendar 2026, Odia Learning App, Odia Book Library, Odia Handwriting Practice, ଓଡ଼ିଆ ଭାଷା, ଓଡ଼ିଆ ଶିକ୍ଷା, ବର୍ଣ୍ଣବୋଧ" />
     <meta name="author" content="Sandeep Biswal G" />
     <link rel="icon" href="https://imsbg.github.io/odiabhasa/images/app.png" type="image/png">
     <link rel="apple-touch-icon" href="https://imsbg.github.io/odiabhasa/images/app.png">
@@ -70,6 +70,7 @@
         --odia-font: "Noto Sans Oriya", sans-serif;
       }
 
+      /* --- GLOBAL STYLES & HIDING DEFAULT CURSOR --- */
       body {
         font-family: var(--odia-font), var(--body-font);
         background-color: var(--bg-color);
@@ -81,6 +82,11 @@
         box-sizing: border-box;
         -webkit-font-smoothing: antialiased;
       }
+      
+      body.custom-cursor-active, 
+      body.custom-cursor-active * {
+        cursor: none !important; /* Forces cursor hiding only when JS confirms non-touch device */
+      }
 
       * {
         margin: 0;
@@ -91,17 +97,73 @@
         scroll-behavior: smooth;
       }
 
-      /* --- NAVIGATION --- */
+      /* --- CUSTOM CURSOR STYLES --- */
+      #custom-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        z-index: 99999;
+        display: none; /* Hidden by default, shown by JS on non-touch screens */
+      }
+      #cursor-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 14px;
+        height: 14px;
+        margin-left: -7px;
+        margin-top: -7px;
+        background-color: #00c6ff;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+        transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                    height 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                    margin 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+                    background-color 0.3s, border 0.3s, box-shadow 0.3s;
+      }
+      /* Hover animation for interactive elements */
+      #cursor-circle.hovered {
+        width: 56px;
+        height: 56px;
+        margin-left: -28px;
+        margin-top: -28px;
+        background-color: rgba(0, 198, 255, 0.1);
+        border: 2px solid #00c6ff;
+        box-shadow: 0 0 15px rgba(0, 198, 255, 0.3) inset;
+      }
+
+      /* --- NAVIGATION (FLOATING ANIMATION & GLASSMORPHISM) --- */
       .nav-wrapper {
         position: fixed;
         top: 0;
+        left: 50%;
+        transform: translateX(-50%);
         width: 100%;
         z-index: 1000;
         padding: 15px 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
       }
+
+      /* Floating Scrolled State */
+      .nav-wrapper.floating {
+        top: 12px;
+        width: calc(100% - 32px);
+        max-width: 1200px;
+        padding: 8px 0;
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        background: rgba(255, 255, 255, 0.6);
+      }
+
       .nav-inner {
         max-width: 1200px;
         margin: 0 auto;
@@ -110,9 +172,9 @@
         justify-content: space-between;
         align-items: center;
       }
-      .logo-texti{
-      padding-top: 10px;
-    }
+      .logo-texti {
+        padding-top: 10px;
+      }
       .logo-text {
         font-size: 1.5rem;
         font-weight: 800;
@@ -122,10 +184,20 @@
         gap: 10px;
         text-decoration: none;
         font-family: var(--headline-font);
+        transition: all 0.3s ease;
       }
       .logo-text img {
         width: 32px;
         border-radius: 6px;
+        transition: all 0.3s ease;
+      }
+
+      /* Shrink logo slightly when floating */
+      .nav-wrapper.floating .logo-text {
+        font-size: 1.3rem;
+      }
+      .nav-wrapper.floating .logo-text img {
+        width: 28px;
       }
 
       /* Desktop Menu */
@@ -150,6 +222,7 @@
         color: #fff;
         padding: 8px 20px;
         border-radius: 50px;
+        text-decoration: none;
         transition: all 0.2s;
       }
       .nav-cta:hover {
@@ -174,7 +247,7 @@
       /* Mobile Menu Container */
       .mobile-menu {
         position: fixed;
-        top: 70px;
+        top: 75px;
         left: 0;
         width: 100%;
         background: #fff;
@@ -211,11 +284,10 @@
       }
 
       .prayer-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
 
       /* --- HERO SECTION --- */
       .hero-wrapper {
@@ -241,6 +313,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
       }
       .hero-logo-box {
         width: 100px;
@@ -298,24 +371,15 @@
         animation: gradientAnimate 8s linear infinite;
       }
 
-      @keyframes gradientAnimate {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-      /* Animated Gradient 2 Text Class */
       .gradient-text2 {
         background: linear-gradient(
           45deg,
-#0066ff,
-#00a8ff,
-#00c896,
-#00b36b,
-#0066ff,
-#00a8ff
-
-
-
+          #0066ff,
+          #00a8ff,
+          #00c896,
+          #00b36b,
+          #0066ff,
+          #00a8ff
         );
         background-size: 400%;
         -webkit-background-clip: text;
@@ -324,23 +388,15 @@
         animation: gradientAnimate 14s linear infinite;
       }
 
-      @keyframes gradientAnimate {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-
-            /* Animated Gradient 0 Text Class */
       .gradient-text0 {
         background: linear-gradient(
           45deg,
-#6a00ff,
-#9b5cff,
-#ff7a00,
-#ff9f45,
-#6a00ff,
-#9b5cff
-
+          #6a00ff,
+          #9b5cff,
+          #ff7a00,
+          #ff9f45,
+          #6a00ff,
+          #9b5cff
         );
         background-size: 400%;
         -webkit-background-clip: text;
@@ -354,6 +410,7 @@
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
       }
+      
       /* Buttons */
       .hero-cta-group {
         display: flex;
@@ -386,25 +443,6 @@
         background-color: #222;
       }
 
-      .btn-outline {
-        background-color: #fff;
-        color: #000;
-        border: 2px solid #000;
-      }
-      .btn-outline:hover {
-        background-color: #f9f9f9;
-      }
-
-      .indus-btn img {
-        height: 52px;
-        border-radius: 8px;
-        transition: transform 0.2s;
-        vertical-align: middle;
-      }
-      .indus-btn:hover img {
-        transform: scale(1.05);
-      }
-
       .play-btn img {
         height: 130px;
         border-radius: 8px;
@@ -413,6 +451,79 @@
       }
       .play-btn:hover img {
         transform: scale(1.05);
+      }
+
+      /* --- FUTURISTIC WEB APP BUTTON & STICKY BEHAVIOR --- */
+      #sticky-anchor {
+          height: 1px;
+          margin-bottom: -1px;
+          width: 100%;
+          pointer-events: none;
+      }
+      .web-app-container {
+        min-height: 56px; /* Placeholder to prevent layout jump */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+      }
+      .web-app-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: linear-gradient(45deg, #00c6ff, #0072ff, #00c6ff);
+        background-size: 200% auto;
+        color: #fff;
+        padding: 14px 35px;
+        border-radius: 50px;
+        font-family: var(--headline-font);
+        font-weight: 700;
+        font-size: 1.1rem;
+        text-decoration: none;
+        transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        box-shadow: 0 10px 30px rgba(0, 114, 255, 0.4);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        animation: pulseGradient 3s linear infinite;
+        white-space: nowrap;
+        z-index: 990;
+      }
+      .web-app-btn:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 15px 35px rgba(0, 114, 255, 0.6);
+        color: #fff;
+      }
+      @keyframes pulseGradient {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 200% 50%; }
+      }
+      .web-app-icon {
+        font-size: 1.3rem;
+      }
+      
+      /* Stuck State of the Futuristic Button */
+      .web-app-btn.stuck {
+        position: fixed;
+        top: 75px; 
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 32px);
+        max-width: 1200px;
+        justify-content: space-between;
+        border-radius: 100px;
+        padding: 12px 30px;
+        box-shadow: 0 8px 32px rgba(0, 114, 255, 0.3);
+        animation: none; /* optional: stops the pulse to be less distracting when stuck */
+        background: linear-gradient(45deg, #0072ff, #00c6ff); /* solid gradient */
+      }
+      .web-app-btn.stuck:hover {
+        transform: translateX(-50%) translateY(0) scale(1);
+      }
+      @media (max-width: 960px) {
+        .web-app-btn.stuck {
+            width: calc(100% - 24px);
+            border-radius: 50px;
+            padding: 10px 20px;
+        }
       }
 
       /* --- FLOATING CARDS (Desktop) --- */
@@ -585,7 +696,7 @@
         color: #fff;
       }
 
-      /* Modal for Canvas */
+      /* Modal Global Settings (Slate + Books) */
       .modal-overlay {
         position: fixed;
         top: 0;
@@ -594,6 +705,7 @@
         height: 100%;
         background: rgba(0,0,0,0.6);
         backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
         display: none;
         align-items: center;
         justify-content: center;
@@ -629,6 +741,7 @@
         border: none;
         cursor: pointer;
         color: #999;
+        z-index: 10;
       }
       .close-modal:hover { color: #000; }
       
@@ -638,7 +751,7 @@
         cursor: crosshair;
         background-color: #fafafa;
         width: 100%;
-        touch-action: none; /* Prevent scrolling while drawing */
+        touch-action: none;
       }
       
       .slate-controls {
@@ -711,12 +824,180 @@
         font-size: 1.2rem;
       }
 
+      /* --- BOOKS SCROLL CONTAINER & MODAL --- */
+      .books-header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+      .books-header-row .section-heading {
+        margin-bottom: 0;
+      }
+      .view-all-btn {
+        padding: 8px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-family: var(--headline-font);
+        font-weight: bold;
+        font-size: 1rem;
+        background: #fff;
+        color: #000;
+        border: 2px solid #000;
+        transition: all 0.2s;
+      }
+      .view-all-btn:hover {
+        background: #f9f9f9;
+        transform: translateY(-2px);
+      }
+
+      .books-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding: 20px 5px 40px 5px;
+        scroll-behavior: smooth;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        cursor: grab;
+      }
+      .books-scroll-container::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+      }
+      .books-scroll-container:active {
+        cursor: grabbing;
+      }
+      .book-card {
+        flex: 0 0 180px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid #f0f0f0;
+        display: flex;
+        flex-direction: column;
+      }
+      .book-card:hover { 
+        transform: translateY(-8px); 
+        box-shadow: 0 15px 25px rgba(0,0,0,0.12);
+      }
+      .book-cover { 
+        width: 100%; 
+        height: 240px; 
+        object-fit: cover; 
+        border-bottom: 1px solid #eee;
+      }
+      .book-info { 
+        padding: 15px; 
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .book-title { 
+        font-family: var(--headline-font); 
+        font-weight: bold; 
+        font-size: 1.1rem; 
+        margin-bottom: 5px; 
+        color: #000; 
+        line-height: 1.3;
+      }
+      .book-author { 
+        font-size: 0.85rem; 
+        color: #666; 
+        line-height: 1.4;
+      }
+      
+      /* All Books Modal Styles */
+      .all-books-content {
+        max-width: 1000px;
+        width: 95%;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 30px;
+        align-items: stretch;
+      }
+      .all-books-content h2 {
+        align-self: flex-start;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        width: 100%;
+        font-family: var(--headline-font);
+        color: #000;
+      }
+      .all-books-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+        width: 100%;
+        margin-top: 20px;
+      }
+      .all-books-grid .book-card {
+        flex: none; /* Override flex basis from horizontal scroll */
+        width: 100%;
+      }
+
+      @media (max-width: 600px) {
+        .book-card { flex: 0 0 140px; }
+        .book-cover { height: 190px; }
+        .book-title { font-size: 1rem; }
+        .all-books-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+      }
+
+      /* --- MORE APPS SECTION --- */
+      .more-apps-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .app-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        background: #fff;
+        border-radius: 16px;
+        border: 1px solid #eee;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      }
+      .app-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      }
+      .app-logo {
+        width: 65px;
+        height: 65px;
+        object-fit: contain;
+      }
+      .app-logo.rounded {
+        border-radius: 14px;
+      }
+      .app-details h3 {
+        font-size: 1.2rem;
+        font-family: var(--headline-font);
+        margin-bottom: 2px;
+        color: #000;
+        line-height: 1.2;
+      }
+      .app-details p {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
       /* --- MOCKUP SLIDER SECTION --- */
       .mockup-slider-wrapper {
         position: relative;
         max-width: 1000px;
         margin: 0 auto;
-        padding: 0 50px; /* Space for arrows on desktop */
+        padding: 0 50px;
       }
       .mockup-slider {
         overflow: hidden;
@@ -726,14 +1007,14 @@
         transition: transform 0.5s ease-in-out;
       }
       .slide {
-        flex: 0 0 33.333%; /* Show 3 slides on desktop */
+        flex: 0 0 33.333%; 
         padding: 10px;
         box-sizing: border-box;
       }
       .slide img {
         width: 100%;
         border-radius: 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Reduced shadow */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         cursor: pointer;
         transition: transform 0.2s;
         display: block;
@@ -759,7 +1040,7 @@
         color: #333;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         transition: all 0.2s;
-        -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+        -webkit-tap-highlight-color: transparent;
       }
       .slider-arrow:hover {
         background-color: #fff;
@@ -773,22 +1054,21 @@
       }
 
       @media (max-width: 960px) {
-        .slide { flex: 0 0 50%; } /* 2 slides */
+        .slide { flex: 0 0 50%; }
       }
       @media (max-width: 600px) {
-        .mockup-slider-wrapper { padding: 0; } /* Full width container */
+        .mockup-slider-wrapper { padding: 0; } 
         .mockup-slider {
-            /* Add padding to align first slide with content, while allowing overflow */
             padding-left: 20px; 
             padding-right: 20px;
         }
         .slide { 
-            flex: 0 0 45%; /* Show more than one slide */
-            padding: 0 6px; /* Spacing between slides */
+            flex: 0 0 45%; 
+            padding: 0 6px; 
         }
         .slide img {
              border-radius: 12px;
-             border: 1px solid #e5e5e5; /* Subtle border like Play Store */
+             border: 1px solid #e5e5e5; 
         }
         .slider-arrow {
             width: 40px;
@@ -820,7 +1100,7 @@
         pointer-events: auto;
       }
       .lightbox-image {
-        max-width: 320px; /* Limit size to phone-like width */
+        max-width: 320px; 
         max-height: 90vh;
         object-fit: contain;
         border-radius: 10px;
@@ -882,7 +1162,7 @@
         .lightbox-image { max-width: 80vw; }
       }
 
-      /* --- FAQ SECTION --- */
+      /* --- FAQ SECTION WITH ANIMATIONS --- */
       .faq-container {
         max-width: 800px;
         margin: 0 auto;
@@ -894,7 +1174,8 @@
         border: 1px solid #e5e5e5;
         border-radius: 16px;
         background-color: #fff;
-        transition: all 0.2s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden; /* Added for smooth expansion */
       }
       .faq-item[open] {
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
@@ -920,27 +1201,28 @@
         font-size: 1.5rem;
         font-weight: 400;
         color: #999;
-        transition: transform 0.2s;
+        transition: transform 0.3s ease;
       }
       .faq-item[open] .faq-question::after {
         transform: rotate(45deg);
-        content: '×';
+        color: #00c6ff; /* Match futuristic theme */
+        content: '+'; /* Keeping it plus but rotated to X */
       }
+      
+      /* Answer Animation CSS */
       .faq-answer {
-        padding: 0 25px 20px 25px;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 25px;
         color: var(--text-sub);
         line-height: 1.7;
+        transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
       }
-      .faq-answer p {
-          margin-bottom: 10px;
-      }
-      .faq-answer ul {
-          padding-left: 20px;
-          margin-top: 10px;
-      }
-      .faq-answer li {
-          margin-bottom: 8px;
-      }
+      
+      .faq-answer p { margin-bottom: 10px; }
+      .faq-answer ul { padding-left: 20px; margin-top: 10px; }
+      .faq-answer li { margin-bottom: 8px; }
 
       /* Footer */
       footer {
@@ -955,14 +1237,30 @@
         color: #000;
         margin-bottom: 10px;
       }
+
+      /* --- SMOOTH SCROLL REVEAL ANIMATION CLASS --- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body>
 
+    <!-- CUSTOM CURSOR -->
+    <div id="custom-cursor">
+      <div id="cursor-circle"></div>
+    </div>
+
     <!-- Header -->
-    <header class="nav-wrapper">
+    <header class="nav-wrapper" id="mainHeader">
       <div class="nav-inner">
-        <a href="#" class="logo-text">
+        <a href="#" class="logo-text interactive-element">
           <img
             src="https://imsbg.github.io/odiabhasa/images/logo.png"
             alt="Odia Bhasa Logo"
@@ -971,7 +1269,7 @@
         </a>
 
         <!-- Hamburger Toggle (Mobile) -->
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+        <button class="mobile-toggle interactive-element" id="mobile-toggle" aria-label="Menu">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -979,21 +1277,21 @@
 
         <!-- Links -->
         <div class="nav-links-desktop">
-          <a href="#" class="nav-link">ମୁଖ୍ୟ ପୃଷ୍ଠା</a>
-          <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="nav-link">ଗୋପନୀୟତା ନୀତି</a>
-          <a href="https://imsbg.github.io/odiabhasa/terms" class="nav-link">ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ</a>
-          <a href="https://imsbg.github.io/odiabhasa/dmca" class="nav-link">ଡିଜିଟାଲ୍ କପିରାଇଟ୍ ସୁରକ୍ଷା ନିୟମ</a>
-          <a href="mailto:message.sbg@gmail.com" class="nav-cta">ଯୋଗାଯୋଗ</a>
+          <a href="#" class="nav-link interactive-element">ମୁଖ୍ୟ ପୃଷ୍ଠା</a>
+          <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="nav-link interactive-element">ଗୋପନୀୟତା ନୀତି</a>
+          <a href="https://imsbg.github.io/odiabhasa/terms" class="nav-link interactive-element">ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ</a>
+          <a href="https://imsbg.github.io/odiabhasa/dmca" class="nav-link interactive-element">ଡିଜିଟାଲ୍ କପିରାଇଟ୍ ସୁରକ୍ଷା ନିୟମ</a>
+          <a href="mailto:message.sbg@gmail.com" class="nav-cta interactive-element">ଯୋଗାଯୋଗ</a>
         </div>
       </div>
     </header>
 
     <!-- Mobile Dropdown Menu -->
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#" class="mobile-link">ମୁଖ୍ୟ ପୃଷ୍ଠା</a>
-      <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="mobile-link">ଗୋପନୀୟତା ନୀତି</a>
-      <a href="https://imsbg.github.io/odiabhasa/terms" class="mobile-link">ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ</a>
-      <a href="https://imsbg.github.io/odiabhasa/dmca" class="mobile-link">ଡିଜିଟାଲ୍ କପିରାଇଟ୍ ସୁରକ୍ଷା ନିୟମ</a>
+      <a href="#" class="mobile-link interactive-element">ମୁଖ୍ୟ ପୃଷ୍ଠା</a>
+      <a href="https://imsbg.github.io/odiabhasa/privacy-policy" class="mobile-link interactive-element">ଗୋପନୀୟତା ନୀତି</a>
+      <a href="https://imsbg.github.io/odiabhasa/terms" class="mobile-link interactive-element">ନିୟମ ଓ ସର୍ତ୍ତାବଳୀ</a>
+      <a href="https://imsbg.github.io/odiabhasa/dmca" class="mobile-link interactive-element">ଡିଜିଟାଲ୍ କପିରାଇଟ୍ ସୁରକ୍ଷା ନିୟମ</a>
     </div>
 
     <!-- HERO -->
@@ -1036,19 +1334,25 @@
         </p>
 
         <div class="hero-cta-group" id="download">
-      
-        <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="play-btn" target="_blank">
-            <img src="https://imsbg.github.io/odiabhasa/images/gp-odia.png" alt="PlayStore" />  <!-- https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa -->
-            
+          <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" class="play-btn interactive-element" target="_blank">
+              <img src="https://imsbg.github.io/odiabhasa/images/gp-odia.png" alt="PlayStore" />  
+          </a>
 
-          
-          <!-- NEW BUTTON ADDED HERE -->
-          <a href="https://imsbg.github.io/odiabhasa/read" class="btn-base btn-primary">
+          <a href="https://imsbg.github.io/odiabhasa/read" class="btn-base btn-primary interactive-element">
             <i class="fas fa-book-open"></i> ଓଡ଼ିଆ ବହି
           </a>
-                   
-         
         </div>
+
+        <!-- NEW FUTURISTIC BUTTON (Animates to sticky full-width on scroll) -->
+        <!-- Invisible anchor point to detect when to stick the button -->
+        <div id="sticky-anchor"></div> 
+        <div class="web-app-container">
+            <a href="https://imsbg.github.io/odiabhasa/app/" class="web-app-btn interactive-element" id="webAppBtn">
+                <span class="web-app-text">ଆପ୍ କୁ ଅନଲାଇନ ରେ ଦେଖନ୍ତୁ</span>
+                <i class="fas fa-mobile-alt web-app-icon"></i>
+            </a>
+        </div>
+
       </div>
     </section>
 
@@ -1113,6 +1417,18 @@
       </div>
     </section>
 
+    <!-- BOOKS SECTION -->
+    <section class="section-wrapper" id="books">
+      <div class="books-header-row">
+        <h2 class="section-heading">ଆମ ଆପ୍ ରେ ଥିବା <span class="gradient-text2">ବହି</span></h2>
+        <button class="view-all-btn interactive-element" id="view-all-books-btn">ସବୁ ବହି ଦେଖନ୍ତୁ <i class="fas fa-arrow-right"></i></button>
+      </div>
+      <div class="books-scroll-container" id="books-container">
+        <!-- Loading Place Holder -->
+        <div style="text-align:center; width: 100%; color:#888;">ବହି ଖୋଜା ଚାଲିଛି... (Loading...)</div>
+      </div>
+    </section>
+
     <!-- APP MOCKUPS SECTION -->
     <section class="section-wrapper" id="mockups">
       <h2 class="section-heading">ଆମ <span class="gradient-text2">ଆପ୍ </span> ର <span class="gradient-text2">ଝଲକ</span></h2>
@@ -1120,19 +1436,19 @@
         <div class="mockup-slider">
           <div class="slider-track">
             <!-- 9 Actual App Screenshots -->
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/1.png" alt="App Screenshot 1" class="mockup-image"></div>
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/2.png" alt="App Screenshot 2" class="mockup-image"></div>
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/3.png" alt="App Screenshot 3" class="mockup-image"></div>
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/4.png" alt="App Screenshot 4" class="mockup-image"></div>
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/5.png" alt="App Screenshot 5" class="mockup-image"></div>
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/6.png" alt="App Screenshot 6" class="mockup-image"></div>
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/7.png" alt="App Screenshot 7" class="mockup-image"></div>
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/8.png" alt="App Screenshot 8" class="mockup-image"></div>
-            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/9.png" alt="App Screenshot 9" class="mockup-image"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/1.png" alt="App Screenshot 1" class="mockup-image interactive-element"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/2.png" alt="App Screenshot 2" class="mockup-image interactive-element"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/3.png" alt="App Screenshot 3" class="mockup-image interactive-element"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/4.png" alt="App Screenshot 4" class="mockup-image interactive-element"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/5.png" alt="App Screenshot 5" class="mockup-image interactive-element"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/6.png" alt="App Screenshot 6" class="mockup-image interactive-element"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/7.png" alt="App Screenshot 7" class="mockup-image interactive-element"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/8.png" alt="App Screenshot 8" class="mockup-image interactive-element"></div>
+            <div class="slide"><img src="https://imsbg.github.io/odiabhasa/images/ss/9.png" alt="App Screenshot 9" class="mockup-image interactive-element"></div>
           </div>
         </div>
-        <button class="slider-arrow prev" aria-label="Previous Slide">&#10094;</button>
-        <button class="slider-arrow next" aria-label="Next Slide">&#10095;</button>
+        <button class="slider-arrow prev interactive-element" aria-label="Previous Slide">&#10094;</button>
+        <button class="slider-arrow next interactive-element" aria-label="Next Slide">&#10095;</button>
       </div>
     </section>
     
@@ -1142,39 +1458,39 @@
 
   <div class="prayer-list">
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଆହେ ଦୟାମୟ ବିଶ୍ୱ ବିହାରୀ</div>
     </a>
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଭବ ସାଗର ତାରଣ କାରଣ ହେ</div>
     </a>
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ଶ୍ରୀ ଗୁରୁ ବନ୍ଦନା</div>
     </a>
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ହେ ଆନନ୍ଦମୟ କୋଟି</div>
     </a>
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> କରୁଣା ସାଗର ପ୍ରଭୁ ହେ</div>
     </a>
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> ତୁମେଟି ଜଗତ କରତା</div>
     </a>
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=op" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-om prayer-icon"></i> କି ସୁନ୍ଦର ଆହା କି ଆନନ୍ଦମୟ</div>
     </a>
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-flag prayer-icon"></i> ଜାତୀୟ ସଙ୍ଗୀତ ଓ ରାଷ୍ଟ୍ର ଗାନ</div>
     </a>
 
-    <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-link">
+    <a href="https://odiabhasa.pages.dev/open?Bahi=amagouraba" class="prayer-link interactive-element">
       <div class="prayer-item"><i class="fas fa-map-marker-alt prayer-icon"></i> ରାଜ୍ୟ ସଙ୍ଗୀତ (ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ)</div>
     </a>
 
@@ -1182,41 +1498,41 @@
 </section>
 
 
-    <!-- FAQ SECTION -->
+    <!-- FAQ SECTION WITH ANIMATIONS -->
     <section class="section-wrapper" id="faq">
       <h2 class="section-heading">❓ Frequently Asked Questions (FAQ)</h2>
       <div class="faq-container">
         
         <details class="faq-item">
-          <summary class="faq-question">What is Odia Bhasa app?</summary>
+          <summary class="faq-question interactive-element">What is Odia Bhasa app?</summary>
           <div class="faq-answer">
             <p>Odia Bhasa is a fully Odia language learning app designed especially for children and beginners. The app helps users learn Odia alphabets, numbers, writing, stories, prayers, and cultural content in a simple and engaging way.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Is Odia Bhasa completely in Odia language?</summary>
+          <summary class="faq-question interactive-element">Is Odia Bhasa completely in Odia language?</summary>
           <div class="faq-answer">
             <p>Yes ✅ <br> The app is 100% in Odia language, making it ideal for kids, parents, and anyone who wants to learn Odia in its pure form.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Is the app free? Are there any ads?</summary>
+          <summary class="faq-question interactive-element">Is the app free? Are there any ads?</summary>
           <div class="faq-answer">
             <p>Yes, the app is completely free and 100% ad-free 🚫📢 <br> There are no advertisements, ensuring a safe and distraction-free learning experience for children.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Who developed the Odia Bhasa app?</summary>
+          <summary class="faq-question interactive-element">Who developed the Odia Bhasa app?</summary>
           <div class="faq-answer">
             <p>The app is developed by Sandeep Biswal G, with the aim of promoting Odia language, culture, and education digitally.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">What can kids learn from this app?</summary>
+          <summary class="faq-question interactive-element">What can kids learn from this app?</summary>
           <div class="faq-answer">
             <p>Children can learn:</p>
             <ul>
@@ -1231,21 +1547,21 @@
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Does the app have writing practice?</summary>
+          <summary class="faq-question interactive-element">Does the app have writing practice?</summary>
           <div class="faq-answer">
             <p>Yes ✍️ The app includes writing practice / digital slate, where kids can practice writing Odia letters just like writing on a slate.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Are Odia story books available in the app?</summary>
+          <summary class="faq-question interactive-element">Are Odia story books available in the app?</summary>
           <div class="faq-answer">
             <p>Yes 📚 The app contains many Odia story books suitable for children, helping them improve reading skills and moral learning.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Does the app include school prayers and songs?</summary>
+          <summary class="faq-question interactive-element">Does the app include school prayers and songs?</summary>
           <div class="faq-answer">
             <p>Yes 🙏🎶 The app includes:</p>
             <ul>
@@ -1257,7 +1573,7 @@
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Is there an Odia calendar in the app?</summary>
+          <summary class="faq-question interactive-element">Is there an Odia calendar in the app?</summary>
           <div class="faq-answer">
             <p>Yes 📅 The app has a detailed Odia Calendar, which shows:</p>
             <ul>
@@ -1269,28 +1585,28 @@
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Is this app suitable for small children?</summary>
+          <summary class="faq-question interactive-element">Is this app suitable for small children?</summary>
           <div class="faq-answer">
             <p>Absolutely 👍 The app is kid-friendly, easy to use, ad-free, and designed especially for early learners and school-going children.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Where can I download the Odia Bhasa app?</summary>
+          <summary class="faq-question interactive-element">Where can I download the Odia Bhasa app?</summary>
           <div class="faq-answer">
             <p>You can download the app only from the Google Play Store</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Does the app require internet?</summary>
+          <summary class="faq-question interactive-element">Does the app require internet?</summary>
           <div class="faq-answer">
             <p>Most learning content works offline, so children can learn anytime, anywhere.</p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary class="faq-question">Why should I choose Odia Bhasa app?</summary>
+          <summary class="faq-question interactive-element">Why should I choose Odia Bhasa app?</summary>
           <div class="faq-answer">
             <p>Because it is:</p>
             <ul>
@@ -1302,6 +1618,34 @@
           </div>
         </details>
 
+      </div>
+    </section>
+
+    <!-- MORE APPS SECTION -->
+    <section class="section-wrapper" id="more-apps">
+      <h2 class="section-heading">More apps from <span class="gradient-text2">Sandeep Biswal G</span></h2>
+      <div class="more-apps-grid">
+        <a href="https://play.google.com/store/apps/details?id=in.sandeep.plyxogames" class="app-card interactive-element" target="_blank">
+          <img src="https://imsbg.github.io/Plyxo-Games/img/logo.png" alt="Plyxo Games Logo" class="app-logo">
+          <div class="app-details">
+            <h3>Plyxo Games</h3>
+            <p>Play Awesome Games</p>
+          </div>
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.sandeep.atomicguru" class="app-card interactive-element" target="_blank">
+          <img src="https://play-lh.googleusercontent.com/MpSS0PRTTof6COgGPpB-8MQaniFdKPUbY5XktfyIqh3yyCAVqpqc9gS3jqO2zW9khOs41_camF3IvAPb5Od-Ngs=w480-h960-rw" alt="Atomic Guru Logo" class="app-logo rounded">
+          <div class="app-details">
+            <h3>Atomic Guru</h3>
+            <p>Periodic Table Learning App</p>
+          </div>
+        </a>
+        <a href="https://imsbg.github.io/Ganita-Bingya-App/" class="app-card interactive-element" target="_blank">
+          <img src="https://imsbg.github.io/images/sandeep-biswal-g/Ganita-Bingya-App.png" alt="Ganita Bingya Logo" class="app-logo rounded">
+          <div class="app-details">
+            <h3>Ganita Bingya</h3>
+            <p>Math Learning App</p>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -1318,21 +1662,32 @@
     <!-- CANVAS MODAL HTML -->
     <div class="modal-overlay" id="slate-modal">
       <div class="modal-content">
-          <button class="close-modal" id="close-modal-btn">&times;</button>
+          <button class="close-modal interactive-element" id="close-modal-btn">&times;</button>
           <canvas id="drawing-canvas"></canvas>
           <div class="slate-controls">
-               <div class="color-picker" id="color-palette"></div>
-              <button class="control-btn" id="clear-btn"><i class="fas fa-eraser"></i> ସଫା କରନ୍ତୁ</button>
+               <div class="color-picker interactive-element" id="color-palette"></div>
+              <button class="control-btn interactive-element" id="clear-btn"><i class="fas fa-eraser"></i> ସଫା କରନ୍ତୁ</button>
           </div>
       </div>
-  </div>
+    </div>
+
+    <!-- ALL BOOKS FLOATING MODAL -->
+    <div class="modal-overlay" id="all-books-modal">
+      <div class="modal-content all-books-content">
+          <button class="close-modal interactive-element" id="close-all-books-btn">&times;</button>
+          <h2>ସବୁ ବହି</h2>
+          <div class="all-books-grid" id="all-books-grid">
+              <!-- Books will be cloned here dynamically -->
+          </div>
+      </div>
+    </div>
 
   <!-- LIGHTBOX FOR MOCKUPS -->
   <div class="lightbox-overlay" id="mockup-lightbox">
-      <span class="lightbox-close">&times;</span>
-      <button class="lightbox-arrow prev" aria-label="Previous Image">&#10094;</button>
+      <span class="lightbox-close interactive-element">&times;</span>
+      <button class="lightbox-arrow prev interactive-element" aria-label="Previous Image">&#10094;</button>
       <img src="" alt="Enlarged App Mockup" class="lightbox-image">
-      <button class="lightbox-arrow next" aria-label="Next Image">&#10095;</button>
+      <button class="lightbox-arrow next interactive-element" aria-label="Next Image">&#10095;</button>
   </div>
 
   <!-- ସତର୍କ ସୂଚନା: ଏହି ଆପ୍ ଏବଂ ୱେବସାଇଟ୍‌ର କୌଣସି ଅଂଶକୁ ନକଲ କରିବା ବେଆଇନ । ଏହାର ଉଲ୍ଲଂଘନ କଲେ ଆଇନ ଅନୁଯାୟୀ କଠୋର କାର୍ଯ୍ୟାନୁଷ୍ଠାନ ନିଆଯିବ। ଏହି ପ୍ଲାଟଫର୍ମର ସମସ୍ତ ସତ୍ତ୍ୱ ଏବଂ ଲୋଗୋ 'ସନ୍ଦୀପ୍ ବିଶ୍ୱାଳ ଜି ଆପ୍ସ'ର ଅଧୀନ ଅଟେ । -->
@@ -1440,7 +1795,84 @@
 <!-- JS LOGIC -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        
+
+        // --- CUSTOM CURSOR LOGIC ---
+        // Activate only if it's not a touch device
+        if (!('ontouchstart' in window) && !navigator.maxTouchPoints) {
+          document.body.classList.add('custom-cursor-active');
+          const cursorWrapper = document.getElementById('custom-cursor');
+          const cursorCircle = document.getElementById('cursor-circle');
+          
+          cursorWrapper.style.display = 'block';
+
+          // Move cursor with mouse
+          window.addEventListener('mousemove', (e) => {
+            cursorWrapper.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+          });
+
+          // Add hover animations to interactive elements
+          const addHoverEffect = () => {
+              const interactables = document.querySelectorAll('.interactive-element, a, button, .slider-arrow, .letter-btn');
+              interactables.forEach(el => {
+                  // prevent binding multiple times
+                  if(!el.dataset.cursorBound) {
+                      el.addEventListener('mouseenter', () => cursorCircle.classList.add('hovered'));
+                      el.addEventListener('mouseleave', () => cursorCircle.classList.remove('hovered'));
+                      el.dataset.cursorBound = "true";
+                  }
+              });
+          };
+          addHoverEffect();
+
+          // Re-bind when new content is generated (like books)
+          const observer = new MutationObserver(() => addHoverEffect());
+          observer.observe(document.body, { childList: true, subtree: true });
+        }
+
+
+        // --- 0. FLOATING HEADER & STICKY BUTTON ---
+        const mainHeader = document.getElementById("mainHeader");
+        const webAppBtn = document.getElementById("webAppBtn");
+        const stickyAnchor = document.getElementById("sticky-anchor");
+
+        window.addEventListener("scroll", () => {
+          // Glassmorphism Header
+          if (window.scrollY > 15) {
+            mainHeader.classList.add("floating");
+          } else {
+            mainHeader.classList.remove("floating");
+          }
+
+          // Sticky Futuristic Button (Docks below header)
+          if (stickyAnchor && webAppBtn) {
+            const anchorRect = stickyAnchor.getBoundingClientRect();
+            // When the anchor scrolls up past 80px, stick the button
+            if (anchorRect.top < 80) {
+              webAppBtn.classList.add("stuck");
+            } else {
+              webAppBtn.classList.remove("stuck");
+            }
+          }
+        });
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll(".section-wrapper, .hero-center");
+        revealElements.forEach((el) => el.classList.add("reveal"));
+
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.08 }
+        );
+
+        revealElements.forEach((el) => revealObserver.observe(el));
+
+
         // 1. MOBILE MENU TOGGLE
         const mobileToggle = document.getElementById("mobile-toggle");
         const mobileMenu = document.getElementById("mobile-menu");
@@ -1468,7 +1900,7 @@
             let currentLetter = '', currentColor = drawingColors[0];
 
             function resizeCanvas() {
-                const modalContent = document.querySelector('.modal-content');
+                const modalContent = document.querySelector('#slate-modal .modal-content');
                 const style = getComputedStyle(modalContent);
                 const paddingX = parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
                 const availWidth = modalContent.clientWidth - paddingX;
@@ -1545,7 +1977,7 @@
 
             swarabarnaList.forEach(letter => {
                 const button = document.createElement('button');
-                button.className = 'letter-btn';
+                button.className = 'letter-btn interactive-element';
                 button.textContent = letter;
                 button.onclick = () => openModal(letter);
                 letterButtonsContainer.appendChild(button);
@@ -1553,7 +1985,7 @@
 
             drawingColors.forEach((color, index) => {
                 const dot = document.createElement('div');
-                dot.className = 'color-dot';
+                dot.className = 'color-dot interactive-element';
                 dot.style.backgroundColor = color;
                 if (index === 0) dot.classList.add('active');
                 dot.onclick = () => {
@@ -1584,6 +2016,118 @@
                     resizeCanvas(); 
                     drawTraceLetter(); 
                 } 
+            });
+        }
+
+        // --- FAQ LOGIC FOR ANIMATION ---
+        const faqs = document.querySelectorAll('.faq-item');
+        faqs.forEach(faq => {
+            const question = faq.querySelector('.faq-question');
+            const answer = faq.querySelector('.faq-answer');
+
+            question.addEventListener('click', (e) => {
+                e.preventDefault(); // Stop default instant toggle
+                const isOpen = faq.hasAttribute('open');
+
+                if (isOpen) {
+                    // Start Closing Animation
+                    answer.style.maxHeight = '0px';
+                    answer.style.paddingTop = '0px';
+                    answer.style.paddingBottom = '0px';
+                    answer.style.opacity = '0';
+                    
+                    // Wait for CSS transition to finish before removing 'open' attribute
+                    setTimeout(() => {
+                        faq.removeAttribute('open');
+                    }, 400); 
+                } else {
+                    // Open & Animate
+                    faq.setAttribute('open', '');
+                    // Temporarily set high max-height to let scrollHeight calculate, then set exact height
+                    answer.style.maxHeight = answer.scrollHeight + 40 + 'px';
+                    answer.style.paddingTop = '0px';
+                    answer.style.paddingBottom = '20px';
+                    answer.style.opacity = '1';
+                }
+            });
+        });
+
+        // --- BOOKS HORIZONTAL SCROLLING & FETCHING ---
+        const booksContainer = document.getElementById('books-container');
+        if (booksContainer) {
+            // Enable mouse wheel horizontal scrolling
+            booksContainer.addEventListener('wheel', (evt) => {
+                if (Math.abs(evt.deltaY) > 0) {
+                    evt.preventDefault();
+                    booksContainer.scrollBy({
+                        left: evt.deltaY < 0 ? -120 : 120, 
+                        behavior: 'auto'
+                    });
+                }
+            });
+
+            // Fetch books dynamically
+            fetch('https://sbgb.pages.dev/ବହି/ସବୁ.json')
+                .then(res => res.json())
+                .then(async data => {
+                    booksContainer.innerHTML = ''; // clear loading message
+                    for (const item of data) {
+                        try {
+                            const bookRes = await fetch(item.destination);
+                            const bookData = await bookRes.json();
+                            
+                            // Extract book JSON name from destination URL
+                            const urlParts = item.destination.split('/');
+                            const fileName = urlParts[urlParts.length - 1].replace('.json', '');
+                            const bookLink = `https://odiabhasa.pages.dev/open?Bahi=${fileName}`;
+
+                            const card = document.createElement('a');
+                            card.href = bookLink;
+                            card.className = 'book-card interactive-element';
+                            card.target = '_blank';
+
+                            card.innerHTML = `
+                                <img src="${bookData.coverpage}" alt="${bookData.title}" class="book-cover" onerror="this.src='https://imsbg.github.io/odiabhasa/images/app.png'">
+                                <div class="book-info">
+                                    <h3 class="book-title">${bookData.title}</h3>
+                                    <p class="book-author">${bookData.author || ''}</p>
+                                </div>
+                            `;
+                            booksContainer.appendChild(card);
+                        } catch (err) {
+                            console.error("Failed to load book from:", item.destination, err);
+                        }
+                    }
+                })
+                .catch(err => {
+                    booksContainer.innerHTML = '<p style="text-align:center; width: 100%; color:#888;">ବହିଗୁଡ଼ିକ ଲୋଡ୍ କରିବାରେ ତ୍ରୁଟି ହୋଇଛି। (Error loading books)</p>';
+                    console.error("Error fetching books list:", err);
+                });
+        }
+
+        // --- ALL BOOKS MODAL LOGIC ---
+        const allBooksModal = document.getElementById('all-books-modal');
+        const viewAllBooksBtn = document.getElementById('view-all-books-btn');
+        const closeAllBooksBtn = document.getElementById('close-all-books-btn');
+        const allBooksGrid = document.getElementById('all-books-grid');
+
+        if (viewAllBooksBtn && allBooksModal) {
+            viewAllBooksBtn.addEventListener('click', () => {
+                allBooksModal.classList.add('active');
+                
+                // Clone books to grid only once
+                if (allBooksGrid.children.length === 0 && booksContainer.children.length > 0) {
+                    Array.from(booksContainer.children).forEach(child => {
+                        const clone = child.cloneNode(true);
+                        allBooksGrid.appendChild(clone);
+                    });
+                }
+            });
+
+            const closeBooksModal = () => allBooksModal.classList.remove('active');
+            closeAllBooksBtn.addEventListener('click', closeBooksModal);
+            allBooksModal.addEventListener('click', (e) => {
+                if (e.target === allBooksModal) closeBooksModal();
             });
         }
 
@@ -1687,7 +2231,6 @@
       });
     </script>
 
-
     <script>
 (function () {
   if (!/Android/i.test(navigator.userAgent)) return;
@@ -1696,7 +2239,6 @@
     "intent://open#Intent;scheme=odiabhasa;package=in.sandeep.odiabhasa;end";
 })();
 </script>
-
 
   </body>
 </html>
