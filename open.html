@@ -2,7 +2,7 @@
 <html lang="or">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <!-- SEO & METADATA -->
     <title>Odia Bhasa App | ଓଡ଼ିଆ ଭାଷା</title>
@@ -22,17 +22,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
 
     <style>
-        /* --- GLOBAL VARIABLES --- */
+        /* --- GLOBAL VARIABLES & THEME --- */
         :root {
             --font-main: 'Google Sans', sans-serif;
             --font-odia: 'Noto Sans Oriya', sans-serif;
             --primary-red: #d32f2f;
+            --primary-red-hover: #b71c1c;
+            --bg-body: #f4f7f9;
             --bg-home: #ffffff;
-            --bg-card-mode: #eef2f5;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        /* --- BASE STYLES & RESET --- */
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -40,97 +49,274 @@
             margin: 0;
             padding: 0;
             min-height: 100vh;
-            color: #202124;
-            background-color: var(--bg-home); /* Default to Home BG */
+            color: var(--text-dark);
+            background-color: var(--bg-body);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background 0.4s ease;
         }
 
         body.card-mode {
-            background: linear-gradient(135deg, #eef2f5 0%, #e6e9f0 100%);
-            display: flex;
-            align-items: center;
+            background: linear-gradient(135deg, #eef2f5 0%, #d9e2ec 100%);
             justify-content: center;
             padding: 20px;
         }
 
-        /* UTILS */
         .hidden { display: none !important; }
         a { text-decoration: none; color: inherit; }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+        }
 
         /* =========================================
            VIEW 1: HOME UI (App Like)
            ========================================= */
         #view-home {
             width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-            background: #fff;
+            max-width: 480px; /* Perfect mobile width */
+            background: var(--bg-home);
+            min-height: 100vh;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.05); /* Gives a phone outline on desktop */
+            animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
+        /* Glassmorphic Header */
         .home-header {
             position: sticky; top: 0; z-index: 100;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(5px);
-            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 18px 24px;
             display: flex; align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
-        .home-title { font-family: var(--font-odia); font-weight: 700; font-size: 24px; margin-left: 12px; }
-
-        .home-body { padding: 10px 20px 40px 20px; display: flex; flex-direction: column; gap: 20px; }
-
-        .banner-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 16px; background: #eee; }
-
-        .section-title { font-family: var(--font-odia); font-weight: 700; font-size: 20px; margin: 10px 0 15px 0; }
         
-        .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
-        .cat-card { background: #F5F7FA; border-radius: 20px; padding: 15px 10px; text-align: center; display: flex; flex-direction: column; align-items: center; cursor: pointer; transition: transform 0.1s; }
-        .cat-card:active { transform: scale(0.98); }
-        .cat-circle { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-odia); font-weight: 700; font-size: 20px; margin-bottom: 10px; }
-        .cat-label { font-family: var(--font-odia); font-size: 13px; font-weight: 600; }
+        .home-header .material-symbols-rounded {
+            font-size: 28px;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
 
-        .num-strip { background: #E0F7FA; border-radius: 20px; padding: 20px; display: flex; align-items: center; overflow: hidden; white-space: nowrap; cursor: pointer; }
-        .num-label { font-family: var(--font-odia); font-size: 24px; font-weight: 700; color: #006064; margin-right: 15px; }
-        .num-text { font-family: var(--font-odia); font-size: 24px; color: #006064; letter-spacing: 15px; opacity: 0.8; }
+        .home-title { 
+            font-family: var(--font-odia); 
+            font-weight: 700; 
+            font-size: 22px; 
+            margin-left: 16px;
+            background: linear-gradient(90deg, #d32f2f, #ff5252);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        .ui-card { width: 100%; border-radius: 20px; padding: 20px; display: flex; align-items: center; box-sizing: border-box; color: white; margin-bottom: 15px; cursor: pointer; }
-        .ui-card.orange { background: linear-gradient(to right, #FF9800, #FF5722); box-shadow: 0 8px 20px rgba(255, 87, 34, 0.3); }
-        .ui-card.purple { background: linear-gradient(to right, #7226FF, #4362FF); box-shadow: 0 8px 20px rgba(67, 98, 255, 0.3); }
-        .ui-card.white { background: #fff; color: #000; border: 1px solid #f0f0f0; margin-bottom: 0; }
+        .home-body { 
+            padding: 20px 24px 40px 24px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 28px; 
+        }
+
+        /* Banner */
+        .banner-img { 
+            width: 100%; 
+            aspect-ratio: 16/9; 
+            object-fit: cover; 
+            border-radius: 20px; 
+            background: #eee;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .banner-img:active { transform: scale(0.98); }
+
+        .section-title { 
+            font-family: var(--font-odia); 
+            font-weight: 700; 
+            font-size: 20px; 
+            margin: 0 0 16px 0; 
+            color: var(--text-dark);
+        }
         
-        .card-icon { font-size: 32px; margin-right: 15px; }
+        /* Category Grid */
+        .cat-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 16px; 
+        }
+        .cat-card { 
+            background: #ffffff; 
+            border-radius: 20px; 
+            padding: 16px 8px; 
+            text-align: center; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            cursor: pointer; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: all 0.2s ease; 
+        }
+        .cat-card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.08); }
+        .cat-card:active { transform: scale(0.95); }
+
+        .cat-circle { 
+            width: 56px; height: 56px; 
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-family: var(--font-odia); font-weight: 700; font-size: 22px; 
+            margin-bottom: 12px;
+            box-shadow: inset 0 -3px 6px rgba(0,0,0,0.05);
+        }
+        
+        /* Themed Gradients for Categories */
+        .c-swara { background: linear-gradient(135deg, #ffcdd2, #ffebee); color: #c62828; }
+        .c-byanjana { background: linear-gradient(135deg, #bbdefb, #e3f2fd); color: #1565c0; }
+        .c-barna { background: linear-gradient(135deg, #c8e6c9, #e8f5e9); color: #2e7d32; }
+        .c-matra { background: linear-gradient(135deg, #ffecb3, #fff8e1); color: #f57f17; }
+        .c-phala { background: linear-gradient(135deg, #e1bee7, #f3e5f5); color: #6a1b9a; }
+        .c-yukta { background: linear-gradient(135deg, #c5cae9, #e8eaf6); color: #283593; }
+
+        .cat-label { font-family: var(--font-odia); font-size: 13px; font-weight: 600; color: #334155; }
+
+        /* Number Strip */
+        .num-strip { 
+            background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%); 
+            border-radius: 20px; 
+            padding: 20px 24px; 
+            display: flex; 
+            align-items: center; 
+            overflow: hidden; 
+            white-space: nowrap; 
+            cursor: pointer; 
+            box-shadow: 0 8px 16px rgba(0, 151, 167, 0.15);
+            transition: transform 0.2s ease;
+        }
+        .num-strip:active { transform: scale(0.98); }
+        .num-label { font-family: var(--font-odia); font-size: 22px; font-weight: 700; color: #006064; margin-right: 16px; }
+        .num-text { font-family: var(--font-odia); font-size: 24px; color: #006064; letter-spacing: 12px; opacity: 0.8; font-weight: 600; }
+
+        /* UI Cards (Bottom List) */
+        .ui-list { display: flex; flex-direction: column; gap: 16px; }
+        
+        .ui-card { 
+            width: 100%; border-radius: 20px; 
+            padding: 20px 24px; display: flex; align-items: center; 
+            box-sizing: border-box; color: white; 
+            cursor: pointer; 
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        
+        /* Glossy effect */
+        .ui-card::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 60%);
+            transform: scale(0); transition: transform 0.5s ease;
+        }
+        .ui-card:hover::before { transform: scale(1); }
+        .ui-card:hover { transform: translateY(-3px); }
+        .ui-card:active { transform: translateY(0) scale(0.98); }
+
+        .ui-card.orange { 
+            background: linear-gradient(135deg, #FF9800, #FF5722); 
+            box-shadow: 0 10px 20px rgba(255, 87, 34, 0.25); 
+        }
+        .ui-card.purple { 
+            background: linear-gradient(135deg, #7226FF, #4362FF); 
+            box-shadow: 0 10px 20px rgba(67, 98, 255, 0.25); 
+        }
+        .ui-card.white { 
+            background: #ffffff; color: var(--text-dark); 
+            border: 1px solid rgba(0,0,0,0.05); 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+        }
+        
+        .card-icon { font-size: 36px; margin-right: 16px; }
         .card-content { flex: 1; }
-        .card-h { font-family: var(--font-odia); font-size: 18px; font-weight: 700; display: block; }
-        .card-s { font-family: var(--font-odia); font-size: 13px; opacity: 0.9; display: block; }
+        .card-h { font-family: var(--font-odia); font-size: 18px; font-weight: 700; display: block; margin-bottom: 4px; }
+        .card-s { font-family: var(--font-odia); font-size: 13px; opacity: 0.85; display: block; }
 
         /* =========================================
            VIEW 2: CARD UI (Deep Link / Ama Gouraba)
            ========================================= */
         #view-card {
-            background: #fff;
-            width: 100%; max-width: 420px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            background: #ffffff;
+            width: 100%; max-width: 400px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             position: relative; overflow: hidden;
-            padding: 40px 30px;
+            padding: 48px 32px 32px 32px;
             box-sizing: border-box;
             text-align: center;
             display: flex; flex-direction: column; align-items: center;
+            animation: fadeSlideUp 0.5s ease-out forwards;
         }
-        #view-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background-color: var(--primary-red); }
-
-        #main-image { width: 140px; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.2); object-fit: contain; margin-bottom: 24px; }
         
-        #page-title { font-family: var(--font-odia); font-size: 24px; font-weight: 700; margin: 0 0 8px 0; line-height: 1.3; }
-        #page-subtitle { font-family: var(--font-odia); font-size: 14px; color: #5f6368; margin: 0 0 30px 0; }
+        /* Top Red Accent Line */
+        #view-card::before { 
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 6px; 
+            background: linear-gradient(90deg, #d32f2f, #ff5252); 
+        }
 
-        .spinner { width: 30px; height: 30px; border: 3px solid #f3f3f3; border-top: 3px solid var(--primary-red); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px auto; }
+        #main-image { 
+            width: 140px; height: auto; border-radius: 16px; 
+            box-shadow: 0 12px 28px rgba(0,0,0,0.15); 
+            object-fit: contain; margin-bottom: 28px; 
+        }
+        
+        #page-title { font-family: var(--font-odia); font-size: 26px; font-weight: 700; margin: 0 0 8px 0; color: var(--text-dark); line-height: 1.3; }
+        #page-subtitle { font-family: var(--font-odia); font-size: 15px; color: var(--text-muted); margin: 0 0 32px 0; }
+
+        /* Modern Spinner */
+        .spinner { 
+            width: 36px; height: 36px; 
+            border: 3px solid rgba(211, 47, 47, 0.1); 
+            border-top: 3px solid var(--primary-red); 
+            border-radius: 50%; 
+            animation: spin 1s cubic-bezier(0.5, 0.1, 0.4, 0.9) infinite; 
+            margin: 0 auto 16px auto; 
+        }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        .action-btn { display: flex; align-items: center; justify-content: center; width: 100%; padding: 14px; border-radius: 12px; font-family: var(--font-odia); font-weight: 700; font-size: 15px; gap: 10px; margin-bottom: 12px; }
-        .btn-red { background: linear-gradient(180deg, #d32f2f 0%, #c62828 100%); color: white; border: none; box-shadow: 0 4px 12px rgba(211, 47, 47, 0.25); }
-        .btn-white { background: white; color: #202124; border: 1px solid #e0e0e0; }
-        
-        .footer { margin-top: 24px; font-size: 12px; color: #9aa0a6; text-align: center; }
+        /* Buttons */
+        .action-btn { 
+            display: flex; align-items: center; justify-content: center; 
+            width: 100%; padding: 16px; border-radius: 16px; 
+            font-family: var(--font-odia); font-weight: 700; font-size: 16px; 
+            gap: 12px; margin-bottom: 14px; 
+            transition: all 0.2s ease;
+        }
+        .btn-red { 
+            background: linear-gradient(135deg, #e53935 0%, #c62828 100%); 
+            color: white; border: none; 
+            box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3); 
+            animation: pulseGlow 2s infinite;
+        }
+        .btn-red:hover { box-shadow: 0 10px 24px rgba(211, 47, 47, 0.4); transform: translateY(-2px); }
+        .btn-red:active { transform: scale(0.98); }
 
+        .btn-white { 
+            background: #f8fafc; color: var(--text-dark); 
+            border: 1px solid #e2e8f0; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        .btn-white:hover { background: #f1f5f9; border-color: #cbd5e1; transform: translateY(-2px); }
+        
+        .footer { margin-top: 28px; font-size: 12px; color: #94a3b8; text-align: center; }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 480px) {
+            #view-home { box-shadow: none; border-radius: 0; }
+        }
     </style>
 </head>
 <body>
@@ -149,16 +335,16 @@
         <div class="home-body">
             <img src="https://imsbg.github.io/Odia-Bhasa-App-Photos/img/bnvp2.png" class="banner-img" alt="Banner">
 
-            <!-- Category Grid (Links add query params to trigger View 2) -->
+            <!-- Category Grid -->
             <div>
                 <div class="section-title">ବିଭାଗ</div>
                 <div class="cat-grid">
-                    <a href="?Swara" class="cat-card"><div class="cat-circle" style="background:#FFF0F0;">ଅ</div><div class="cat-label">ସ୍ୱରବର୍ଣ୍ଣ</div></a>
-                    <a href="?Byanjana" class="cat-card"><div class="cat-circle" style="background:#F0F8FF;">କ</div><div class="cat-label">ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ</div></a>
-                    <a href="?Barna_Parichaya" class="cat-card"><div class="cat-circle" style="background:#F0FFF4;">ବର୍ଣ୍ଣ</div><div class="cat-label">ବର୍ଣ୍ଣ ପରିଚୟ</div></a>
-                    <a href="?Matra" class="cat-card"><div class="cat-circle" style="background:#FFF8E1;">ା</div><div class="cat-label">ମାତ୍ରା</div></a>
-                    <a href="?Phala" class="cat-card"><div class="cat-circle" style="background:#F3E5F5;">୍ୟ</div><div class="cat-label">ଫଳା</div></a>
-                    <a href="?Yukta" class="cat-card"><div class="cat-circle" style="background:#E8EAF6;">ଙ୍କ</div><div class="cat-label">ଯୁକ୍ତାକ୍ଷର</div></a>
+                    <a href="?Swara" class="cat-card"><div class="cat-circle c-swara">ଅ</div><div class="cat-label">ସ୍ୱରବର୍ଣ୍ଣ</div></a>
+                    <a href="?Byanjana" class="cat-card"><div class="cat-circle c-byanjana">କ</div><div class="cat-label">ବ୍ୟଞ୍ଜନବର୍ଣ୍ଣ</div></a>
+                    <a href="?Barna_Parichaya" class="cat-card"><div class="cat-circle c-barna">ବର୍ଣ୍ଣ</div><div class="cat-label">ବର୍ଣ୍ଣ ପରିଚୟ</div></a>
+                    <a href="?Matra" class="cat-card"><div class="cat-circle c-matra">ା</div><div class="cat-label">ମାତ୍ରା</div></a>
+                    <a href="?Phala" class="cat-card"><div class="cat-circle c-phala">୍ୟ</div><div class="cat-label">ଫଳା</div></a>
+                    <a href="?Yukta" class="cat-card"><div class="cat-circle c-yukta">ଙ୍କ</div><div class="cat-label">ଯୁକ୍ତାକ୍ଷର</div></a>
                 </div>
             </div>
 
@@ -167,7 +353,8 @@
                 <div class="num-text">୦ ୧ ୨ ୩ ୪ ୫ ୬ ୭</div>
             </a>
 
-            <div style="display:flex; flex-direction:column;">
+            <!-- Bottom Cards -->
+            <div class="ui-list">
                 <a href="?Writing" class="ui-card orange">
                     <span class="material-symbols-rounded card-icon">edit</span>
                     <div class="card-content">
@@ -192,7 +379,7 @@
                         <span class="card-h">କ୍ୟାଲେଣ୍ଡର</span>
                         <span class="card-s">ପର୍ବପର୍ବାଣି ଓ ଛୁଟିଦିନ ଦେଖନ୍ତୁ</span>
                     </div>
-                    <span class="material-symbols-rounded" style="color:#aaa">chevron_right</span>
+                    <span class="material-symbols-rounded" style="color:#cbd5e1">chevron_right</span>
                 </a>
             </div>
         </div>
@@ -214,7 +401,7 @@
 
         <div id="loading-section">
             <div class="spinner"></div>
-            <p id="status-text" style="font-size: 13px; color: #666; font-family: var(--font-odia);">ଆପ୍ ଖୋଲୁଅଛି...</p>
+            <p id="status-text" style="font-size: 14px; color: #64748b; font-family: var(--font-odia); font-weight: 600;">ଆପ୍ ଖୋଲୁଅଛି...</p>
         </div>
 
         <div id="manual-actions" class="hidden" style="width:100%">
@@ -235,7 +422,7 @@
 
     <!-- 
       ================================================================
-      JAVASCRIPT LOGIC
+      JAVASCRIPT LOGIC (Unchanged)
       ================================================================
     -->
     <script>
