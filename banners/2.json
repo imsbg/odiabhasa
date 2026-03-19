@@ -1,11 +1,18 @@
 {
-  "version": 37,
+  "version": 38,
   "banners": [
             {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/newupdate.jpg",
       "text": "",
       "paragraph": "ଖୁସିର ଖବର! ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ରେ ଏବେ ପ୍ରଥମ ରୁ ଦଶମ ଶ୍ରେଣୀ ର ସବୁ ବହି ଉପଲବ୍ଧ",
       "link": "https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa",
+      "promo": "yes"
+    },
+    {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/1773907701635.jpg",
+      "text": "",
+      "paragraph": "ଆମର ନୂତନ ଗେମ୍ ଆପ୍",
+      "link": "https://play.google.com/store/apps/details?id=in.sandeep.plyxogames",
       "promo": "yes"
     },
             {
