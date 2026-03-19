@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Odia Bhasa App | ଆମ ଭାଷା ଆମ ପରିଚୟ | Free Ad-Free Learning App</title>
+    <meta name="title" content="Odia Bhasa App | ଆମ ଭାଷା ଆମ ପରିଚୟ | Free Ad-Free Learning App">
+    <meta name="description" content="Download Odia Bhasa by Sandeep Biswal G. A 100% free and ad-free app for kids to learn Odia alphabets, reading, and writing. Learning mother tongue should not depend on subscriptions.">
+    <meta name="keywords" content="Odia Bhasa, learn Odia, Odia app for kids, Odia alphabets, read and write Odia, free Odia learning app, Sandeep Biswal G, ଆମ ଭାଷା ଆମ ପରିଚୟ, Odia language app">
+    <meta name="author" content="Sandeep Biswal G">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/ଆମ-ଭାଷା-ଆମ-ପରିଚୟ.html">
+    <meta property="og:title" content="Odia Bhasa App | ଆମ ଭାଷା ଆମ ପରିଚୟ">
+    <meta property="og:description" content="100% Free & Ad-Free Odia learning app for kids. From alphabets to writing and reading, all in one app.">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- SEO Schema Markup for Software Application -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Odia Bhasa",
+      "operatingSystem": "ANDROID",
+      "applicationCategory": "EducationalApplication",
+      "author": {
+        "@type": "Person",
+        "name": "Sandeep Biswal G"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      },
+      "description": "Odia bhasa is a free ad-free learning app for kids from learning alphabets to writing and reading all in one app.",
+      "url": "https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa"
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #D32F2F; /* Odia Cultural Red */
+            --secondary: #FFC107; /* Bright Yellow */
+            --dark: #212121;
+            --light: #F9F9F9;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .odia-text {
+            font-family: 'Baloo Bhaina 2', cursive;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(211, 47, 47, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #555;
+            background: var(--white);
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            display: inline-block;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            animation: pulseGlow 2s infinite;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-5px);
+            background: #B71C1C;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 5rem 2rem;
+            background: #FFF8E1;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: var(--dark);
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f1f1f1;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 20px;
+            background: #fafafa;
+        }
+
+        .faq-answer p {
+            padding: 20px 0;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* Floating background shapes */
+        .shape {
+            position: absolute;
+            font-family: 'Baloo Bhaina 2', cursive;
+            font-size: 5rem;
+            color: rgba(211, 47, 47, 0.1);
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .shape-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .shape-2 { top: 20%; right: 10%; animation-delay: 1s; }
+        .shape-3 { bottom: 15%; left: 15%; animation-delay: 2s; }
+        .shape-4 { bottom: 20%; right: 5%; animation-delay: 3s; }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.5rem; }
+            .tagline { font-size: 1rem; }
+            .shape { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Odia Letters for Design -->
+        <div class="shape shape-1">ଅ</div>
+        <div class="shape shape-2">ଆ</div>
+        <div class="shape shape-3">କ</div>
+        <div class="shape shape-4">ଖ</div>
+
+        <div class="hero-content">
+            <h1 class="hero-title odia-text">ଆମ ଭାଷା ଆମ ପରିଚୟ</h1>
+            <h2 class="hero-subtitle">Odia Bhasa App</h2>
+            
+            <div class="tagline">
+                "Learning a language, especially one's mother tongue, should not depend on subscriptions or ads."
+            </div>
+            
+            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #444;">
+                A completely <strong style="color:var(--primary)">Free & Ad-Free</strong> learning app designed for kids. From learning alphabets to writing and reading—all in one place. All content inside the app is purely in the Odia language!
+            </p>
+
+            <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank" class="btn-download">
+                <i class="fab fa-google-play fa-2x"></i>
+                <div style="text-align: left;">
+                    <span style="font-size: 0.8rem; font-weight: normal; display: block;">GET IT ON</span>
+                    <span>Google Play</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title odia-text">ଆପ୍ ର ବିଶେଷତା (Features)</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-ban"></i>
+                <h3>100% Ad-Free & Free</h3>
+                <p class="odia-text">ବିନା ମୂଲ୍ୟ ଏବଂ ବିଜ୍ଞାପନ ମୁକ୍ତ</p>
+                <p style="font-size: 0.9rem; margin-top:10px; color:#666;">No hidden charges, no subscriptions, and absolutely zero annoying ads to distract your child.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-child"></i>
+                <h3>Made for Kids</h3>
+                <p class="odia-text">ପିଲାମାନଙ୍କ ପାଇଁ ପ୍ରସ୍ତୁତ</p>
+                <p style="font-size: 0.9rem; margin-top:10px; color:#666;">An interactive, easy-to-use interface tailored specifically for young learners.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-pen-fancy"></i>
+                <h3>Read & Write</h3>
+                <p class="odia-text">ପଠନ ଏବଂ ଲିଖନ</p>
+                <p style="font-size: 0.9rem; margin-top:10px; color:#666;">Learn the alphabet (Swara & Vyanjana varna), practice writing, and start reading easily.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-language"></i>
+                <h3>Purely Odia Content</h3>
+                <p class="odia-text">ସମ୍ପୂର୍ଣ୍ଣ ଓଡ଼ିଆରେ</p>
+                <p style="font-size: 0.9rem; margin-top:10px; color:#666;">Immerse your child in their mother tongue. Every lesson inside the app is in the Odia language.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="section-title odia-text">ସାଧାରଣ ପ୍ରଶ୍ନ (FAQs)</h2>
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>1. Is the Odia Bhasa app really free?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! The app is 100% free forever. There are no premium subscriptions, no paywalls, and absolutely no ads. Learning the mother tongue should be accessible to everyone.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>2. What age group is this app for?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>It is primarily designed for kids and toddlers who are just starting to learn the Odia language. However, anyone who wants to learn the basics of reading and writing Odia can use it.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>3. What exactly can my child learn?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Your child can learn the complete Odia Alphabet (Swara Varna and Vyanjana Varna), practice tracing and writing letters, and learn how to read basic words. It is an all-in-one foundation app.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>4. Does the app require an internet connection?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Once downloaded from the Google Play Store, the app functions offline so your child can learn anywhere, anytime without needing an active internet connection.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>5. Who developed this app?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>The app is developed with love for the Odia language by <strong>Sandeep Biswal G</strong>.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h3 class="odia-text" style="margin-bottom: 10px; font-size: 1.5rem;">ଆମ ଭାଷା ଆମ ପରିଚୟ</h3>
+        <p>App Name: <strong>Odia Bhasa</strong></p>
+        <p>Developed & Maintained by <a href="https://imsbg.github.io/" target="_blank">Sandeep Biswal G</a></p>
+        <div style="margin-top: 20px;">
+            <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank" style="display: inline-block; border: 1px solid var(--secondary); padding: 8px 20px; border-radius: 20px;">
+                Download on Google Play
+            </a>
+        </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #aaa;">&copy; <script>document.write(new Date().getFullYear())</script> Sandeep Biswal G. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive FAQ Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Close other open FAQs
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current FAQ
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
