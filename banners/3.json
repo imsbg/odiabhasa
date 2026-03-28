@@ -1,14 +1,32 @@
 {
-  "version": 6,
+  "version": 7,
   "banners": [
+                {
+  "image": "https://imsbg.github.io/odiabhasa/images/banner/utkala-dibasa.jpg",
+  "text": "",
+  "paragraph": "ଉତ୍କଳ ଦିବସର ହାର୍ଦ୍ଦିକ ଶୁଭେଚ୍ଛା ଓ ଅଭିନନ୍ଦନ!",
+  "link": "",
+  "promo": "no",
+  "start": "01-04-2026 00:01",
+  "end": "01-04-2026 23:59"
+},
+                {
+  "image": "https://imsbg.github.io/odiabhasa/images/banner/odia-new-year.jpg",
+  "text": "",
+  "paragraph": "ଓଡ଼ିଆ ନବବର୍ଷ ଓ ମହାବିଷୁବ ପଣା ସଂକ୍ରାନ୍ତିର ଅନେକ ଅନେକ ଶୁଭେଚ୍ଛା!",
+  "link": "",
+  "promo": "no",
+  "start": "14-04-2026 00:01",
+  "end": "14-04-2026 23:59"
+},
             {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/pakhala.jpg",
   "text": "",
   "paragraph": "ପଖାଳ କଂସାଏ, ଶାଗ ଭଜା ଓ ଚୁନା ମାଛ ଭଜା... ଓଡ଼ିଆର ସବୁଠୁ ବଡ଼ ସୁଖ",
   "link": "",
   "promo": "no",
-  "start": "20-03-2026 00:01",
-  "end": "20-03-2026 23:59"
+  "start": "20-03-2027 00:01",
+  "end": "20-03-2027 23:59"
 },
     {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/holi2026.jpg",
