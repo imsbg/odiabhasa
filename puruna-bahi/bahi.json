@@ -1,22 +1,33 @@
 [
   {
+    "id": "puruna_chh_man_ath_gunth",
+    "title": "ଛ ମାଣ ଆଠ ଗୁଣ୍ଠ",
+    "author": "ବ୍ୟାସକବି ଫକୀର ମୋହନ ସେନାପତି",
+    "year": "୧୮୯୭ - ୧୮୯୯ (ଧାରାବାହିକ); ୧୯୦୨ (ପୁସ୍ତକ ଆକାରରେ)",
+    "category": "ଉପନ୍ୟାସ",
+    "source": "ଉତ୍କଳ ସାହିତ୍ୟ",
+    "publisher": "ଉତ୍କଳ ସାହିତ୍ୟ ପ୍ରେସ୍",
+    "url": "https://drive.google.com/uc?export=download&id=17rlbW13B_lGrNz5wBKaK7Hqqre135V_e",
+    "version": 1
+  },
+  {
     "id": "puruna_abasara_basare",
     "title": "ଅବସର ବାସରେ",
     "author": "ଫକୀର ମୋହନ ସେନାପତି",
     "year": "୧୯୦୮, ୧୯୧୪ (୨ୟ)",
     "category": "କବିତା",
-    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
     "publisher": "ସୃଜନିକା",
     "url": "https://drive.google.com/uc?export=download&id=1pBeNDhzcsfHCgk-EvakN2MUw_SbDsNjD",
     "version": 2
   },
-    {
+  {
     "id": "puruna_acharasikhya",
     "title": "ଆଚାର ଶିକ୍ଷା",
     "author": "ଗୋବିନ୍ଦ ରଥ (ସଂ)",
     "year": "୧୯୧୦",
     "category": "ଜ୍ଞାନଗ୍ରନ୍ଥ",
-    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
     "publisher": "ସୃଜନିକା",
     "url": "https://drive.google.com/uc?id=13YnH75XVppiKTfZdxvCzUVYhA0CG0ayl&export=download",
     "version": 1
@@ -27,9 +38,64 @@
     "author": "ପ୍ୟାରୀ ମୋହନ ଆଚାର୍ଯ୍ୟ",
     "year": "୧୮୭୯",
     "category": "ଇତିହାସ",
-    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
     "publisher": "ସୃଜନିକା",
     "url": "https://drive.google.com/uc?export=download&id=1AiUNvoHyM1KZEIK6vUn8zeMA0dcijWaV",
+    "version": 1
+  },
+  {
+    "id": "puruna_chautisha_madhuchakra_1",
+    "title": "ଚଉତିଶା ମଧୁଚକ୍ର (୧ମ ଭାଗ)",
+    "author": "ଦୀନକୃଷ୍ଣ ଦାସ (ସଂ. ବିଚ୍ଛନ୍ଦ ଚରଣ ପଟ୍ଟନାୟକ)",
+    "year": "୧୯୩୧",
+    "category": "ଗୀତିକାବ୍ୟ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?export=download&id=1k0wj0PL4enpuGF7EC9I8PmaDgCXEwmSL",
+    "version": 1
+  },
+  {
+    "id": "puruna_chautisha_madhuchakra_2",
+    "title": "ଚଉତିଶା ମଧୁଚକ୍ର (୨ୟ ଭାଗ)",
+    "author": "ଦୀନକୃଷ୍ଣ ଦାସ (ସଂ. ବିଚ୍ଛନ୍ଦ ଚରଣ ପଟ୍ଟନାୟକ)",
+    "year": "୧୯୩୧",
+    "category": "ଗୀତିକାବ୍ୟ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?export=download&id=1uXE7E0FyEkgRTi1fvUHddvlpKlSZL0b9",
+    "version": 1
+  },
+  {
+    "id": "puruna_chautisha_madhuchakra_3",
+    "title": "ଚଉତିଶା ମଧୁଚକ୍ର (୩ୟ ଭାଗ)",
+    "author": "ଦୀନକୃଷ୍ଣ ଦାସ (ସଂ. ବିଚ୍ଛନ୍ଦ ଚରଣ ପଟ୍ଟନାୟକ)",
+    "year": "୧୯୩୧",
+    "category": "ଗୀତିକାବ୍ୟ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?export=download&id=1AR_MZ4K-JwYwIrei4Pt1qV_X4eCWQr5J",
+    "version": 1
+  },
+  {
+    "id": "puruna_chautisha_hara_2",
+    "title": "ଚଉତିଶା ହାର (୨ୟ ଭାଗ)",
+    "author": "ବିହାରୀ ଦାସ",
+    "year": "୧୯୨୪",
+    "category": "ଗୀତିକବିତା",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1tLSHdAqwEdKyMINr0mX2rThbL9psrM1J&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_chautisha_hara_1",
+    "title": "ଚଉତିଶା ହାର (୧ମ ଭାଗ)",
+    "author": "ବିହାରୀ ଦାସ",
+    "year": "୧୯୨୪",
+    "category": "ଗୀତିକବିତା",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=17gOyydsI9M2lfhqobiWKk8OOqNY5Eq1m&export=download",
     "version": 1
   }
 ]
