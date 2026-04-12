@@ -1,5 +1,27 @@
 [
   {
+    "id": "puruna_arth_koili",
+    "title": "ଅର୍ଥ କୋଇଲି",
+    "author": "ଜଗନ୍ନାଥ ଦାସ",
+    "year": "୧୯୫୭",
+    "category": "ଛାନ୍ଦ, ଅର୍ଜ୍ଜୁନ, ପାର୍ଥ, ଗୋପପୁର",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1xe8P0DnOYZVoMwL9Fyxec2H0XuRdSVYY&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_bilngka_ramayn",
+    "title": "ବିଲଙ୍କା ରାମାୟଣ",
+    "author": "ସାରଳା ଦାସ",
+    "year": "୧୯୫୧, ନୂସଂ.",
+    "category": "କାବ୍ୟ, ସହସ୍ରଶିରା ରାବଣ, ପୂର୍ବ ଖଣ୍ଡ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ପ୍ରାଚୀନ, ସୋଆ",
+    "url": "https://drive.google.com/uc?id=1F1_A3GoUJK75RbbYeLvK1pxINLu9PXIE&export=download",
+    "version": 1
+  },
+  {
     "id": "puruna_chh_man_ath_gunth",
     "title": "ଛ ମାଣ ଆଠ ଗୁଣ୍ଠ",
     "author": "ବ୍ୟାସକବି ଫକୀର ମୋହନ ସେନାପତି",
@@ -11,15 +33,26 @@
     "version": 1
   },
   {
+    "id": "puruna_atibd_jgnnath_das",
+    "title": "ଅତିବଡ଼ ଜଗନ୍ନାଥ ଦାସ",
+    "author": "ରତ୍ନାକର କର",
+    "year": "୧୯୩୨",
+    "category": "ଜୀବନୀ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1RzOZPVIY3eXCfixfaa_v5Hta26oc943Q&export=download",
+    "version": 1
+  },
+  {
     "id": "puruna_abasara_basare",
     "title": "ଅବସର ବାସରେ",
-    "author": "ଫକୀର ମୋହନ ସେନାପତି",
+    "author": "ବ୍ୟାସକବି ଫକୀର ମୋହନ ସେନାପତି",
     "year": "୧୯୦୮, ୧୯୧୪ (୨ୟ)",
     "category": "କବିତା",
     "source": "ଓଡ଼ିଆ ବିଭବ",
     "publisher": "ସୃଜନିକା",
     "url": "https://drive.google.com/uc?export=download&id=1pBeNDhzcsfHCgk-EvakN2MUw_SbDsNjD",
-    "version": 2
+    "version": 3
   },
   {
     "id": "puruna_acharasikhya",
@@ -77,17 +110,6 @@
     "version": 1
   },
   {
-    "id": "puruna_chautisha_hara_2",
-    "title": "ଚଉତିଶା ହାର (୨ୟ ଭାଗ)",
-    "author": "ବିହାରୀ ଦାସ",
-    "year": "୧୯୨୪",
-    "category": "ଗୀତିକବିତା",
-    "source": "ଓଡ଼ିଆ ବିଭବ",
-    "publisher": "ସୃଜନିକା",
-    "url": "https://drive.google.com/uc?id=1tLSHdAqwEdKyMINr0mX2rThbL9psrM1J&export=download",
-    "version": 1
-  },
-  {
     "id": "puruna_chautisha_hara_1",
     "title": "ଚଉତିଶା ହାର (୧ମ ଭାଗ)",
     "author": "ବିହାରୀ ଦାସ",
@@ -96,6 +118,17 @@
     "source": "ଓଡ଼ିଆ ବିଭବ",
     "publisher": "ସୃଜନିକା",
     "url": "https://drive.google.com/uc?id=17gOyydsI9M2lfhqobiWKk8OOqNY5Eq1m&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_chautisha_hara_2",
+    "title": "ଚଉତିଶା ହାର (୨ୟ ଭାଗ)",
+    "author": "ବିହାରୀ ଦାସ",
+    "year": "୧୯୨୪",
+    "category": "ଗୀତିକବିତା",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1tLSHdAqwEdKyMINr0mX2rThbL9psrM1J&export=download",
     "version": 1
   }
 ]
