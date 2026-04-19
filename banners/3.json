@@ -1,5 +1,5 @@
 {
-  "version": 8,
+  "version": 9,
   "banners": [
                 {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/utkala-dibasa.jpg",
@@ -56,7 +56,9 @@
       "text": "",
       "paragraph": "ଆମର ନୂତନ ଗେମ୍ ଆପ୍",
       "link": "https://play.google.com/store/apps/details?id=in.sandeep.plyxogames",
-      "promo": "yes"
+      "promo": "yes",
+  "start": "14-04-2026 00:01",
+  "end": "14-04-2026 23:59"
     },
         {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/kalijayi.jpg",
