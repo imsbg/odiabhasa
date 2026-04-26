@@ -2,124 +2,371 @@
 <html lang="or">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <!-- Link the specific JSON file to this layout based on Markdown frontmatter -->
+    <!-- FETCH DATA FROM JEKYLL -->
     {% assign book = site.data.books[page.book_id] %}
-    
-    <!-- Dynamic SEO Meta Tags -->
-    <title>{{ book.title }} | ଓଡ଼ିଆ ବହି | Odia Bhasa</title>
-    <meta name="description" content="{{ book.title }} - ଲେଖକ: {{ book.author }}। ଏହି ଓଡ଼ିଆ ବହିଟିକୁ ଅନ୍‌ଲାଇନ୍‌ରେ ପଢ଼ନ୍ତୁ। Odia Bhasa App">
+
+    <!-- =================================================================
+         PROFESSIONAL SEO & META TAGS (Cover image used here for sharing)
+         ================================================================= -->
+    <title>{{ book.title }} | ଓଡ଼ିଆ ପାଠାଗାର | Odia Bhasa App</title>
+    <meta name="description" content="{{ book.title }} ବହିଟି ପଢନ୍ତୁ - {{ book.author }} ଙ୍କ ଦ୍ବାରା ଲିଖିତ। Odia Bhasa App">
     <meta name="author" content="{{ book.author }}">
+    <meta name="robots" content="index, follow">
     
-    <!-- Open Graph for Social Sharing -->
-    <meta property="og:title" content="{{ book.title }}">
-    <meta property="og:description" content="ଲେଖକ: {{ book.author }}। ଏହି ବହିଟିକୁ ସମ୍ପୂର୍ଣ୍ଣ ମାଗଣାରେ ପଢ଼ନ୍ତୁ।">
+    <meta name="theme-color" id="theme-color-meta" content="#FFD800">
+    
+    <!-- Open Graph (Facebook/WhatsApp/LinkedIn) -->
+    <meta property="og:title" content="{{ book.title }} | ଓଡ଼ିଆ ପାଠାଗାର | Odia Bhasa App">
+    <meta property="og:description" content="{{ book.title }} ବହିଟି ପଢନ୍ତୁ - ଲେଖକ: {{ book.author }}। ଏହି ଓଡ଼ିଆ ବହିଟିକୁ ମାଗଣାରେ ପଢ଼ନ୍ତୁ। ଓଡ଼ିଆ ଭାଷା ଆପ୍">
     <meta property="og:image" content="{{ book.coverpage }}">
     <meta property="og:type" content="book">
 
-    <!-- JSON-LD Structured Data for Google Indexing -->
+    <!-- Schema.org JSON-LD for Google Rich Results -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Book",
       "name": "{{ book.title }}",
-      "author": {
-        "@type": "Person",
-        "name": "{{ book.author }}"
-      },
+      "author": { "@type": "Person", "name": "{{ book.author }}" },
       "image": "{{ book.coverpage }}",
       "inLanguage": "or",
       "bookFormat": "https://schema.org/EBook"
     }
     </script>
-    
-    <!-- Default CSS for crawler and noscript -->
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .book-cover { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px; }
-        .page-heading { color: #333; margin-top: 2rem; }
-        .page-paragraph { margin-bottom: 1rem; font-size: 1.1rem; }
-        .reader-controls { display: none; } /* Hidden for crawlers, shown by JS */
-    </style>
 
-    <!-- NOSCRIPT Fallback: If JS is disabled (like Googlebot), show all pages naturally -->
-    <noscript>
-        <style>
-            .book-page { display: block !important; margin-bottom: 3rem; border-bottom: 2px dashed #ccc; padding-bottom: 2rem; }
-            .reader-controls { display: none !important; }
-        </style>
-    </noscript>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- YOUR EXACT UI CSS -->
+    <style>
+        :root {
+            --primary-yellow: #FFD800; --bg-color: #FDF9EE; --white: #FFFFFF; --black: #000000;
+            --purple: #7C3AED; --text-dark: #1A1A1A;
+            --border-thick: 3px solid var(--black); --shadow-comic: 4px 4px 0px var(--black);
+            --shadow-comic-lg: 6px 6px 0px var(--black);
+            --radius-sm: 12px; --radius-md: 16px; --radius-pill: 50px;
+            --font-base: 18px; --sepia-l: 90%;
+        }
+
+        body.theme-dark { --bg-color: #121212; --white: #1e1e1e; --black: #ffffff; --text-dark: #f1f1f1; --primary-yellow: #B29700; --purple: #9d6aff; }
+        body.theme-sepia { --bg-color: hsl(40, 45%, var(--sepia-l)); --white: hsl(40, 45%, calc(var(--sepia-l) + 5%)); --black: #4A3B2C; --text-dark: #4A3B2C; --primary-yellow: #E5C300; --purple: #6A32C9; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Noto Sans Oriya', sans-serif; background-color: var(--bg-color); color: var(--text-dark); user-select: none; overflow-x: hidden; transition: background-color 0.3s, color 0.3s; }
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; cursor: pointer; outline: none; }
+        .hidden { display: none !important; }
+        .icon { width: 28px; height: 28px; fill: currentColor; }
+
+        .app-container { width: 100%; min-height: 100vh; position: relative; }
+        
+        .reader-view { background: var(--bg-color); min-height: 100vh; position: relative; }
+        .reader-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 15px 20px; background: var(--bg-color); z-index: 100; border-bottom: var(--border-thick); position: sticky; top: 0; transition: background-color 0.3s; }
+        .rh-left { display: flex; gap: 15px; }
+        .rh-titles { display: flex; flex-direction: column; }
+        .rh-main-title { font-size: 20px; font-weight: 900; line-height: 1.2; }
+        .rh-sub-title { font-size: 12px; font-weight: 700; color: #777; margin-top: 4px; }
+        .header-btn { background: none; border: none; color: var(--text-dark); display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+        .rh-actions { display: flex; gap: 15px; }
+
+        .reader-content { max-width: 800px; margin: 0 auto; padding: 40px 25px 120px 25px; min-height: 80vh; }
+        
+        .content-p { font-size: var(--font-base); line-height: 1.9; font-weight: 500; margin-bottom: 25px; color: var(--text-dark); word-wrap: break-word; transition: font-size 0.3s; }
+        strong, b { font-weight: 900; } em, i { font-style: italic; }
+        .book-page-header { font-size: calc(var(--font-base) + 6px); font-weight: 900; margin-top: 35px; margin-bottom: 15px; color: var(--text-dark); line-height: 1.4; }
+        
+        .first-page-center { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .first-page-center .content-p, .first-page-center .book-page-header { text-align: center; }
+        .reading-active { background-color: rgba(124, 58, 237, 0.2); border-left: 4px solid var(--purple); padding-left: 10px; border-radius: 4px;}
+        .text-purple { color: var(--purple); cursor: pointer; text-decoration: underline; text-decoration-color: rgba(124, 58, 237, 0.4); text-underline-offset: 4px; }
+
+        .reader-bottom { position: fixed; bottom: 0; left: 0; width: 100%; display: flex; justify-content: space-between; align-items: flex-end; padding: 20px; pointer-events: none; z-index: 500; }
+        .page-counter { font-size: 18px; font-weight: 900; color: var(--text-dark); background: var(--bg-color); padding: 5px 10px; border: var(--border-thick); border-radius: 10px;}
+        .fab-audio { width: 65px; height: 65px; background: var(--purple); color: #fff; border: var(--border-thick); border-radius: 50%; box-shadow: var(--shadow-comic); display: flex; align-items: center; justify-content: center; pointer-events: auto; transition: 0.2s; cursor: pointer; }
+        .fab-audio:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0px var(--black); }
+        .fab-audio svg { width: 30px; height: 30px; fill: currentColor; }
+
+        .nav-arrows-container { position: fixed; bottom: 85px; left: 50%; transform: translateX(-50%); width: 100%; max-width: 600px; display: flex; justify-content: space-between; padding: 0 20px; z-index: 400; pointer-events: none; }
+        .nav-btn { width: 50px; height: 50px; background: var(--white); color: var(--text-dark); border: var(--border-thick); border-radius: 50%; box-shadow: var(--shadow-comic); display: flex; align-items: center; justify-content: center; pointer-events: auto; transition: opacity 0.4s ease, transform 0.1s; opacity: 1; }
+        .nav-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--black); }
+        .nav-btn.faded { opacity: 0; pointer-events: none; }
+
+        /* Modals */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(3px); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: 0.3s; }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .comic-modal { background: var(--bg-color); width: 100%; max-width: 350px; border: var(--border-thick); border-radius: var(--radius-md); box-shadow: var(--shadow-comic-lg); padding: 25px; text-align: center; transform: scale(0.8); transition: 0.3s; max-height: 85vh; display: flex; flex-direction: column; overflow-y: auto; }
+        .modal-overlay.active .comic-modal { transform: scale(1); }
+        .comic-modal h3 { font-size: 18px; margin-bottom: 20px; font-weight: 900; color: var(--text-dark); }
+        .modal-btn { width: 100%; padding: 12px; margin-bottom: 12px; border: var(--border-thick); border-radius: var(--radius-pill); font-size: 16px; font-weight: 900; background: var(--white); color: var(--text-dark); box-shadow: 3px 3px 0px var(--black); transition: 0.1s; }
+        .modal-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0px var(--black); }
+        .btn-close { margin-top: 10px; background: #bbb; color: #000; border-color: #000;}
+
+        /* Settings CSS */
+        .settings-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        .settings-label { text-align: left; font-weight: 900; margin: 10px 0 5px 0; font-size: 14px; color: var(--text-dark); }
+        .toggle-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: 700; text-align: left;}
+        .sepia-slider-container { padding: 10px; border: 2px dashed var(--black); border-radius: 8px; margin-bottom: 15px; background: var(--white); }
+        input[type="range"] { width: 100%; accent-color: var(--purple); cursor: pointer; }
+        .search-results-box { flex: 1; overflow-y: auto; text-align: left; margin: 15px 0; border: 2px solid #ccc; border-radius: 8px; padding: 10px; background: var(--white); max-height: 200px; }
+        .search-item { padding: 10px; border-bottom: 1px dashed #ccc; cursor: pointer; font-size: 14px; }
+        .search-input { width: 100%; padding: 14px 20px; border: var(--border-thick); border-radius: var(--radius-pill); font-size: 16px; font-weight: 700; background: var(--white); color: var(--text-dark); }
+        input[type="checkbox"] { appearance: none; width: 40px; height: 20px; background: var(--white); border: 2px solid var(--black); border-radius: 20px; position: relative; cursor: pointer; }
+        input[type="checkbox"]::before { content: ''; position: absolute; width: 12px; height: 12px; background: var(--black); border-radius: 50%; top: 2px; left: 3px; transition: 0.2s; }
+        input[type="checkbox"]:checked { background: var(--purple); border-color: var(--black); }
+        input[type="checkbox"]:checked::before { left: 21px; background: #fff; border: 1px solid var(--black);}
+    </style>
 </head>
 <body>
 
-    <main>
-        <!-- Semantic Article wrapping everything -->
-        <article itemscope itemtype="https://schema.org/Book">
-            
-            <!-- Book Header Info -->
-            <header style="text-align: center; margin-bottom: 3rem;">
-                <img itemprop="image" src="{{ book.coverpage }}" alt="{{ book.title }} Cover" class="book-cover">
-                <h1 itemprop="name">{{ book.title }}</h1>
-                <p itemprop="author" style="font-size: 1.2rem; color: #555;">ଲେଖକ: <strong>{{ book.author }}</strong></p>
+    <div class="app-container" id="app-root">
+
+        <!-- ==================== READER VIEW ==================== -->
+        <div id="reader-view" class="reader-view">
+            <header class="reader-header">
+                <div class="rh-left">
+                    <button class="header-btn" onclick="window.location.href='https://imsbg.github.io/odiabhasa/'">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+                    </button>
+                    <div class="rh-titles">
+                        <div id="rh-main-title" class="rh-main-title">{{ book.title }}</div>
+                        <div id="rh-sub-title" class="rh-sub-title">{{ book.author }}</div>
+                    </div>
+                </div>
+                <div class="rh-actions">
+                    <button class="header-btn" onclick="openSearchModal()"><svg class="icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
+                    <button class="header-btn" onclick="openSettingsModal()"><svg class="icon" viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></button>
+                </div>
             </header>
 
-            <!-- Reader Controls Placeholder (Will be activated by JS later) -->
-            <div id="reader-controls" class="reader-controls" style="text-align: center; margin-bottom: 20px;">
-                <button id="prevBtn">ପୂର୍ବ ପୃଷ୍ଠା</button>
-                <span id="pageCounter" style="margin: 0 15px; font-weight: bold;"></span>
-                <button id="nextBtn">ପରବର୍ତ୍ତୀ ପୃଷ୍ଠା</button>
-            </div>
-
-            <!-- Book Content Loop (Liquid pulls from JSON) -->
-            <div id="reader-content">
+            <!-- SEO STATIC HTML PRE-RENDERED -->
+            <div id="page-content" class="reader-content">
                 {% for b_page in book.pages %}
-                    <!-- Each section is one page. We hide pages after the first one so JS can control them -->
-                    <section class="book-page" data-page="{{ forloop.index }}" {% if forloop.index > 1 %}style="display: none;"{% endif %}>
+                    <div class="book-page {% if forloop.index0 == 0 %}first-page-center{% endif %}" data-index="{{ forloop.index0 }}" style="{% if forloop.index0 != 0 %}display: none;{% endif %}">
                         
-                        {% for content_block in b_page.content %}
-                            
-                            {% if content_block.type == 'header' %}
-                                <!-- Using h2 for SEO hierarchy -->
-                                <h2 class="page-heading">{{ content_block.text }}</h2>
-                            
-                            {% elsif content_block.type == 'paragraph' %}
-                                <p class="page-paragraph">
-                                    {% for span in content_block.spans %}
-                                        <!-- Replace JSON \n with HTML <br> -->
-                                        {% assign text_html = span.text | newline_to_br %}
-                                        
-                                        {% if span.style == 'italic' %}
-                                            <em>{{ text_html }}</em>
-                                        {% elsif span.style == 'bold' %}
-                                            <strong>{{ text_html }}</strong>
-                                        {% else %}
-                                            <span>{{ text_html }}</span>
-                                        {% endif %}
-                                        
-                                    {% endfor %}
-                                </p>
-                            {% endif %}
-                            
-                        {% endfor %}
-
-                        <!-- Media Additions -->
-                        {% if b_page.audio %}
-                            <div style="margin-top: 20px; background: #f4f4f4; padding: 10px; border-radius: 5px;">
-                                <p><strong>ଶୁଣନ୍ତୁ:</strong></p>
-                                <audio controls preload="none" style="width: 100%;">
-                                    <source src="{{ b_page.audio }}" type="audio/mpeg">
-                                    ଆପଣଙ୍କ ବ୍ରାଉଜର୍ ଅଡିଓ ସପୋର୍ଟ କରୁନାହିଁ।
-                                </audio>
-                            </div>
+                        {% assign isIndexPage = false %}
+                        {% if forloop.index0 == 1 or book.title contains 'ସୂଚୀ' %}
+                            {% assign isIndexPage = true %}
                         {% endif %}
 
-                    </section>
+                        {% for item in b_page.content %}
+                            {% if item.type == 'header' %}
+                                {% assign headerClass = 'book-page-header' %}
+                                {% if forloop.parentloop.index0 <= 1 %}{% assign headerClass = 'content-p' %}{% endif %}
+                                <div class="{{ headerClass }} {% if isIndexPage %}text-purple{% endif %}" {% if isIndexPage %}onclick="findChapterAndGo('{{ item.text | strip_html | truncatewords: 1, "" }}')"{% endif %}>
+                                    {{ item.text | newline_to_br }}
+                                </div>
+                            
+                            {% elsif item.type == 'paragraph' %}
+                                {% assign paraText = "" %}
+                                {% for span in item.spans %}
+                                    {% assign txt = span.text | newline_to_br %}
+                                    {% if span.style == 'bold' %}{% assign txt = "<strong>" | append: txt | append: "</strong>" %}{% endif %}
+                                    {% if span.style == 'italic' %}{% assign txt = "<em>" | append: txt | append: "</em>" %}{% endif %}
+                                    {% assign paraText = paraText | append: txt %}
+                                {% endfor %}
+
+                                <div class="content-p" id="chunk-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}">{{ paraText }}</div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 {% endfor %}
             </div>
 
-        </article>
-    </main>
-<script src="{{ '/assets/js/reader.js' | relative_url }}" defer></script>
+            <div class="nav-arrows-container" id="nav-arrows-ui">
+                <button class="nav-btn" onclick="changePage(-1)" id="btn-prev">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </button>
+                <button class="nav-btn" onclick="changePage(1)" id="btn-next">
+                    <svg class="icon" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                </button>
+            </div>
+
+            <div class="reader-bottom">
+                <div class="page-counter" id="page-indicator">୧ / ୧</div>
+                <button class="fab-audio" id="btn-play-audio" onclick="toggleAudio()">
+                    <svg viewBox="0 0 24 24" id="audio-icon"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- ==================== SETTINGS MODAL ==================== -->
+        <div id="settings-modal" class="modal-overlay">
+            <div class="comic-modal">
+                <h3>ସେଟିଂସ୍</h3>
+                <div class="settings-label">ଅକ୍ଷର ଆକାର </div>
+                <div class="settings-grid">
+                    <button class="modal-btn" onclick="adjFont(-2)">ଅ- ଛୋଟ</button>
+                    <button class="modal-btn" onclick="adjFont(2)">ଅ+ ବଡ</button>
+                </div>
+                <div class="settings-label">ରଙ୍ଗ</div>
+                <button class="modal-btn" onclick="setTheme('light')" style="background:#fff; color:#000;">ଆଲୋକିତ</button>
+                <button class="modal-btn" onclick="setTheme('dark')" style="background:#222; color:#fff;">ଅନ୍ଧାରିଆ</button>
+                <button class="modal-btn" onclick="setTheme('sepia')" style="background:#F4ECD8; color:#5B4636;">ଆଖି ସୁରକ୍ଷା</button>
+                <div id="sepia-slider-wrapper" class="sepia-slider-container hidden">
+                    <div class="settings-label" style="text-align:center;">ଆଖି ସୁରକ୍ଷା ରଙ୍ଗ</div>
+                    <input type="range" min="70" max="95" id="sepia-intensity" oninput="updateSepia(this.value)">
+                </div>
+                <div class="settings-label" style="margin-top:15px;">ଅନ୍ୟାନ୍ୟ</div>
+                <div class="toggle-row">
+                    <span>ତୀର ଦେଖାନ୍ତୁ </span>
+                    <input type="checkbox" id="pref-arrows" onchange="updateToggles()">
+                </div>
+                <div class="toggle-row">
+                    <span>ଅଡିଓ ବଟନ୍</span>
+                    <input type="checkbox" id="pref-audio" onchange="updateToggles()">
+                </div>
+                <button class="modal-btn btn-close" onclick="closeSettingsModal()">ବନ୍ଦ କରନ୍ତୁ</button>
+            </div>
+        </div>
+
+        <!-- ==================== SEARCH MODAL ==================== -->
+        <div id="search-modal" class="modal-overlay">
+            <div class="comic-modal">
+                <h3>ବହି ଭିତରେ ଖୋଜନ୍ତୁ</h3>
+                <input type="text" id="in-book-search" class="search-input" placeholder="ଶବ୍ଦ ଲେଖନ୍ତୁ...">
+                <div class="search-results-box" id="search-results"></div>
+                <button class="modal-btn btn-close" onclick="closeSearchModal()">ବନ୍ଦ କରନ୍ତୁ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPORT JSON FOR SEARCH MODAL -->
+    <script>
+        const bookData = {{ book | jsonify }};
+    </script>
+
+    <!-- UI JAVASCRIPT -->
+    <script>
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        document.addEventListener('copy', e => { e.preventDefault(); e.clipboardData.setData('text/plain', "ଓଡ଼ିଆ ଭାଷା ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ : https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa"); });
+
+        let currentPage = 0;
+        let pages = document.querySelectorAll('.book-page');
+        let prefs = { fontSize: 18, theme: 'light', showArrows: true, showAudio: true, sepiaLightness: 90 };
+        let navTimeout; let synth = window.speechSynthesis; let audioChunks = []; let currentChunkIndex = 0; let isPlaying = false;
+        let touchstartX = 0; let touchendX = 0;
+
+        const ui = {
+            modalSettings: document.getElementById('settings-modal'), modalSearch: document.getElementById('search-modal'),
+            pageInd: document.getElementById('page-indicator'), btnPrev: document.getElementById('btn-prev'), btnNext: document.getElementById('btn-next'),
+            navArrowsUI: document.getElementById('nav-arrows-ui'), btnAudio: document.getElementById('btn-play-audio'), audioIcon: document.getElementById('audio-icon'),
+            inBookInput: document.getElementById('in-book-search'), searchResults: document.getElementById('search-results'),
+            sepiaWrapper: document.getElementById('sepia-slider-wrapper'), sepiaSlider: document.getElementById('sepia-intensity'),
+            themeMeta: document.getElementById('theme-color-meta'), pageContent: document.getElementById('page-content')
+        };
+
+        window.onload = () => {
+            loadPrefs();
+            setupNavAutoHider(); setupSwipe();
+            ui.inBookInput.addEventListener('keyup', doInBookSearch);
+            updatePaginationUI();
+        };
+
+        // --- PREFS ---
+        function loadPrefs() {
+            try { const stored = localStorage.getItem('odiaPrefs'); if(stored) prefs = { ...prefs, ...JSON.parse(stored) }; } catch(e){}
+            applyPrefs();
+            document.getElementById('pref-arrows').checked = prefs.showArrows; document.getElementById('pref-audio').checked = prefs.showAudio; ui.sepiaSlider.value = prefs.sepiaLightness;
+        }
+        function savePrefs() { localStorage.setItem('odiaPrefs', JSON.stringify(prefs)); applyPrefs(); }
+        function applyPrefs() {
+            document.body.className = ''; if(prefs.theme !== 'light') document.body.classList.add(`theme-${prefs.theme}`);
+            document.documentElement.style.setProperty('--font-base', `${prefs.fontSize}px`); document.documentElement.style.setProperty('--sepia-l', `${prefs.sepiaLightness}%`);
+            ui.navArrowsUI.style.display = prefs.showArrows ? 'flex' : 'none'; ui.btnAudio.style.display = prefs.showAudio ? 'flex' : 'none';
+            ui.sepiaWrapper.style.display = prefs.theme === 'sepia' ? 'block' : 'none';
+            if(prefs.theme === 'dark') ui.themeMeta.content = '#121212'; else if(prefs.theme === 'sepia') ui.themeMeta.content = `hsl(40, 45%, ${prefs.sepiaLightness}%)`; else ui.themeMeta.content = '#FFD800';
+        }
+        function adjFont(diff) { prefs.fontSize = Math.max(14, Math.min(32, prefs.fontSize + diff)); savePrefs(); }
+        function setTheme(t) { prefs.theme = t; savePrefs(); }
+        function updateSepia(val) { prefs.sepiaLightness = val; savePrefs(); }
+        function updateToggles() { prefs.showArrows = document.getElementById('pref-arrows').checked; prefs.showAudio = document.getElementById('pref-audio').checked; savePrefs(); }
+
+        // --- MODALS ---
+        function openSettingsModal() { ui.modalSettings.classList.add('active'); } function closeSettingsModal() { ui.modalSettings.classList.remove('active'); }
+        function openSearchModal() { ui.modalSearch.classList.add('active'); ui.searchResults.innerHTML=''; ui.inBookInput.value=''; } function closeSearchModal() { ui.modalSearch.classList.remove('active'); }
+
+        // --- READER PAGINATION ---
+        function changePage(dir) {
+            const next = currentPage + dir;
+            if(next >= 0 && next < pages.length) {
+                stopAudio();
+                pages[currentPage].style.display = 'none';
+                currentPage = next;
+                pages[currentPage].style.display = 'block';
+                if(currentPage === 0) pages[currentPage].classList.add('first-page-center'); else pages[currentPage].classList.remove('first-page-center');
+                window.scrollTo(0,0);
+                updatePaginationUI();
+            }
+        }
+
+        function updatePaginationUI() {
+            const odiaNum = n => n.toString().replace(/\d/g, d => "୦୧୨୩୪୫୬୭୮୯"[d]);
+            ui.pageInd.textContent = `${odiaNum(currentPage+1)} / ${odiaNum(pages.length)}`;
+            ui.btnPrev.style.visibility = currentPage === 0 ? 'hidden' : 'visible';
+            ui.btnNext.style.visibility = currentPage === pages.length - 1 ? 'hidden' : 'visible';
+            resetNavTimer();
+        }
+
+        function goToPage(idx) {
+            if(idx !== currentPage) {
+                changePage(idx - currentPage);
+            }
+        }
+
+        // --- SEARCH ---
+        function findChapterAndGo(q) {
+            if(!q) return;
+            for(let i = 2; i < bookData.pages.length; i++) {
+                if(JSON.stringify(bookData.pages[i]).includes(q)) { goToPage(i); return; }
+            }
+        }
+        function doInBookSearch() {
+            const q = ui.inBookInput.value.trim().toLowerCase(); if(q.length < 2) { ui.searchResults.innerHTML = ''; return; }
+            let html = ''; const odiaNum = n => n.toString().replace(/\d/g, d => "୦୧୨୩୪୫୬୭୮୯"[d]);
+            bookData.pages.forEach((p, idx) => { if(JSON.stringify(p).toLowerCase().includes(q)) html += `<div class="search-item" onclick="closeSearchModal(); goToPage(${idx});"><strong>ପୃଷ୍ଠା ${odiaNum(idx+1)}:</strong> ମିଳିଲା...</div>`; });
+            ui.searchResults.innerHTML = html || '<div class="search-item">କିଛି ମିଳିଲା ନାହିଁ</div>';
+        }
+
+        // --- SWIPE & ARROWS ---
+        function setupSwipe() {
+            ui.pageContent.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; }, {passive: true});
+            ui.pageContent.addEventListener('touchend', e => { touchendX = e.changedTouches[0].screenX; handleGesture(); }, {passive: true});
+        }
+        function handleGesture() { const th = 50; if (touchendX < touchstartX - th) changePage(1); if (touchendX > touchstartX + th) changePage(-1); }
+        function setupNavAutoHider() { ['mousemove', 'touchstart', 'click', 'scroll'].forEach(evt => document.addEventListener(evt, resetNavTimer, {passive: true})); }
+        function resetNavTimer() {
+            if(!prefs.showArrows) return; ui.btnPrev.classList.remove('faded'); ui.btnNext.classList.remove('faded');
+            clearTimeout(navTimeout); navTimeout = setTimeout(() => { ui.btnPrev.classList.add('faded'); ui.btnNext.classList.add('faded'); }, 3000);
+        }
+
+        // --- TTS AUDIO ---
+        function toggleAudio() { isPlaying ? stopAudio() : startAudio(); }
+        function startAudio() {
+            audioChunks = []; currentChunkIndex = 0;
+            // Get text from the CURRENT PAGE ONLY
+            pages[currentPage].querySelectorAll('.content-p, .book-page-header').forEach((el, i) => { 
+                const txt = el.innerText.trim(); 
+                if(txt.length > 0) audioChunks.push({ text: txt, id: el.id }); 
+            });
+            if(audioChunks.length > 0) playChunk(0);
+        }
+        function playChunk(idx) {
+            if(idx >= audioChunks.length) { stopAudio(); return; } currentChunkIndex = idx;
+            document.querySelectorAll('.reading-active').forEach(e => e.classList.remove('reading-active'));
+            const activeEl = document.getElementById(audioChunks[idx].id);
+            if(activeEl) { activeEl.classList.add('reading-active'); activeEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+            synth.cancel(); const utt = new SpeechSynthesisUtterance(audioChunks[idx].text);
+            const voices = synth.getVoices(); let voice = voices.find(v => v.lang.includes('or') || v.name.toLowerCase().includes('odia'));
+            if(!voice) voice = voices.find(v => v.lang.includes('hi')); if(voice) utt.voice = voice; utt.rate = 0.9;
+            utt.onstart = () => { isPlaying = true; ui.audioIcon.innerHTML = `<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>`; };
+            utt.onend = () => { if(isPlaying) playChunk(currentChunkIndex + 1); }; utt.onerror = () => stopAudio();
+            synth.speak(utt);
+        }
+        function stopAudio() { synth.cancel(); isPlaying = false; document.querySelectorAll('.reading-active').forEach(e => e.classList.remove('reading-active')); ui.audioIcon.innerHTML = `<path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>`; }
+    </script>
 </body>
 </html>
