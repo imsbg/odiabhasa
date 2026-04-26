@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Link the specific JSON file to this layout based on Markdown frontmatter -->
+    {% assign book = site.data.books[page.book_id] %}
+    
+    <!-- Dynamic SEO Meta Tags -->
+    <title>{{ book.title }} | ଓଡ଼ିଆ ବହି | Odia Bhasa</title>
+    <meta name="description" content="{{ book.title }} - ଲେଖକ: {{ book.author }}। ଏହି ଓଡ଼ିଆ ବହିଟିକୁ ଅନ୍‌ଲାଇନ୍‌ରେ ପଢ଼ନ୍ତୁ। Odia Bhasa App">
+    <meta name="author" content="{{ book.author }}">
+    
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="{{ book.title }}">
+    <meta property="og:description" content="ଲେଖକ: {{ book.author }}। ଏହି ବହିଟିକୁ ସମ୍ପୂର୍ଣ୍ଣ ମାଗଣାରେ ପଢ଼ନ୍ତୁ।">
+    <meta property="og:image" content="{{ book.coverpage }}">
+    <meta property="og:type" content="book">
+
+    <!-- JSON-LD Structured Data for Google Indexing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Book",
+      "name": "{{ book.title }}",
+      "author": {
+        "@type": "Person",
+        "name": "{{ book.author }}"
+      },
+      "image": "{{ book.coverpage }}",
+      "inLanguage": "or",
+      "bookFormat": "https://schema.org/EBook"
+    }
+    </script>
+    
+    <!-- Default CSS for crawler and noscript -->
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .book-cover { max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 20px; }
+        .page-heading { color: #333; margin-top: 2rem; }
+        .page-paragraph { margin-bottom: 1rem; font-size: 1.1rem; }
+        .reader-controls { display: none; } /* Hidden for crawlers, shown by JS */
+    </style>
+
+    <!-- NOSCRIPT Fallback: If JS is disabled (like Googlebot), show all pages naturally -->
+    <noscript>
+        <style>
+            .book-page { display: block !important; margin-bottom: 3rem; border-bottom: 2px dashed #ccc; padding-bottom: 2rem; }
+            .reader-controls { display: none !important; }
+        </style>
+    </noscript>
+</head>
+<body>
+
+    <main>
+        <!-- Semantic Article wrapping everything -->
+        <article itemscope itemtype="https://schema.org/Book">
+            
+            <!-- Book Header Info -->
+            <header style="text-align: center; margin-bottom: 3rem;">
+                <img itemprop="image" src="{{ book.coverpage }}" alt="{{ book.title }} Cover" class="book-cover">
+                <h1 itemprop="name">{{ book.title }}</h1>
+                <p itemprop="author" style="font-size: 1.2rem; color: #555;">ଲେଖକ: <strong>{{ book.author }}</strong></p>
+            </header>
+
+            <!-- Reader Controls Placeholder (Will be activated by JS later) -->
+            <div id="reader-controls" class="reader-controls" style="text-align: center; margin-bottom: 20px;">
+                <button id="prevBtn">ପୂର୍ବ ପୃଷ୍ଠା</button>
+                <span id="pageCounter" style="margin: 0 15px; font-weight: bold;"></span>
+                <button id="nextBtn">ପରବର୍ତ୍ତୀ ପୃଷ୍ଠା</button>
+            </div>
+
+            <!-- Book Content Loop (Liquid pulls from JSON) -->
+            <div id="reader-content">
+                {% for b_page in book.pages %}
+                    <!-- Each section is one page. We hide pages after the first one so JS can control them -->
+                    <section class="book-page" data-page="{{ forloop.index }}" {% if forloop.index > 1 %}style="display: none;"{% endif %}>
+                        
+                        {% for content_block in b_page.content %}
+                            
+                            {% if content_block.type == 'header' %}
+                                <!-- Using h2 for SEO hierarchy -->
+                                <h2 class="page-heading">{{ content_block.text }}</h2>
+                            
+                            {% elsif content_block.type == 'paragraph' %}
+                                <p class="page-paragraph">
+                                    {% for span in content_block.spans %}
+                                        <!-- Replace JSON \n with HTML <br> -->
+                                        {% assign text_html = span.text | newline_to_br %}
+                                        
+                                        {% if span.style == 'italic' %}
+                                            <em>{{ text_html }}</em>
+                                        {% elsif span.style == 'bold' %}
+                                            <strong>{{ text_html }}</strong>
+                                        {% else %}
+                                            <span>{{ text_html }}</span>
+                                        {% endif %}
+                                        
+                                    {% endfor %}
+                                </p>
+                            {% endif %}
+                            
+                        {% endfor %}
+
+                        <!-- Media Additions -->
+                        {% if b_page.audio %}
+                            <div style="margin-top: 20px; background: #f4f4f4; padding: 10px; border-radius: 5px;">
+                                <p><strong>ଶୁଣନ୍ତୁ:</strong></p>
+                                <audio controls preload="none" style="width: 100%;">
+                                    <source src="{{ b_page.audio }}" type="audio/mpeg">
+                                    ଆପଣଙ୍କ ବ୍ରାଉଜର୍ ଅଡିଓ ସପୋର୍ଟ କରୁନାହିଁ।
+                                </audio>
+                            </div>
+                        {% endif %}
+
+                    </section>
+                {% endfor %}
+            </div>
+
+        </article>
+    </main>
+
+</body>
+</html>
