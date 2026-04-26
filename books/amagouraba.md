@@ -2,5 +2,5 @@
 ---
 layout: book
 book_id: amagouraba
-permalink: /books/amagouraba/
+permalink: /books/amagouraba
 ---
