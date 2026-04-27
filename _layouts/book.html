@@ -8,12 +8,18 @@
     {% assign book = site.data[page.book_id] %}
 
     <!-- =================================================================
-         PROFESSIONAL SEO & META TAGS (Cover image used here for sharing)
+         PROFESSIONAL SEO & META TAGS
          ================================================================= -->
     <title>{{ book.title }} | ଓଡ଼ିଆ ପାଠାଗାର | Odia Bhasa App</title>
-    <meta name="description" content="{{ book.title }} ବହିଟି ପଢନ୍ତୁ - {{ book.author }} ଙ୍କ ଦ୍ବାରା ଲିଖିତ। Odia Bhasa App">
+    
+    <!-- Enhanced Meta Description for Bilingual Search Intent -->
+    <meta name="description" content="{{ book.title }} ବହିଟି ମାଗଣାରେ ପଢନ୍ତୁ - ଲେଖକ {{ book.author }}। Read {{ book.title }} Odia book online for free on Odia Bhasa App. Best Odia literature and stories.">
+    <meta name="keywords" content="{{ book.title }}, {{ book.author }}, Odia books, read Odia books online, Odia literature, free Odia books, Odia story books, ଓଡ଼ିଆ ବହି, {{ book.title }} in Odia">
     <meta name="author" content="{{ book.author }}">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    
+    <!-- Canonical Link to prevent Duplicate Content penalties -->
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
     
     <meta name="theme-color" id="theme-color-meta" content="#FFD800">
     
@@ -21,9 +27,17 @@
     <meta property="og:title" content="{{ book.title }} | ଓଡ଼ିଆ ପାଠାଗାର | Odia Bhasa App">
     <meta property="og:description" content="{{ book.title }} ବହିଟି ପଢନ୍ତୁ - ଲେଖକ: {{ book.author }}। ଏହି ଓଡ଼ିଆ ବହିଟିକୁ ମାଗଣାରେ ପଢ଼ନ୍ତୁ। ଓଡ଼ିଆ ଭାଷା ଆପ୍">
     <meta property="og:image" content="{{ book.coverpage }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
     <meta property="og:type" content="book">
+    <meta property="book:author" content="{{ book.author }}">
 
-    <!-- Schema.org JSON-LD for Google Rich Results -->
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ book.title }} | ଓଡ଼ିଆ ପାଠାଗାର">
+    <meta name="twitter:description" content="{{ book.title }} ବହିଟି ପଢନ୍ତୁ - ଲେଖକ: {{ book.author }}। ଏହି ଓଡ଼ିଆ ବହିଟିକୁ ମାଗଣାରେ ପଢ଼ନ୍ତୁ।">
+    <meta name="twitter:image" content="{{ book.coverpage }}">
+
+    <!-- Schema.org JSON-LD for Google Rich Results (Book Schema) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -32,7 +46,28 @@
       "author": { "@type": "Person", "name": "{{ book.author }}" },
       "image": "{{ book.coverpage }}",
       "inLanguage": "or",
-      "bookFormat": "https://schema.org/EBook"
+      "bookFormat": "https://schema.org/EBook",
+      "description": "{{ book.title }} ବହିଟି ମାଗଣାରେ ପଢନ୍ତୁ - {{ book.author }} ଙ୍କ ଦ୍ବାରା ଲିଖିତ ।",
+      "url": "{{ site.url }}{{ page.url }}",
+      "publisher": { "@type": "Organization", "name": "Odia Bhasa App" }
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD for Breadcrumbs (Helps with Search Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ଓଡ଼ିଆ ପାଠାଗାର",
+        "item": "{{ site.url }}/books/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ book.title }}"
+      }]
     }
     </script>
 
@@ -125,27 +160,33 @@
     <div class="app-container" id="app-root">
 
         <!-- ==================== READER VIEW ==================== -->
-        <div id="reader-view" class="reader-view">
+        <main id="reader-view" class="reader-view">
             <header class="reader-header">
                 <div class="rh-left">
-                    <button class="header-btn" onclick="window.location.href='{{ '/books/' | relative_url }}'">
+                    <button class="header-btn" aria-label="Go Back to Library" onclick="window.location.href='{{ '/books/' | relative_url }}'">
                         <svg class="icon" viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
                     </button>
                     <div class="rh-titles">
-                        <div id="rh-main-title" class="rh-main-title">{{ book.title }}</div>
+                        <!-- Converted to H1 for SEO Main Title Priority -->
+                        <h1 id="rh-main-title" class="rh-main-title">{{ book.title }}</h1>
                         <div id="rh-sub-title" class="rh-sub-title">{{ book.author }}</div>
                     </div>
                 </div>
                 <div class="rh-actions">
-                    <button class="header-btn" onclick="openSearchModal()"><svg class="icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
-                    <button class="header-btn" onclick="openSettingsModal()"><svg class="icon" viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></button>
+                    <!-- NEW DOWNLOAD BUTTON ADDED HERE -->
+                    <button class="header-btn" aria-label="Download App" onclick="downloadApp()">
+                        <svg class="icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    </button>
+                    
+                    <button class="header-btn" aria-label="Search inside book" onclick="openSearchModal()"><svg class="icon" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
+                    <button class="header-btn" aria-label="Reading Settings" onclick="openSettingsModal()"><svg class="icon" viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></svg></button>
                 </div>
             </header>
 
             <!-- SEO STATIC HTML PRE-RENDERED -->
-            <div id="page-content" class="reader-content">
+            <article id="page-content" class="reader-content">
                 {% for b_page in book.pages %}
-                    <div class="book-page {% if forloop.index0 == 0 %}first-page-center{% endif %}" data-index="{{ forloop.index0 }}" style="{% if forloop.index0 != 0 %}display: none;{% endif %}">
+                    <section class="book-page {% if forloop.index0 == 0 %}first-page-center{% endif %}" data-index="{{ forloop.index0 }}" style="{% if forloop.index0 != 0 %}display: none;{% endif %}">
                         
                         {% assign isIndexPage = false %}
                         {% if forloop.index0 == 1 or book.title contains 'ସୂଚୀ' %}
@@ -156,9 +197,10 @@
                             {% if item.type == 'header' %}
                                 {% assign headerClass = 'book-page-header' %}
                                 {% if forloop.parentloop.index0 <= 1 %}{% assign headerClass = 'content-p' %}{% endif %}
-                                <div class="{{ headerClass }} {% if isIndexPage %}text-purple{% endif %}" {% if isIndexPage %}onclick="findChapterAndGo('{{ item.text | strip_html | truncatewords: 1, "" }}')"{% endif %}>
+                                <!-- Converted Header Divs to Semantic H2 tags for SEO -->
+                                <h2 class="{{ headerClass }} {% if isIndexPage %}text-purple{% endif %}" {% if isIndexPage %}onclick="findChapterAndGo('{{ item.text | strip_html | truncatewords: 1, "" }}')"{% endif %}>
                                     {{ item.text | newline_to_br }}
-                                </div>
+                                </h2>
                             
                             {% elsif item.type == 'paragraph' %}
                                 {% assign paraText = "" %}
@@ -169,38 +211,39 @@
                                     {% assign paraText = paraText | append: txt %}
                                 {% endfor %}
 
-                                <div class="content-p" id="chunk-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}">{{ paraText }}</div>
+                                <!-- Converted Paragraph Divs to Semantic <p> tags for SEO -->
+                                <p class="content-p" id="chunk-{{ forloop.parentloop.index0 }}-{{ forloop.index0 }}">{{ paraText }}</p>
                             {% endif %}
                         {% endfor %}
-                    </div>
+                    </section>
                 {% endfor %}
-            </div>
+            </article>
 
-            <div class="nav-arrows-container" id="nav-arrows-ui">
-                <button class="nav-btn" onclick="changePage(-1)" id="btn-prev">
+            <nav class="nav-arrows-container" id="nav-arrows-ui" aria-label="Page Navigation">
+                <button class="nav-btn" aria-label="Previous Page" onclick="changePage(-1)" id="btn-prev">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
                 </button>
-                <button class="nav-btn" onclick="changePage(1)" id="btn-next">
+                <button class="nav-btn" aria-label="Next Page" onclick="changePage(1)" id="btn-next">
                     <svg class="icon" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
                 </button>
-            </div>
+            </nav>
 
             <div class="reader-bottom">
-                <div class="page-counter" id="page-indicator">୧ / ୧</div>
-                <button class="fab-audio" id="btn-play-audio" onclick="toggleAudio()">
+                <div class="page-counter" id="page-indicator" aria-live="polite">୧ / ୧</div>
+                <button class="fab-audio" aria-label="Read Aloud" id="btn-play-audio" onclick="toggleAudio()">
                     <svg viewBox="0 0 24 24" id="audio-icon"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
                 </button>
             </div>
-        </div>
+        </main>
 
         <!-- ==================== SETTINGS MODAL ==================== -->
-        <div id="settings-modal" class="modal-overlay">
+        <div id="settings-modal" class="modal-overlay" aria-hidden="true">
             <div class="comic-modal">
                 <h3>ସେଟିଂସ୍</h3>
                 <div class="settings-label">ଅକ୍ଷର ଆକାର </div>
                 <div class="settings-grid">
-                    <button class="modal-btn" onclick="adjFont(-2)">ଅ- ଛୋଟ</button>
-                    <button class="modal-btn" onclick="adjFont(2)">ଅ+ ବଡ</button>
+                    <button class="modal-btn" aria-label="Decrease Font Size" onclick="adjFont(-2)">ଅ- ଛୋଟ</button>
+                    <button class="modal-btn" aria-label="Increase Font Size" onclick="adjFont(2)">ଅ+ ବଡ</button>
                 </div>
                 <div class="settings-label">ରଙ୍ଗ</div>
                 <button class="modal-btn" onclick="setTheme('light')" style="background:#fff; color:#000;">ଆଲୋକିତ</button>
@@ -208,28 +251,28 @@
                 <button class="modal-btn" onclick="setTheme('sepia')" style="background:#F4ECD8; color:#5B4636;">ଆଖି ସୁରକ୍ଷା</button>
                 <div id="sepia-slider-wrapper" class="sepia-slider-container hidden">
                     <div class="settings-label" style="text-align:center;">ଆଖି ସୁରକ୍ଷା ରଙ୍ଗ</div>
-                    <input type="range" min="70" max="95" id="sepia-intensity" oninput="updateSepia(this.value)">
+                    <input type="range" aria-label="Sepia intensity" min="70" max="95" id="sepia-intensity" oninput="updateSepia(this.value)">
                 </div>
                 <div class="settings-label" style="margin-top:15px;">ଅନ୍ୟାନ୍ୟ</div>
                 <div class="toggle-row">
                     <span>ତୀର ଦେଖାନ୍ତୁ </span>
-                    <input type="checkbox" id="pref-arrows" onchange="updateToggles()">
+                    <input type="checkbox" aria-label="Toggle Arrows" id="pref-arrows" onchange="updateToggles()">
                 </div>
                 <div class="toggle-row">
                     <span>ଅଡିଓ ବଟନ୍</span>
-                    <input type="checkbox" id="pref-audio" onchange="updateToggles()">
+                    <input type="checkbox" aria-label="Toggle Audio Button" id="pref-audio" onchange="updateToggles()">
                 </div>
-                <button class="modal-btn btn-close" onclick="closeSettingsModal()">ବନ୍ଦ କରନ୍ତୁ</button>
+                <button class="modal-btn btn-close" aria-label="Close Settings" onclick="closeSettingsModal()">ବନ୍ଦ କରନ୍ତୁ</button>
             </div>
         </div>
 
         <!-- ==================== SEARCH MODAL ==================== -->
-        <div id="search-modal" class="modal-overlay">
+        <div id="search-modal" class="modal-overlay" aria-hidden="true">
             <div class="comic-modal">
                 <h3>ବହି ଭିତରେ ଖୋଜନ୍ତୁ</h3>
-                <input type="text" id="in-book-search" class="search-input" placeholder="ଶବ୍ଦ ଲେଖନ୍ତୁ...">
+                <input type="text" id="in-book-search" aria-label="Search keywords in book" class="search-input" placeholder="ଶବ୍ଦ ଲେଖନ୍ତୁ...">
                 <div class="search-results-box" id="search-results"></div>
-                <button class="modal-btn btn-close" onclick="closeSearchModal()">ବନ୍ଦ କରନ୍ତୁ</button>
+                <button class="modal-btn btn-close" aria-label="Close Search" onclick="closeSearchModal()">ବନ୍ଦ କରନ୍ତୁ</button>
             </div>
         </div>
     </div>
@@ -285,9 +328,22 @@
         function updateSepia(val) { prefs.sepiaLightness = val; savePrefs(); }
         function updateToggles() { prefs.showArrows = document.getElementById('pref-arrows').checked; prefs.showAudio = document.getElementById('pref-audio').checked; savePrefs(); }
 
+        // --- DOWNLOAD APP LOGIC ---
+        function downloadApp() {
+            // Detect if the user is on a mobile device (Android, iOS, etc.)
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                window.location.href = "https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa";
+            } else {
+                window.location.href = "https://imsbg.github.io/odiabhasa/";
+            }
+        }
+
         // --- MODALS ---
-        function openSettingsModal() { ui.modalSettings.classList.add('active'); } function closeSettingsModal() { ui.modalSettings.classList.remove('active'); }
-        function openSearchModal() { ui.modalSearch.classList.add('active'); ui.searchResults.innerHTML=''; ui.inBookInput.value=''; } function closeSearchModal() { ui.modalSearch.classList.remove('active'); }
+        function openSettingsModal() { ui.modalSettings.classList.add('active'); ui.modalSettings.setAttribute('aria-hidden', 'false'); } 
+        function closeSettingsModal() { ui.modalSettings.classList.remove('active'); ui.modalSettings.setAttribute('aria-hidden', 'true'); }
+        function openSearchModal() { ui.modalSearch.classList.add('active'); ui.modalSearch.setAttribute('aria-hidden', 'false'); ui.searchResults.innerHTML=''; ui.inBookInput.value=''; } 
+        function closeSearchModal() { ui.modalSearch.classList.remove('active'); ui.modalSearch.setAttribute('aria-hidden', 'true'); }
 
         // --- READER PAGINATION ---
         function changePage(dir) {
