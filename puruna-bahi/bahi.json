@@ -1,5 +1,60 @@
 [
   {
+    "id": "puruna_adbhut_prinam",
+    "title": "ଅଦ୍ଭୁତ ପରିଣାମ",
+    "author": "ମୃତ୍ୟୁଞ୍ଜୟ ରଥ",
+    "year": "୧୯୧୫",
+    "category": "ଗଳ୍ପ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1UnYLRRj6c0kXQQLO2ZhdcZIN_gdUjnDz&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_angkprsn_smadhan",
+    "title": "ଅଙ୍କପ୍ରଶ୍ନ ସମାଧାନ",
+    "author": "ମଧୁସୂଦନ ରାଓ",
+    "year": "୧୯୦୧",
+    "category": "ପାଠ୍ୟପୁସ୍ତକ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1LMNfp-letUJ-r-3GkmxZ2y0q_lpQilkP&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_mne_mne",
+    "title": "ମନେ ମନେ",
+    "author": "ବୈଷ୍ଣବ ଚରଣ ଦାସ",
+    "year": "୧୯୨୮",
+    "category": "ଉପନ୍ୟାସ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?export=download&id=1MD1I6mCcqUscTZ1Z-lumdXWpwM9xXahr",
+    "version": 1
+  },
+  {
+    "id": "puruna_bsnt_gatha",
+    "title": "ବସନ୍ତ ଗାଥା",
+    "author": "ମଧୁସୂଦନ ରାଓ",
+    "year": "୧୯୦୨",
+    "category": "କବିତା",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1-Oovz4P9S73if2cCuHPGefZntWL6l531&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_puran_ktha_lhri",
+    "title": "ପୁରାଣ କଥା ଲହରୀ",
+    "author": "ଗଙ୍ଗାଧର ମହାପାତ୍ର",
+    "year": "୧୯୨୮",
+    "category": "ଗଳ୍ପ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?export=download&id=1LC4gUaTrc6RIhtjKGRdJPRnmUIcLKFJA",
+    "version": 1
+  },
+  {
     "id": "puruna_arth_koili",
     "title": "ଅର୍ଥ କୋଇଲି",
     "author": "ଜଗନ୍ନାଥ ଦାସ",
@@ -129,6 +184,61 @@
     "source": "ଓଡ଼ିଆ ବିଭବ",
     "publisher": "ସୃଜନିକା",
     "url": "https://drive.google.com/uc?id=1tLSHdAqwEdKyMINr0mX2rThbL9psrM1J&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_dhengkanal_bhugol",
+    "title": "ଢେଙ୍କାନାଳ ଭୂଗୋଳ",
+    "author": "ରାମଚନ୍ଦ୍ର ଭକ୍ତିବିନୋଦ",
+    "year": "୧୯୩୨",
+    "category": "ପ୍ରବନ୍ଧ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?export=download&id=1Rwp1qSWd4aeUOxfSlWRnH0XUAPSRtZfN",
+    "version": 1
+  },
+  {
+    "id": "puruna_arddhangg_pksi",
+    "title": "ଅର୍ଦ୍ଧାଙ୍ଗ ପକ୍ଷୀ",
+    "author": "ହରିଚନ୍ଦନ ଜଗଦେବ",
+    "year": "୧୯୧୭",
+    "category": "କବିତା",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1w7I2nPu6E-3zLr6Ih5mer3vZK9Tf0Xtl&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_asa_swpn",
+    "title": "ଆଶା ସ୍ୱପ୍ନ",
+    "author": "ହରିଚନ୍ଦନ ଜଗଦେବ",
+    "year": "୧୯୧୯",
+    "category": "କବିତା",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1ciwtP07ieej_2yIj3N-Bdgik_TWPv5wC&export=download",
+    "version": 1
+  },
+  {
+    "id": "puruna_sita_bibah",
+    "title": "ସୀତା ବିବାହ",
+    "author": "କାମପାଳ ମିଶ୍ର",
+    "year": "୧୮୯୯",
+    "category": "କାବ୍ୟ",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?export=download&id=1By3UkN1EfECombMyJ4QeObvMqR5Gsi4i",
+    "version": 1
+  },
+  {
+    "id": "puruna_mhima",
+    "title": "ମହିମା",
+    "author": "ଗଙ୍ଗାଧର ମେହେର",
+    "year": "୧୮୯୭",
+    "category": "କବିତା",
+    "source": "ଓଡ଼ିଆ ବିଭବ",
+    "publisher": "ସୃଜନିକା",
+    "url": "https://drive.google.com/uc?id=1IzPH34wSWC58MQ2rCI79iP0Hhg3l_K8_&export=download",
     "version": 1
   }
 ]
