@@ -88,7 +88,7 @@ You can download the app from the following stores:
 
 *   [**ଗୁଗଲ ପ୍ଲେ ଷ୍ଟୋର | Google Play Store**](https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa)
 *   [**ଇଣ୍ଡସ ଆପ୍‌ଷ୍ଟୋର୍ | Indus Appstore**](https://www.indusappstore.com/apps/education/ଓଡ଼ିଆ-ଭାଷା/in.sandeep.odiabhasa/?page=details&id=in.sandeep.odiabhasa)
-
+*   [**New Odia School Books 2026**](https://odiabhasa.pages.dev/bahi/school)
 
 ---
 
