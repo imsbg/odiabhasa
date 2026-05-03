@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ଓଡ଼ିଆ ଭାଷା ଆପ୍ - ବିଦ୍ୟାଳୟ ବହି</title>    
+    <meta name="author" content="Sandeep Biswal G">
+    <meta name="robots" content="index, follow">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #008f68;
+            --primary-dark: #006e50;
+            --bg-color: #f0f7f4;
+            --card-bg: #ffffff;
+            --text-main: #263238;
+            --text-muted: #546e7a;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Baloo Bhaina 2', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 20px 20px 100px 20px; /* Bottom padding for fixed button */
+        }
+
+        /* Top Header */
+        .top-bar {
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+            background: var(--card-bg);
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .title-area h1 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+
+        .title-area p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .live-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            color: #d32f2f;
+            font-weight: 700;
+            font-size: 1rem;
+            background: #ffebee;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 5px;
+        }
+
+        .pulse-dot {
+            width: 10px;
+            height: 10px;
+            background-color: #f44336;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(244, 67, 54, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0); }
+        }
+
+        .live-time {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Releases Grid Layout */
+        .releases-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+            /* Mobile: 1 column, PC: Auto multiple columns */
+            grid-template-columns: 1fr; 
+        }
+
+        @media (min-width: 768px) {
+            .releases-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .releases-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Release Card & Accordion */
+        .release-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            align-self: start;
+        }
+
+        .release-header {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            transition: background 0.3s;
+            user-select: none;
+        }
+
+        .release-header:hover {
+            background: #f9fdfa;
+        }
+
+        .release-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .release-name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1b5e20;
+            margin-bottom: 2px;
+        }
+
+        .release-total {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .release-total span {
+            color: #d32f2f;
+            font-size: 1.3rem;
+            background: #ffebee;
+            padding: 2px 10px;
+            border-radius: 8px;
+            margin-right: 5px;
+        }
+
+        .chevron {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        /* Asset List (Hidden by default) */
+        .release-content {
+            display: none; /* Toggled by JS */
+            border-top: 1px solid var(--border-color);
+            background: #fafcfb;
+            padding: 15px;
+        }
+
+        .asset-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            border: 1px solid #eef2f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .asset-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .asset-name {
+            color: var(--text-main);
+            font-size: 1rem;
+            font-weight: 600;
+            word-break: break-word;
+            padding-right: 15px;
+        }
+
+        .asset-count {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        /* Fixed Play Store Button */
+        .floating-btn-container {
+            position: fixed;
+            bottom: 25px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .download-btn {
+            pointer-events: auto;
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0, 143, 104, 0.4);
+        }
+
+        .download-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 143, 104, 0.5);
+        }
+
+        .download-btn svg {
+            width: 28px;
+            height: 28px;
+            margin-right: 12px;
+            fill: white;
+        }
+
+        .loader {
+            grid-column: 1 / -1;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Area -->
+    <div class="top-bar">
+        <div class="title-area">
+            <h1>ବିଦ୍ୟାଳୟ ବହି</h1>
+            <p>୧ମ ରୁ ୮ମ ନୂତନ ସଂସ୍କରଣ ବହି ଡାଉନଲୋଡ ବିବରଣୀ</p>
+        </div>
+        <div class="live-section">
+            <div class="live-indicator">
+                <div class="pulse-dot"></div>
+                ଲାଇଭ୍
+            </div>
+            <div class="live-time" id="datetime">ସମୟ ଲୋଡ୍ ହେଉଛି...</div>
+        </div>
+    </div>
+
+    <!-- Main Grid Area -->
+    <div class="releases-container" id="releases-container">
+        <div class="loader">ତଥ୍ୟ ଅଣାଯାଉଛି...</div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="floating-btn-container">
+        <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank" class="download-btn">
+            <svg viewBox="0 0 24 24">
+                <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+            </svg>
+            ପ୍ଲେ ଷ୍ଟୋରରୁ ଆଣନ୍ତୁ
+        </a>
+    </div>
+
+    <script>
+        const apiUrl = "https://api.github.com/repos/odiaschoolbooks/odiabooks/releases";
+        const odiaDigits = ['୦', '୧', '୨', '୩', '୪', '୫', '୬', '୭', '୮', '୯'];
+
+        // Convert English numbers to Odia numbers
+        function toOdiaNumber(num) {
+            return num.toString().replace(/[0-9]/g, digit => odiaDigits[digit]);
+        }
+
+        // Clean up File Name: Remove .pdf and replace dots with space
+        function formatFileName(filename) {
+            // Remove .pdf or .PDF from the end
+            let withoutExt = filename.replace(/\.pdf$/i, '');
+            // Replace all remaining dots (.) with space ( )
+            return withoutExt.replace(/\./g, ' ');
+        }
+
+        // Accordion Toggle Function
+        function toggleAccordion(element) {
+            const content = element.nextElementSibling;
+            const chevron = element.querySelector('.chevron');
+            
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                chevron.style.transform = "rotate(0deg)";
+            } else {
+                content.style.display = "block";
+                chevron.style.transform = "rotate(180deg)";
+            }
+        }
+
+        // Update Live Date and Time
+        function updateDateTime() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', year: 'numeric', month: 'long', 
+                day: 'numeric', hour: '2-digit', minute: '2-digit', 
+                second: '2-digit', hour12: true 
+            };
+            document.getElementById('datetime').innerText = now.toLocaleString('or-IN', options);
+        }
+
+        // Fetch Download Stats from GitHub
+        async function fetchDownloadStats() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) throw new Error('Network response failed');
+                const releases = await response.json();
+
+                let releasesHtml = '';
+
+                releases.forEach((release, index) => {
+                    let releaseTotal = 0;
+                    let assetsHtml = '';
+
+                    // Generate File List
+                    release.assets.forEach(asset => {
+                        releaseTotal += asset.download_count;
+                        let cleanName = formatFileName(asset.name);
+                        
+                        assetsHtml += `
+                            <div class="asset-item">
+                                <span class="asset-name">${cleanName}</span>
+                                <span class="asset-count">${toOdiaNumber(asset.download_count)}</span>
+                            </div>
+                        `;
+                    });
+
+                    // Set properties to auto-open the first (latest) release
+                    const isFirst = index === 0;
+                    const contentDisplay = isFirst ? 'block' : 'none';
+                    const chevronRotation = isFirst ? 'rotate(180deg)' : 'rotate(0deg)';
+                    const releaseName = release.name || release.tag_name || "ଅଜ୍ଞାତ ସଂସ୍କରଣ";
+
+                    // Build Card Structure
+                    releasesHtml += `
+                        <div class="release-card">
+                            <div class="release-header" onclick="toggleAccordion(this)">
+                                <div class="release-info">
+                                    <span class="release-name">${releaseName}</span>
+                                    <span class="release-total"><span>${toOdiaNumber(releaseTotal)}</span> ଡାଉନଲୋଡ୍</span>
+                                </div>
+                                <svg class="chevron" style="transform: ${chevronRotation};" viewBox="0 0 24 24">
+                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                                </svg>
+                            </div>
+                            <div class="release-content" style="display: ${contentDisplay};">
+                                ${assetsHtml || '<div style="text-align:center; color:gray;">କୌଣସି ଫାଇଲ୍ ନାହିଁ</div>'}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                document.getElementById('releases-container').innerHTML = releasesHtml;
+
+            } catch (error) {
+                console.error("Error:", error);
+                document.getElementById('releases-container').innerHTML = '<div class="loader" style="color:red;">ତଥ୍ୟ ଆଣିବାରେ ବିଫଳ ହେଲା। ଦୟାକରି ଇଣ୍ଟରନେଟ୍ ଯାଞ୍ଚ କରନ୍ତୁ।</div>';
+            }
+        }
+
+        // Initialize Callers
+        setInterval(updateDateTime, 1000); 
+        updateDateTime(); 
+        
+        fetchDownloadStats(); 
+        setInterval(fetchDownloadStats, 60000); 
+    </script>
+</body>
+</html>
