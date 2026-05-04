@@ -1,12 +1,12 @@
 {
-  "version": 11,
+  "version": 15,
   "banners": [
     {
-      "image": "https://imsbg.github.io/odiabhasa/images/banner/sorry1.jpeg",
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/nupd.jpeg",
       "text": "",
       "paragraph": "",
-      "link": "",
-      "promo": "no"
+      "link": "https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa",
+      "promo": "yes"
     }
   ]
 }
