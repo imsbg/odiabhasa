@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Data -->
+    <title>Odia School Books - Download PDF | Odia Bhasa App</title>
+    <meta name="description" content="Download and read all BSE Odisha School Books PDF for free. No ads, no pop-ups. Read Class 1 to 10 books anytime with the Odia Bhasa App.">
+    <meta name="keywords" content="Odia Bhasa, Odia Bhasa App, Odia App, Odia Language App, Odia School Books, Odisha Board Books, BSE Odisha Books PDF">
+    <meta name="author" content="Sandeep Biswal G">
+    <link rel="canonical" href="https://imsbg.github.io/odiabhasa/bse-odia-books/">
+
+    <!-- Google Fonts: Google Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+
+    <!-- CSS Styling -->
+    <style>
+        :root {
+            --primary: #0266c8;
+            --primary-dark: #014991;
+            --secondary: #f9ab00;
+            --bg-color: #f8f9fa;
+            --text-main: #202124;
+            --text-muted: #5f6368;
+            --white: #ffffff;
+            --border: #dadce0;
+            --radius: 20px;
+            --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Google Sans', sans-serif; }
+
+        body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0.8rem 2rem; position: fixed; top: 20px; left: 5%; width: 90%;
+            z-index: 1000; background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .nav-links { display: flex; gap: 2rem; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .menu-toggle { display: none; font-size: 1.8rem; color: var(--text-main); cursor: pointer; background: none; border: none; }
+
+        .hero {
+            background: linear-gradient(145deg, #0266c8 0%, #4285f4 100%);
+            margin: 8rem 5% 2rem 5%; border-radius: 28px; padding: 6rem 2rem 8rem 2rem;
+            text-align: center; color: var(--white); position: relative;
+        }
+
+        .hero h1 { font-size: 3.2rem; font-weight: 700; margin-bottom: 1.2rem; line-height: 1.2; letter-spacing: -0.5px; }
+        .hero p { font-size: 1.15rem; max-width: 650px; margin: 0 auto 2.5rem auto; opacity: 0.95; }
+
+        .btn {
+            display: inline-flex; align-items: center; gap: 10px; background: var(--white);
+            color: var(--primary-dark); padding: 15px 32px; border-radius: 50px;
+            text-decoration: none; font-weight: 700; font-size: 1.1rem;
+            box-shadow: var(--shadow-sm); transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+        .filter-wrapper {
+            max-width: 850px; margin: -5rem auto 4rem auto; background: var(--white);
+            padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow-lg);
+            position: relative; z-index: 10; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .input-group { display: flex; flex-direction: column; gap: 10px; }
+        .input-group label { font-size: 0.9rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; }
+
+        select {
+            padding: 15px; border: 2px solid var(--border); border-radius: 12px; font-size: 1.05rem;
+            font-weight: 600; color: var(--text-main); outline: none; cursor: pointer;
+            background-color: var(--bg-color); transition: border-color 0.3s; appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%235f6368%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat; background-position: right 15px top 50%; background-size: 12px auto;
+        }
+        select:focus { border-color: var(--primary); }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+
+        .promo-banner { background: #e6f4ea; border: 1px solid #ceead6; border-radius: var(--radius); padding: 1.5rem 2rem; text-align: center; margin-bottom: 3.5rem; color: #137333; }
+        .promo-banner h3 { font-size: 1.25rem; margin-bottom: 6px; font-weight: 700; }
+
+        .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 5rem; }
+        
+        .book-card {
+            background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;
+            transition: all 0.3s; text-decoration: none; color: inherit; align-items: flex-start; gap: 16px;
+            display: none; /* Hidden for JS Filtering */
+        }
+        .book-card.visible { display: flex; } /* Shown by JS Filtering */
+        
+        .book-card:hover { border-color: var(--primary); box-shadow: var(--shadow-lg); transform: translateY(-6px); }
+        .book-icon { background: #e8f0fe; color: var(--primary); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+        .book-info h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; color: var(--text-main); }
+        .book-info span { font-size: 0.8rem; color: var(--text-muted); background: var(--bg-color); padding: 4px 10px; border-radius: 6px; font-weight: 600; border: 1px solid var(--border); }
+
+        .empty-state { text-align: center; padding: 5rem 1rem; background: var(--white); border-radius: var(--radius); border: 2px dashed var(--border); margin-bottom: 4rem; }
+        .empty-state h3 { font-size: 1.6rem; margin-bottom: 12px; color: var(--text-main); }
+        .empty-state p { color: var(--text-muted); font-size: 1.05rem; }
+
+        .faq-section { background: var(--white); padding: 5rem 5%; border-top: 1px solid var(--border); }
+        .faq-container { max-width: 850px; margin: 0 auto; }
+        .faq-header { text-align: center; margin-bottom: 3.5rem; }
+        .faq-header h2 { font-size: 2.4rem; color: var(--text-main); font-weight: 700; }
+        .faq-item { margin-bottom: 1.2rem; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: var(--white); }
+        .faq-question { padding: 1.4rem 1.8rem; font-weight: 700; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; line-height: 1.4; color: var(--text-main); transition: background 0.3s; }
+        .faq-question:hover { background: #f1f3f4; }
+        .faq-answer { padding: 0 1.8rem; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; color: var(--text-muted); font-size: 1.05rem; }
+        .faq-item.active .faq-answer { padding: 1.5rem 1.8rem; max-height: 500px; border-top: 1px solid var(--border); }
+        .faq-item.active .faq-question { color: var(--primary); }
+
+        footer { background: #202124; color: #bdc1c6; padding: 4rem 5% 3rem 5%; text-align: center; }
+        .footer-links { margin-bottom: 1.8rem; }
+        .footer-links a { color: var(--white); text-decoration: none; margin: 0 12px; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--secondary); }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .menu-toggle { display: block; }
+            .nav-links { position: absolute; top: 70px; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); flex-direction: column; padding: 1.5rem; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid var(--border); display: none; gap: 1.2rem; }
+            .nav-links.active { display: flex; }
+            .hero { margin-top: 7.5rem; padding: 4rem 1.5rem 6rem 1.5rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .filter-wrapper { grid-template-columns: 1fr; margin-top: -3rem; padding: 1.8rem; }
+        }
+    </style>
+
+    <!-- SEO STRUCTURED DATA (JSON-LD) - Updated with ALL FAQs -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "Odia Bhasa App",
+          "operatingSystem": "ANDROID",
+          "applicationCategory": "EducationalApplication",
+          "description": "Download and read all BSE Odisha Board School Books PDF for free. Class 1 to 10 offline reading.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is the Odia Bhasa App?",
+              "acceptedAnswer": { "@type": "Answer", "text": "The Odia Bhasa App is a dedicated educational platform providing Odisha Board students with free PDF access to Class 1 to 10 school textbooks without any ads or pop-ups." }
+            },
+            {
+              "@type": "Question",
+              "name": "Which Class 1 and Class 2 books are available on the Odia Bhasa App?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Using the Odia Bhasa App, you can download Class 1 books like Jhulana - 1, Ganita Khela, and Hasakhela. For Class 2, we provide Jhulana - 2, Maja Majare Ganita, and Hasakhusi." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I download Class 3 and Class 4 books using the Odia Bhasa App?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes! For Class 3, the Odia Bhasa App offers books like Bhasa Mahaka 1, Bichitra Ama Pruthibi, Ganita Mela, and Indradhanu. For Class 4, you can read Bhasa Mahaka 2, Ama Bichitra Biswa, and Sahitya Kalika completely free." }
+            },
+            {
+              "@type": "Question",
+              "name": "What books are included for Class 5 and Class 6 in the Odia Bhasa App?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Class 5 students can find Bhasamahaka 3, Nabarasa, and Paribesa Bigyana on the Odia Bhasa App. For Class 6, books like Sahityasudha, Ganita Prakasha, Samajika Bigyana, and Kalakunja are available to download and read offline." }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the Odia Bhasa App have textbooks for Class 7 and Class 8?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. The Odia Bhasa App library includes Class 7 titles like Sahityasumana, Jigyasa, and Kalakruti. For Class 8, you get free access to Sahityasurabhi, Kruti, Kousala Bodha, and Sarala Ganita." }
+            },
+            {
+              "@type": "Question",
+              "name": "Are Board Exam books for Class 9 and Class 10 available on the Odia Bhasa App?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, Board students can fully rely on the Odia Bhasa App! Download essential Class 9 and Class 10 books like Sahitya Sindhu, Madhyamika Byakarana, Bhoutika Bigyana, Jiba Bigyana, and Bhugola O Arthaniti for your exam preparations." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="/" class="logo">Odia Bhasa</a>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+        <div class="nav-links" id="navMenu">
+            <a href="/">Home</a>
+            <a href="#library" onclick="toggleMenu()">Digital Library</a>
+            <a href="#faqs" onclick="toggleMenu()">FAQs</a>
+            <a href="https://imsbg.github.io/odiabhasa/contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Odisha Board School Books PDF Archive</h1>
+        <p>Easily find and read all your required state board syllabus books in one secure place. Pick your grade and curriculum to instantly load your free study materials.</p>
+        <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank" class="btn">
+            📱 Download Odia Bhasa App
+        </a>
+    </header>
+
+    <div class="filter-wrapper" id="library">
+        <div class="input-group">
+            <label for="class-filter">🎓 Choose a class to continue</label>
+            <select id="class-filter" onchange="filterLibrary()">
+                <option value="none">-- Select Your Class --</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4</option>
+                <option value="5">Class 5</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="type-filter">📚 Select Curriculum Pattern</label>
+            <select id="type-filter" onchange="filterLibrary()">
+                <option value="all">Display All Books</option>
+                <option value="new">New Syllabus</option>
+                <option value="old">Old Syllabus</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="container">
+        
+
+        <div id="empty-state" class="empty-state">
+            <div style="font-size: 3.5rem; margin-bottom: 15px;">📚</div>
+            <h3>Discover Your Study Materials</h3>
+            <p>Please pick a grade level and syllabus category from the menus above to browse our collection of free PDFs.</p>
+        </div>
+
+        
+        <!-- SEO FIX: ALL books hardcoded in HTML so Google bots can read them immediately -->
+        <div id="books-container" class="books-grid">
+            
+            <!-- Class 1 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="1" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Jhulana - 1</h4><span>Class 1 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="1" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Khela</h4><span>Class 1 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="1" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Hasakhela (Prathama Bhaga)</h4><span>Class 1 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="1" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Hasakhela (Dwitiya Bhaga)</h4><span>Class 1 • Old Syllabus</span></div></a>
+            
+            <!-- Class 2 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="2" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Jhulana - 2</h4><span>Class 2 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="2" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Maja Majare Ganita</h4><span>Class 2 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="2" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Hasakhusi</h4><span>Class 2 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="2" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Khela</h4><span>Class 2 • Old Syllabus</span></div></a>
+            
+            <!-- Class 3 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Bhasa Mahaka 1</h4><span>Class 3 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Bichitra Ama Pruthibi</h4><span>Class 3 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Mela</h4><span>Class 3 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Indradhanu</h4><span>Class 3 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Khela O Yoga (Khela O Joga)</h4><span>Class 3 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Pallavi</h4><span>Class 3 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ama Bhasa Ama Sahitya</h4><span>Class 3 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Maja</h4><span>Class 3 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Jana Ajana</h4><span>Class 3 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="3" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>My English Book</h4><span>Class 3 • Old Syllabus</span></div></a>
+            
+            <!-- Class 4 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Bhasa Mahaka 2</h4><span>Class 4 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ama Bichitra Biswa</h4><span>Class 4 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Mela</h4><span>Class 4 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Indradhanu</h4><span>Class 4 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Krida O Yoga (Krida O Joga)</h4><span>Class 4 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Pallavi</h4><span>Class 4 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Sahitya Kalika</h4><span>Class 4 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Kuhuka</h4><span>Class 4 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ame O Ama Paribesa</h4><span>Class 4 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="4" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>My English Book</h4><span>Class 4 • Old Syllabus</span></div></a>
+            
+            <!-- Class 5 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Bhasamahaka 3</h4><span>Class 5 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ama Bichitra Biswa</h4><span>Class 5 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Mela</h4><span>Class 5 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Khela O Yoga (Khela O Joga)</h4><span>Class 5 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Nabarasa</h4><span>Class 5 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Pallavi</h4><span>Class 5 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Sahitya Kusuma</h4><span>Class 5 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Dhara</h4><span>Class 5 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Paribesa Bigyana</h4><span>Class 5 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="5" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>My English Book</h4><span>Class 5 • Old Syllabus</span></div></a>
+            
+            <!-- Class 6 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Sahityasudha</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Prakasha</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Samajika Bigyana</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Kousala Bodha</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Khela Sikhya</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Kalakunja</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Jigyasa</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Jasmine</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Sanskrutakalika</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Hindi Kalika</h4><span>Class 6 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ama Sahitya</h4><span>Class 6 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita</h4><span>Class 6 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bigyana</h4><span>Class 6 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bhugola</h4><span>Class 6 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Itihasa O Rajaniti Bigyana</h4><span>Class 6 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Kamputara Sikhya O Proyoga</h4><span>Class 6 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>My English Book</h4><span>Class 6 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="6" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bhasa Kalika Bhaga 1</h4><span>Class 6 • Old Syllabus</span></div></a>
+            
+            <!-- Class 7 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Sahityasumana</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Jigyasa</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Samajika Bigyana</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Prakasha</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Khela Sikhya</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Kousala Bodha</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Kalakruti</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Jasmine</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Sanskrutakalika</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Hindi Kalika</h4><span>Class 7 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Sahitya Sourabha</h4><span>Class 7 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita</h4><span>Class 7 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Itihasa O Rajaniti Bigyana</h4><span>Class 7 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bhugola</h4><span>Class 7 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bigyana</h4><span>Class 7 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>English Reader</h4><span>Class 7 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bhasa Kalika Bhaga 2</h4><span>Class 7 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="7" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Kamputara Sikhya Bhaga 2</h4><span>Class 7 • Old Syllabus</span></div></a>
+            
+            <!-- Class 8 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Sahityasurabhi</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Ganita Prakasha</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Jigyasa</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Samajika Bigyana</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Kruti</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Kousala Bodha</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Jasmine</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Sanskrutakalika</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="new"><div class="book-icon">📖</div><div class="book-info"><h4>Hindi Kalika</h4><span>Class 8 • New Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Sahityika</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Ama Odia Byakarana</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Sarala Sahitya</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bigyana</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Sarala Ganita (Bija Ganita)</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Sarala Ganita (Jyamiti)</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bhugola</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Itihasa O Rajaniti Bigyana</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>A New Approach To English</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Stories Past & Present</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Bhasa Sourabham</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Hindi Patha</h4><span>Class 8 • Old Syllabus</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="8" data-type="old"><div class="book-icon">📖</div><div class="book-info"><h4>Sarala Hindi Byakarana</h4><span>Class 8 • Old Syllabus</span></div></a>
+            
+            <!-- Class 9 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ସାହିତ୍ୟ ଧାରା</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ମାଧ୍ୟମିକ ବ୍ୟାକରଣ</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Learn & Practice Grammar</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Skills Of Communicative English</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Sanskruta Ballari</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ସଂସ୍କୃତ ବ୍ୟାକରଣ ପ୍ରଦୀପହ</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Hindi Manjari</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Hindi Byakaran Aur Prayoga</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ମାଧ୍ୟମିକ ବୀଜଗଣିତ</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ମାଧ୍ୟମିକ ଜ୍ୟାମିତି</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ଭୌତିକ ବିଜ୍ଞାନ</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ଜୀବ ବିଜ୍ଞାନ</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ଇତିହାସ ଓ ରାଜନୀତି ବିଜ୍ଞାନ</h4><span>Class 9 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="9" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ଭୂଗୋଳ ଓ ଅର୍ଥନୀତି</h4><span>Class 9 • Standard</span></div></a>
+
+            <!-- Class 10 -->
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ସାହିତ୍ୟ ସିନ୍ଧୁ</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ମାଧ୍ୟମିକ ବ୍ୟାକରଣ</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Skills Of Communicative English</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Learn & Practice Grammar</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Sanskruta Sahitya Manjari</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ସଂସ୍କୃତ ବ୍ୟାକରଣ ପ୍ରକାଶହ</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Hindi Saurav</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>Madhyamika Hindi Byakaran</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ମାଧ୍ୟମିକ ବୀଜଗଣିତ</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ମାଧ୍ୟମିକ ଜ୍ୟାମିତି</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ଭୌତିକ ବିଜ୍ଞାନ</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ଜୀବ ବିଜ୍ଞାନ</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ଇତିହାସ ଓ ରାଜନୀତି ବିଜ୍ଞାନ</h4><span>Class 10 • Standard</span></div></a>
+            <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="10" data-type="all"><div class="book-icon">📖</div><div class="book-info"><h4>ଭୂଗୋଳ ଓ ଅର୍ଥନୀତି</h4><span>Class 10 • Standard</span></div></a>
+
+            
+        </div>
+                <div class="promo-banner">
+            <h3>100% Free & Uninterrupted Learning</h3>
+            <p>We provide all educational resources completely free with <strong>zero advertising</strong> and <strong>no pop-ups</strong>. Get the <strong>Odia Bhasa App</strong> to save books directly to your device for offline studying.</p>
+        </div>
+    </div>
+
+    <!-- SEO Optimized FAQ Section (ALL 6 ORIGINAL FAQs RESTORED) -->
+    <section class="faq-section" id="faqs">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Common Questions (FAQs)</h2>
+                <p>Everything you need to know about accessing textbooks via the Odia Bhasa App.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    The <strong>Odia Bhasa App</strong> is a dedicated educational platform providing Odisha Board students with free PDF access to Class 1 to 10 school textbooks without any ads or pop-ups.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Which Class 1 and Class 2 books are available on the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    Using the <strong>Odia Bhasa App</strong>, you can download Class 1 books like <em>Jhulana - 1</em>, <em>Ganita Khela</em>, and <em>Hasakhela</em>. For Class 2, we provide <em>Jhulana - 2</em>, <em>Maja Majare Ganita</em>, and <em>Hasakhusi</em>.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I download Class 3 and Class 4 books using the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    Yes! For Class 3, the <strong>Odia Bhasa App</strong> offers books like <em>Bhasa Mahaka 1</em>, <em>Bichitra Ama Pruthibi</em>, <em>Ganita Mela</em>, and <em>Indradhanu</em>. For Class 4, you can read <em>Bhasa Mahaka 2</em>, <em>Ama Bichitra Biswa</em>, and <em>Sahitya Kalika</em> completely free.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What books are included for Class 5 and Class 6 in the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    Class 5 students can find <em>Bhasamahaka 3</em>, <em>Nabarasa</em>, and <em>Paribesa Bigyana</em> on the <strong>Odia Bhasa App</strong>. For Class 6, books like <em>Sahityasudha</em>, <em>Ganita Prakasha</em>, <em>Samajika Bigyana</em>, and <em>Kalakunja</em> are available to download and read offline.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Does the Odia Bhasa App have textbooks for Class 7 and Class 8? <span>+</span></div>
+                <div class="faq-answer">
+                    Absolutely. The <strong>Odia Bhasa App</strong> library includes Class 7 titles like <em>Sahityasumana</em>, <em>Jigyasa</em>, and <em>Kalakruti</em>. For Class 8, you get free access to <em>Sahityasurabhi</em>, <em>Kruti</em>, <em>Kousala Bodha</em>, and <em>Sarala Ganita</em>.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Are Board Exam books for Class 9 and Class 10 available on the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    Yes, Board students can fully rely on the <strong>Odia Bhasa App</strong>! Download essential Class 9 and Class 10 books like <em>Sahitya Sindhu</em>, <em>Madhyamika Byakarana</em>, <em>Bhoutika Bigyana</em>, <em>Jiba Bigyana</em>, and <em>Bhugola O Arthaniti</em> for your exam preparations.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank">Download Our App</a>
+            <a href="https://imsbg.github.io/odiabhasa/privacy-policy" target="_blank">Privacy Policy</a>
+            <a href="https://imsbg.github.io/odiabhasa/terms" target="_blank">Terms of Service</a>
+        </div>
+        <p>&copy; <span id="year"></span> Odia Bhasa App. Sandeep Biswal G.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                const sign = item.querySelector('span');
+                sign.textContent = parent.classList.contains('active') ? '−' : '+';
+            });
+        });
+
+        // SEO Friendly Filtering - Show/Hide HTML elements instead of rendering from arrays
+        function filterLibrary() {
+            const selectedClass = document.getElementById('class-filter').value;
+            const typeFilter = document.getElementById('type-filter');
+            let selectedType = typeFilter.value;
+            
+            // Auto-handle standard classes 9 and 10
+            if (selectedClass === '9' || selectedClass === '10') {
+                typeFilter.disabled = true;
+                typeFilter.value = 'all';
+                selectedType = 'all';
+            } else {
+                typeFilter.disabled = false;
+            }
+
+            const emptyState = document.getElementById('empty-state');
+            const cards = document.querySelectorAll('.book-card');
+            let visibleCount = 0;
+
+            // Empty state check
+            if (selectedClass === 'none') {
+                emptyState.style.display = 'block';
+                cards.forEach(card => card.classList.remove('visible'));
+                return;
+            }
+
+            emptyState.style.display = 'none';
+
+            // Filter logic
+            cards.forEach(card => {
+                const cardClass = card.getAttribute('data-class');
+                const cardType = card.getAttribute('data-type');
+
+                const matchClass = (cardClass === selectedClass);
+                const matchType = (selectedType === 'all' || cardType === 'all' || cardType === selectedType);
+
+                if (matchClass && matchType) {
+                    card.classList.add('visible');
+                    visibleCount++;
+                } else {
+                    card.classList.remove('visible');
+                }
+            });
+
+            // Fallback if combination doesn't exist
+            if (visibleCount === 0) {
+                emptyState.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
