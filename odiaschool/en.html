@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Data -->
+    <title>Odia School Books - Download PDF | Odia Bhasa App</title>
+    <meta name="description" content="Download and read all BSE Odisha School Books PDF for free. No ads, no pop-ups. Read Class 1 to 10 books anytime with the Odia Bhasa App.">
+    <meta name="keywords" content="Odia Bhasa, Odia Bhasa App, Odia App, Odia Language App, Odia School Books, Odisha Board Books, Download PDF, 2026 Odia School Books, Class 1 to 10 Textbooks, Free Educational Resources, No Ads, No Pop-ups, Offline Reading, Odisha State Board Syllabus, BSE Odisha Books, Odia Textbooks, Digital Library">
+        <meta name="author" content="Sandeep Biswal G">
+    <link rel="canonical" href="https://imsbg.github.io/odiabhasa/odiaschool/en">
+
+    <!-- Google Fonts: Google Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+
+    <!-- CSS Styling -->
+    <style>
+        :root {
+            --primary: #0266c8;
+            --primary-dark: #014991;
+            --secondary: #f9ab00;
+            --bg-color: #f8f9fa;
+            --text-main: #202124;
+            --text-muted: #5f6368;
+            --white: #ffffff;
+            --border: #dadce0;
+            --radius: 20px;
+            --shadow-sm: 0 2px 6px rgba(0,0,0,0.05);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Google Sans', sans-serif;
+        }
+
+        /* Anti-Copy: Disable text selection */
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* Floating Glassmorphism Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 2rem;
+            position: fixed;
+            top: 20px; /* Floating from top */
+            left: 5%;
+            width: 90%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50px; /* Fully rounded */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--text-main);
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(145deg, #0266c8 0%, #4285f4 100%);
+            margin: 8rem 5% 2rem 5%;
+            border-radius: 28px;
+            padding: 6rem 2rem 8rem 2rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+            opacity: 0.95;
+        }
+
+        /* App Download Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--white);
+            color: var(--primary-dark);
+            padding: 15px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Filter Box UI */
+        .filter-wrapper {
+            max-width: 850px;
+            margin: -5rem auto 4rem auto;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .input-group label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        select {
+            padding: 15px;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+            outline: none;
+            cursor: pointer;
+            background-color: var(--bg-color);
+            transition: border-color 0.3s;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%235f6368%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px top 50%;
+            background-size: 12px auto;
+        }
+
+        select:focus {
+            border-color: var(--primary);
+        }
+
+        /* Content Area */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* Promo Banner */
+        .promo-banner {
+            background: #e6f4ea;
+            border: 1px solid #ceead6;
+            border-radius: var(--radius);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            color: #137333;
+        }
+
+        .promo-banner h3 {
+            font-size: 1.25rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        /* Books Grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .book-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .book-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-6px);
+        }
+
+        .book-icon {
+            background: #e8f0fe;
+            color: var(--primary);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .book-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-main);
+        }
+
+        .book-info span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: var(--bg-color);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 5rem 1rem;
+            background: var(--white);
+            border-radius: var(--radius);
+            border: 2px dashed var(--border);
+            margin-bottom: 4rem;
+        }
+
+        .empty-state h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .empty-state p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--white);
+            padding: 5rem 5%;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .faq-header h2 {
+            font-size: 2.4rem;
+            color: var(--text-main);
+            font-weight: 700;
+        }
+
+        .faq-item {
+            margin-bottom: 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            background: var(--white);
+        }
+
+        .faq-question {
+            padding: 1.4rem 1.8rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            line-height: 1.4;
+            color: var(--text-main);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #f1f3f4;
+        }
+
+        .faq-answer {
+            padding: 0 1.8rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem 1.8rem;
+            max-height: 500px;
+            border-top: 1px solid var(--border);
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: #202124;
+            color: #bdc1c6;
+            padding: 4rem 5% 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.8rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(15px);
+                flex-direction: column;
+                padding: 1.5rem;
+                border-radius: 20px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                border: 1px solid var(--border);
+                display: none;
+                gap: 1.2rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hero { margin-top: 7.5rem; padding: 4rem 1.5rem 6rem 1.5rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .filter-wrapper { grid-template-columns: 1fr; margin-top: -3rem; padding: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Rounded Navbar -->
+    <nav>
+        <a href="#" class="logo">
+            <span style="font-size: 1.8rem;"></span>Odia Bhasa
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-links" id="navMenu">
+            <a href="#" onclick="toggleMenu()">Home</a>
+            <a href="#library" onclick="toggleMenu()">Digital Library</a>
+            <a href="#faqs" onclick="toggleMenu()">FAQs</a>
+            <a href="https://imsbg.github.io/odiabhasa/contact" onclick="toggleMenu()">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Completely New Text) -->
+    <header class="hero">
+        <h1>Odia School Books Digital Archive</h1>
+        <p>Easily find and read all your required state board syllabus books in one secure place. Pick your grade and curriculum to instantly load your study materials.</p>
+        <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank" class="btn">
+            📱 Download Odia Bhasa App
+        </a>
+    </header>
+
+    <!-- Filter UI Box -->
+    <div class="filter-wrapper" id="library">
+        <div class="input-group">
+            <label for="class-filter">🎓 Choose a class to continue</label>
+            <select id="class-filter" onchange="filterLibrary()">
+                <option value="none">-- Select Your Class --</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4</option>
+                <option value="5">Class 5</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+            </select>
+        </div>
+        <div class="input-group">
+            <label for="type-filter">📚 Select Curriculum Pattern</label>
+            <select id="type-filter" onchange="filterLibrary()">
+                <option value="all">Display All Books</option>
+                <option value="new">New Syllabus</option>
+                <option value="old">Old Syllabus</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        
+        <!-- Promo Banner -->
+        <div class="promo-banner">
+            <h3>100% Free & Uninterrupted Learning</h3>
+            <p>We provide all educational resources completely free with <strong>zero advertising</strong> and <strong>no pop-ups</strong>. Get the <strong>Odia Bhasa App</strong> to save books directly to your device for offline studying.</p>
+        </div>
+
+        <!-- Initial Empty State -->
+        <div id="empty-state" class="empty-state">
+            <div style="font-size: 3.5rem; margin-bottom: 15px;">📚</div>
+            <h3>Discover Your Study Materials</h3>
+            <p>Please pick a grade level and syllabus category from the menus above to browse our collection of free PDFs.</p>
+        </div>
+
+        <!-- Books Grid -->
+        <div id="books-container" class="books-grid" style="display: none;">
+            <!-- Rendered by JS -->
+        </div>
+
+    </div>
+
+    <!-- SEO Optimized FAQ Section -->
+    <section class="faq-section" id="faqs">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Common Questions (FAQs)</h2>
+                <p>Everything you need to know about accessing textbooks via the Odia Bhasa App.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    The <strong>Odia Bhasa App</strong> is a dedicated educational platform providing Odisha Board students with free PDF access to Class 1 to 10 school textbooks without any ads or pop-ups.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Which Class 1 and Class 2 books are available on the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    Using the <strong>Odia Bhasa App</strong>, you can download Class 1 books like <em>Jhulana - 1</em>, <em>Ganita Khela</em>, and <em>Hasakhela</em>. For Class 2, we provide <em>Jhulana - 2</em>, <em>Maja Majare Ganita</em>, and <em>Hasakhusi</em>.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I download Class 3 and Class 4 books using the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    Yes! For Class 3, the <strong>Odia Bhasa App</strong> offers books like <em>Bhasa Mahaka 1</em>, <em>Bichitra Ama Pruthibi</em>, <em>Ganita Mela</em>, and <em>Indradhanu</em>. For Class 4, you can read <em>Bhasa Mahaka 2</em>, <em>Ama Bichitra Biswa</em>, and <em>Sahitya Kalika</em> completely free.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What books are included for Class 5 and Class 6 in the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    Class 5 students can find <em>Bhasamahaka 3</em>, <em>Nabarasa</em>, and <em>Paribesa Bigyana</em> on the <strong>Odia Bhasa App</strong>. For Class 6, books like <em>Sahityasudha</em>, <em>Ganita Prakasha</em>, <em>Samajika Bigyana</em>, and <em>Kalakunja</em> are available to download and read offline.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Does the Odia Bhasa App have textbooks for Class 7 and Class 8? <span>+</span></div>
+                <div class="faq-answer">
+                    Absolutely. The <strong>Odia Bhasa App</strong> library includes Class 7 titles like <em>Sahityasumana</em>, <em>Jigyasa</em>, and <em>Kalakruti</em>. For Class 8, you get free access to <em>Sahityasurabhi</em>, <em>Kruti</em>, <em>Kousala Bodha</em>, and <em>Sarala Ganita</em>.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Are Board Exam books for Class 9 and Class 10 available on the Odia Bhasa App? <span>+</span></div>
+                <div class="faq-answer">
+                    Yes, Board students can fully rely on the <strong>Odia Bhasa App</strong>! Download essential Class 9 and Class 10 books like <em>Sahitya Sindhu</em>, <em>Madhyamika Byakarana</em>, <em>Bhoutika Bigyana</em>, <em>Jiba Bigyana</em>, and <em>Bhugola O Arthaniti</em> for your exam preparations.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank">Download Our App</a>
+            <a href="https://imsbg.github.io/odiabhasa/privacy-policy" target="_blank">Privacy Policy</a>
+            <a href="https://imsbg.github.io/odiabhasa/terms" target="_blank">Terms of Service</a>
+        </div>
+        <p>&copy; <span id="year"></span> Odia Bhasa App. Sandeep Biswal G.</p>
+    </footer>
+
+    <!-- Security & Functionality Scripts -->
+    <script>
+        // Security Feature 1: Disable Right Click Context Menu
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Security Feature 2: Disable F12, Inspect Element, View Source
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123 || 
+               (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74 || e.keyCode == 67)) || 
+               (e.ctrlKey && e.keyCode == 85)) {
+                e.preventDefault();
+                alert("ଏହାର ଦରକାର କାହିଁକି ପଡ଼ିଲା ?? ତମେ ଆମ ଆପ୍ ଡାଉନଲୋଡ କରି ପାଠ ପଢ ।");
+                return false;
+            }
+        };
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                const sign = item.querySelector('span');
+                sign.textContent = parent.classList.contains('active') ? '−' : '+';
+            });
+        });
+
+        // Book Database (Grammatically Correct / Title Cased)
+        const bookData = [
+            // Class 1
+            { class: '1', type: 'new', name: 'Jhulana - 1' },
+            { class: '1', type: 'new', name: 'Ganita Khela' },
+            { class: '1', type: 'old', name: 'Hasakhela (Prathama Bhaga)' },
+            { class: '1', type: 'old', name: 'Hasakhela (Dwitiya Bhaga)' },
+            // Class 2
+            { class: '2', type: 'new', name: 'Jhulana - 2' },
+            { class: '2', type: 'new', name: 'Maja Majare Ganita' },
+            { class: '2', type: 'old', name: 'Hasakhusi' },
+            { class: '2', type: 'old', name: 'Ganita Khela' },
+            // Class 3
+            { class: '3', type: 'new', name: 'Bhasa Mahaka 1' },
+            { class: '3', type: 'new', name: 'Bichitra Ama Pruthibi' },
+            { class: '3', type: 'new', name: 'Ganita Mela' },
+            { class: '3', type: 'new', name: 'Indradhanu' },
+            { class: '3', type: 'new', name: 'Khela O Yoga (Khela O Joga)' },
+            { class: '3', type: 'new', name: 'Pallavi' },
+            { class: '3', type: 'old', name: 'Ama Bhasa Ama Sahitya' },
+            { class: '3', type: 'old', name: 'Ganita Maja' },
+            { class: '3', type: 'old', name: 'Jana Ajana' },
+            { class: '3', type: 'old', name: 'My English Book' },
+            // Class 4
+            { class: '4', type: 'new', name: 'Bhasa Mahaka 2' },
+            { class: '4', type: 'new', name: 'Ama Bichitra Biswa' },
+            { class: '4', type: 'new', name: 'Ganita Mela' },
+            { class: '4', type: 'new', name: 'Indradhanu' },
+            { class: '4', type: 'new', name: 'Krida O Yoga (Krida O Joga)' },
+            { class: '4', type: 'new', name: 'Pallavi' },
+            { class: '4', type: 'old', name: 'Sahitya Kalika' },
+            { class: '4', type: 'old', name: 'Ganita Kuhuka' },
+            { class: '4', type: 'old', name: 'Ame O Ama Paribesa' },
+            { class: '4', type: 'old', name: 'My English Book' },
+            // Class 5
+            { class: '5', type: 'new', name: 'Bhasamahaka 3' },
+            { class: '5', type: 'new', name: 'Ama Bichitra Biswa' },
+            { class: '5', type: 'new', name: 'Ganita Mela' },
+            { class: '5', type: 'new', name: 'Khela O Yoga (Khela O Joga)' },
+            { class: '5', type: 'new', name: 'Nabarasa' },
+            { class: '5', type: 'new', name: 'Pallavi' },
+            { class: '5', type: 'old', name: 'Sahitya Kusuma' },
+            { class: '5', type: 'old', name: 'Ganita Dhara' },
+            { class: '5', type: 'old', name: 'Paribesa Bigyana' },
+            { class: '5', type: 'old', name: 'My English Book' },
+            // Class 6
+            { class: '6', type: 'new', name: 'Sahityasudha' },
+            { class: '6', type: 'new', name: 'Ganita Prakasha' },
+            { class: '6', type: 'new', name: 'Samajika Bigyana' },
+            { class: '6', type: 'new', name: 'Kousala Bodha' },
+            { class: '6', type: 'new', name: 'Khela Sikhya' },
+            { class: '6', type: 'new', name: 'Kalakunja' },
+            { class: '6', type: 'new', name: 'Jigyasa' },
+            { class: '6', type: 'new', name: 'Jasmine' },
+            { class: '6', type: 'new', name: 'Sanskrutakalika' },
+            { class: '6', type: 'new', name: 'Hindi Kalika' },
+            { class: '6', type: 'old', name: 'Ama Sahitya' },
+            { class: '6', type: 'old', name: 'Ganita' },
+            { class: '6', type: 'old', name: 'Bigyana' },
+            { class: '6', type: 'old', name: 'Bhugola' },
+            { class: '6', type: 'old', name: 'Itihasa O Rajaniti Bigyana' },
+            { class: '6', type: 'old', name: 'Kamputara Sikhya O Proyoga' },
+            { class: '6', type: 'old', name: 'My English Book' },
+            { class: '6', type: 'old', name: 'Bhasa Kalika Bhaga 1' },
+            // Class 7
+            { class: '7', type: 'new', name: 'Sahityasumana' },
+            { class: '7', type: 'new', name: 'Jigyasa' },
+            { class: '7', type: 'new', name: 'Samajika Bigyana' },
+            { class: '7', type: 'new', name: 'Ganita Prakasha' },
+            { class: '7', type: 'new', name: 'Khela Sikhya' },
+            { class: '7', type: 'new', name: 'Kousala Bodha' },
+            { class: '7', type: 'new', name: 'Kalakruti' },
+            { class: '7', type: 'new', name: 'Jasmine' },
+            { class: '7', type: 'new', name: 'Sanskrutakalika' },
+            { class: '7', type: 'new', name: 'Hindi Kalika' },
+            { class: '7', type: 'old', name: 'Sahitya Sourabha' },
+            { class: '7', type: 'old', name: 'Ganita' },
+            { class: '7', type: 'old', name: 'Itihasa O Rajaniti Bigyana' },
+            { class: '7', type: 'old', name: 'Bhugola' },
+            { class: '7', type: 'old', name: 'Bigyana' },
+            { class: '7', type: 'old', name: 'English Reader' },
+            { class: '7', type: 'old', name: 'Bhasa Kalika Bhaga 2' },
+            { class: '7', type: 'old', name: 'Kamputara Sikhya Bhaga 2' },
+            // Class 8
+            { class: '8', type: 'new', name: 'Sahityasurabhi' },
+            { class: '8', type: 'new', name: 'Ganita Prakasha' },
+            { class: '8', type: 'new', name: 'Jigyasa' },
+            { class: '8', type: 'new', name: 'Samajika Bigyana' },
+            { class: '8', type: 'new', name: 'Kruti' },
+            { class: '8', type: 'new', name: 'Kousala Bodha' },
+            { class: '8', type: 'new', name: 'Jasmine' },
+            { class: '8', type: 'new', name: 'Sanskrutakalika' },
+            { class: '8', type: 'new', name: 'Hindi Kalika' },
+            { class: '8', type: 'old', name: 'Sahityika' },
+            { class: '8', type: 'old', name: 'Ama Odia Byakarana' },
+            { class: '8', type: 'old', name: 'Sarala Sahitya' },
+            { class: '8', type: 'old', name: 'Bigyana' },
+            { class: '8', type: 'old', name: 'Sarala Ganita (Bija Ganita)' },
+            { class: '8', type: 'old', name: 'Sarala Ganita (Jyamiti)' },
+            { class: '8', type: 'old', name: 'Bhugola' },
+            { class: '8', type: 'old', name: 'Itihasa O Rajaniti Bigyana' },
+            { class: '8', type: 'old', name: 'A New Approach To English' },
+            { class: '8', type: 'old', name: 'Stories Past & Present' },
+            { class: '8', type: 'old', name: 'Bhasa Sourabham' },
+            { class: '8', type: 'old', name: 'Hindi Patha' },
+            { class: '8', type: 'old', name: 'Sarala Hindi Byakarana' },
+            // Class 9 (universal type)
+            { class: '9', type: 'all', name: 'ସାହିତ୍ୟ ଧାରା' },
+            { class: '9', type: 'all', name: 'ମାଧ୍ୟମିକ ବ୍ୟାକରଣ' },
+            { class: '9', type: 'all', name: 'Learn & Practice Grammar' },
+            { class: '9', type: 'all', name: 'Skills Of Communicative English' },
+            { class: '9', type: 'all', name: 'Sanskruta Ballari' },
+            { class: '9', type: 'all', name: 'ସଂସ୍କୃତ ବ୍ୟାକରଣ ପ୍ରଦୀପହ' },
+            { class: '9', type: 'all', name: 'Hindi Manjari' },
+            { class: '9', type: 'all', name: 'Hindi Byakaran Aur Prayoga' },
+            { class: '9', type: 'all', name: 'ମାଧ୍ୟମିକ ବୀଜଗଣିତ' },
+            { class: '9', type: 'all', name: 'ମାଧ୍ୟମିକ ଜ୍ୟାମିତି' },
+            { class: '9', type: 'all', name: 'ଭୌତିକ ବିଜ୍ଞାନ' },
+            { class: '9', type: 'all', name: 'ଜୀବ ବିଜ୍ଞାନ' },
+            { class: '9', type: 'all', name: 'ଇତିହାସ ଓ ରାଜନୀତି ବିଜ୍ଞାନ' },
+            { class: '9', type: 'all', name: 'ଭୂଗୋଳ ଓ ଅର୍ଥନୀତି' },
+            // Class 10 (universal type)
+            { class: '10', type: 'all', name: 'ସାହିତ୍ୟ ସିନ୍ଧୁ' },
+            { class: '10', type: 'all', name: 'ମାଧ୍ୟମିକ ବ୍ୟାକରଣ' },
+            { class: '10', type: 'all', name: 'Skills Of Communicative English' },
+            { class: '10', type: 'all', name: 'Learn & Practice Grammar' },
+            { class: '10', type: 'all', name: 'Sanskruta Sahitya Manjari' },
+            { class: '10', type: 'all', name: 'ସଂସ୍କୃତ ବ୍ୟାକରଣ ପ୍ରକାଶହ' },
+            { class: '10', type: 'all', name: 'Hindi Saurav' },
+            { class: '10', type: 'all', name: 'Madhyamika Hindi Byakaran' },
+            { class: '10', type: 'all', name: 'ମାଧ୍ୟମିକ ବୀଜଗଣିତ' },
+            { class: '10', type: 'all', name: 'ମାଧ୍ୟମିକ ଜ୍ୟାମିତି' },
+            { class: '10', type: 'all', name: 'ଭୌତିକ ବିଜ୍ଞାନ' },
+            { class: '10', type: 'all', name: 'ଜୀବ ବିଜ୍ଞାନ' },
+            { class: '10', type: 'all', name: 'ଇତିହାସ ଓ ରାଜନୀତି ବିଜ୍ଞାନ' },
+            { class: '10', type: 'all', name: 'ଭୂଗୋଳ ଓ ଅର୍ଥନୀତି' }
+        ];
+
+        const booksContainer = document.getElementById('books-container');
+        const emptyState = document.getElementById('empty-state');
+        const typeFilter = document.getElementById('type-filter');
+
+        // Render books on load for SEO / Structure
+        function renderAllBooks() {
+            booksContainer.innerHTML = '';
+            bookData.forEach(book => {
+                const badgeText = book.type === 'all' ? 'Standard' : (book.type === 'new' ? 'New Syllabus' : 'Old Syllabus');
+                const card = `
+                    <a href="https://odiabhasa.pages.dev/open" target="_blank" class="book-card" data-class="${book.class}" data-type="${book.type}">
+                        <div class="book-icon">📖</div>
+                        <div class="book-info">
+                            <h4>${book.name}</h4>
+                            <span>Class ${book.class} • ${badgeText}</span>
+                        </div>
+                    </a>
+                `;
+                booksContainer.innerHTML += card;
+            });
+        }
+
+        // Dropdown Filtering Logic
+        function filterLibrary() {
+            const selectedClass = document.getElementById('class-filter').value;
+            let selectedType = typeFilter.value;
+            
+            // Auto-handle standard classes 9 and 10
+            if (selectedClass === '9' || selectedClass === '10') {
+                typeFilter.disabled = true;
+                typeFilter.value = 'all';
+                selectedType = 'all';
+            } else {
+                typeFilter.disabled = false;
+            }
+
+            // Empty state check
+            if (selectedClass === 'none') {
+                emptyState.style.display = 'block';
+                booksContainer.style.display = 'none';
+                return;
+            }
+
+            emptyState.style.display = 'none';
+            booksContainer.style.display = 'grid';
+
+            const cards = document.querySelectorAll('.book-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const cardClass = card.getAttribute('data-class');
+                const cardType = card.getAttribute('data-type');
+
+                const matchClass = (cardClass === selectedClass);
+                const matchType = (selectedType === 'all' || cardType === 'all' || cardType === selectedType);
+
+                if (matchClass && matchType) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Fallback if combination doesn't exist
+            if (visibleCount === 0) {
+                emptyState.style.display = 'block';
+                booksContainer.style.display = 'none';
+            }
+        }
+
+        // Initialize Render
+        window.onload = () => {
+            renderAllBooks();
+        };
+
+    </script>
+</body>
+</html>
