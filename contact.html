@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sandeep Biswal G">
+    
+    <!-- SEO and Meta Tags (English for better reach) -->
+    <title>Odia Bhasa App : ସହାୟତା</title>
+    <meta name="description" content="Official support and contact page for the Odia Bhasa App. Reach out to our team for help, provide feedback, or report issues. Learn Odia easily without ads or subscriptions.">
+    <meta name="keywords" content="Odia Bhasa App, Odia language learning, contact Odia Bhasa, Odia app support, Sandeep Biswal G, learn Odia, Odia grammar app, Odia language, Odia education app">
+    
+    <meta conical="https://imsbg.github.io/odiabhasa/contact">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Odia Bhasa App : Support & Feedback">
+    <meta property="og:description" content="Official support and contact page for the Odia Bhasa App. Get help, share feedback, and reach out to our team.">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/contact">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Odia Bhasa App : Support & Feedback">
+    <meta name="twitter:description" content="Contact the support team of Odia Bhasa App. We are here to help you learn Odia smoothly.">
+    <meta name="twitter:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://imsbg.github.io/odiabhasa/images/app.png" type="image/png">
+    
+    <!-- Noto Sans Oriya Font & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Blue - Dark Blue Gradient Theme */
+            --primary-light: #007bb5;
+            --primary-color: #005A87;
+            --primary-dark: #003049;
+            --bg-top: #E6F0F9;
+            --bg-bottom: #FFFFFF;
+            --surface-color: #FFFFFF;
+            --input-bg: #F8FAFC;
+            --text-main: #1A1C1E;
+            --text-muted: #6B7280;
+            --border-color: #E2E8F0;
+            --error-color: #DC2626;
+            --error-bg: #FEF2F2;
+        }
+
+        body {
+            font-family: 'Noto Sans Oriya', 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: linear-gradient(to bottom, var(--bg-top) 40%, var(--bg-bottom) 40%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            padding-top: 80px; 
+            min-height: 100vh;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .nav-brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-brand {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            background-color: transparent;
+            color: var(--text-main);
+            font-size: 15px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            padding: 8px 0;
+            font-family: inherit;
+        }
+
+        .dropdown-content {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            position: absolute;
+            right: 0;
+            background-color: var(--surface-color);
+            min-width: 160px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            z-index: 1;
+            margin-top: 5px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--text-main);
+            padding: 12px 20px;
+            text-decoration: none;
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #F3F4F6;
+            color: var(--primary-color);
+        }
+
+        .download-btn {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 90, 135, 0.2);
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 48, 73, 0.3);
+        }
+
+        /* Main Content Container */
+        .page-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Titles */
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            color: var(--primary-dark);
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Two Column Card Design */
+        .contact-card-wrapper {
+            display: flex;
+            background: var(--surface-color);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            min-height: 600px;
+        }
+
+        /* Left Info Panel */
+        .info-panel {
+            flex: 0 0 40%;
+            background: linear-gradient(145deg, var(--primary-light), var(--primary-dark));
+            padding: 50px 40px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-panel::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .info-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .info-brand img {
+            width: 50px;
+            border-radius: 12px;
+            background: white;
+            padding: 2px;
+        }
+
+        .info-brand h2 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .quotes-container {
+            margin-bottom: 40px;
+            z-index: 2;
+        }
+
+        .odia-quote {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .eng-quote {
+            font-size: 15px;
+            font-style: italic;
+            opacity: 0.9;
+            line-height: 1.6;
+            border-left: 3px solid rgba(255,255,255,0.5);
+            padding-left: 15px;
+        }
+        
+        .author {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+            z-index: 2;
+        }
+
+        .social-link:hover {
+            opacity: 0.8;
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* Right Form Panel */
+        .form-panel {
+            flex: 1;
+            padding: 60px;
+            background: var(--surface-color);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+        }
+
+        .form-row .input-group {
+            margin-bottom: 0;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .input-group input, 
+        .input-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 15px;
+            font-family: inherit;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            border-radius: 10px; 
+            background-color: var(--input-bg); 
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .input-group input:focus, 
+        .input-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background-color: #FFFFFF;
+            box-shadow: 0 0 0 4px rgba(0, 90, 135, 0.08); 
+        }
+
+        .input-group input.input-error {
+            border-color: var(--error-color);
+            background-color: var(--error-bg);
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .error-msg {
+            color: var(--error-color);
+            font-size: 12.5px;
+            margin-top: 6px; 
+            display: none;
+            font-weight: 500;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-3px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Odia Captcha Section */
+        .captcha-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--input-bg);
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .captcha-wrapper.input-error {
+            border-color: var(--error-color);
+            background-color: var(--error-bg);
+        }
+
+        .captcha-question {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            white-space: nowrap;
+        }
+        
+        .captcha-input-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+        }
+
+        .captcha-input-area input {
+            flex: 1;
+            max-width: 100px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: white;
+            transition: border-color 0.3s ease;
+        }
+
+        .captcha-input-area input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* Info Tooltip */
+        .info-tooltip {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            color: #9CA3AF;
+            transition: color 0.2s;
+        }
+
+        .info-tooltip:hover {
+            color: var(--primary-color);
+        }
+
+        .tooltip-text {
+            visibility: hidden;
+            width: 250px;
+            background-color: var(--primary-dark);
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.5;
+            position: absolute;
+            z-index: 10;
+            bottom: 140%;
+            left: 50%;
+            margin-left: -125px;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .tooltip-text::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--primary-dark) transparent transparent transparent;
+        }
+
+        .info-tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Buttons */
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            font-family: inherit;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 90, 135, 0.2);
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 48, 73, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background-color: #9CA3AF;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Success Message Area */
+        #success-section {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success-icon {
+            width: 60px;
+            height: 60px;
+            background: #10B981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .success-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        .success-text {
+            color: var(--primary-dark);
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .success-subtext {
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        /* Success Actions Group */
+        .success-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .outline-btn {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            box-shadow: none;
+            width: 100%;
+            padding: 13px 20px;
+            margin-top: 0;
+        }
+
+        .outline-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .play-store-btn {
+            width: 100%;
+            background-color: #000000;
+            margin-top: 0;
+            text-decoration: none;
+        }
+
+        .play-store-btn:hover {
+            background-color: #333333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .contact-card-wrapper {
+                flex-direction: column;
+            }
+            .info-panel {
+                padding: 40px 30px;
+            }
+            .form-panel {
+                padding: 40px 30px;
+            }
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+                margin-bottom: 0;
+            }
+            .form-row .input-group {
+                margin-bottom: 25px;
+            }
+            body {
+                background: var(--bg-top);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 15px 20px;
+                background: rgba(255,255,255,0.95);
+            }
+            .nav-brand {
+                font-size: 18px;
+            }
+            .nav-actions {
+                gap: 15px;
+            }
+            .download-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            .page-header h1 {
+                font-size: 32px;
+            }
+            .tooltip-text {
+                width: 220px;
+                left: auto;
+                right: -15px; /* Shifted to prevent screen overflow on mobile */
+                margin-left: 0;
+            }
+            .tooltip-text::after {
+                left: auto;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <a href="https://imsbg.github.io/odiabhasa" class="nav-brand-container">
+            <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="Odia Bhasa Logo" class="nav-logo">
+            <span class="nav-brand">ଓଡ଼ିଆ ଭାଷା</span>
+        </a>
+        <div class="nav-actions">
+            <div class="dropdown">
+                <button class="dropbtn">ମେନୁ ▼</button>
+                <div class="dropdown-content">
+                    <a href="https://imsbg.github.io/odiabhasa">ମୂଳପୃଷ୍ଠା</a>
+                    <a href="https://imsbg.github.io/odiabhasa/privacy-policy">ଗୋପନୀୟତା ନୀତି</a>
+                    <a href="https://imsbg.github.io/odiabhasa/app">ଅନଲାଇନ ଦେଖନ୍ତୁ</a>
+                </div>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa&hl=or" class="download-btn" target="_blank">ଆପ୍ ଡାଉନଲୋଡ୍</a>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="page-container">
+        
+        <div class="page-header">
+            <h1>ସହାୟତା ଏବଂ ମତାମତ</h1>
+            <p>ଆପଣଙ୍କର ଯେକୌଣସି ପ୍ରଶ୍ନ କିମ୍ବା ମତାମତ ଥିଲେ ଆମକୁ ଜଣାନ୍ତୁ। ଆମେ ଯଥାଶୀଘ୍ର ଆପଣଙ୍କୁ ସାହାଯ୍ୟ କରିବାକୁ ଚେଷ୍ଟା କରିବୁ।</p>
+        </div>
+
+        <div class="contact-card-wrapper">
+            
+            <!-- Left Info Panel -->
+            <div class="info-panel">
+                <div>
+                    <div class="info-brand">
+                        <img src="https://imsbg.github.io/odiabhasa/images/app.png" alt="App Icon">
+                        <h2>ଓଡ଼ିଆ ଭାଷା</h2>
+                    </div>
+
+                    <div class="quotes-container">
+                        <div class="odia-quote">
+                            ଓଡ଼ିଆ ଭାଷା : ଆମ ଭାଷା, ଆମ ପରିଚୟ ।<br>ଓଡ଼ିଆ ଭାଷା ଓ ସଂସ୍କୃତି ମୋ ଗର୍ବ ।
+                        </div>
+                        <div class="eng-quote">
+                            "Learning a language especially one's mother tongue should not depend on subscriptions or ads."
+                            <span class="author">- Sandeep Biswal G</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Instagram Link -->
+                <a href="https://www.instagram.com/sbgapps/" target="_blank" class="social-link">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                    @sbgapps
+                </a>
+            </div>
+
+            <!-- Right Form Panel -->
+            <div class="form-panel">
+                <form id="contactForm">
+                    <!-- FormSubmit config (Hidden) -->
+                    <input type="hidden" name="_subject" value="New Support Request: Odia Bhasa App">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="name">ଆପଣଙ୍କ ନାମ</label>
+                            <input type="text" id="name" name="Name" placeholder="ଆପଣଙ୍କ ନାମ ଲେଖନ୍ତୁ" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="email">ଇମେଲ୍ ଠିକଣା</label>
+                            <input type="email" id="email" name="Email" placeholder="ଉଦାହରଣ: name@domain.com" required>
+                            <div id="email-error" class="error-msg">ସଠିକ୍ ଇମେଲ୍ ଠିକଣା ଦିଅନ୍ତୁ (@ ଏବଂ . ଆବଶ୍ୟକ)</div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="subject">ବିଷୟ</label>
+                        <input type="text" id="subject" name="Subject" placeholder="ଉଦାହରଣ: ଅସୁବିଧା ଜଣାନ୍ତୁ" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="message">ବାର୍ତ୍ତା</label>
+                        <textarea id="message" name="Message" placeholder="ଆମେ ଆପଣଙ୍କୁ କିପରି ସାହାଯ୍ୟ କରିପାରିବୁ?" required></textarea>
+                    </div>
+
+                    <!-- Odia Math Captcha with Info Icon -->
+                    <div class="input-group">
+                        <label>ପ୍ରମାଣୀକରଣ</label>
+                        <div id="captcha-container" class="captcha-wrapper">
+                            <span class="captcha-question" id="captcha-question">ସମାଧାନ କରନ୍ତୁ: ୦ + ୦ = </span>
+                            <div class="captcha-input-area">
+                                <input type="text" id="captcha-answer" placeholder="ଉତ୍ତର" required>
+                                
+                                <div class="info-tooltip">
+                                    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                                        <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                                    </svg>
+                                    <span class="tooltip-text">ସ୍ୱୟଂଚାଳିତ ସ୍ପାମ୍ ଏବଂ ଅଦରକାରୀ ବାର୍ତ୍ତା ରୋକିବା ପାଇଁ ଏହି ପ୍ରମାଣୀକରଣ ଆବଶ୍ୟକ।</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="captcha-error" class="error-msg">ଭୁଲ୍ ଉତ୍ତର।</div>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="submit-btn">ବାର୍ତ୍ତା ପଠାନ୍ତୁ</button>
+                </form>
+
+                <!-- Success Section -->
+                <div id="success-section" style="display: none;">
+                    <div class="success-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+                    </div>
+                    <div class="success-text">ଧନ୍ୟବାଦ!</div>
+                    <div class="success-subtext">ଆପଣଙ୍କ ବାର୍ତ୍ତା ସଫଳତାର ସହ ପଠାଯାଇଛି। ଆମେ ଶୀଘ୍ର ଏହାର ଯାଞ୍ଚ କରିବୁ।</div>
+                    
+                    <div class="success-actions">
+                        <button type="button" id="submitNewBtn" class="submit-btn outline-btn">ନୂଆ ବାର୍ତ୍ତା ପଠାନ୍ତୁ</button>
+                        
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successSection = document.getElementById('success-section');
+        const submitNewBtn = document.getElementById('submitNewBtn');
+        
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        
+        const captchaContainer = document.getElementById('captcha-container');
+        const captchaQuestion = document.getElementById('captcha-question');
+        const captchaAnswer = document.getElementById('captcha-answer');
+        const captchaError = document.getElementById('captcha-error');
+
+        const formSubmitUrl = "https://formsubmit.co/ajax/6cfdd2bbf06efb1c3566f136ccc53fd5";
+
+        // Odia Number Mapping
+        const engToOdiaNumbers = {
+            '0': '୦', '1': '୧', '2': '୨', '3': '୩', '4': '୪', 
+            '5': '୫', '6': '୬', '7': '୭', '8': '୮', '9': '୯'
+        };
+
+        let currentCaptchaSumEng = 0;
+        let currentCaptchaSumOdia = '';
+
+        function convertToOdia(num) {
+            let str = num.toString();
+            let odiaStr = '';
+            for(let char of str) {
+                odiaStr += engToOdiaNumbers[char] || char;
+            }
+            return odiaStr;
+        }
+
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            currentCaptchaSumEng = num1 + num2;
+            currentCaptchaSumOdia = convertToOdia(currentCaptchaSumEng);
+            
+            captchaQuestion.innerText = `ସମାଧାନ କରନ୍ତୁ: ${convertToOdia(num1)} + ${convertToOdia(num2)} = `;
+            captchaAnswer.value = '';
+            captchaError.style.display = 'none';
+            captchaContainer.classList.remove('input-error');
+        }
+
+        window.onload = generateCaptcha;
+
+        captchaAnswer.addEventListener('input', function(e) {
+            let val = this.value;
+            let converted = '';
+            for(let i = 0; i < val.length; i++) {
+                converted += engToOdiaNumbers[val[i]] || val[i];
+            }
+            this.value = converted;
+            
+            captchaContainer.classList.remove('input-error');
+            captchaError.style.display = 'none';
+        });
+
+        function validateEmail(email) {
+            const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return regex.test(email);
+        }
+
+        emailInput.addEventListener('input', function() {
+            if (this.value.length > 0 && !validateEmail(this.value)) {
+                this.classList.add('input-error');
+                emailError.style.display = 'block';
+            } else {
+                this.classList.remove('input-error');
+                emailError.style.display = 'none';
+            }
+        });
+        
+        emailInput.addEventListener('blur', function() {
+            if (this.value.length > 0 && !validateEmail(this.value)) {
+                this.classList.add('input-error');
+                emailError.style.display = 'block';
+            }
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let isValid = true;
+
+            if (!validateEmail(emailInput.value)) {
+                emailInput.classList.add('input-error');
+                emailError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (captchaAnswer.value.trim() !== currentCaptchaSumOdia) {
+                captchaContainer.classList.add('input-error');
+                captchaError.style.display = 'block';
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            submitBtn.innerText = "ପଠାଯାଉଛି...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+
+            fetch(formSubmitUrl, {
+                method: "POST",
+                headers: { 'Accept': 'application/json' },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    form.style.display = 'none';
+                    successSection.style.display = 'flex';
+                } else {
+                    alert("କିଛି ଅସୁବିଧା ହେଲା। ଦୟାକରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।");
+                    resetButton();
+                }
+            })
+            .catch(error => {
+                alert("ପଠାଇବାରେ ତ୍ରୁଟି। ଦୟାକରି ଆପଣଙ୍କ ଇଣ୍ଟରନେଟ୍ ଯାଞ୍ଚ କରନ୍ତୁ।");
+                resetButton();
+            });
+        });
+
+        function resetButton() {
+            submitBtn.innerText = "ବାର୍ତ୍ତା ପଠାନ୍ତୁ";
+            submitBtn.disabled = false;
+        }
+
+        submitNewBtn.addEventListener('click', function() {
+            form.reset(); 
+            generateCaptcha(); 
+            
+            emailInput.classList.remove('input-error');
+            emailError.style.display = 'none';
+            captchaContainer.classList.remove('input-error');
+            captchaError.style.display = 'none';
+
+            successSection.style.display = 'none';
+            form.style.display = 'block';
+            resetButton();
+        });
+    </script>
+
+</body>
+</html>
