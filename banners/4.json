@@ -1,14 +1,7 @@
 {
-  "version": 9,
+  "version": 10,
   "banners": [
-   {
-  "image": "https://imsbg.github.io/odiabhasa/images/banner/raja-2026.jpg",
-  "text": "",
-  "paragraph": "ରଜ ପର୍ବର ହାର୍ଦ୍ଦିକ ଅଭିନନ୍ଦନ ଓ ଶୁଭେଚ୍ଛା!",
-  "link": "",
-  "promo": "no"
-},
-                {
+ {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/utkala-dibasa.jpg",
   "text": "",
   "paragraph": "ଉତ୍କଳ ଦିବସର ହାର୍ଦ୍ଦିକ ଶୁଭେଚ୍ଛା ଓ ଅଭିନନ୍ଦନ!",
@@ -17,7 +10,7 @@
   "start": "01-04-2026 00:01",
   "end": "01-04-2026 23:59"
 },
-                {
+ {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/odia-new-year.jpg",
   "text": "",
   "paragraph": "ଓଡ଼ିଆ ନବବର୍ଷ ଓ ମହାବିଷୁବ ପଣା ସଂକ୍ରାନ୍ତିର ଅନେକ ଅନେକ ଶୁଭେଚ୍ଛା!",
