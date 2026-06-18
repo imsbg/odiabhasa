@@ -1,6 +1,13 @@
 {
-  "version": 10,
+  "version": 11,
   "banners": [
+        {
+      "image": "https://imsbg.github.io/odiabhasa/images/banner/obf.jpg",
+      "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ",
+      "paragraph": "ଜୟ ଜଗନ୍ନାଥ",
+      "link": "",
+      "promo": "no"
+    },
  {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/utkala-dibasa.jpg",
   "text": "",
