@@ -1,1 +1,30 @@
-
+{
+  "version": 1,
+  "books": [
+    {
+      "id": "class1_jhulana1",
+      "title": "ଝୁଲଣା - ୧ (ନୂତନ)",
+      "url": "https://github.com/odiaschoolbooks/odiabooks/releases/download/%E0%AD%A7-%E0%AD%A9/Class.I.-.Jhulana.pdf"
+    },
+    {
+      "id": "class1_ganitakhela",
+      "title": "ଗଣିତ ଖେଳ (ନୂତନ)",
+      "url": "https://github.com/odiaschoolbooks/odiabooks/releases/download/%E0%AD%A7-%E0%AD%A9/Class.I.-.Math.pdf"
+    },
+    {
+      "id": "class1_hasakhela_1",
+      "title": "ହସଖେଳ (ପ୍ରଥମ ଭାଗ)",
+      "url": "https://osepa.odisha.gov.in/upload/ebooks/CLASS-I/Hasakhela-P-I-(Cl-I)-P-1-104.pdf"
+    },
+    {
+      "id": "class1_hasakhela_2",
+      "title": "ହସଖେଳ (ଦ୍ଵିତୀୟ ଭାଗ)",
+      "url": "https://osepa.odisha.gov.in/upload/ebooks/CLASS-I/Haso-Khelo-Part-II-112.pdf"
+    },
+    {
+      "id": "class1_sikhara_1",
+      "title": "ଶିଖର - ୧",
+      "url": "https://osepa.odisha.gov.in/upload/ebooks/CLASS-I/Sikhara-1.pdf"
+    }
+  ]
+}
