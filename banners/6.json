@@ -1,14 +1,12 @@
 {
-  "version": 1,
+  "version": 2,
   "banners": [
  {
-  "image": "https://imsbg.github.io/odiabhasa/images/banner/utkala-dibasa.jpg",
+  "image": "https://imsbg.github.io/odiabhasa/images/banner/rthj.jpg",
   "text": "",
-  "paragraph": "ଉତ୍କଳ ଦିବସର ହାର୍ଦ୍ଦିକ ଶୁଭେଚ୍ଛା ଓ ଅଭିନନ୍ଦନ!",
+  "paragraph": "ଜୟ ଜଗନ୍ନାଥ",
   "link": "",
-  "promo": "no",
-  "start": "01-04-2026 00:01",
-  "end": "01-04-2026 23:59"
+  "promo": "no"
 },
  {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/odia-new-year.jpg",
