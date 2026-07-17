@@ -1,13 +1,6 @@
 {
-  "version": 2,
+  "version": 3,
   "banners": [
- {
-  "image": "https://imsbg.github.io/odiabhasa/images/banner/rthj.jpg",
-  "text": "",
-  "paragraph": "ଜୟ ଜଗନ୍ନାଥ",
-  "link": "",
-  "promo": "no"
-},
  {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/odia-new-year.jpg",
   "text": "",
