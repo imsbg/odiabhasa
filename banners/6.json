@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "banners": [
  {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/odia-new-year.jpg",
@@ -28,13 +28,7 @@
   "start": "03-03-2026 00:01",
   "end": "04-03-2026 23:59"
 },
-    {
-      "image": "https://imsbg.github.io/odiabhasa/images/banner/hid2026.jpg",
-      "text": "",
-      "paragraph": "ସ୍ୱାଧୀନତା ଦିବସର ଅଭିନନ୍ଦନ!",
-      "link": "",
-      "promo": "no"
-    },
+  
     {
       "image": "https://imsbg.github.io/odiabhasa/images/banner/rath-yatra.jpg",
       "text": "ରଥ ଯାତ୍ରା ର ଦୃଶ୍ୟ",
