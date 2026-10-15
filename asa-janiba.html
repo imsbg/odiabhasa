@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="or">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>ଆସ ଜାଣିବା | Asa Janiba - Odia Bhasa</title>
+    <meta name="description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ ଏବଂ ପନିପରିବା ବିଷୟରେ ଜାଣନ୍ତୁ। Learn about animals, fruits, and vegetables in Odia language with interesting facts.">
+    <meta name="keywords" content="Odia Bhasa, Asa Janiba, Animals in Odia, Fruits in Odia, Vegetables in Odia, Odia General Knowledge, Sandeep Biswal G">
+    <meta name="author" content="Sandeep Biswal G">
+    <link rel="canonical" href="https://imsbg.github.io/odiabhasa/asa-janiba">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="ଆସ ଜାଣିବା | Asa Janiba - Odia Bhasa">
+    <meta property="og:description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ ଏବଂ ପନିପରିବା ବିଷୟରେ ଜାଣନ୍ତୁ।">
+    <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
+    <meta property="og:url" content="https://imsbg.github.io/odiabhasa/asa-janiba">
+    
+    <style>
+        /* --- CSS Variables --- */
+        :root {
+            --app-background: #F4F1EB;
+            --header-brown: #6D5240;
+            --card-background: #FFFFFF;
+            --text-primary: #2C241B;
+            --text-secondary: #7A7063;
+            --accent-orange: #E65100;
+            --shimmer-bg: #E0E0E0;
+            --shimmer-shine: #F5F5F5;
+            --fallback-img: "https://imsbg.github.io/odiabhasa/images/app.png";
+        }
+
+        /* --- Global Reset --- */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+        body { background-color: var(--app-background); color: var(--text-primary); overflow-x: hidden; height: 100vh; display: flex; flex-direction: column; }
+        button, input { border: none; outline: none; background: none; font-family: inherit; }
+        
+        /* Custom Scrollbar for Desktop */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 10px; }
+
+        /* --- Header --- */
+        header {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 16px 12px 16px; background-color: var(--app-background);
+            position: relative; z-index: 10; height: 70px; flex-shrink: 0;
+        }
+        .home-btn { display: none; text-decoration: none; padding: 8px; margin-right: 8px; border-radius: 50%; transition: background 0.2s; }
+        .home-btn:hover { background: rgba(0,0,0,0.05); }
+        .home-btn svg { width: 26px; height: 26px; fill: var(--text-primary); }
+        .header-title { font-size: 24px; font-weight: bold; color: var(--text-primary); flex: 1; padding-left: 8px;}
+        .icon-btn { padding: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s;}
+        .icon-btn:hover { background: rgba(0,0,0,0.05); }
+        .icon-btn svg { width: 24px; height: 24px; fill: var(--text-primary); }
+        .notification-wrapper { position: relative; }
+        .notification-dot {
+            position: absolute; top: 12px; right: 12px; width: 10px; height: 10px;
+            background-color: var(--accent-orange); border-radius: 50%; display: none;
+        }
+
+        /* --- Search Bar --- */
+        .search-bar {
+            display: none; flex: 1; align-items: center; background: rgba(0,0,0,0.05);
+            border-radius: 25px; padding: 0 16px; height: 50px; margin-left: 8px;
+        }
+        .search-bar.active { display: flex; }
+        .search-bar input { flex: 1; font-size: 16px; color: var(--text-primary); width: 100%; }
+        .search-bar input::placeholder { color: var(--text-secondary); }
+
+        /* --- Layout Wrappers --- */
+        .app-body {
+            flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative;
+        }
+        .main-content {
+            flex: 1; overflow-y: auto; padding-bottom: 24px;
+        }
+
+        /* --- Category Selector --- */
+        .categories {
+            display: flex; gap: 12px; padding: 16px 20px; overflow-x: auto; scrollbar-width: none;
+        }
+        .categories::-webkit-scrollbar { display: none; }
+        .category-chip {
+            display: flex; align-items: center; gap: 8px; padding: 0 20px; height: 48px;
+            background-color: var(--card-background); border-radius: 50px; cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); white-space: nowrap; transition: 0.2s;
+            font-size: 16px; font-weight: bold; color: var(--text-primary);
+        }
+        .category-chip.active { background-color: var(--header-brown); color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+
+        /* --- Grid Layout --- */
+        .grid-container {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 0 20px;
+        }
+
+        /* --- Cards --- */
+        .card {
+            background: var(--card-background); border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+            cursor: pointer; display: flex; flex-direction: column; aspect-ratio: 0.8; overflow: hidden; transition: transform 0.2s;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .card:active { transform: scale(0.97); }
+        .card img { width: 100%; height: 60%; object-fit: cover; }
+        .card-content { padding: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; height: 40%;}
+        .card-title { font-size: 18px; font-weight: bold; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .card-subtitle { font-size: 12px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        /* --- Shimmer Loading --- */
+        .shimmer-card { background: var(--card-background); border-radius: 20px; aspect-ratio: 0.8; overflow: hidden; display: flex; flex-direction: column; }
+        .shimmer-img { height: 60%; width: 100%; }
+        .shimmer-content { padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 40%; justify-content: center;}
+        .shimmer-line { height: 16px; border-radius: 4px; width: 80%; }
+        .shimmer-line.short { width: 50%; height: 12px;}
+        .shimmer-anim {
+            background: linear-gradient(90deg, var(--shimmer-bg) 25%, var(--shimmer-shine) 50%, var(--shimmer-bg) 75%);
+            background-size: 200% 100%; animation: shimmer 1.5s infinite linear;
+        }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+        /* --- Floating Update Button --- */
+        .update-btn {
+            position: fixed; top: 16px; left: 50%; transform: translateX(-50%) translateY(-150%);
+            background: var(--accent-orange); color: white; padding: 12px 24px; border-radius: 50px;
+            font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 8px;
+            box-shadow: 0 4px 12px rgba(230, 81, 0, 0.4); cursor: pointer; transition: transform 0.4s ease; z-index: 100;
+        }
+        .update-btn.show { transform: translateX(-50%) translateY(0); }
+        .update-btn svg { width: 20px; height: 20px; fill: white; }
+
+        /* --- Mobile Overlays --- */
+        .overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 200;
+        }
+        .overlay.active { opacity: 1; visibility: visible; }
+
+        /* --- Detail Panel / Bottom Sheet --- */
+        .detail-panel {
+            position: fixed; bottom: 0; left: 50%; transform: translateX(-50%) translateY(100%);
+            width: 100%; max-width: 600px; height: 85vh; background: var(--app-background);
+            border-radius: 24px 24px 0 0; z-index: 201; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+        .detail-panel.active { transform: translateX(-50%) translateY(0); }
+        .drag-handle { width: 40px; height: 4px; background: #ccc; border-radius: 4px; margin: 12px auto; flex-shrink: 0;}
+        
+        .desktop-placeholder { display: none; }
+        
+        .sheet-content { flex: 1; overflow-y: auto; padding-bottom: 80px; position: relative;}
+        .banner-container { position: relative; width: 100%; height: 250px; cursor: pointer; }
+        .banner-container img { width: 100%; height: 100%; object-fit: cover; }
+        .zoom-hint { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.6); color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; }
+        
+        .details-pad { padding: 24px; }
+        .badge { background: rgba(109, 82, 64, 0.1); color: var(--header-brown); padding: 4px 8px; border-radius: 8px; font-size: 12px; display: inline-block; margin-bottom: 8px;}
+        .det-title { font-size: 32px; font-weight: bold; margin-bottom: 4px;}
+        .det-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 4px;}
+        .det-sc { font-size: 14px; font-style: italic; color: rgba(122, 112, 99, 0.8); margin-bottom: 20px;}
+        .divider { height: 1px; background: rgba(200,200,200,0.5); margin-bottom: 16px; }
+        .det-desc { font-size: 18px; line-height: 1.5; margin-bottom: 24px; }
+        .fact-title { font-size: 20px; font-weight: bold; color: var(--header-brown); margin-bottom: 12px; }
+        .fact-item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 16px; line-height: 1.5;}
+        .fact-item span { margin-right: 8px; margin-top: 2px;}
+
+        /* Scroll Down Button */
+        .scroll-down-btn {
+            position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+            background: var(--header-brown); color: white; padding: 12px 20px; border-radius: 50px;
+            display: flex; align-items: center; gap: 8px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer; transition: opacity 0.3s, visibility 0.3s; z-index: 10; width: max-content;
+        }
+        .scroll-down-btn.hidden { opacity: 0; visibility: hidden; }
+        .scroll-down-btn svg { width: 24px; height: 24px; fill: white; }
+
+        /* --- Force App Download Modal (Mobile Only) --- */
+        .force-app-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            z-index: 9999; display: none; align-items: center; justify-content: center;
+        }
+        .force-app-dialog {
+            background: white; padding: 32px 24px; border-radius: 24px; text-align: center;
+            width: 90%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .force-app-dialog h2 { margin-bottom: 16px; color: var(--text-primary); font-size: 22px; line-height: 1.4;}
+        .force-app-dialog p { color: var(--text-secondary); margin-bottom: 24px; font-size: 16px; line-height: 1.6;}
+        .force-app-btns button {
+            width: 100%; padding: 16px; border-radius: 50px; font-size: 16px; font-weight: bold; margin-top: 12px; cursor: pointer; transition: transform 0.1s;
+        }
+        .force-app-btns button:active { transform: scale(0.96); }
+        .btn-open { background: var(--header-brown); color: white; }
+        .btn-download { background: var(--accent-orange); color: white; }
+
+        /* --- Full Screen Image --- */
+        .fullscreen-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: black; z-index: 300; display: none; align-items: center; justify-content: center;
+        }
+        .fullscreen-overlay.active { display: flex; }
+        .fullscreen-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .close-fs { position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.5); border-radius: 50%; padding: 8px; cursor: pointer;}
+        .close-fs svg { fill: white; width: 24px; height: 24px; }
+
+        /* --- Alert Dialog --- */
+        .dialog {
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9);
+            background: white; border-radius: 16px; padding: 24px; width: 90%; max-width: 400px;
+            z-index: 300; opacity: 0; visibility: hidden; transition: 0.3s;
+        }
+        .dialog.active { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
+        .dialog h3 { margin-bottom: 12px; }
+        .dialog p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.5;}
+        .dialog button { float: right; color: var(--header-brown); font-weight: bold; font-size: 16px; cursor: pointer; padding: 8px;}
+        
+        .empty-state { text-align: center; color: var(--text-secondary); font-size: 18px; padding: 40px; grid-column: 1 / -1; }
+
+        /* =========================================================
+           DESKTOP STYLES (Split Screen logic > 900px)
+           ========================================================= */
+        @media (min-width: 900px) {
+            .home-btn { display: flex; } /* Show Home Button on Desktop */
+            
+            .app-body { 
+                flex-direction: row; padding: 0 24px 24px 24px; gap: 24px; max-width: 1400px; margin: 0 auto; width: 100%;
+            }
+            
+            /* Left Grid Area */
+            .grid-container { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); padding: 0; }
+            .main-content { padding-bottom: 0; }
+            .categories { padding: 0 0 16px 0; }
+
+            /* Right Details Panel */
+            .detail-panel {
+                position: relative; transform: none; bottom: auto; left: auto;
+                width: 400px; max-width: 400px; height: 100%; border-radius: 24px;
+                background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 10;
+            }
+            .drag-handle { display: none; }
+            
+            /* Desktop Empty State for Right Panel */
+            .desktop-placeholder {
+                display: flex; flex-direction: column; align-items: center; justify-content: center;
+                height: 100%; text-align: center; color: var(--text-secondary); opacity: 0.7; padding: 24px;
+            }
+            .desktop-placeholder span { font-size: 64px; margin-bottom: 16px; display: block;}
+            .sheet-content { display: none; } /* Hidden until item clicked */
+            
+            /* Overlay not needed on desktop */
+            .overlay { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Force App Download Popup (Mobile Only) -->
+    <div class="force-app-overlay" id="forceAppOverlay">
+        <div class="force-app-dialog">
+            <h2>📱 ଆପ୍ ବ୍ୟବହାର କରନ୍ତୁ</h2>
+            <p>ଆପଣ ମାଗଣାରେ ୫ଟି ତଥ୍ୟ ପଢିସାରିଛନ୍ତି। ଅଧିକ ଜାଣିବା ପାଇଁ ଆମର ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ କିମ୍ବା ଖୋଲନ୍ତୁ।</p>
+            <div class="force-app-btns">
+                <button class="btn-open" onclick="window.location.href='https://odiabhasa.pages.dev/open'">ଆପ୍ ଖୋଲନ୍ତୁ</button>
+                <button class="btn-download" onclick="window.location.href='https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa&hl=or'">ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Update Button -->
+    <button class="update-btn" id="updateBtn" onclick="applyUpdate()">
+        <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+        ନୂଆ ତଥ୍ୟ ଆସିଛି - ଅପଡେଟ୍
+    </button>
+
+    <!-- Header -->
+    <header id="mainHeader">
+        <!-- Desktop Home Button -->
+        <a href="https://imsbg.github.io/odiabhasa/" class="home-btn" title="Home">
+            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        </a>
+
+        <button class="icon-btn" style="display:none;" id="backBtn" onclick="closeSearch()">
+            <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        </button>
+        <div class="header-title" id="headerTitle">ଆସ ଜାଣିବା</div>
+        
+        <div class="search-bar" id="searchBar">
+            <input type="text" id="searchInput" placeholder="ଖୋଜନ୍ତୁ..." oninput="handleSearch()">
+        </div>
+
+        <button class="icon-btn" id="searchBtn" onclick="openSearch()">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </button>
+        <div class="notification-wrapper" id="notifWrapper" onclick="showNotification()">
+            <button class="icon-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg>
+            </button>
+            <div class="notification-dot" id="notifDot"></div>
+        </div>
+    </header>
+
+    <!-- Maintenance Message -->
+    <div id="maintenanceView" style="display: none; height: 80vh; flex-direction: column; align-items: center; justify-content: center;">
+        <div style="font-size: 48px;">⚠️</div>
+        <div id="maintenanceMsg" style="margin-top: 16px; font-size: 18px; text-align: center;">ସର୍ଭର ମେଣ୍ଟେନାନ୍ସ ଚାଲିଛି...</div>
+    </div>
+
+    <!-- App Body (Grid Left, Details Right on Desktop) -->
+    <div id="appBody" class="app-body">
+        
+        <!-- Left Side: List & Categories -->
+        <div class="main-content" id="mainContent">
+            <div class="categories" id="categoryContainer"></div>
+            <div class="grid-container" id="gridContainer"></div>
+        </div>
+
+        <!-- Right Side: Details (Acts as Bottom Sheet on Mobile) -->
+        <div class="detail-panel" id="bottomSheet">
+            <div class="drag-handle"></div>
+            
+            <!-- Desktop Placeholder (shows when nothing is selected) -->
+            <div class="desktop-placeholder" id="desktopPlaceholder">
+                <span>👈</span>
+                <h2>ବାମ ପାଖରୁ ଏକ ବିଷୟ ବାଛନ୍ତୁ</h2>
+                <p style="margin-top:8px; font-size: 14px;">(Select an item from the left)</p>
+            </div>
+
+            <!-- Scrollable content area -->
+            <div class="sheet-content" id="sheetScrollArea" onscroll="checkScroll()">
+                <div class="banner-container" onclick="openFullScreen()">
+                    <img id="bsImage" src="" alt="Banner">
+                    <div class="zoom-hint">🔍 ଟ୍ୟାପ୍ କରନ୍ତୁ</div>
+                </div>
+                <div class="details-pad">
+                    <div class="badge" id="bsCategory"></div>
+                    <div class="det-title" id="bsOdiaName"></div>
+                    <div class="det-subtitle" id="bsEnglishName"></div>
+                    <div class="det-sc" id="bsScName"></div>
+                    <div class="divider"></div>
+                    <div class="det-desc" id="bsDesc"></div>
+                    
+                    <div id="factsContainer">
+                        <div class="fact-title">ବିଶେଷ ତଥ୍ୟ</div>
+                        <div id="factsList"></div>
+                    </div>
+                </div>
+                
+                <button class="scroll-down-btn hidden" id="scrollDownBtn" onclick="scrollToBottom()">
+                    ବିଶେଷ ତଥ୍ୟ ତଳେ ଅଛି
+                    <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlays -->
+    <div class="overlay" id="overlay" onclick="closeSheet()"></div>
+    <div class="overlay" id="dialogOverlay" onclick="closeNotification()" style="z-index:299;"></div>
+
+    <!-- Fullscreen Image -->
+    <div class="fullscreen-overlay" id="fsOverlay">
+        <div class="close-fs" onclick="closeFullScreen()">
+            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </div>
+        <img id="fsImage" src="" alt="Fullscreen">
+    </div>
+
+    <!-- Notification Dialog -->
+    <div class="dialog" id="notifDialog">
+        <h3 id="dialogTitle"></h3>
+        <p id="dialogMsg"></p>
+        <button onclick="closeNotification()">ଠିକ୍ ଅଛି</button>
+    </div>
+
+    <!-- Application Logic -->
+    <script>
+        // Constants
+        const FALLBACK_IMG = "https://imsbg.github.io/odiabhasa/images/app.png";
+        const MASTER_CATEGORIES = [
+            { id: "animals", title: "ପଶୁ ଓ ପକ୍ଷୀ", url: "https://imsbg.github.io/animals/odia-bhasa/data.json", icon: "🦁" },
+            { id: "fruits", title: "ଫଳ", url: "https://imsbg.github.io/fruits-and-vegetables/data/fruits.json", icon: "🥭" },
+            { id: "vegetables", title: "ପନିପରିବା", url: "https://imsbg.github.io/fruits-and-vegetables/data/vegetables.json", icon: "🥔" }
+        ];
+
+        // State Variables
+        let appConfig = {};
+        let activeCategories = [];
+        let selectedCategoryId = "";
+        let currentItems = [];
+        let freshNetworkData = null; 
+        let searchString = "";
+
+        // Elements
+        const gridContainer = document.getElementById('gridContainer');
+        const catContainer = document.getElementById('categoryContainer');
+        const updateBtn = document.getElementById('updateBtn');
+        const appBody = document.getElementById('appBody');
+        const maintenanceView = document.getElementById('maintenanceView');
+
+        // Helpers
+        function isMobile() { return window.innerWidth < 900; }
+
+        // Init App
+        async function init() {
+            renderShimmer();
+            await fetchConfig();
+            if (appConfig.maintenanceMode) {
+                appBody.style.display = 'none';
+                maintenanceView.style.display = 'flex';
+                document.getElementById('maintenanceMsg').innerText = appConfig.maintenanceMessage || 'ସର୍ଭର ମେଣ୍ଟେନାନ୍ସ ଚାଲିଛି...';
+                return;
+            }
+            
+            maintenanceView.style.display = 'none';
+            activeCategories = MASTER_CATEGORIES.filter(c => !(appConfig.hiddenTabs || []).includes(c.id));
+            if(activeCategories.length > 0) {
+                selectedCategoryId = activeCategories[0].id;
+                renderCategoryChips();
+                loadData(activeCategories[0]);
+            }
+        }
+
+        // Fetch Global Config
+        async function fetchConfig() {
+            try {
+                const res = await fetch("https://imsbg.github.io/animals/notification.json");
+                const data = await res.json();
+                appConfig = {
+                    maintenanceMode: data.maintenanceMode || false,
+                    maintenanceMessage: data.maintenanceMessage || "",
+                    hiddenTabs: data.hiddenTabs || [],
+                    hasNotification: data.notification?.hasNew || false,
+                    notifTitle: data.notification?.title || "",
+                    notifMessage: data.notification?.message || "",
+                    dataVersion: data.dataVersion || 0
+                };
+                if(appConfig.hasNotification) document.getElementById('notifDot').style.display = 'block';
+            } catch(e) {
+                console.log("Config fetch failed", e);
+            }
+        }
+
+        // Data Loading Logic (Cache First, Network Background)
+        async function loadData(category) {
+            renderShimmer();
+            freshNetworkData = null;
+            updateBtn.classList.remove('show');
+
+            const cacheKey = `wildlife_cache_${category.id}`;
+            const cachedString = localStorage.getItem(cacheKey);
+            let cachedVersion = 0;
+
+            if (cachedString) {
+                try {
+                    const parsed = JSON.parse(cachedString);
+                    cachedVersion = parsed[0]?.version || 0;
+                    currentItems = parseItems(parsed);
+                    renderGrid();
+                } catch(e) {}
+            }
+
+            try {
+                const res = await fetch(category.url);
+                const rawData = await res.json();
+                const networkVersion = rawData[0]?.version || 0;
+
+                if (!cachedString) {
+                    currentItems = parseItems(rawData);
+                    localStorage.setItem(cacheKey, JSON.stringify(rawData));
+                    renderGrid();
+                } else if (networkVersion > cachedVersion) {
+                    freshNetworkData = rawData;
+                    updateBtn.classList.add('show');
+                }
+            } catch(e) {
+                if(!cachedString) renderGrid(); 
+            }
+        }
+
+        function applyUpdate() {
+            if(!freshNetworkData) return;
+            const category = activeCategories.find(c => c.id === selectedCategoryId);
+            const cacheKey = `wildlife_cache_${category.id}`;
+            localStorage.setItem(cacheKey, JSON.stringify(freshNetworkData));
+            currentItems = parseItems(freshNetworkData);
+            updateBtn.classList.remove('show');
+            renderGrid();
+        }
+
+        function parseItems(jsonArray) {
+            return jsonArray.map(obj => {
+                let facts = [];
+                if(obj.details && obj.details["ବିଶେଷ_ତଥ୍ୟ"]) facts = obj.details["ବିଶେଷ_ତଥ୍ୟ"];
+                return {
+                    odiaName: obj.odiaName || "Unknown",
+                    englishName: obj.name || "Unknown",
+                    scientificName: obj.scientificName || "",
+                    image: obj.image || "",
+                    category: obj.category || "",
+                    descriptionOdia: obj.descriptionOdia || "",
+                    facts: facts
+                };
+            });
+        }
+
+        // UI Renders
+        function renderCategoryChips() {
+            catContainer.innerHTML = activeCategories.map(cat => `
+                <div class="category-chip ${cat.id === selectedCategoryId ? 'active' : ''}" 
+                     onclick="switchCategory('${cat.id}')">
+                    <span>${cat.icon}</span> ${cat.title}
+                </div>
+            `).join('');
+        }
+
+        function switchCategory(id) {
+            if(selectedCategoryId === id) return;
+            selectedCategoryId = id;
+            closeSearch();
+            renderCategoryChips();
+            const cat = activeCategories.find(c => c.id === id);
+            loadData(cat);
+            closeSheet(); // Reset details view
+            
+            if(!isMobile()) {
+                document.getElementById('desktopPlaceholder').style.display = 'flex';
+                document.getElementById('sheetScrollArea').style.display = 'none';
+            }
+        }
+
+        function renderShimmer() {
+            let html = '';
+            for(let i=0; i<6; i++) {
+                html += `
+                <div class="shimmer-card">
+                    <div class="shimmer-img shimmer-anim"></div>
+                    <div class="shimmer-content">
+                        <div class="shimmer-line shimmer-anim"></div>
+                        <div class="shimmer-line short shimmer-anim"></div>
+                    </div>
+                </div>`;
+            }
+            gridContainer.innerHTML = html;
+        }
+
+        function renderGrid() {
+            const filtered = searchString.trim() === "" ? currentItems : currentItems.filter(i => 
+                i.odiaName.toLowerCase().includes(searchString.toLowerCase()) || 
+                i.englishName.toLowerCase().includes(searchString.toLowerCase())
+            );
+
+            if(filtered.length === 0) {
+                gridContainer.innerHTML = `<div class="empty-state">କିଛି ମିଳିଲା ନାହିଁ 😕</div>`;
+                return;
+            }
+
+            gridContainer.innerHTML = filtered.map((item, index) => `
+                <div class="card" onclick="openSheet(${index})">
+                    <img src="${item.image}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" alt="${item.odiaName}">
+                    <div class="card-content">
+                        <div class="card-title">${item.odiaName}</div>
+                        <div class="card-subtitle">${item.englishName}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Search Handlers
+        function openSearch() {
+            document.getElementById('headerTitle').style.display = 'none';
+            document.getElementById('searchBtn').style.display = 'none';
+            document.getElementById('notifWrapper').style.display = 'none';
+            document.getElementById('backBtn').style.display = 'flex';
+            document.getElementById('searchBar').classList.add('active');
+            document.getElementById('searchInput').focus();
+        }
+
+        function closeSearch() {
+            document.getElementById('headerTitle').style.display = 'block';
+            document.getElementById('searchBtn').style.display = 'flex';
+            document.getElementById('notifWrapper').style.display = 'block';
+            document.getElementById('backBtn').style.display = 'none';
+            document.getElementById('searchBar').classList.remove('active');
+            document.getElementById('searchInput').value = "";
+            searchString = "";
+            renderGrid();
+        }
+
+        function handleSearch() {
+            searchString = document.getElementById('searchInput').value;
+            renderGrid();
+        }
+
+        // Notification Modal
+        function showNotification() {
+            document.getElementById('notifDot').style.display = 'none';
+            document.getElementById('dialogTitle').innerText = appConfig.notifTitle;
+            document.getElementById('dialogMsg').innerText = appConfig.notifMessage;
+            document.getElementById('dialogOverlay').classList.add('active');
+            document.getElementById('notifDialog').classList.add('active');
+        }
+        function closeNotification() {
+            document.getElementById('dialogOverlay').classList.remove('active');
+            document.getElementById('notifDialog').classList.remove('active');
+        }
+
+        // Details Logic (Bottom Sheet Mobile / Side Panel Desktop)
+        let currentItemForSheet = null;
+        function openSheet(index) {
+            // --- MOBILE PAYWALL LOGIC ---
+            if (isMobile()) {
+                let readCount = parseInt(localStorage.getItem('odiaAppReadCount') || '0');
+                if (readCount >= 5) {
+                    document.getElementById('forceAppOverlay').style.display = 'flex';
+                    return; // Stop execution
+                }
+                localStorage.setItem('odiaAppReadCount', readCount + 1);
+            }
+            // ----------------------------
+
+            const filtered = searchString.trim() === "" ? currentItems : currentItems.filter(i => 
+                i.odiaName.toLowerCase().includes(searchString.toLowerCase()) || 
+                i.englishName.toLowerCase().includes(searchString.toLowerCase())
+            );
+            currentItemForSheet = filtered[index];
+            
+            document.getElementById('bsImage').src = currentItemForSheet.image;
+            document.getElementById('bsImage').onerror = function() { this.src=FALLBACK_IMG; };
+            document.getElementById('bsCategory').innerText = currentItemForSheet.category;
+            document.getElementById('bsOdiaName').innerText = currentItemForSheet.odiaName;
+            document.getElementById('bsEnglishName').innerText = currentItemForSheet.englishName;
+            
+            const scObj = document.getElementById('bsScName');
+            if(currentItemForSheet.scientificName && currentItemForSheet.scientificName !== "Unknown") {
+                scObj.innerText = "Sc: " + currentItemForSheet.scientificName;
+                scObj.style.display = "block";
+            } else {
+                scObj.style.display = "none";
+            }
+
+            document.getElementById('bsDesc').innerText = currentItemForSheet.descriptionOdia;
+
+            const factsCont = document.getElementById('factsContainer');
+            const factsList = document.getElementById('factsList');
+            const scrollBtn = document.getElementById('scrollDownBtn');
+            
+            if(currentItemForSheet.facts && currentItemForSheet.facts.length > 0) {
+                factsCont.style.display = 'block';
+                factsList.innerHTML = currentItemForSheet.facts.map(f => `
+                    <div class="fact-item"><span>🐾</span><div>${f}</div></div>
+                `).join('');
+                scrollBtn.classList.remove('hidden');
+            } else {
+                factsCont.style.display = 'none';
+                scrollBtn.classList.add('hidden');
+            }
+
+            // UI Switching
+            document.getElementById('desktopPlaceholder').style.display = 'none';
+            document.getElementById('sheetScrollArea').style.display = 'block';
+
+            if(isMobile()) {
+                document.getElementById('overlay').classList.add('active');
+                document.getElementById('bottomSheet').classList.add('active');
+            }
+            
+            document.getElementById('sheetScrollArea').scrollTop = 0;
+            setTimeout(checkScroll, 100); 
+        }
+
+        function closeSheet() {
+            if(isMobile()) {
+                document.getElementById('overlay').classList.remove('active');
+                document.getElementById('bottomSheet').classList.remove('active');
+            }
+        }
+
+        // Scroll Logic for Details
+        function checkScroll() {
+            const area = document.getElementById('sheetScrollArea');
+            const btn = document.getElementById('scrollDownBtn');
+            if(!currentItemForSheet || currentItemForSheet.facts.length === 0 || area.style.display === 'none') {
+                btn.classList.add('hidden');
+                return;
+            }
+            if(area.scrollTop + area.clientHeight >= area.scrollHeight - 50) {
+                btn.classList.add('hidden');
+            } else {
+                btn.classList.remove('hidden');
+            }
+        }
+
+        function scrollToBottom() {
+            const area = document.getElementById('sheetScrollArea');
+            area.scrollTo({ top: area.scrollHeight, behavior: 'smooth' });
+        }
+
+        // Full Screen Image
+        function openFullScreen() {
+            if(!currentItemForSheet) return;
+            document.getElementById('fsImage').src = currentItemForSheet.image;
+            document.getElementById('fsImage').onerror = function() { this.src=FALLBACK_IMG; };
+            document.getElementById('fsOverlay').classList.add('active');
+        }
+        function closeFullScreen() {
+            document.getElementById('fsOverlay').classList.remove('active');
+        }
+
+        // Window resize handler to manage Desktop/Mobile state gracefully
+        window.addEventListener('resize', () => {
+            if(!isMobile()) {
+                document.getElementById('overlay').classList.remove('active');
+                document.getElementById('bottomSheet').classList.remove('active');
+                if(!currentItemForSheet) {
+                    document.getElementById('desktopPlaceholder').style.display = 'flex';
+                    document.getElementById('sheetScrollArea').style.display = 'none';
+                }
+            } else {
+                if(currentItemForSheet && document.getElementById('sheetScrollArea').style.display === 'block') {
+                    document.getElementById('overlay').classList.add('active');
+                    document.getElementById('bottomSheet').classList.add('active');
+                }
+            }
+        });
+
+        // Run
+        window.onload = init;
+    </script>
+</body>
+</html>
