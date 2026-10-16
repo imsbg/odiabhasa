@@ -11,6 +11,11 @@
     <meta name="author" content="Sandeep Biswal G">
     <link rel="canonical" href="https://imsbg.github.io/odiabhasa/asa-janiba">
     
+    <!-- Google Sans Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    
     <!-- Open Graph for Social Media -->
     <meta property="og:title" content="ଆସ ଜାଣିବା | Asa Janiba - Odia Bhasa">
     <meta property="og:description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ ଏବଂ ପନିପରିବା ବିଷୟରେ ଜାଣନ୍ତୁ।">
@@ -26,14 +31,31 @@
             --text-primary: #2C241B;
             --text-secondary: #7A7063;
             --accent-orange: #E65100;
+            --success-green: #2E7D32;
+            --delete-red: #D32F2F;
             --shimmer-bg: #E0E0E0;
             --shimmer-shine: #F5F5F5;
-            --fallback-img: "https://imsbg.github.io/odiabhasa/images/app.png";
+            
+            /* Material Design Easing for Smoothness */
+            --md-easing: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* --- Global Reset --- */
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-        body { background-color: var(--app-background); color: var(--text-primary); overflow-x: hidden; height: 100vh; display: flex; flex-direction: column; }
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Google Sans', system-ui, -apple-system, sans-serif; 
+        }
+        body { 
+            background-color: var(--app-background); 
+            color: var(--text-primary); 
+            overflow-x: hidden; 
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            -webkit-font-smoothing: antialiased; /* Crisp text rendering */
+        }
         button, input { border: none; outline: none; background: none; font-family: inherit; }
         
         /* Custom Scrollbar for Desktop */
@@ -47,11 +69,11 @@
             padding: 16px 16px 12px 16px; background-color: var(--app-background);
             position: relative; z-index: 10; height: 70px; flex-shrink: 0;
         }
-        .home-btn { display: none; text-decoration: none; padding: 8px; margin-right: 8px; border-radius: 50%; transition: background 0.2s; }
+        .home-btn { display: none; text-decoration: none; padding: 8px; margin-right: 8px; border-radius: 50%; transition: background 0.2s var(--md-easing); }
         .home-btn:hover { background: rgba(0,0,0,0.05); }
         .home-btn svg { width: 26px; height: 26px; fill: var(--text-primary); }
         .header-title { font-size: 24px; font-weight: bold; color: var(--text-primary); flex: 1; padding-left: 8px;}
-        .icon-btn { padding: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s;}
+        .icon-btn { padding: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s var(--md-easing);}
         .icon-btn:hover { background: rgba(0,0,0,0.05); }
         .icon-btn svg { width: 24px; height: 24px; fill: var(--text-primary); }
         .notification-wrapper { position: relative; }
@@ -74,21 +96,48 @@
             flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative;
         }
         .main-content {
-            flex: 1; overflow-y: auto; padding-bottom: 24px;
+            flex: 1; overflow-y: auto; padding-bottom: 24px; scroll-behavior: smooth;
         }
 
         /* --- Category Selector --- */
         .categories {
-            display: flex; gap: 12px; padding: 16px 20px; overflow-x: auto; scrollbar-width: none;
+            display: flex; gap: 12px; padding: 16px 20px 8px 20px; overflow-x: auto; scrollbar-width: none;
         }
         .categories::-webkit-scrollbar { display: none; }
         .category-chip {
             display: flex; align-items: center; gap: 8px; padding: 0 20px; height: 48px;
             background-color: var(--card-background); border-radius: 50px; cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); white-space: nowrap; transition: 0.2s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1); white-space: nowrap; 
+            transition: background-color 0.3s var(--md-easing), color 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing);
             font-size: 16px; font-weight: bold; color: var(--text-primary);
         }
-        .category-chip.active { background-color: var(--header-brown); color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        .category-chip:hover { box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+        .category-chip.active { background-color: var(--header-brown); color: white; box-shadow: 0 4px 8px rgba(109, 82, 64, 0.4); }
+
+        /* --- Action Controls (Count & Download) --- */
+        .controls-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px 20px; margin-bottom: 8px;
+        }
+        .total-text { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+        .btn-action {
+            display: flex; align-items: center; gap: 6px; padding: 6px 12px;
+            border-radius: 50px; font-size: 13px; font-weight: bold; cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+        }
+        .btn-action:active { transform: scale(0.95); }
+        .btn-action.download { background: rgba(230, 81, 0, 0.1); color: var(--accent-orange); }
+        .btn-action.download svg { fill: var(--accent-orange); width: 16px; height: 16px; }
+        
+        .btn-action.saved { background: rgba(46, 125, 50, 0.1); color: var(--success-green); cursor: default; }
+        .btn-action.saved:active { transform: none; }
+        .btn-action.saved svg { fill: var(--success-green); width: 16px; height: 16px; }
+
+        .btn-action.delete { background: rgba(211, 47, 47, 0.1); padding: 8px; margin-left: 8px; }
+        .btn-action.delete svg { fill: var(--delete-red); width: 18px; height: 18px; }
+
+        .actions-wrapper { display: flex; align-items: center; }
+        .download-progress { color: var(--accent-orange); font-weight: bold; font-size: 13px; }
 
         /* --- Grid Layout --- */
         .grid-container {
@@ -97,15 +146,20 @@
 
         /* --- Cards --- */
         .card {
-            background: var(--card-background); border-radius: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
-            cursor: pointer; display: flex; flex-direction: column; aspect-ratio: 0.8; overflow: hidden; transition: transform 0.2s;
+            background: var(--card-background); border-radius: 20px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08); 
+            cursor: pointer; display: flex; flex-direction: column; aspect-ratio: 0.8; overflow: hidden; 
+            /* Hardware Acceleration and smooth transition */
+            transition: transform 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing);
+            will-change: transform, box-shadow; 
+            transform: translateZ(0); 
         }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-        .card:active { transform: scale(0.97); }
-        .card img { width: 100%; height: 60%; object-fit: cover; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.12); }
+        .card:active { transform: scale(0.96); transition: transform 0.1s; }
+        .card img { width: 100%; height: 60%; object-fit: cover; background-color: #f0f0f0; }
         .card-content { padding: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; height: 40%;}
         .card-title { font-size: 18px; font-weight: bold; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .card-subtitle { font-size: 12px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .card-subtitle { font-size: 12px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 4px; }
 
         /* --- Shimmer Loading --- */
         .shimmer-card { background: var(--card-background); border-radius: 20px; aspect-ratio: 0.8; overflow: hidden; display: flex; flex-direction: column; }
@@ -124,7 +178,7 @@
             position: fixed; top: 16px; left: 50%; transform: translateX(-50%) translateY(-150%);
             background: var(--accent-orange); color: white; padding: 12px 24px; border-radius: 50px;
             font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 8px;
-            box-shadow: 0 4px 12px rgba(230, 81, 0, 0.4); cursor: pointer; transition: transform 0.4s ease; z-index: 100;
+            box-shadow: 0 4px 12px rgba(230, 81, 0, 0.4); cursor: pointer; transition: transform 0.4s var(--md-easing); z-index: 100;
         }
         .update-btn.show { transform: translateX(-50%) translateY(0); }
         .update-btn svg { width: 20px; height: 20px; fill: white; }
@@ -132,7 +186,7 @@
         /* --- Mobile Overlays --- */
         .overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s; z-index: 200;
+            background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s var(--md-easing); z-index: 200;
         }
         .overlay.active { opacity: 1; visibility: visible; }
 
@@ -140,7 +194,9 @@
         .detail-panel {
             position: fixed; bottom: 0; left: 50%; transform: translateX(-50%) translateY(100%);
             width: 100%; max-width: 600px; height: 85vh; background: var(--app-background);
-            border-radius: 24px 24px 0 0; z-index: 201; transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border-radius: 24px 24px 0 0; z-index: 201; 
+            transition: transform 0.4s var(--md-easing);
+            will-change: transform;
             display: flex; flex-direction: column; overflow: hidden;
         }
         .detail-panel.active { transform: translateX(-50%) translateY(0); }
@@ -148,29 +204,38 @@
         
         .desktop-placeholder { display: none; }
         
-        .sheet-content { flex: 1; overflow-y: auto; padding-bottom: 80px; position: relative;}
+        .sheet-content { flex: 1; overflow-y: auto; padding-bottom: 80px; position: relative; scroll-behavior: smooth;}
         .banner-container { position: relative; width: 100%; height: 250px; cursor: pointer; }
-        .banner-container img { width: 100%; height: 100%; object-fit: cover; }
+        .banner-container img { width: 100%; height: 100%; object-fit: cover; background-color: #eee;}
         .zoom-hint { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.6); color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; }
         
         .details-pad { padding: 24px; }
-        .badge { background: rgba(109, 82, 64, 0.1); color: var(--header-brown); padding: 4px 8px; border-radius: 8px; font-size: 12px; display: inline-block; margin-bottom: 8px;}
+        .badge { background: rgba(109, 82, 64, 0.1); color: var(--header-brown); padding: 4px 8px; border-radius: 8px; font-size: 12px; display: inline-block; margin-bottom: 8px; font-weight: bold;}
         .det-title { font-size: 32px; font-weight: bold; margin-bottom: 4px;}
         .det-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 4px;}
         .det-sc { font-size: 14px; font-style: italic; color: rgba(122, 112, 99, 0.8); margin-bottom: 20px;}
-        .divider { height: 1px; background: rgba(200,200,200,0.5); margin-bottom: 16px; }
-        .det-desc { font-size: 18px; line-height: 1.5; margin-bottom: 24px; }
+        .divider { height: 1px; background: rgba(200,200,200,0.3); margin-bottom: 16px; }
+        .det-desc { font-size: 18px; line-height: 1.6; margin-bottom: 24px; }
+        
+        /* Extra Details UI */
+        .extra-details-box { background: rgba(109, 82, 64, 0.05); border-radius: 16px; padding: 16px; margin-bottom: 24px; }
+        .extra-details-box h4 { font-size: 18px; font-weight: bold; color: var(--header-brown); margin-bottom: 12px; }
+        .ed-row { display: flex; margin-bottom: 8px; font-size: 15px; }
+        .ed-key { flex: 0.4; font-weight: bold; color: var(--text-primary); }
+        .ed-val { flex: 0.6; color: var(--text-secondary); }
+
         .fact-title { font-size: 20px; font-weight: bold; color: var(--header-brown); margin-bottom: 12px; }
-        .fact-item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 16px; line-height: 1.5;}
+        .fact-item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 16px; line-height: 1.6;}
         .fact-item span { margin-right: 8px; margin-top: 2px;}
 
         /* Scroll Down Button */
         .scroll-down-btn {
             position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
             background: var(--header-brown); color: white; padding: 12px 20px; border-radius: 50px;
-            display: flex; align-items: center; gap: 8px; font-weight: bold; box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            cursor: pointer; transition: opacity 0.3s, visibility 0.3s; z-index: 10; width: max-content;
+            display: flex; align-items: center; gap: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(109, 82, 64, 0.3);
+            cursor: pointer; transition: opacity 0.3s, visibility 0.3s, transform 0.2s; z-index: 10; width: max-content;
         }
+        .scroll-down-btn:active { transform: translateX(-50%) scale(0.95); }
         .scroll-down-btn.hidden { opacity: 0; visibility: hidden; }
         .scroll-down-btn svg { width: 24px; height: 24px; fill: white; }
 
@@ -197,22 +262,29 @@
         .fullscreen-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: black; z-index: 300; display: none; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.3s;
         }
-        .fullscreen-overlay.active { display: flex; }
+        .fullscreen-overlay.active { display: flex; opacity: 1; }
         .fullscreen-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .close-fs { position: absolute; top: 16px; right: 16px; background: rgba(0,0,0,0.5); border-radius: 50%; padding: 8px; cursor: pointer;}
+        .close-fs { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.2); border-radius: 50%; padding: 8px; cursor: pointer; transition: background 0.2s;}
+        .close-fs:hover { background: rgba(255,255,255,0.4); }
         .close-fs svg { fill: white; width: 24px; height: 24px; }
 
         /* --- Alert Dialog --- */
         .dialog {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9);
-            background: white; border-radius: 16px; padding: 24px; width: 90%; max-width: 400px;
-            z-index: 300; opacity: 0; visibility: hidden; transition: 0.3s;
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -40%) scale(0.9);
+            background: white; border-radius: 20px; padding: 24px; width: 90%; max-width: 400px;
+            z-index: 300; opacity: 0; visibility: hidden; transition: 0.3s var(--md-easing);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         .dialog.active { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
         .dialog h3 { margin-bottom: 12px; }
         .dialog p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.5;}
-        .dialog button { float: right; color: var(--header-brown); font-weight: bold; font-size: 16px; cursor: pointer; padding: 8px;}
+        .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; }
+        .dialog button { border-radius: 8px; padding: 10px 16px; color: var(--header-brown); font-weight: bold; font-size: 15px; cursor: pointer; transition: background 0.2s;}
+        .dialog button:hover { background: rgba(109, 82, 64, 0.05); }
+        .dialog button.danger { color: var(--delete-red); }
+        .dialog button.danger:hover { background: rgba(211, 47, 47, 0.05); }
         
         .empty-state { text-align: center; color: var(--text-secondary); font-size: 18px; padding: 40px; grid-column: 1 / -1; }
 
@@ -220,14 +292,14 @@
            DESKTOP STYLES (Split Screen logic > 900px)
            ========================================================= */
         @media (min-width: 900px) {
-            .home-btn { display: flex; } /* Show Home Button on Desktop */
+            .home-btn { display: flex; } 
             
             .app-body { 
                 flex-direction: row; padding: 0 24px 24px 24px; gap: 24px; max-width: 1400px; margin: 0 auto; width: 100%;
             }
             
             /* Left Grid Area */
-            .grid-container { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); padding: 0; }
+            .grid-container { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); padding: 0; }
             .main-content { padding-bottom: 0; }
             .categories { padding: 0 0 16px 0; }
 
@@ -235,19 +307,16 @@
             .detail-panel {
                 position: relative; transform: none; bottom: auto; left: auto;
                 width: 400px; max-width: 400px; height: 100%; border-radius: 24px;
-                background: white; box-shadow: 0 4px 16px rgba(0,0,0,0.08); z-index: 10;
+                background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.06); z-index: 10;
             }
             .drag-handle { display: none; }
             
-            /* Desktop Empty State for Right Panel */
             .desktop-placeholder {
                 display: flex; flex-direction: column; align-items: center; justify-content: center;
                 height: 100%; text-align: center; color: var(--text-secondary); opacity: 0.7; padding: 24px;
             }
             .desktop-placeholder span { font-size: 64px; margin-bottom: 16px; display: block;}
-            .sheet-content { display: none; } /* Hidden until item clicked */
-            
-            /* Overlay not needed on desktop */
+            .sheet-content { display: none; }
             .overlay { display: none !important; }
         }
     </style>
@@ -268,13 +337,13 @@
 
     <!-- Top Update Button -->
     <button class="update-btn" id="updateBtn" onclick="applyUpdate()">
+        <!-- Refresh SVG -->
         <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
-        ନୂଆ ତଥ୍ୟ ଆସିଛି - ଅପଡେଟ୍
+        ନୂଆ ତଥ୍ୟ ଆସିଛି - ଅପଡେଟ୍ କରନ୍ତୁ
     </button>
 
     <!-- Header -->
     <header id="mainHeader">
-        <!-- Desktop Home Button -->
         <a href="https://imsbg.github.io/odiabhasa/" class="home-btn" title="Home">
             <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
         </a>
@@ -311,6 +380,12 @@
         <!-- Left Side: List & Categories -->
         <div class="main-content" id="mainContent">
             <div class="categories" id="categoryContainer"></div>
+            
+            <!-- Controls Row (Total count and Offline buttons) -->
+            <div class="controls-row" id="controlsRow" style="display: none;">
+                <!-- Filled via JS -->
+            </div>
+
             <div class="grid-container" id="gridContainer"></div>
         </div>
 
@@ -339,6 +414,8 @@
                     <div class="divider"></div>
                     <div class="det-desc" id="bsDesc"></div>
                     
+                    <div id="extraDetailsContainer" style="display: none;"></div>
+
                     <div id="factsContainer">
                         <div class="fact-title">ବିଶେଷ ତଥ୍ୟ</div>
                         <div id="factsList"></div>
@@ -346,7 +423,7 @@
                 </div>
                 
                 <button class="scroll-down-btn hidden" id="scrollDownBtn" onclick="scrollToBottom()">
-                    ବିଶେଷ ତଥ୍ୟ ତଳେ ଅଛି
+                    ବିଶେଷ ତଥ୍ୟ ପାଇଁ ତଳକୁ ଯାଆନ୍ତୁ
                     <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                 </button>
             </div>
@@ -355,7 +432,7 @@
 
     <!-- Overlays -->
     <div class="overlay" id="overlay" onclick="closeSheet()"></div>
-    <div class="overlay" id="dialogOverlay" onclick="closeNotification()" style="z-index:299;"></div>
+    <div class="overlay" id="dialogOverlay" style="z-index:299;"></div>
 
     <!-- Fullscreen Image -->
     <div class="fullscreen-overlay" id="fsOverlay">
@@ -365,17 +442,20 @@
         <img id="fsImage" src="" alt="Fullscreen">
     </div>
 
-    <!-- Notification Dialog -->
-    <div class="dialog" id="notifDialog">
+    <!-- Custom Dialogs (Reused for Notification, Download, and Delete) -->
+    <div class="dialog" id="customDialog">
         <h3 id="dialogTitle"></h3>
         <p id="dialogMsg"></p>
-        <button onclick="closeNotification()">ଠିକ୍ ଅଛି</button>
+        <div class="dialog-actions" id="dialogActions">
+            <!-- Buttons injected here -->
+        </div>
     </div>
 
     <!-- Application Logic -->
     <script>
-        // Constants
-        const FALLBACK_IMG = "https://imsbg.github.io/odiabhasa/images/app.png";
+        // Use URL-Encoded SVG to prevent HTML attribute breaking (the bug you saw!)
+        const FALLBACK_IMG_SRC = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237A7063'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E";
+        
         const MASTER_CATEGORIES = [
             { id: "animals", title: "ପଶୁ ଓ ପକ୍ଷୀ", url: "https://imsbg.github.io/animals/odia-bhasa/data.json", icon: "🦁" },
             { id: "fruits", title: "ଫଳ", url: "https://imsbg.github.io/fruits-and-vegetables/data/fruits.json", icon: "🥭" },
@@ -389,6 +469,10 @@
         let currentItems = [];
         let freshNetworkData = null; 
         let searchString = "";
+        
+        // Download states
+        let isDownloading = false;
+        let isCategoryDownloaded = false;
 
         // Elements
         const gridContainer = document.getElementById('gridContainer');
@@ -396,9 +480,15 @@
         const updateBtn = document.getElementById('updateBtn');
         const appBody = document.getElementById('appBody');
         const maintenanceView = document.getElementById('maintenanceView');
+        const controlsRow = document.getElementById('controlsRow');
 
         // Helpers
         function isMobile() { return window.innerWidth < 900; }
+        
+        function toOdiaDigits(num) {
+            const odiaMap = {'0':'୦','1':'୧','2':'୨','3':'୩','4':'୪','5':'୫','6':'୬','7':'୭','8':'୮','9':'୯'};
+            return num.toString().split('').map(char => odiaMap[char] || char).join('');
+        }
 
         // Init App
         async function init() {
@@ -440,9 +530,10 @@
             }
         }
 
-        // Data Loading Logic (Cache First, Network Background)
+        // Data Loading Logic
         async function loadData(category) {
             renderShimmer();
+            controlsRow.style.display = 'none'; 
             freshNetworkData = null;
             updateBtn.classList.remove('show');
 
@@ -455,6 +546,7 @@
                     const parsed = JSON.parse(cachedString);
                     cachedVersion = parsed[0]?.version || 0;
                     currentItems = parseItems(parsed);
+                    await checkDownloadStatus(category.id);
                     renderGrid();
                 } catch(e) {}
             }
@@ -467,6 +559,7 @@
                 if (!cachedString) {
                     currentItems = parseItems(rawData);
                     localStorage.setItem(cacheKey, JSON.stringify(rawData));
+                    await checkDownloadStatus(category.id);
                     renderGrid();
                 } else if (networkVersion > cachedVersion) {
                     freshNetworkData = rawData;
@@ -490,7 +583,16 @@
         function parseItems(jsonArray) {
             return jsonArray.map(obj => {
                 let facts = [];
-                if(obj.details && obj.details["ବିଶେଷ_ତଥ୍ୟ"]) facts = obj.details["ବିଶେଷ_ତଥ୍ୟ"];
+                let extraDetails = {};
+                if(obj.details) {
+                    for(const key in obj.details) {
+                        if(key === "ବିଶେଷ_ତଥ୍ୟ") {
+                            facts = obj.details[key];
+                        } else {
+                            extraDetails[key.replace(/_/g, ' ')] = obj.details[key];
+                        }
+                    }
+                }
                 return {
                     odiaName: obj.odiaName || "Unknown",
                     englishName: obj.name || "Unknown",
@@ -498,9 +600,74 @@
                     image: obj.image || "",
                     category: obj.category || "",
                     descriptionOdia: obj.descriptionOdia || "",
-                    facts: facts
+                    facts: facts,
+                    extraDetails: extraDetails
                 };
             });
+        }
+
+        // --- Offline Cache API Logic ---
+        async function checkDownloadStatus(catId) {
+            if('caches' in window) {
+                isCategoryDownloaded = await caches.has(`app_images_${catId}`);
+            }
+        }
+
+        async function triggerDownloadProcess() {
+            showDialog(
+                "ଅଫଲାଇନ୍ ଡାଉନଲୋଡ୍",
+                `ବିନା ଇଣ୍ଟରନେଟରେ ଦେଖିବା ପାଇଁ ଆପଣ ଏହି ବିଭାଗର ସମସ୍ତ ଫଟୋ ଡାଉନଲୋଡ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି? (ପାଖାପାଖି ${toOdiaDigits((currentItems.length * 0.15).toFixed(1))} ଏମବି ଡାଟା ଖର୍ଚ୍ଚ ହେବ)`,
+                [
+                    { text: "ବାତିଲ୍", action: closeDialog },
+                    { text: "ହଁ, ଡାଉନଲୋଡ୍ କରନ୍ତୁ", action: () => { closeDialog(); executeDownload(); }, primary: true }
+                ]
+            );
+        }
+
+        async function executeDownload() {
+            if(!('caches' in window)) return;
+            isDownloading = true;
+            renderControls();
+            
+            try {
+                const cacheName = `app_images_${selectedCategoryId}`;
+                const cache = await caches.open(cacheName);
+                
+                let count = 0;
+                for(let item of currentItems) {
+                    if(item.image) {
+                        try {
+                            await cache.add(item.image); 
+                        } catch(e) {}
+                    }
+                    count++;
+                    const pct = Math.floor((count / currentItems.length) * 100);
+                    const progressEl = document.getElementById('dlProgressText');
+                    if(progressEl) progressEl.innerText = `ଡାଉନଲୋଡ୍... ${toOdiaDigits(pct)}%`;
+                }
+                isCategoryDownloaded = true;
+            } catch(e) { console.log(e); }
+            
+            isDownloading = false;
+            renderControls();
+        }
+
+        async function triggerDeleteProcess() {
+            showDialog(
+                "ଡିଲିଟ୍ କରନ୍ତୁ",
+                "ଆପଣ ଏହି ବିଭାଗର ସମସ୍ତ ଅଫଲାଇନ୍ ଫଟୋ ଡିଲିଟ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି? ଏହାଦ୍ୱାରା ମୋବାଇଲର ଷ୍ଟୋରେଜ୍ ଖାଲି ହେବ।",
+                [
+                    { text: "ବାତିଲ୍", action: closeDialog },
+                    { text: "ହଁ, ଡିଲିଟ୍ କରନ୍ତୁ", action: () => { closeDialog(); executeDelete(); }, danger: true }
+                ]
+            );
+        }
+
+        async function executeDelete() {
+            if(!('caches' in window)) return;
+            await caches.delete(`app_images_${selectedCategoryId}`);
+            isCategoryDownloaded = false;
+            renderControls();
         }
 
         // UI Renders
@@ -520,7 +687,7 @@
             renderCategoryChips();
             const cat = activeCategories.find(c => c.id === id);
             loadData(cat);
-            closeSheet(); // Reset details view
+            closeSheet(); 
             
             if(!isMobile()) {
                 document.getElementById('desktopPlaceholder').style.display = 'flex';
@@ -542,6 +709,47 @@
             }
             gridContainer.innerHTML = html;
         }
+        
+        function renderControls() {
+            if(!currentItems || currentItems.length === 0 || searchString.trim() !== "") {
+                controlsRow.style.display = 'none';
+                return;
+            }
+            controlsRow.style.display = 'flex';
+            
+            const totalCountText = `ମୋଟ: ${toOdiaDigits(currentItems.length)}`;
+            const estSize = toOdiaDigits((currentItems.length * 0.15).toFixed(1));
+            
+            let rightHtml = '';
+            
+            if (isDownloading) {
+                rightHtml = `<div class="download-progress" id="dlProgressText">ଡାଉନଲୋଡ୍... ୦%</div>`;
+            } else if (isCategoryDownloaded) {
+                rightHtml = `
+                    <div class="actions-wrapper">
+                        <div class="btn-action saved">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            ସେଭ୍ ହୋଇଛି
+                        </div>
+                        <div class="btn-action delete" onclick="triggerDeleteProcess()">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+                        </div>
+                    </div>
+                `;
+            } else {
+                rightHtml = `
+                    <div class="btn-action download" onclick="triggerDownloadProcess()">
+                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        ଅଫଲାଇନ୍ ସେଭ୍ (~${estSize} ଏମବି)
+                    </div>
+                `;
+            }
+            
+            controlsRow.innerHTML = `
+                <div class="total-text">${totalCountText}</div>
+                ${rightHtml}
+            `;
+        }
 
         function renderGrid() {
             const filtered = searchString.trim() === "" ? currentItems : currentItems.filter(i => 
@@ -549,14 +757,17 @@
                 i.englishName.toLowerCase().includes(searchString.toLowerCase())
             );
 
+            renderControls();
+
             if(filtered.length === 0) {
                 gridContainer.innerHTML = `<div class="empty-state">କିଛି ମିଳିଲା ନାହିଁ 😕</div>`;
                 return;
             }
 
+            // ADDED loading="lazy" for massively improved performance/smoothness!
             gridContainer.innerHTML = filtered.map((item, index) => `
                 <div class="card" onclick="openSheet(${index})">
-                    <img src="${item.image}" onerror="this.onerror=null;this.src='${FALLBACK_IMG}';" alt="${item.odiaName}">
+                    <img src="${item.image}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_IMG_SRC}';" alt="${item.odiaName}">
                     <div class="card-content">
                         <div class="card-title">${item.odiaName}</div>
                         <div class="card-subtitle">${item.englishName}</div>
@@ -591,32 +802,52 @@
             renderGrid();
         }
 
-        // Notification Modal
+        // Generic Dialog System
+        function showDialog(title, message, buttons) {
+            document.getElementById('dialogTitle').innerText = title;
+            document.getElementById('dialogTitle').style.color = buttons.some(b => b.danger) ? 'var(--delete-red)' : 'var(--text-primary)';
+            document.getElementById('dialogMsg').innerText = message;
+            
+            const actionsContainer = document.getElementById('dialogActions');
+            actionsContainer.innerHTML = '';
+            
+            buttons.forEach(btn => {
+                const b = document.createElement('button');
+                b.innerText = btn.text;
+                if(btn.danger) b.classList.add('danger');
+                b.onclick = btn.action;
+                actionsContainer.appendChild(b);
+            });
+            
+            document.getElementById('dialogOverlay').classList.add('active');
+            document.getElementById('customDialog').classList.add('active');
+        }
+
+        function closeDialog() {
+            document.getElementById('dialogOverlay').classList.remove('active');
+            document.getElementById('customDialog').classList.remove('active');
+        }
+
         function showNotification() {
             document.getElementById('notifDot').style.display = 'none';
-            document.getElementById('dialogTitle').innerText = appConfig.notifTitle;
-            document.getElementById('dialogMsg').innerText = appConfig.notifMessage;
-            document.getElementById('dialogOverlay').classList.add('active');
-            document.getElementById('notifDialog').classList.add('active');
-        }
-        function closeNotification() {
-            document.getElementById('dialogOverlay').classList.remove('active');
-            document.getElementById('notifDialog').classList.remove('active');
+            showDialog(
+                appConfig.notifTitle, 
+                appConfig.notifMessage, 
+                [{ text: "ଠିକ୍ ଅଛି", action: closeDialog }]
+            );
         }
 
         // Details Logic (Bottom Sheet Mobile / Side Panel Desktop)
         let currentItemForSheet = null;
         function openSheet(index) {
-            // --- MOBILE PAYWALL LOGIC ---
             if (isMobile()) {
                 let readCount = parseInt(localStorage.getItem('odiaAppReadCount') || '0');
                 if (readCount >= 5) {
                     document.getElementById('forceAppOverlay').style.display = 'flex';
-                    return; // Stop execution
+                    return; 
                 }
                 localStorage.setItem('odiaAppReadCount', readCount + 1);
             }
-            // ----------------------------
 
             const filtered = searchString.trim() === "" ? currentItems : currentItems.filter(i => 
                 i.odiaName.toLowerCase().includes(searchString.toLowerCase()) || 
@@ -625,7 +856,7 @@
             currentItemForSheet = filtered[index];
             
             document.getElementById('bsImage').src = currentItemForSheet.image;
-            document.getElementById('bsImage').onerror = function() { this.src=FALLBACK_IMG; };
+            document.getElementById('bsImage').onerror = function() { this.src=FALLBACK_IMG_SRC; };
             document.getElementById('bsCategory').innerText = currentItemForSheet.category;
             document.getElementById('bsOdiaName').innerText = currentItemForSheet.odiaName;
             document.getElementById('bsEnglishName').innerText = currentItemForSheet.englishName;
@@ -640,6 +871,21 @@
 
             document.getElementById('bsDesc').innerText = currentItemForSheet.descriptionOdia;
 
+            // Extra Details
+            const extraCont = document.getElementById('extraDetailsContainer');
+            if(Object.keys(currentItemForSheet.extraDetails).length > 0) {
+                extraCont.style.display = 'block';
+                let edHtml = `<h4>ଅଧିକ ତଥ୍ୟ</h4>`;
+                for(let key in currentItemForSheet.extraDetails) {
+                    let val = toOdiaDigits(currentItemForSheet.extraDetails[key]);
+                    edHtml += `<div class="ed-row"><div class="ed-key">${key} :</div><div class="ed-val">${val}</div></div>`;
+                }
+                extraCont.innerHTML = `<div class="extra-details-box">${edHtml}</div>`;
+            } else {
+                extraCont.style.display = 'none';
+            }
+
+            // Facts
             const factsCont = document.getElementById('factsContainer');
             const factsList = document.getElementById('factsList');
             const scrollBtn = document.getElementById('scrollDownBtn');
@@ -647,7 +893,7 @@
             if(currentItemForSheet.facts && currentItemForSheet.facts.length > 0) {
                 factsCont.style.display = 'block';
                 factsList.innerHTML = currentItemForSheet.facts.map(f => `
-                    <div class="fact-item"><span>🐾</span><div>${f}</div></div>
+                    <div class="fact-item"><span>🐾</span><div>${toOdiaDigits(f)}</div></div>
                 `).join('');
                 scrollBtn.classList.remove('hidden');
             } else {
@@ -655,7 +901,6 @@
                 scrollBtn.classList.add('hidden');
             }
 
-            // UI Switching
             document.getElementById('desktopPlaceholder').style.display = 'none';
             document.getElementById('sheetScrollArea').style.display = 'block';
 
@@ -675,7 +920,6 @@
             }
         }
 
-        // Scroll Logic for Details
         function checkScroll() {
             const area = document.getElementById('sheetScrollArea');
             const btn = document.getElementById('scrollDownBtn');
@@ -699,14 +943,13 @@
         function openFullScreen() {
             if(!currentItemForSheet) return;
             document.getElementById('fsImage').src = currentItemForSheet.image;
-            document.getElementById('fsImage').onerror = function() { this.src=FALLBACK_IMG; };
+            document.getElementById('fsImage').onerror = function() { this.src=FALLBACK_IMG_SRC; };
             document.getElementById('fsOverlay').classList.add('active');
         }
         function closeFullScreen() {
             document.getElementById('fsOverlay').classList.remove('active');
         }
 
-        // Window resize handler to manage Desktop/Mobile state gracefully
         window.addEventListener('resize', () => {
             if(!isMobile()) {
                 document.getElementById('overlay').classList.remove('active');
