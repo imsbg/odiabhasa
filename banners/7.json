@@ -1,5 +1,5 @@
 {
-  "version": 18,
+  "version": 19,
   "banners": [
  {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/odia-new-year.jpg",
@@ -44,6 +44,16 @@
   "start": "16-10-2026 00:00",
   "end": "19-10-2026 23:59"
 },
+
+             {
+  "image": "https://imsbg.github.io/odiabhasa/images/banner/cd.jpg",
+  "text": "",
+  "paragraph": "",
+  "link": "",
+  "promo": "no",
+  "start": "14-11-2026 08:13",
+  "end": "14-11-2026 23:58"
+},
      {
   "image": "https://imsbg.github.io/odiabhasa/images/banner/obdaypromo.jpg",
   "text": "",
@@ -54,15 +64,7 @@
   "end": "29-12-2026 23:59"
 },
 
-         {
-  "image": "https://imsbg.github.io/odiabhasa/images/banner/cd.jpg",
-  "text": "",
-  "paragraph": "",
-  "link": "",
-  "promo": "no",
-  "start": "14-11-2026 08:13",
-  "end": "14-11-2026 23:58"
-},
+
 
     
     {
