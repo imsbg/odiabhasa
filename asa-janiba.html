@@ -6,8 +6,8 @@
     
     <!-- SEO Meta Tags -->
     <title>ଆସ ଜାଣିବା | Asa Janiba - Odia Bhasa</title>
-    <meta name="description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ ଏବଂ ପନିପରିବା ବିଷୟରେ ଜାଣନ୍ତୁ। Learn about animals, fruits, and vegetables in Odia language with interesting facts.">
-    <meta name="keywords" content="Odia Bhasa, Asa Janiba, Animals in Odia, Fruits in Odia, Vegetables in Odia, Odia General Knowledge, Sandeep Biswal G">
+    <meta name="description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ ଏବଂ ପନିପରିବା ବିଷୟରେ ଜାଣନ୍ତୁ। Learn about , fruits, and vegetables in Odia language with interesting facts.">
+    <meta name="keywords" content="Odia Bhasa, Asa Janiba,  in Odia, Fruits in Odia, Vegetables in Odia, Odia General Knowledge, Sandeep Biswal G">
     <meta name="author" content="Sandeep Biswal G">
     <link rel="canonical" href="https://imsbg.github.io/odiabhasa/asa-janiba">
     
@@ -457,9 +457,10 @@
         const FALLBACK_IMG_SRC = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237A7063'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E";
         
         const MASTER_CATEGORIES = [
-            { id: "animals", title: "ପଶୁ ଓ ପକ୍ଷୀ", url: "https://imsbg.github.io/animals/odia-bhasa/data.json", icon: "🦁" },
+            { id: "", title: "ପଶୁ ଓ ପକ୍ଷୀ", url: "https://imsbg.github.io//odia-bhasa/data.json", icon: "🦁" },
             { id: "fruits", title: "ଫଳ", url: "https://imsbg.github.io/fruits-and-vegetables/data/fruits.json", icon: "🥭" },
             { id: "vegetables", title: "ପନିପରିବା", url: "https://imsbg.github.io/fruits-and-vegetables/data/vegetables.json", icon: "🥔" }
+            { id: "gadi-ebom-sadaka", title: "ଗାଡି ଏବଂ ସଡ଼କ", url: "https://imsbg.github.io/asa-janiba-data/gadi-ebom-sadaka.json", icon: "🛣️" }
         ];
 
         // State Variables
@@ -513,7 +514,7 @@
         // Fetch Global Config
         async function fetchConfig() {
             try {
-                const res = await fetch("https://imsbg.github.io/animals/notification.json");
+                const res = await fetch("https://imsbg.github.io//notification.json");
                 const data = await res.json();
                 appConfig = {
                     maintenanceMode: data.maintenanceMode || false,
