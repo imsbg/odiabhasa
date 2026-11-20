@@ -11,964 +11,2394 @@
     <meta name="author" content="Sandeep Biswal G">
     <link rel="canonical" href="https://imsbg.github.io/odiabhasa/asa-janiba">
     
-    <!-- Google Sans Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
-    
     <!-- Open Graph for Social Media -->
     <meta property="og:title" content="ଆସ ଜାଣିବା | Asa Janiba - Odia Bhasa">
     <meta property="og:description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ ଏବଂ ପନିପରିବା ବିଷୟରେ ଜାଣନ୍ତୁ।">
     <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
     <meta property="og:url" content="https://imsbg.github.io/odiabhasa/asa-janiba">
-    
-    <style>
-        /* --- CSS Variables --- */
-        :root {
-            --app-background: #F4F1EB;
-            --header-brown: #6D5240;
-            --card-background: #FFFFFF;
-            --text-primary: #2C241B;
-            --text-secondary: #7A7063;
-            --accent-orange: #E65100;
-            --success-green: #2E7D32;
-            --delete-red: #D32F2F;
-            --shimmer-bg: #E0E0E0;
-            --shimmer-shine: #F5F5F5;
-            
-            /* Material Design Easing for Smoothness */
-            --md-easing: cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  <!-- ========== END SEO & METADATA ========== -->
 
-        /* --- Global Reset --- */
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-            font-family: 'Google Sans', system-ui, -apple-system, sans-serif; 
-        }
-        body { 
-            background-color: var(--app-background); 
-            color: var(--text-primary); 
-            overflow-x: hidden; 
-            height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            -webkit-font-smoothing: antialiased; /* Crisp text rendering */
-        }
-        button, input { border: none; outline: none; background: none; font-family: inherit; }
-        
-        /* Custom Scrollbar for Desktop */
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 10px; }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Oriya:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-        /* --- Header --- */
-        header {
-            display: flex; align-items: center; justify-content: space-between;
-            padding: 16px 16px 12px 16px; background-color: var(--app-background);
-            position: relative; z-index: 10; height: 70px; flex-shrink: 0;
-        }
-        .home-btn { display: none; text-decoration: none; padding: 8px; margin-right: 8px; border-radius: 50%; transition: background 0.2s var(--md-easing); }
-        .home-btn:hover { background: rgba(0,0,0,0.05); }
-        .home-btn svg { width: 26px; height: 26px; fill: var(--text-primary); }
-        .header-title { font-size: 24px; font-weight: bold; color: var(--text-primary); flex: 1; padding-left: 8px;}
-        .icon-btn { padding: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s var(--md-easing);}
-        .icon-btn:hover { background: rgba(0,0,0,0.05); }
-        .icon-btn svg { width: 24px; height: 24px; fill: var(--text-primary); }
-        .notification-wrapper { position: relative; }
-        .notification-dot {
-            position: absolute; top: 12px; right: 12px; width: 10px; height: 10px;
-            background-color: var(--accent-orange); border-radius: 50%; display: none;
-        }
+  <style>
+    :root {
+      --bg: #FFF9F2;
+      --header-brown: #FF7043;
+      --card-bg: #FFFFFF;
+      --border: #FFE0B2;
+      --footer-bg: #FFF8EE;
+      --text: #2D241E;
+      --text-sec: #6E6259;
+      --orange: #FF6D00;
+      --green: #2E7D32;
+      --red: #D32F2F;
+      --new-badge: #E91E63;
+      --custom-badge: #00897B;
+      --font: 'Noto Sans Oriya', system-ui, -apple-system, sans-serif;
+      --spring: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-        /* --- Search Bar --- */
-        .search-bar {
-            display: none; flex: 1; align-items: center; background: rgba(0,0,0,0.05);
-            border-radius: 25px; padding: 0 16px; height: 50px; margin-left: 8px;
-        }
-        .search-bar.active { display: flex; }
-        .search-bar input { flex: 1; font-size: 16px; color: var(--text-primary); width: 100%; }
-        .search-bar input::placeholder { color: var(--text-secondary); }
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-        /* --- Layout Wrappers --- */
-        .app-body {
-            flex: 1; display: flex; flex-direction: column; overflow: hidden; position: relative;
-        }
-        .main-content {
-            flex: 1; overflow-y: auto; padding-bottom: 24px; scroll-behavior: smooth;
-        }
+    html, body {
+      margin: 0;
+      padding: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* --- Category Selector --- */
-        .categories {
-            display: flex; gap: 12px; padding: 16px 20px 8px 20px; overflow-x: auto; scrollbar-width: none;
-        }
-        .categories::-webkit-scrollbar { display: none; }
-        .category-chip {
-            display: flex; align-items: center; gap: 8px; padding: 0 20px; height: 48px;
-            background-color: var(--card-background); border-radius: 50px; cursor: pointer;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); white-space: nowrap; 
-            transition: background-color 0.3s var(--md-easing), color 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing);
-            font-size: 16px; font-weight: bold; color: var(--text-primary);
-        }
-        .category-chip:hover { box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
-        .category-chip.active { background-color: var(--header-brown); color: white; box-shadow: 0 4px 8px rgba(109, 82, 64, 0.4); }
+    body.no-scroll { overflow: hidden; }
 
-        /* --- Action Controls (Count & Download) --- */
-        .controls-row {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 8px 20px; margin-bottom: 8px;
-        }
-        .total-text { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
-        .btn-action {
-            display: flex; align-items: center; gap: 6px; padding: 6px 12px;
-            border-radius: 50px; font-size: 13px; font-weight: bold; cursor: pointer;
-            transition: opacity 0.2s, transform 0.1s;
-        }
-        .btn-action:active { transform: scale(0.95); }
-        .btn-action.download { background: rgba(230, 81, 0, 0.1); color: var(--accent-orange); }
-        .btn-action.download svg { fill: var(--accent-orange); width: 16px; height: 16px; }
-        
-        .btn-action.saved { background: rgba(46, 125, 50, 0.1); color: var(--success-green); cursor: default; }
-        .btn-action.saved:active { transform: none; }
-        .btn-action.saved svg { fill: var(--success-green); width: 16px; height: 16px; }
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      color: inherit;
+    }
 
-        .btn-action.delete { background: rgba(211, 47, 47, 0.1); padding: 8px; margin-left: 8px; }
-        .btn-action.delete svg { fill: var(--delete-red); width: 18px; height: 18px; }
+    /* --- Shell --- */
+    .app-shell {
+      max-width: 960px;
+      margin: 0 auto;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
 
-        .actions-wrapper { display: flex; align-items: center; }
-        .download-progress { color: var(--accent-orange); font-weight: bold; font-size: 13px; }
+    /* --- Sticky Interactive Header --- */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 249, 242, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: calc(10px + env(safe-area-inset-top, 0px)) 16px 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        /* --- Grid Layout --- */
-        .grid-container {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 0 20px;
-        }
+    .circle-btn {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 6px rgba(45, 36, 30, 0.06);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      transition: transform 0.18s var(--spring), background-color 0.2s ease;
+    }
+    .circle-btn:active { transform: scale(0.91); }
+    .circle-btn.hidden { display: none; }
 
-        /* --- Cards --- */
-        .card {
-            background: var(--card-background); border-radius: 20px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08); 
-            cursor: pointer; display: flex; flex-direction: column; aspect-ratio: 0.8; overflow: hidden; 
-            /* Hardware Acceleration and smooth transition */
-            transition: transform 0.3s var(--md-easing), box-shadow 0.3s var(--md-easing);
-            will-change: transform, box-shadow; 
-            transform: translateZ(0); 
-        }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 16px rgba(0,0,0,0.12); }
-        .card:active { transform: scale(0.96); transition: transform 0.1s; }
-        .card img { width: 100%; height: 60%; object-fit: cover; background-color: #f0f0f0; }
-        .card-content { padding: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; height: 40%;}
-        .card-title { font-size: 18px; font-weight: bold; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .card-subtitle { font-size: 12px; color: var(--text-secondary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 4px; }
+    .header-main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 46px;
+    }
 
-        /* --- Shimmer Loading --- */
-        .shimmer-card { background: var(--card-background); border-radius: 20px; aspect-ratio: 0.8; overflow: hidden; display: flex; flex-direction: column; }
-        .shimmer-img { height: 60%; width: 100%; }
-        .shimmer-content { padding: 12px; display: flex; flex-direction: column; align-items: center; gap: 8px; height: 40%; justify-content: center;}
-        .shimmer-line { height: 16px; border-radius: 4px; width: 80%; }
-        .shimmer-line.short { width: 50%; height: 12px;}
-        .shimmer-anim {
-            background: linear-gradient(90deg, var(--shimmer-bg) 25%, var(--shimmer-shine) 50%, var(--shimmer-bg) 75%);
-            background-size: 200% 100%; animation: shimmer 1.5s infinite linear;
-        }
-        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    .header-title-row {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .header-title-row.hidden { display: none; }
 
-        /* --- Floating Update Button --- */
-        .update-btn {
-            position: fixed; top: 16px; left: 50%; transform: translateX(-50%) translateY(-150%);
-            background: var(--accent-orange); color: white; padding: 12px 24px; border-radius: 50px;
-            font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 8px;
-            box-shadow: 0 4px 12px rgba(230, 81, 0, 0.4); cursor: pointer; transition: transform 0.4s var(--md-easing); z-index: 100;
-        }
-        .update-btn.show { transform: translateX(-50%) translateY(0); }
-        .update-btn svg { width: 20px; height: 20px; fill: white; }
+    .header-title {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.3;
+    }
+    .invisible-shared { opacity: 0 !important; }
 
-        /* --- Mobile Overlays --- */
-        .overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); opacity: 0; visibility: hidden; transition: 0.3s var(--md-easing); z-index: 200;
-        }
-        .overlay.active { opacity: 1; visibility: visible; }
+    .search-box {
+      flex: 1;
+      display: none;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 25px;
+      height: 46px;
+      padding: 0 14px;
+      box-shadow: 0 2px 8px rgba(45, 36, 30, 0.05);
+      animation: fadeSlide 0.22s var(--spring);
+    }
+    .search-box.active { display: flex; }
 
-        /* --- Detail Panel / Bottom Sheet --- */
-        .detail-panel {
-            position: fixed; bottom: 0; left: 50%; transform: translateX(-50%) translateY(100%);
-            width: 100%; max-width: 600px; height: 85vh; background: var(--app-background);
-            border-radius: 24px 24px 0 0; z-index: 201; 
-            transition: transform 0.4s var(--md-easing);
-            will-change: transform;
-            display: flex; flex-direction: column; overflow: hidden;
-        }
-        .detail-panel.active { transform: translateX(-50%) translateY(0); }
-        .drag-handle { width: 40px; height: 4px; background: #ccc; border-radius: 4px; margin: 12px auto; flex-shrink: 0;}
-        
-        .desktop-placeholder { display: none; }
-        
-        .sheet-content { flex: 1; overflow-y: auto; padding-bottom: 80px; position: relative; scroll-behavior: smooth;}
-        .banner-container { position: relative; width: 100%; height: 250px; cursor: pointer; }
-        .banner-container img { width: 100%; height: 100%; object-fit: cover; background-color: #eee;}
-        .zoom-hint { position: absolute; bottom: 12px; right: 12px; background: rgba(0,0,0,0.6); color: white; padding: 4px 8px; border-radius: 12px; font-size: 12px; }
-        
-        .details-pad { padding: 24px; }
-        .badge { background: rgba(109, 82, 64, 0.1); color: var(--header-brown); padding: 4px 8px; border-radius: 8px; font-size: 12px; display: inline-block; margin-bottom: 8px; font-weight: bold;}
-        .det-title { font-size: 32px; font-weight: bold; margin-bottom: 4px;}
-        .det-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 4px;}
-        .det-sc { font-size: 14px; font-style: italic; color: rgba(122, 112, 99, 0.8); margin-bottom: 20px;}
-        .divider { height: 1px; background: rgba(200,200,200,0.3); margin-bottom: 16px; }
-        .det-desc { font-size: 18px; line-height: 1.6; margin-bottom: 24px; }
-        
-        /* Extra Details UI */
-        .extra-details-box { background: rgba(109, 82, 64, 0.05); border-radius: 16px; padding: 16px; margin-bottom: 24px; }
-        .extra-details-box h4 { font-size: 18px; font-weight: bold; color: var(--header-brown); margin-bottom: 12px; }
-        .ed-row { display: flex; margin-bottom: 8px; font-size: 15px; }
-        .ed-key { flex: 0.4; font-weight: bold; color: var(--text-primary); }
-        .ed-val { flex: 0.6; color: var(--text-secondary); }
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-family: var(--font);
+      font-size: 16px;
+      color: var(--text);
+      caret-color: var(--header-brown);
+      width: 100%;
+    }
+    .search-input::placeholder { color: var(--text-sec); }
 
-        .fact-title { font-size: 20px; font-weight: bold; color: var(--header-brown); margin-bottom: 12px; }
-        .fact-item { display: flex; align-items: flex-start; margin-bottom: 12px; font-size: 16px; line-height: 1.6;}
-        .fact-item span { margin-right: 8px; margin-top: 2px;}
+    .search-clear {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-sec);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.15s ease;
+    }
+    .search-clear.visible { opacity: 1; pointer-events: auto; }
 
-        /* Scroll Down Button */
-        .scroll-down-btn {
-            position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
-            background: var(--header-brown); color: white; padding: 12px 20px; border-radius: 50px;
-            display: flex; align-items: center; gap: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(109, 82, 64, 0.3);
-            cursor: pointer; transition: opacity 0.3s, visibility 0.3s, transform 0.2s; z-index: 10; width: max-content;
-        }
-        .scroll-down-btn:active { transform: translateX(-50%) scale(0.95); }
-        .scroll-down-btn.hidden { opacity: 0; visibility: hidden; }
-        .scroll-down-btn svg { width: 24px; height: 24px; fill: white; }
+    /* --- Download Progress Banner --- */
+    .dl-banner-wrap {
+      padding: 0 20px;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: max-height 0.3s var(--spring), opacity 0.25s ease, transform 0.3s var(--spring), margin 0.25s ease;
+    }
+    .dl-banner-wrap.visible {
+      max-height: 110px;
+      opacity: 1;
+      transform: translateY(0);
+      margin-bottom: 10px;
+    }
+    .dl-banner {
+      background: var(--card-bg);
+      border: 1.5px solid rgba(255, 109, 0, 0.4);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+    .dl-banner-top {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .dl-pct { color: var(--orange); }
+    .progress-track {
+      height: 8px;
+      border-radius: 50px;
+      background: rgba(255, 109, 0, 0.15);
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 50px;
+      background: var(--orange);
+      transition: width 0.2s ease;
+    }
 
-        /* --- Force App Download Modal (Mobile Only) --- */
-        .force-app-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
-            z-index: 9999; display: none; align-items: center; justify-content: center;
-        }
-        .force-app-dialog {
-            background: white; padding: 32px 24px; border-radius: 24px; text-align: center;
-            width: 90%; max-width: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .force-app-dialog h2 { margin-bottom: 16px; color: var(--text-primary); font-size: 22px; line-height: 1.4;}
-        .force-app-dialog p { color: var(--text-secondary); margin-bottom: 24px; font-size: 16px; line-height: 1.6;}
-        .force-app-btns button {
-            width: 100%; padding: 16px; border-radius: 50px; font-size: 16px; font-weight: bold; margin-top: 12px; cursor: pointer; transition: transform 0.1s;
-        }
-        .force-app-btns button:active { transform: scale(0.96); }
-        .btn-open { background: var(--header-brown); color: white; }
-        .btn-download { background: var(--accent-orange); color: white; }
+    /* --- Stage & Screens --- */
+    .stage {
+      flex: 1;
+      position: relative;
+      padding-bottom: 28px;
+    }
 
-        /* --- Full Screen Image --- */
-        .fullscreen-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: black; z-index: 300; display: none; align-items: center; justify-content: center;
-            opacity: 0; transition: opacity 0.3s;
-        }
-        .fullscreen-overlay.active { display: flex; opacity: 1; }
-        .fullscreen-overlay img { max-width: 100%; max-height: 100%; object-fit: contain; }
-        .close-fs { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.2); border-radius: 50%; padding: 8px; cursor: pointer; transition: background 0.2s;}
-        .close-fs:hover { background: rgba(255,255,255,0.4); }
-        .close-fs svg { fill: white; width: 24px; height: 24px; }
+    .screen {
+      width: 100%;
+      transition: opacity 0.34s var(--spring), transform 0.36s var(--spring);
+      will-change: transform, opacity;
+    }
+    .screen.hidden { display: none; }
 
-        /* --- Alert Dialog --- */
-        .dialog {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -40%) scale(0.9);
-            background: white; border-radius: 20px; padding: 24px; width: 90%; max-width: 400px;
-            z-index: 300; opacity: 0; visibility: hidden; transition: 0.3s var(--md-easing);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        .dialog.active { opacity: 1; visibility: visible; transform: translate(-50%, -50%) scale(1); }
-        .dialog h3 { margin-bottom: 12px; }
-        .dialog p { color: var(--text-secondary); margin-bottom: 24px; line-height: 1.5;}
-        .dialog-actions { display: flex; justify-content: flex-end; gap: 8px; }
-        .dialog button { border-radius: 8px; padding: 10px 16px; color: var(--header-brown); font-weight: bold; font-size: 15px; cursor: pointer; transition: background 0.2s;}
-        .dialog button:hover { background: rgba(109, 82, 64, 0.05); }
-        .dialog button.danger { color: var(--delete-red); }
-        .dialog button.danger:hover { background: rgba(211, 47, 47, 0.05); }
-        
-        .empty-state { text-align: center; color: var(--text-secondary); font-size: 18px; padding: 40px; grid-column: 1 / -1; }
+    #categoryScreen.fading-out {
+      opacity: 0;
+      transform: scale(0.96);
+      pointer-events: none;
+    }
+    #gridScreen.entering {
+      opacity: 0;
+      transform: translateY(36px);
+    }
+    #gridScreen.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        /* =========================================================
-           DESKTOP STYLES (Split Screen logic > 900px)
-           ========================================================= */
-        @media (min-width: 900px) {
-            .home-btn { display: flex; } 
-            
-            .app-body { 
-                flex-direction: row; padding: 0 24px 24px 24px; gap: 24px; max-width: 1400px; margin: 0 auto; width: 100%;
-            }
-            
-            /* Left Grid Area */
-            .grid-container { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); padding: 0; }
-            .main-content { padding-bottom: 0; }
-            .categories { padding: 0 0 16px 0; }
+    /* --- Toolbar & Pills --- */
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 20px 10px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .toolbar-label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-sec);
+    }
 
-            /* Right Details Panel */
-            .detail-panel {
-                position: relative; transform: none; bottom: auto; left: auto;
-                width: 400px; max-width: 400px; height: 100%; border-radius: 24px;
-                background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.06); z-index: 10;
-            }
-            .drag-handle { display: none; }
-            
-            .desktop-placeholder {
-                display: flex; flex-direction: column; align-items: center; justify-content: center;
-                height: 100%; text-align: center; color: var(--text-secondary); opacity: 0.7; padding: 24px;
-            }
-            .desktop-placeholder span { font-size: 64px; margin-bottom: 16px; display: block;}
-            .sheet-content { display: none; }
-            .overlay { display: none !important; }
-        }
-    </style>
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 50px;
+      padding: 6px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      transition: transform 0.15s var(--spring);
+    }
+    .pill:active { transform: scale(0.95); }
+    .pill-white {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 13px;
+    }
+    .pill-orange {
+      background: rgba(255, 109, 0, 0.12);
+      border: 1px solid rgba(255, 109, 0, 0.3);
+      color: var(--orange);
+    }
+    .pill-green {
+      background: rgba(46, 125, 50, 0.12);
+      border: 1px solid rgba(46, 125, 50, 0.3);
+      color: var(--green);
+    }
+
+    .saved-group { display: inline-flex; align-items: center; gap: 8px; }
+    .del-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(211, 47, 47, 0.12);
+      color: var(--red);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.15s var(--spring);
+    }
+    .del-circle:active { transform: scale(0.9); }
+
+    /* --- Category Banner Cards --- */
+    .category-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      padding: 4px 20px 24px;
+    }
+    @media (min-width: 720px) {
+      .category-list { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .cat-banner {
+      position: relative;
+      width: 100%;
+      height: 128px;
+      border-radius: 24px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      box-shadow: 0 4px 14px rgba(45, 36, 30, 0.05);
+      overflow: hidden;
+      cursor: pointer;
+      text-align: left;
+      transition: transform 0.24s var(--spring), box-shadow 0.24s var(--spring), border-color 0.2s ease;
+    }
+    .cat-banner:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(255, 112, 67, 0.14);
+      border-color: #FFD180;
+    }
+    .cat-banner:active { transform: scale(0.98); }
+
+    .cat-img-wrap {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 65%;
+      height: 100%;
+      overflow: hidden;
+      background: var(--footer-bg);
+    }
+    .cat-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.45s var(--spring);
+    }
+    .cat-img.loaded { opacity: 1; }
+    .cat-banner:hover .cat-img.loaded { transform: scale(1.04); }
+
+    .cat-fallback-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      background: var(--footer-bg);
+    }
+
+    .cat-fade {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        #FFFFFF 0%,
+        #FFFFFF 44%,
+        rgba(255, 255, 255, 0.78) 68%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      pointer-events: none;
+    }
+
+    .cat-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      width: 74%;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cat-badges {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+      flex-wrap: wrap;
+    }
+    .cat-badges:empty { display: none; }
+
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 50px;
+      padding: 2px 9px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .tag-pill.new { background: var(--new-badge); }
+    .tag-pill.custom { background: var(--custom-badge); }
+
+    .saved-mini {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border-radius: 50px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green);
+      background: rgba(46, 125, 50, 0.14);
+    }
+
+    .cat-title {
+      margin: 0;
+      font-size: 23px;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.28;
+    }
+
+    .cat-count {
+      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--header-brown);
+    }
+
+    /* --- Items Grid --- */
+    .grid-wrap { position: relative; min-height: 55vh; }
+
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      padding: 4px 20px 28px;
+    }
+    @media (min-width: 640px) {
+      .items-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (min-width: 900px) {
+      .items-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+
+    .item-card {
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      aspect-ratio: 0.8;
+      box-shadow: 0 3px 10px rgba(45, 36, 30, 0.045);
+      cursor: pointer;
+      transition: transform 0.24s var(--spring), box-shadow 0.24s var(--spring), border-color 0.2s ease;
+      animation: cardPop 0.34s var(--spring) both;
+    }
+    .item-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 112, 67, 0.14);
+      border-color: #FFD180;
+    }
+    .item-card:active { transform: scale(0.96); }
+
+    .item-img-wrap {
+      flex: 1;
+      min-height: 0;
+      padding: 6px;
+      display: flex;
+    }
+    .item-img-frame {
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      background: var(--footer-bg);
+    }
+    .item-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 0.35s ease, transform 0.4s var(--spring);
+    }
+    .item-img.loaded { opacity: 1; }
+    .item-card:hover .item-img.loaded { transform: scale(1.04); }
+
+    .item-footer {
+      background: var(--footer-bg);
+      padding: 10px 10px 11px;
+      text-align: center;
+    }
+    .item-odia {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.3;
+    }
+    .item-eng {
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-sec);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* --- Floating Update FAB --- */
+    .update-fab {
+      position: sticky;
+      top: 72px;
+      z-index: 30;
+      margin: 0 auto 12px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 50px;
+      box-shadow: 0 8px 22px rgba(255, 109, 0, 0.35);
+      animation: dropIn 0.32s var(--spring);
+    }
+    .update-fab.visible { display: flex; }
+
+    /* --- Shimmer Skeletons --- */
+    .shimmer {
+      background: linear-gradient(110deg, #EDE4D8 25%, #FAF6F0 50%, #EDE4D8 75%);
+      background-size: 200% 100%;
+      animation: shimmerMove 1.45s linear infinite;
+    }
+
+    .shimmer-banner {
+      height: 128px;
+      border-radius: 24px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .shimmer-card {
+      border-radius: 22px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      aspect-ratio: 0.8;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* --- Empty / Maintenance / Error States --- */
+    .state-box {
+      padding: 64px 28px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .state-box.hidden { display: none; }
+    .state-emoji { font-size: 54px; margin-bottom: 12px; }
+    .state-text {
+      font-size: 16px;
+      color: var(--text-sec);
+      line-height: 1.6;
+      max-width: 340px;
+      margin: 0;
+    }
+    .primary-btn {
+      margin-top: 18px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 11px 22px;
+      border-radius: 50px;
+      box-shadow: 0 6px 16px rgba(255, 109, 0, 0.25);
+      transition: transform 0.16s var(--spring);
+    }
+    .primary-btn:active { transform: scale(0.95); }
+
+    /* --- Shared Floating Elements --- */
+    .shared-title-ghost {
+      position: fixed;
+      z-index: 90;
+      margin: 0;
+      font-family: var(--font);
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--text);
+      white-space: nowrap;
+      pointer-events: none;
+      transform-origin: top left;
+      will-change: transform;
+    }
+
+    .flying-img-ghost {
+      position: fixed;
+      z-index: 120;
+      object-fit: cover;
+      pointer-events: none;
+      will-change: left, top, width, height, border-radius;
+      box-shadow: 0 12px 32px rgba(45, 36, 30, 0.22);
+    }
+
+    /* --- Detail Modal Sheet --- */
+    .detail-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .detail-overlay.open { display: flex; }
+
+    .detail-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      opacity: 0;
+      transition: opacity 0.3s var(--ease);
+    }
+    .detail-overlay.visible .detail-backdrop { opacity: 1; }
+
+    .detail-sheet {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 720px;
+      height: calc(100dvh - 28px);
+      background: var(--bg);
+      border-radius: 28px 28px 0 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(64px);
+      transition: opacity 0.32s var(--spring), transform 0.38s var(--spring);
+      display: flex;
+      flex-direction: column;
+    }
+    .detail-overlay.visible .detail-sheet {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .detail-scroll {
+      flex: 1;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+    }
+
+    .detail-hero-wrap {
+      padding: 20px 16px 0;
+      position: relative;
+    }
+    .detail-hero {
+      width: 100%;
+      height: 256px;
+      border-radius: 24px;
+      overflow: hidden;
+      position: relative;
+      background: var(--footer-bg);
+      cursor: zoom-in;
+    }
+    .detail-hero.hidden-for-flight { opacity: 0; }
+    .detail-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .zoom-hint-pill {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      background: rgba(0, 0, 0, 0.62);
+      color: #FFFFFF;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 50px;
+      backdrop-filter: blur(4px);
+    }
+
+    .detail-close-btn {
+      position: absolute;
+      top: 28px;
+      right: 24px;
+      z-index: 10;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.48);
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      transition: transform 0.16s var(--spring), background 0.2s ease;
+    }
+    .detail-close-btn:active { transform: scale(0.9); }
+
+    .detail-body { padding: 22px 24px 104px; }
+
+    .detail-cat-chip {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 112, 67, 0.14);
+      color: var(--header-brown);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 11px;
+      border-radius: 50px;
+      margin-bottom: 8px;
+    }
+    .detail-odia {
+      margin: 0;
+      font-size: 31px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.25;
+    }
+    .detail-eng {
+      margin: 4px 0 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-sec);
+    }
+    .detail-sci {
+      margin: 3px 0 0;
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(110, 98, 89, 0.82);
+    }
+    .detail-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+    .detail-desc {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .extra-card {
+      margin-top: 20px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 16px;
+    }
+    .section-heading {
+      margin: 0 0 12px;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--header-brown);
+    }
+    .extra-row {
+      display: flex;
+      gap: 10px;
+      padding: 5px 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .extra-key {
+      flex: 0 0 40%;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .extra-val {
+      flex: 1;
+      color: var(--text-sec);
+    }
+
+    .facts-wrap { margin-top: 24px; }
+    .fact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    .scroll-down-fab {
+      position: absolute;
+      left: 50%;
+      bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+      transform: translateX(-50%) translateY(20px);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 12;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--header-brown);
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 11px 20px;
+      border-radius: 50px;
+      box-shadow: 0 8px 24px rgba(255, 112, 67, 0.36);
+      white-space: nowrap;
+      transition: opacity 0.25s ease, transform 0.3s var(--spring);
+    }
+    .scroll-down-fab.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* --- Full-Screen Zoomable Viewer --- */
+    .zoom-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 150;
+      background: rgba(0, 0, 0, 0.96);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      touch-action: none;
+      opacity: 0;
+      transition: opacity 0.25s var(--ease);
+    }
+    .zoom-overlay.open { display: flex; }
+    .zoom-overlay.visible { opacity: 1; }
+
+    .zoom-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      user-select: none;
+      -webkit-user-drag: none;
+      will-change: transform;
+      transform-origin: center center;
+    }
+
+    .zoom-close {
+      position: absolute;
+      top: calc(24px + env(safe-area-inset-top, 0px));
+      right: 20px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.16);
+      color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .zoom-tip {
+      position: absolute;
+      bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 12px;
+      padding: 7px 14px;
+      border-radius: 50px;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    /* --- Alert Dialogs (Download / Delete) --- */
+    .dialog-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 140;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+    }
+    .dialog-overlay.open { display: flex; }
+    .dialog-overlay.visible { opacity: 1; }
+
+    .dialog-card {
+      width: 100%;
+      max-width: 380px;
+      background: #FFFFFF;
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+      transform: scale(0.92);
+      transition: transform 0.26s var(--spring);
+    }
+    .dialog-overlay.visible .dialog-card { transform: scale(1); }
+
+    .dialog-title {
+      margin: 0 0 10px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .dialog-desc {
+      margin: 0 0 16px;
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--text-sec);
+    }
+    .dialog-btn {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      transition: transform 0.15s var(--spring);
+    }
+    .dialog-btn:active { transform: scale(0.97); }
+    .btn-orange { background: var(--orange); color: #FFFFFF; }
+    .btn-brown { background: var(--header-brown); color: #FFFFFF; }
+    .btn-red { background: var(--red); color: #FFFFFF; }
+    .btn-red-outline {
+      background: transparent;
+      border: 1.5px solid var(--red);
+      color: var(--red);
+    }
+    .dialog-cancel-row { text-align: right; margin-top: 2px; }
+    .dialog-cancel {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-sec);
+      padding: 6px 12px;
+      border-radius: 10px;
+    }
+
+    /* --- Animations --- */
+    @keyframes shimmerMove {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes cardPop {
+      from { opacity: 0; transform: translateY(14px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes dropIn {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+  <div class="app-shell" id="appShell">
+    <!-- Interactive Header -->
+    <header class="app-header">
+      <button class="circle-btn hidden" id="backBtn" aria-label="ପଛକୁ ଯାଆନ୍ତୁ">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
 
-    <!-- Force App Download Popup (Mobile Only) -->
-    <div class="force-app-overlay" id="forceAppOverlay">
-        <div class="force-app-dialog">
-            <h2>📱 ଆପ୍ ବ୍ୟବହାର କରନ୍ତୁ</h2>
-            <p>ଆପଣ ମାଗଣାରେ ୫ଟି ତଥ୍ୟ ପଢିସାରିଛନ୍ତି। ଅଧିକ ଜାଣିବା ପାଇଁ ଆମର ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ କିମ୍ବା ଖୋଲନ୍ତୁ।</p>
-            <div class="force-app-btns">
-                <button class="btn-open" onclick="window.location.href='https://odiabhasa.pages.dev/open'">ଆପ୍ ଖୋଲନ୍ତୁ</button>
-                <button class="btn-download" onclick="window.location.href='https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa&hl=or'">ଆପ୍ ଡାଉନଲୋଡ୍ କରନ୍ତୁ</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Top Update Button -->
-    <button class="update-btn" id="updateBtn" onclick="applyUpdate()">
-        <!-- Refresh SVG -->
-        <svg viewBox="0 0 24 24"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
-        ନୂଆ ତଥ୍ୟ ଆସିଛି - ଅପଡେଟ୍ କରନ୍ତୁ
-    </button>
-
-    <!-- Header -->
-    <header id="mainHeader">
-        <a href="https://imsbg.github.io/odiabhasa/" class="home-btn" title="Home">
-            <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-        </a>
-
-        <button class="icon-btn" style="display:none;" id="backBtn" onclick="closeSearch()">
-            <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
-        </button>
-        <div class="header-title" id="headerTitle">ଆସ ଜାଣିବା</div>
-        
-        <div class="search-bar" id="searchBar">
-            <input type="text" id="searchInput" placeholder="ଖୋଜନ୍ତୁ..." oninput="handleSearch()">
+      <div class="header-main">
+        <div class="header-title-row" id="headerTitleRow">
+          <h1 class="header-title" id="headerTitle">ଆସ ଜାଣିବା</h1>
+          <button class="circle-btn hidden" id="searchBtn" aria-label="ଖୋଜନ୍ତୁ">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+          </button>
         </div>
 
-        <button class="icon-btn" id="searchBtn" onclick="openSearch()">
-            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        </button>
-        <div class="notification-wrapper" id="notifWrapper" onclick="showNotification()">
-            <button class="icon-btn">
-                <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/></svg>
-            </button>
-            <div class="notification-dot" id="notifDot"></div>
+        <div class="search-box" id="searchBox">
+          <input type="search" id="searchInput" class="search-input" placeholder="ଖୋଜନ୍ତୁ..." autocomplete="off" />
+          <button class="search-clear" id="searchClearBtn" aria-label="ସଫା କରନ୍ତୁ">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
         </div>
+      </div>
     </header>
 
-    <!-- Maintenance Message -->
-    <div id="maintenanceView" style="display: none; height: 80vh; flex-direction: column; align-items: center; justify-content: center;">
-        <div style="font-size: 48px;">⚠️</div>
-        <div id="maintenanceMsg" style="margin-top: 16px; font-size: 18px; text-align: center;">ସର୍ଭର ମେଣ୍ଟେନାନ୍ସ ଚାଲିଛି...</div>
+    <!-- Download Progress Banner -->
+    <div class="dl-banner-wrap" id="dlBannerWrap">
+      <div class="dl-banner">
+        <div class="dl-banner-top">
+          <span id="dlStatusText">ଡାଉନଲୋଡ୍ ଚାଲିଛି...</span>
+          <span class="dl-pct" id="dlPctText">୦%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="dlProgressFill"></div>
+        </div>
+      </div>
     </div>
 
-    <!-- App Body (Grid Left, Details Right on Desktop) -->
-    <div id="appBody" class="app-body">
-        
-        <!-- Left Side: List & Categories -->
-        <div class="main-content" id="mainContent">
-            <div class="categories" id="categoryContainer"></div>
-            
-            <!-- Controls Row (Total count and Offline buttons) -->
-            <div class="controls-row" id="controlsRow" style="display: none;">
-                <!-- Filled via JS -->
-            </div>
-
-            <div class="grid-container" id="gridContainer"></div>
-        </div>
-
-        <!-- Right Side: Details (Acts as Bottom Sheet on Mobile) -->
-        <div class="detail-panel" id="bottomSheet">
-            <div class="drag-handle"></div>
-            
-            <!-- Desktop Placeholder (shows when nothing is selected) -->
-            <div class="desktop-placeholder" id="desktopPlaceholder">
-                <span>👈</span>
-                <h2>ବାମ ପାଖରୁ ଏକ ବିଷୟ ବାଛନ୍ତୁ</h2>
-                <p style="margin-top:8px; font-size: 14px;">(Select an item from the left)</p>
-            </div>
-
-            <!-- Scrollable content area -->
-            <div class="sheet-content" id="sheetScrollArea" onscroll="checkScroll()">
-                <div class="banner-container" onclick="openFullScreen()">
-                    <img id="bsImage" src="" alt="Banner">
-                    <div class="zoom-hint">🔍 ଟ୍ୟାପ୍ କରନ୍ତୁ</div>
-                </div>
-                <div class="details-pad">
-                    <div class="badge" id="bsCategory"></div>
-                    <div class="det-title" id="bsOdiaName"></div>
-                    <div class="det-subtitle" id="bsEnglishName"></div>
-                    <div class="det-sc" id="bsScName"></div>
-                    <div class="divider"></div>
-                    <div class="det-desc" id="bsDesc"></div>
-                    
-                    <div id="extraDetailsContainer" style="display: none;"></div>
-
-                    <div id="factsContainer">
-                        <div class="fact-title">ବିଶେଷ ତଥ୍ୟ</div>
-                        <div id="factsList"></div>
-                    </div>
-                </div>
-                
-                <button class="scroll-down-btn hidden" id="scrollDownBtn" onclick="scrollToBottom()">
-                    ବିଶେଷ ତଥ୍ୟ ପାଇଁ ତଳକୁ ଯାଆନ୍ତୁ
-                    <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                </button>
-            </div>
-        </div>
+    <!-- Maintenance Screen -->
+    <div class="state-box hidden" id="maintenanceView">
+      <div class="state-emoji">🛠️</div>
+      <p class="state-text" id="maintenanceMsg">ସର୍ଭର ମେଣ୍ଟେନାନ୍ସ ଚାଲିଛି...</p>
     </div>
 
-    <!-- Overlays -->
-    <div class="overlay" id="overlay" onclick="closeSheet()"></div>
-    <div class="overlay" id="dialogOverlay" style="z-index:299;"></div>
-
-    <!-- Fullscreen Image -->
-    <div class="fullscreen-overlay" id="fsOverlay">
-        <div class="close-fs" onclick="closeFullScreen()">
-            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+    <!-- Main Stage -->
+    <main class="stage" id="mainStage">
+      <!-- SCREEN 1: Category Banner List -->
+      <section class="screen" id="categoryScreen">
+        <div class="toolbar" id="categoryToolbar">
+          <span class="toolbar-label">ବିଭାଗ ବାଛନ୍ତୁ</span>
+          <div id="categoryOfflineSlot"></div>
         </div>
-        <img id="fsImage" src="" alt="Fullscreen">
-    </div>
 
-    <!-- Custom Dialogs (Reused for Notification, Download, and Delete) -->
-    <div class="dialog" id="customDialog">
-        <h3 id="dialogTitle"></h3>
-        <p id="dialogMsg"></p>
-        <div class="dialog-actions" id="dialogActions">
-            <!-- Buttons injected here -->
+        <div class="category-list" id="categoryList"></div>
+
+        <div class="state-box hidden" id="configErrorView">
+          <div class="state-emoji">📡</div>
+          <p class="state-text">ଇଣ୍ଟରନେଟ୍ ସଂଯୋଗ ନାହିଁ!<br />ଦୟାକରି ଇଣ୍ଟରନେଟ୍ ଚାଲୁ କରି ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</p>
+          <button class="primary-btn" id="retryConfigBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/>
+            </svg>
+            <span>ପୁନଃଚେଷ୍ଟା କରନ୍ତୁ</span>
+          </button>
         </div>
+      </section>
+
+      <!-- SCREEN 2: Selected Category Items Grid -->
+      <section class="screen hidden" id="gridScreen">
+        <div class="toolbar" id="gridToolbar">
+          <span class="pill pill-white" id="gridCountPill">ମୋଟ: ୦</span>
+          <div id="gridOfflineSlot"></div>
+        </div>
+
+        <div class="grid-wrap">
+          <button class="update-fab" id="updateFab">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12a9 9 0 1 1-2.64-6.36"/><path d="M21 3v6h-6"/>
+            </svg>
+            <span>ନୂଆ ତଥ୍ୟ ଆସିଛି - ଅପଡେଟ୍ କରନ୍ତୁ</span>
+          </button>
+
+          <div class="items-grid" id="itemsGrid"></div>
+
+          <div class="state-box hidden" id="emptyItemsView">
+            <div class="state-emoji">🔍</div>
+            <p class="state-text" style="font-weight:700;font-size:18px;">କିଛି ମିଳିଲା ନାହିଁ!</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Detail Sheet Modal -->
+  <div class="detail-overlay" id="detailOverlay" role="dialog" aria-modal="true">
+    <div class="detail-backdrop" id="detailBackdrop"></div>
+    <div class="detail-sheet" id="detailSheet">
+      <button class="detail-close-btn" id="detailCloseBtn" aria-label="ବନ୍ଦ କରନ୍ତୁ">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="detail-scroll" id="detailScroll">
+        <div class="detail-hero-wrap">
+          <div class="detail-hero" id="detailHero">
+            <img id="detailHeroImg" alt="" />
+            <span class="zoom-hint-pill">🔍 ବଡ଼ କରି ଦେଖନ୍ତୁ</span>
+          </div>
+        </div>
+
+        <div class="detail-body" id="detailBody"></div>
+      </div>
+
+      <button class="scroll-down-fab" id="scrollDownFab">
+        <span>ବିଶେଷ ତଥ୍ୟ ପାଇଁ ତଳକୁ ଯାଆନ୍ତୁ</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 9l6 6 6-6"/>
+        </svg>
+      </button>
     </div>
+  </div>
 
-    <!-- Application Logic -->
-    <script>
-        // Use URL-Encoded SVG to prevent HTML attribute breaking (the bug you saw!)
-        const FALLBACK_IMG_SRC = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237A7063'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z'/%3E%3C/svg%3E";
-        
-        const MASTER_CATEGORIES = [
-            { id: "animals", title: "ପଶୁ ଓ ପକ୍ଷୀ", url: "https://imsbg.github.io//odia-bhasa/data.json", icon: "🦁" },
-            { id: "fruits", title: "ଫଳ", url: "https://imsbg.github.io/fruits-and-vegetables/data/fruits.json", icon: "🥭" },
-            { id: "vegetables", title: "ପନିପରିବା", url: "https://imsbg.github.io/fruits-and-vegetables/data/vegetables.json", icon: "🥔" },
-            { id: "gadi-ebom-sadaka", title: "ଗାଡି ଏବଂ ସଡ଼କ", url: "https://imsbg.github.io/asa-janiba-data/gadi-ebom-sadaka.json", icon: "🛣️" }
-        ];
+  <!-- Full-Screen Zoom Viewer -->
+  <div class="zoom-overlay" id="zoomOverlay">
+    <img class="zoom-img" id="zoomImg" alt="" />
+    <button class="zoom-close" id="zoomCloseBtn" aria-label="ବନ୍ଦ କରନ୍ତୁ">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <div class="zoom-tip">🔍 ଜୁମ୍ କରିବାକୁ ଦୁଇଥର ଟ୍ୟାପ୍ କିମ୍ବା ପିଞ୍ଚ୍ କରନ୍ତୁ</div>
+  </div>
 
-        // State Variables
-        let appConfig = {};
-        let activeCategories = [];
-        let selectedCategoryId = "";
-        let currentItems = [];
-        let freshNetworkData = null; 
-        let searchString = "";
-        
-        // Download states
-        let isDownloading = false;
-        let isCategoryDownloaded = false;
+  <!-- Offline Download / Delete Dialog -->
+  <div class="dialog-overlay" id="actionDialog">
+    <div class="dialog-card">
+      <h2 class="dialog-title" id="dialogTitle"></h2>
+      <p class="dialog-desc" id="dialogDesc"></p>
+      <div id="dialogActions"></div>
+      <div class="dialog-cancel-row">
+        <button class="dialog-cancel" id="dialogCancelBtn">ବାତିଲ୍</button>
+      </div>
+    </div>
+  </div>
 
-        // Elements
-        const gridContainer = document.getElementById('gridContainer');
-        const catContainer = document.getElementById('categoryContainer');
-        const updateBtn = document.getElementById('updateBtn');
-        const appBody = document.getElementById('appBody');
-        const maintenanceView = document.getElementById('maintenanceView');
-        const controlsRow = document.getElementById('controlsRow');
+  <script>
+    (() => {
+      'use strict';
 
-        // Helpers
-        function isMobile() { return window.innerWidth < 900; }
-        
-        function toOdiaDigits(num) {
-            const odiaMap = {'0':'୦','1':'୧','2':'୨','3':'୩','4':'୪','5':'୫','6':'୬','7':'୭','8':'୮','9':'୯'};
-            return num.toString().split('').map(char => odiaMap[char] || char).join('');
+      const APP_CONFIG_URL = 'https://imsbg.github.io/asa-janiba-data/app.json';
+      const CACHE_NAME = 'asa-janiba-offline-v1';
+      const LS_CONFIG_KEY = 'asa_janiba_app_config_v2';
+      const LS_CAT_PREFIX = 'asa_janiba_cat_data_';
+      const LS_DOWNLOADED_KEY = 'asa_janiba_downloaded_ids';
+
+      const ICON_CHECK = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+      const ICON_DL = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
+      const ICON_TRASH = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>`;
+
+      // --- Odia Numeral Helper ---
+      const ODIA_DIGITS = { '0':'୦','1':'୧','2':'୨','3':'୩','4':'୪','5':'୫','6':'୬','7':'୭','8':'୮','9':'୯' };
+      function toOdia(val) {
+        return String(val ?? '').replace(/[0-9]/g, d => ODIA_DIGITS[d] || d);
+      }
+
+      function escapeHtml(str) {
+        return String(str ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&#39;');
+      }
+
+      function displayCategoryTitle(cat) {
+        return cat.icon && cat.icon.trim() ? `${cat.icon.trim()} ${cat.title}` : cat.title;
+      }
+
+      // --- App State ---
+      const state = {
+        appConfig: { version: 0, maintenanceMode: false, maintenanceMessage: '', hiddenTabs: [], categories: [] },
+        activeCategories: [],
+        previews: {}, // { [catId]: { firstImage, itemCount } }
+        selectedCategory: null,
+        itemsList: [],
+        isLoadingItems: false,
+        isSearchActive: false,
+        searchQuery: '',
+        downloadedIds: new Set(),
+        isDownloading: false,
+        latestNetworkData: null,
+        isUpdateAvailable: false,
+        isTransitioning: false,
+        activeItem: null,
+        sourceImgEl: null,
+        isZoomOpen: false
+      };
+
+      // --- DOM Refs ---
+      const el = {
+        backBtn: document.getElementById('backBtn'),
+        headerTitleRow: document.getElementById('headerTitleRow'),
+        headerTitle: document.getElementById('headerTitle'),
+        searchBtn: document.getElementById('searchBtn'),
+        searchBox: document.getElementById('searchBox'),
+        searchInput: document.getElementById('searchInput'),
+        searchClearBtn: document.getElementById('searchClearBtn'),
+
+        dlBannerWrap: document.getElementById('dlBannerWrap'),
+        dlStatusText: document.getElementById('dlStatusText'),
+        dlPctText: document.getElementById('dlPctText'),
+        dlProgressFill: document.getElementById('dlProgressFill'),
+
+        maintenanceView: document.getElementById('maintenanceView'),
+        maintenanceMsg: document.getElementById('maintenanceMsg'),
+        mainStage: document.getElementById('mainStage'),
+
+        categoryScreen: document.getElementById('categoryScreen'),
+        categoryToolbar: document.getElementById('categoryToolbar'),
+        categoryOfflineSlot: document.getElementById('categoryOfflineSlot'),
+        categoryList: document.getElementById('categoryList'),
+        configErrorView: document.getElementById('configErrorView'),
+        retryConfigBtn: document.getElementById('retryConfigBtn'),
+
+        gridScreen: document.getElementById('gridScreen'),
+        gridToolbar: document.getElementById('gridToolbar'),
+        gridCountPill: document.getElementById('gridCountPill'),
+        gridOfflineSlot: document.getElementById('gridOfflineSlot'),
+        updateFab: document.getElementById('updateFab'),
+        itemsGrid: document.getElementById('itemsGrid'),
+        emptyItemsView: document.getElementById('emptyItemsView'),
+
+        detailOverlay: document.getElementById('detailOverlay'),
+        detailBackdrop: document.getElementById('detailBackdrop'),
+        detailSheet: document.getElementById('detailSheet'),
+        detailCloseBtn: document.getElementById('detailCloseBtn'),
+        detailScroll: document.getElementById('detailScroll'),
+        detailHero: document.getElementById('detailHero'),
+        detailHeroImg: document.getElementById('detailHeroImg'),
+        detailBody: document.getElementById('detailBody'),
+        scrollDownFab: document.getElementById('scrollDownFab'),
+
+        zoomOverlay: document.getElementById('zoomOverlay'),
+        zoomImg: document.getElementById('zoomImg'),
+        zoomCloseBtn: document.getElementById('zoomCloseBtn'),
+
+        actionDialog: document.getElementById('actionDialog'),
+        dialogTitle: document.getElementById('dialogTitle'),
+        dialogDesc: document.getElementById('dialogDesc'),
+        dialogActions: document.getElementById('dialogActions'),
+        dialogCancelBtn: document.getElementById('dialogCancelBtn')
+      };
+
+      // --- Persistent Storage Helpers ---
+      function loadDownloadedIds() {
+        try {
+          const raw = localStorage.getItem(LS_DOWNLOADED_KEY);
+          const arr = raw ? JSON.parse(raw) : [];
+          state.downloadedIds = new Set(Array.isArray(arr) ? arr : []);
+        } catch {
+          state.downloadedIds = new Set();
+        }
+      }
+
+      function saveDownloadedIds() {
+        try {
+          localStorage.setItem(LS_DOWNLOADED_KEY, JSON.stringify([...state.downloadedIds]));
+        } catch {}
+      }
+
+      function parseAppConfig(raw) {
+        const obj = typeof raw === 'string' ? JSON.parse(raw) : raw;
+        const hiddenTabs = Array.isArray(obj.hiddenTabs) ? obj.hiddenTabs : [];
+        const categories = (Array.isArray(obj.categories) ? obj.categories : [])
+          .filter(c => !c.hidden)
+          .map((c, idx) => ({
+            id: c.id || `cat_${idx}`,
+            title: c.title || '',
+            url: c.url || '',
+            icon: c.icon || '',
+            isNew: Boolean(c.isNew),
+            tag: c.tag || ''
+          }));
+        return {
+          version: Number(obj.version || 1),
+          maintenanceMode: Boolean(obj.maintenanceMode),
+          maintenanceMessage: obj.maintenanceMessage || '',
+          hiddenTabs,
+          categories
+        };
+      }
+
+      function getCachedConfig() {
+        try {
+          const raw = localStorage.getItem(LS_CONFIG_KEY);
+          return raw ? parseAppConfig(raw) : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function saveCachedConfig(rawText) {
+        try { localStorage.setItem(LS_CONFIG_KEY, rawText); } catch {}
+      }
+
+      function parseCategoryData(rawText) {
+        const parsed = typeof rawText === 'string' ? JSON.parse(rawText) : rawText;
+        let version = 0;
+        let arr = [];
+
+        if (Array.isArray(parsed)) {
+          arr = parsed;
+        } else if (parsed && typeof parsed === 'object') {
+          version = Number(parsed.version || 0);
+          arr = parsed.items || parsed.data || [];
         }
 
-        // Init App
-        async function init() {
-            renderShimmer();
-            await fetchConfig();
-            if (appConfig.maintenanceMode) {
-                appBody.style.display = 'none';
-                maintenanceView.style.display = 'flex';
-                document.getElementById('maintenanceMsg').innerText = appConfig.maintenanceMessage || 'ସର୍ଭର ମେଣ୍ଟେନାନ୍ସ ଚାଲିଛି...';
-                return;
+        if (version === 0 && arr.length > 0 && arr[0].version) {
+          version = Number(arr[0].version || 0);
+        }
+
+        const items = arr.map(obj => {
+          const facts = [];
+          const extraDetails = {};
+          if (obj.details && typeof obj.details === 'object') {
+            for (const [k, v] of Object.entries(obj.details)) {
+              if (k === 'ବିଶେଷ_ତଥ୍ୟ' && Array.isArray(v)) {
+                v.forEach(f => facts.push(String(f)));
+              } else if (v !== null && v !== undefined && String(v).trim() !== '') {
+                extraDetails[k] = String(v);
+              }
             }
-            
-            maintenanceView.style.display = 'none';
-            activeCategories = MASTER_CATEGORIES.filter(c => !(appConfig.hiddenTabs || []).includes(c.id));
-            if(activeCategories.length > 0) {
-                selectedCategoryId = activeCategories[0].id;
-                renderCategoryChips();
-                loadData(activeCategories[0]);
-            }
-        }
-
-        // Fetch Global Config
-        async function fetchConfig() {
-            try {
-                const res = await fetch("https://imsbg.github.io//notification.json");
-                const data = await res.json();
-                appConfig = {
-                    maintenanceMode: data.maintenanceMode || false,
-                    maintenanceMessage: data.maintenanceMessage || "",
-                    hiddenTabs: data.hiddenTabs || [],
-                    hasNotification: data.notification?.hasNew || false,
-                    notifTitle: data.notification?.title || "",
-                    notifMessage: data.notification?.message || "",
-                    dataVersion: data.dataVersion || 0
-                };
-                if(appConfig.hasNotification) document.getElementById('notifDot').style.display = 'block';
-            } catch(e) {
-                console.log("Config fetch failed", e);
-            }
-        }
-
-        // Data Loading Logic
-        async function loadData(category) {
-            renderShimmer();
-            controlsRow.style.display = 'none'; 
-            freshNetworkData = null;
-            updateBtn.classList.remove('show');
-
-            const cacheKey = `wildlife_cache_${category.id}`;
-            const cachedString = localStorage.getItem(cacheKey);
-            let cachedVersion = 0;
-
-            if (cachedString) {
-                try {
-                    const parsed = JSON.parse(cachedString);
-                    cachedVersion = parsed[0]?.version || 0;
-                    currentItems = parseItems(parsed);
-                    await checkDownloadStatus(category.id);
-                    renderGrid();
-                } catch(e) {}
-            }
-
-            try {
-                const res = await fetch(category.url);
-                const rawData = await res.json();
-                const networkVersion = rawData[0]?.version || 0;
-
-                if (!cachedString) {
-                    currentItems = parseItems(rawData);
-                    localStorage.setItem(cacheKey, JSON.stringify(rawData));
-                    await checkDownloadStatus(category.id);
-                    renderGrid();
-                } else if (networkVersion > cachedVersion) {
-                    freshNetworkData = rawData;
-                    updateBtn.classList.add('show');
-                }
-            } catch(e) {
-                if(!cachedString) renderGrid(); 
-            }
-        }
-
-        function applyUpdate() {
-            if(!freshNetworkData) return;
-            const category = activeCategories.find(c => c.id === selectedCategoryId);
-            const cacheKey = `wildlife_cache_${category.id}`;
-            localStorage.setItem(cacheKey, JSON.stringify(freshNetworkData));
-            currentItems = parseItems(freshNetworkData);
-            updateBtn.classList.remove('show');
-            renderGrid();
-        }
-
-        function parseItems(jsonArray) {
-            return jsonArray.map(obj => {
-                let facts = [];
-                let extraDetails = {};
-                if(obj.details) {
-                    for(const key in obj.details) {
-                        if(key === "ବିଶେଷ_ତଥ୍ୟ") {
-                            facts = obj.details[key];
-                        } else {
-                            extraDetails[key.replace(/_/g, ' ')] = obj.details[key];
-                        }
-                    }
-                }
-                return {
-                    odiaName: obj.odiaName || "Unknown",
-                    englishName: obj.name || "Unknown",
-                    scientificName: obj.scientificName || "",
-                    image: obj.image || "",
-                    category: obj.category || "",
-                    descriptionOdia: obj.descriptionOdia || "",
-                    facts: facts,
-                    extraDetails: extraDetails
-                };
-            });
-        }
-
-        // --- Offline Cache API Logic ---
-        async function checkDownloadStatus(catId) {
-            if('caches' in window) {
-                isCategoryDownloaded = await caches.has(`app_images_${catId}`);
-            }
-        }
-
-        async function triggerDownloadProcess() {
-            showDialog(
-                "ଅଫଲାଇନ୍ ଡାଉନଲୋଡ୍",
-                `ବିନା ଇଣ୍ଟରନେଟରେ ଦେଖିବା ପାଇଁ ଆପଣ ଏହି ବିଭାଗର ସମସ୍ତ ଫଟୋ ଡାଉନଲୋଡ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି? (ପାଖାପାଖି ${toOdiaDigits((currentItems.length * 0.15).toFixed(1))} ଏମବି ଡାଟା ଖର୍ଚ୍ଚ ହେବ)`,
-                [
-                    { text: "ବାତିଲ୍", action: closeDialog },
-                    { text: "ହଁ, ଡାଉନଲୋଡ୍ କରନ୍ତୁ", action: () => { closeDialog(); executeDownload(); }, primary: true }
-                ]
-            );
-        }
-
-        async function executeDownload() {
-            if(!('caches' in window)) return;
-            isDownloading = true;
-            renderControls();
-            
-            try {
-                const cacheName = `app_images_${selectedCategoryId}`;
-                const cache = await caches.open(cacheName);
-                
-                let count = 0;
-                for(let item of currentItems) {
-                    if(item.image) {
-                        try {
-                            await cache.add(item.image); 
-                        } catch(e) {}
-                    }
-                    count++;
-                    const pct = Math.floor((count / currentItems.length) * 100);
-                    const progressEl = document.getElementById('dlProgressText');
-                    if(progressEl) progressEl.innerText = `ଡାଉନଲୋଡ୍... ${toOdiaDigits(pct)}%`;
-                }
-                isCategoryDownloaded = true;
-            } catch(e) { console.log(e); }
-            
-            isDownloading = false;
-            renderControls();
-        }
-
-        async function triggerDeleteProcess() {
-            showDialog(
-                "ଡିଲିଟ୍ କରନ୍ତୁ",
-                "ଆପଣ ଏହି ବିଭାଗର ସମସ୍ତ ଅଫଲାଇନ୍ ଫଟୋ ଡିଲିଟ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି? ଏହାଦ୍ୱାରା ମୋବାଇଲର ଷ୍ଟୋରେଜ୍ ଖାଲି ହେବ।",
-                [
-                    { text: "ବାତିଲ୍", action: closeDialog },
-                    { text: "ହଁ, ଡିଲିଟ୍ କରନ୍ତୁ", action: () => { closeDialog(); executeDelete(); }, danger: true }
-                ]
-            );
-        }
-
-        async function executeDelete() {
-            if(!('caches' in window)) return;
-            await caches.delete(`app_images_${selectedCategoryId}`);
-            isCategoryDownloaded = false;
-            renderControls();
-        }
-
-        // UI Renders
-        function renderCategoryChips() {
-            catContainer.innerHTML = activeCategories.map(cat => `
-                <div class="category-chip ${cat.id === selectedCategoryId ? 'active' : ''}" 
-                     onclick="switchCategory('${cat.id}')">
-                    <span>${cat.icon}</span> ${cat.title}
-                </div>
-            `).join('');
-        }
-
-        function switchCategory(id) {
-            if(selectedCategoryId === id) return;
-            selectedCategoryId = id;
-            closeSearch();
-            renderCategoryChips();
-            const cat = activeCategories.find(c => c.id === id);
-            loadData(cat);
-            closeSheet(); 
-            
-            if(!isMobile()) {
-                document.getElementById('desktopPlaceholder').style.display = 'flex';
-                document.getElementById('sheetScrollArea').style.display = 'none';
-            }
-        }
-
-        function renderShimmer() {
-            let html = '';
-            for(let i=0; i<6; i++) {
-                html += `
-                <div class="shimmer-card">
-                    <div class="shimmer-img shimmer-anim"></div>
-                    <div class="shimmer-content">
-                        <div class="shimmer-line shimmer-anim"></div>
-                        <div class="shimmer-line short shimmer-anim"></div>
-                    </div>
-                </div>`;
-            }
-            gridContainer.innerHTML = html;
-        }
-        
-        function renderControls() {
-            if(!currentItems || currentItems.length === 0 || searchString.trim() !== "") {
-                controlsRow.style.display = 'none';
-                return;
-            }
-            controlsRow.style.display = 'flex';
-            
-            const totalCountText = `ମୋଟ: ${toOdiaDigits(currentItems.length)}`;
-            const estSize = toOdiaDigits((currentItems.length * 0.15).toFixed(1));
-            
-            let rightHtml = '';
-            
-            if (isDownloading) {
-                rightHtml = `<div class="download-progress" id="dlProgressText">ଡାଉନଲୋଡ୍... ୦%</div>`;
-            } else if (isCategoryDownloaded) {
-                rightHtml = `
-                    <div class="actions-wrapper">
-                        <div class="btn-action saved">
-                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            ସେଭ୍ ହୋଇଛି
-                        </div>
-                        <div class="btn-action delete" onclick="triggerDeleteProcess()">
-                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-                        </div>
-                    </div>
-                `;
-            } else {
-                rightHtml = `
-                    <div class="btn-action download" onclick="triggerDownloadProcess()">
-                        <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                        ଅଫଲାଇନ୍ ସେଭ୍ (~${estSize} ଏମବି)
-                    </div>
-                `;
-            }
-            
-            controlsRow.innerHTML = `
-                <div class="total-text">${totalCountText}</div>
-                ${rightHtml}
-            `;
-        }
-
-        function renderGrid() {
-            const filtered = searchString.trim() === "" ? currentItems : currentItems.filter(i => 
-                i.odiaName.toLowerCase().includes(searchString.toLowerCase()) || 
-                i.englishName.toLowerCase().includes(searchString.toLowerCase())
-            );
-
-            renderControls();
-
-            if(filtered.length === 0) {
-                gridContainer.innerHTML = `<div class="empty-state">କିଛି ମିଳିଲା ନାହିଁ 😕</div>`;
-                return;
-            }
-
-            // ADDED loading="lazy" for massively improved performance/smoothness!
-            gridContainer.innerHTML = filtered.map((item, index) => `
-                <div class="card" onclick="openSheet(${index})">
-                    <img src="${item.image}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_IMG_SRC}';" alt="${item.odiaName}">
-                    <div class="card-content">
-                        <div class="card-title">${item.odiaName}</div>
-                        <div class="card-subtitle">${item.englishName}</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Search Handlers
-        function openSearch() {
-            document.getElementById('headerTitle').style.display = 'none';
-            document.getElementById('searchBtn').style.display = 'none';
-            document.getElementById('notifWrapper').style.display = 'none';
-            document.getElementById('backBtn').style.display = 'flex';
-            document.getElementById('searchBar').classList.add('active');
-            document.getElementById('searchInput').focus();
-        }
-
-        function closeSearch() {
-            document.getElementById('headerTitle').style.display = 'block';
-            document.getElementById('searchBtn').style.display = 'flex';
-            document.getElementById('notifWrapper').style.display = 'block';
-            document.getElementById('backBtn').style.display = 'none';
-            document.getElementById('searchBar').classList.remove('active');
-            document.getElementById('searchInput').value = "";
-            searchString = "";
-            renderGrid();
-        }
-
-        function handleSearch() {
-            searchString = document.getElementById('searchInput').value;
-            renderGrid();
-        }
-
-        // Generic Dialog System
-        function showDialog(title, message, buttons) {
-            document.getElementById('dialogTitle').innerText = title;
-            document.getElementById('dialogTitle').style.color = buttons.some(b => b.danger) ? 'var(--delete-red)' : 'var(--text-primary)';
-            document.getElementById('dialogMsg').innerText = message;
-            
-            const actionsContainer = document.getElementById('dialogActions');
-            actionsContainer.innerHTML = '';
-            
-            buttons.forEach(btn => {
-                const b = document.createElement('button');
-                b.innerText = btn.text;
-                if(btn.danger) b.classList.add('danger');
-                b.onclick = btn.action;
-                actionsContainer.appendChild(b);
-            });
-            
-            document.getElementById('dialogOverlay').classList.add('active');
-            document.getElementById('customDialog').classList.add('active');
-        }
-
-        function closeDialog() {
-            document.getElementById('dialogOverlay').classList.remove('active');
-            document.getElementById('customDialog').classList.remove('active');
-        }
-
-        function showNotification() {
-            document.getElementById('notifDot').style.display = 'none';
-            showDialog(
-                appConfig.notifTitle, 
-                appConfig.notifMessage, 
-                [{ text: "ଠିକ୍ ଅଛି", action: closeDialog }]
-            );
-        }
-
-        // Details Logic (Bottom Sheet Mobile / Side Panel Desktop)
-        let currentItemForSheet = null;
-        function openSheet(index) {
-            if (isMobile()) {
-                let readCount = parseInt(localStorage.getItem('odiaAppReadCount') || '0');
-                if (readCount >= 5) {
-                    document.getElementById('forceAppOverlay').style.display = 'flex';
-                    return; 
-                }
-                localStorage.setItem('odiaAppReadCount', readCount + 1);
-            }
-
-            const filtered = searchString.trim() === "" ? currentItems : currentItems.filter(i => 
-                i.odiaName.toLowerCase().includes(searchString.toLowerCase()) || 
-                i.englishName.toLowerCase().includes(searchString.toLowerCase())
-            );
-            currentItemForSheet = filtered[index];
-            
-            document.getElementById('bsImage').src = currentItemForSheet.image;
-            document.getElementById('bsImage').onerror = function() { this.src=FALLBACK_IMG_SRC; };
-            document.getElementById('bsCategory').innerText = currentItemForSheet.category;
-            document.getElementById('bsOdiaName').innerText = currentItemForSheet.odiaName;
-            document.getElementById('bsEnglishName').innerText = currentItemForSheet.englishName;
-            
-            const scObj = document.getElementById('bsScName');
-            if(currentItemForSheet.scientificName && currentItemForSheet.scientificName !== "Unknown") {
-                scObj.innerText = "Sc: " + currentItemForSheet.scientificName;
-                scObj.style.display = "block";
-            } else {
-                scObj.style.display = "none";
-            }
-
-            document.getElementById('bsDesc').innerText = currentItemForSheet.descriptionOdia;
-
-            // Extra Details
-            const extraCont = document.getElementById('extraDetailsContainer');
-            if(Object.keys(currentItemForSheet.extraDetails).length > 0) {
-                extraCont.style.display = 'block';
-                let edHtml = `<h4>ଅଧିକ ତଥ୍ୟ</h4>`;
-                for(let key in currentItemForSheet.extraDetails) {
-                    let val = toOdiaDigits(currentItemForSheet.extraDetails[key]);
-                    edHtml += `<div class="ed-row"><div class="ed-key">${key} :</div><div class="ed-val">${val}</div></div>`;
-                }
-                extraCont.innerHTML = `<div class="extra-details-box">${edHtml}</div>`;
-            } else {
-                extraCont.style.display = 'none';
-            }
-
-            // Facts
-            const factsCont = document.getElementById('factsContainer');
-            const factsList = document.getElementById('factsList');
-            const scrollBtn = document.getElementById('scrollDownBtn');
-            
-            if(currentItemForSheet.facts && currentItemForSheet.facts.length > 0) {
-                factsCont.style.display = 'block';
-                factsList.innerHTML = currentItemForSheet.facts.map(f => `
-                    <div class="fact-item"><span>🐾</span><div>${toOdiaDigits(f)}</div></div>
-                `).join('');
-                scrollBtn.classList.remove('hidden');
-            } else {
-                factsCont.style.display = 'none';
-                scrollBtn.classList.add('hidden');
-            }
-
-            document.getElementById('desktopPlaceholder').style.display = 'none';
-            document.getElementById('sheetScrollArea').style.display = 'block';
-
-            if(isMobile()) {
-                document.getElementById('overlay').classList.add('active');
-                document.getElementById('bottomSheet').classList.add('active');
-            }
-            
-            document.getElementById('sheetScrollArea').scrollTop = 0;
-            setTimeout(checkScroll, 100); 
-        }
-
-        function closeSheet() {
-            if(isMobile()) {
-                document.getElementById('overlay').classList.remove('active');
-                document.getElementById('bottomSheet').classList.remove('active');
-            }
-        }
-
-        function checkScroll() {
-            const area = document.getElementById('sheetScrollArea');
-            const btn = document.getElementById('scrollDownBtn');
-            if(!currentItemForSheet || currentItemForSheet.facts.length === 0 || area.style.display === 'none') {
-                btn.classList.add('hidden');
-                return;
-            }
-            if(area.scrollTop + area.clientHeight >= area.scrollHeight - 50) {
-                btn.classList.add('hidden');
-            } else {
-                btn.classList.remove('hidden');
-            }
-        }
-
-        function scrollToBottom() {
-            const area = document.getElementById('sheetScrollArea');
-            area.scrollTo({ top: area.scrollHeight, behavior: 'smooth' });
-        }
-
-        // Full Screen Image
-        function openFullScreen() {
-            if(!currentItemForSheet) return;
-            document.getElementById('fsImage').src = currentItemForSheet.image;
-            document.getElementById('fsImage').onerror = function() { this.src=FALLBACK_IMG_SRC; };
-            document.getElementById('fsOverlay').classList.add('active');
-        }
-        function closeFullScreen() {
-            document.getElementById('fsOverlay').classList.remove('active');
-        }
-
-        window.addEventListener('resize', () => {
-            if(!isMobile()) {
-                document.getElementById('overlay').classList.remove('active');
-                document.getElementById('bottomSheet').classList.remove('active');
-                if(!currentItemForSheet) {
-                    document.getElementById('desktopPlaceholder').style.display = 'flex';
-                    document.getElementById('sheetScrollArea').style.display = 'none';
-                }
-            } else {
-                if(currentItemForSheet && document.getElementById('sheetScrollArea').style.display === 'block') {
-                    document.getElementById('overlay').classList.add('active');
-                    document.getElementById('bottomSheet').classList.add('active');
-                }
-            }
+          }
+          return {
+            odiaName: obj.odiaName || 'Unknown',
+            englishName: obj.name || 'Unknown',
+            scientificName: obj.scientificName || '',
+            image: obj.image || '',
+            category: obj.category || '',
+            descriptionOdia: obj.descriptionOdia || '',
+            facts,
+            extraDetails
+          };
         });
 
-        // Run
-        window.onload = init;
-    </script>
+        return { version, items, rawJson: typeof rawText === 'string' ? rawText : JSON.stringify(parsed) };
+      }
+
+      function getCachedCategory(catId) {
+        try {
+          const raw = localStorage.getItem(LS_CAT_PREFIX + catId);
+          return raw ? parseCategoryData(raw) : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function saveCachedCategory(catId, rawJson) {
+        try { localStorage.setItem(LS_CAT_PREFIX + catId, rawJson); } catch {}
+      }
+
+      async function fetchCategoryNetwork(cat) {
+        if (!cat || !cat.url) return null;
+        try {
+          const res = await fetch(cat.url, { cache: 'no-store' });
+          if (!res.ok) return null;
+          const text = await res.text();
+          return parseCategoryData(text);
+        } catch {
+          return null;
+        }
+      }
+
+      async function cacheImageOffline(url) {
+        if (!url) return;
+        try {
+          if ('caches' in window) {
+            const cache = await caches.open(CACHE_NAME);
+            const match = await cache.match(url);
+            if (!match) {
+              try {
+                await cache.add(new Request(url, { mode: 'no-cors' }));
+              } catch {}
+            }
+          }
+          // Preload into browser cache as well
+          await new Promise(resolve => {
+            const img = new Image();
+            img.onload = resolve;
+            img.onerror = resolve;
+            img.src = url;
+          });
+        } catch {}
+      }
+
+      // --- Header & Toolbar UI ---
+      function updateHeader() {
+        const inCategory = Boolean(state.selectedCategory);
+        el.backBtn.classList.toggle('hidden', !inCategory && !state.isSearchActive);
+        el.searchBtn.classList.toggle('hidden', !inCategory);
+
+        el.headerTitle.textContent = inCategory
+          ? displayCategoryTitle(state.selectedCategory)
+          : 'ଆସ ଜାଣିବା';
+
+        if (state.isSearchActive && inCategory) {
+          el.headerTitleRow.classList.add('hidden');
+          el.searchBox.classList.add('active');
+          el.searchClearBtn.classList.toggle('visible', state.searchQuery.length > 0);
+        } else {
+          el.headerTitleRow.classList.remove('hidden');
+          el.searchBox.classList.remove('active');
+        }
+      }
+
+      function renderCategoryOfflinePill() {
+        if (state.isDownloading || state.activeCategories.length === 0) {
+          el.categoryOfflineSlot.innerHTML = '';
+          return;
+        }
+        const allDone = state.activeCategories.every(c => state.downloadedIds.has(c.id));
+        if (allDone) {
+          el.categoryOfflineSlot.innerHTML = `
+            <span class="pill pill-green">${ICON_CHECK}<span>ସବୁ ସେଭ୍ ହୋଇଛି</span></span>
+          `;
+        } else {
+          el.categoryOfflineSlot.innerHTML = `
+            <button class="pill pill-orange" id="dlAllBtn">${ICON_DL}<span>ସବୁ ଅଫଲାଇନ୍ ସେଭ୍</span></button>
+          `;
+          document.getElementById('dlAllBtn').onclick = openDownloadDialog;
+        }
+      }
+
+      function renderGridOfflinePill() {
+        const cat = state.selectedCategory;
+        if (!cat || state.isLoadingItems || state.itemsList.length === 0 || state.isDownloading) {
+          el.gridOfflineSlot.innerHTML = '';
+          return;
+        }
+        if (state.downloadedIds.has(cat.id)) {
+          el.gridOfflineSlot.innerHTML = `
+            <div class="saved-group">
+              <span class="pill pill-green">${ICON_CHECK}<span>ସେଭ୍ ହୋଇଛି</span></span>
+              <button class="del-circle" id="deleteOfflineBtn" aria-label="ଡିଲିଟ୍">${ICON_TRASH}</button>
+            </div>
+          `;
+          document.getElementById('deleteOfflineBtn').onclick = openDeleteDialog;
+        } else {
+          const estMB = toOdia((state.itemsList.length * 0.15).toFixed(1));
+          el.gridOfflineSlot.innerHTML = `
+            <button class="pill pill-orange" id="dlCatBtn">${ICON_DL}<span>ଅଫଲାଇନ୍ ସେଭ୍ (~${estMB} ଏମବି)</span></button>
+          `;
+          document.getElementById('dlCatBtn').onclick = openDownloadDialog;
+        }
+      }
+
+      // --- Render Shimmers ---
+      function renderCategoryShimmers() {
+        el.categoryToolbar.classList.add('hidden');
+        el.configErrorView.classList.add('hidden');
+        el.categoryList.innerHTML = Array.from({ length: 4 }).map(() => `
+          <div class="shimmer-banner">
+            <div style="flex:1;">
+              <div class="shimmer" style="height:24px;width:65%;border-radius:8px;"></div>
+              <div class="shimmer" style="height:14px;width:45%;border-radius:6px;margin-top:10px;"></div>
+            </div>
+            <div class="shimmer" style="width:88px;height:88px;border-radius:18px;"></div>
+          </div>
+        `).join('');
+      }
+
+      function renderGridShimmers() {
+        el.gridToolbar.classList.add('hidden');
+        el.emptyItemsView.classList.add('hidden');
+        el.itemsGrid.innerHTML = Array.from({ length: 6 }).map(() => `
+          <div class="shimmer-card">
+            <div style="flex:1;padding:6px;">
+              <div class="shimmer" style="width:100%;height:100%;border-radius:16px;"></div>
+            </div>
+            <div style="background:var(--footer-bg);padding:12px;display:flex;flex-direction:column;align-items:center;gap:8px;">
+              <div class="shimmer" style="height:17px;width:78%;border-radius:5px;"></div>
+              <div class="shimmer" style="height:12px;width:52%;border-radius:5px;"></div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // --- Render Category List ---
+      function renderCategories() {
+        el.configErrorView.classList.add('hidden');
+        el.categoryToolbar.classList.remove('hidden');
+        renderCategoryOfflinePill();
+
+        el.categoryList.innerHTML = state.activeCategories.map(cat => {
+          const preview = state.previews[cat.id];
+          const isSaved = state.downloadedIds.has(cat.id);
+          const badgeText = cat.tag && cat.tag.trim() ? cat.tag.trim() : (cat.isNew ? 'ନୂତନ' : '');
+          const badgeClass = badgeText === 'ନୂତନ' ? 'new' : 'custom';
+          const countText = preview && preview.itemCount > 0
+            ? `ମୋଟ ${toOdia(preview.itemCount)}ଟି • ଦେଖନ୍ତୁ →`
+            : 'ଦେଖନ୍ତୁ →';
+
+          const imgBlock = preview && preview.firstImage
+            ? `<div class="cat-img-wrap shimmer">
+                 <img class="cat-img" src="${escapeHtml(preview.firstImage)}" alt="${escapeHtml(cat.title)}" loading="lazy"
+                      onload="this.classList.add('loaded');this.parentElement.classList.remove('shimmer');"
+                      onerror="this.parentElement.classList.remove('shimmer');this.parentElement.innerHTML='<div class=\\'cat-fallback-icon\\'>${escapeHtml(cat.icon || '📘')}</div>';" />
+               </div>`
+            : `<div class="cat-img-wrap shimmer"></div>`;
+
+          return `
+            <button class="cat-banner" data-cat-id="${escapeHtml(cat.id)}">
+              ${imgBlock}
+              <div class="cat-fade"></div>
+              <div class="cat-content">
+                <div class="cat-badges">
+                  ${badgeText ? `<span class="tag-pill ${badgeClass}">${escapeHtml(badgeText)}</span>` : ''}
+                  ${isSaved ? `<span class="saved-mini">${ICON_CHECK} ସେଭ୍</span>` : ''}
+                </div>
+                <h2 class="cat-title">${escapeHtml(displayCategoryTitle(cat))}</h2>
+                <div class="cat-count">${countText}</div>
+              </div>
+            </button>
+          `;
+        }).join('');
+
+        el.categoryList.querySelectorAll('.cat-banner').forEach(card => {
+          card.addEventListener('click', () => {
+            const cat = state.activeCategories.find(c => c.id === card.dataset.catId);
+            const titleEl = card.querySelector('.cat-title');
+            if (cat) openCategory(cat, titleEl);
+          });
+        });
+      }
+
+      function updateSingleCategoryBanner(catId) {
+        const card = el.categoryList.querySelector(`.cat-banner[data-cat-id="${CSS.escape(catId)}"]`);
+        const preview = state.previews[catId];
+        if (!card || !preview) return;
+
+        const countEl = card.querySelector('.cat-count');
+        if (countEl && preview.itemCount > 0) {
+          countEl.textContent = `ମୋଟ ${toOdia(preview.itemCount)}ଟି • ଦେଖନ୍ତୁ →`;
+        }
+        const wrap = card.querySelector('.cat-img-wrap');
+        if (wrap && preview.firstImage && !wrap.querySelector('img')) {
+          const cat = state.activeCategories.find(c => c.id === catId);
+          const img = document.createElement('img');
+          img.className = 'cat-img';
+          img.loading = 'lazy';
+          img.alt = cat ? cat.title : '';
+          img.src = preview.firstImage;
+          img.onload = () => {
+            img.classList.add('loaded');
+            wrap.classList.remove('shimmer');
+          };
+          img.onerror = () => {
+            wrap.classList.remove('shimmer');
+            wrap.innerHTML = `<div class="cat-fallback-icon">${escapeHtml((cat && cat.icon) || '📘')}</div>`;
+          };
+          wrap.appendChild(img);
+        }
+      }
+
+      // --- Render Items Grid ---
+      function getFilteredItems() {
+        const q = state.searchQuery.trim().toLowerCase();
+        if (!q) return state.itemsList;
+        return state.itemsList.filter(it =>
+          it.odiaName.toLowerCase().includes(q) ||
+          it.englishName.toLowerCase().includes(q)
+        );
+      }
+
+      function renderItemsGrid() {
+        if (state.isLoadingItems) {
+          renderGridShimmers();
+          return;
+        }
+        const displayed = getFilteredItems();
+
+        if (displayed.length === 0) {
+          el.gridToolbar.classList.toggle('hidden', state.itemsList.length === 0);
+          el.gridCountPill.textContent = `ମୋଟ: ${toOdia(0)}`;
+          el.itemsGrid.innerHTML = '';
+          el.emptyItemsView.classList.remove('hidden');
+          renderGridOfflinePill();
+          return;
+        }
+
+        el.gridToolbar.classList.remove('hidden');
+        el.emptyItemsView.classList.add('hidden');
+        el.gridCountPill.textContent = `ମୋଟ: ${toOdia(displayed.length)}`;
+        renderGridOfflinePill();
+
+        el.itemsGrid.innerHTML = displayed.map((item, idx) => `
+          <article class="item-card" data-idx="${idx}" style="animation-delay:${Math.min(idx * 25, 240)}ms">
+            <div class="item-img-wrap">
+              <div class="item-img-frame shimmer">
+                <img class="item-img" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.odiaName)}" loading="lazy"
+                     onload="this.classList.add('loaded');this.parentElement.classList.remove('shimmer');"
+                     onerror="this.parentElement.classList.remove('shimmer');this.style.opacity=0.25;" />
+              </div>
+            </div>
+            <div class="item-footer">
+              <div class="item-odia">${escapeHtml(item.odiaName)}</div>
+              <div class="item-eng">${escapeHtml(item.englishName)}</div>
+            </div>
+          </article>
+        `).join('');
+
+        el.itemsGrid.querySelectorAll('.item-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const item = displayed[Number(card.dataset.idx)];
+            const imgEl = card.querySelector('.item-img-frame');
+            if (item) openDetailModal(item, imgEl);
+          });
+        });
+      }
+
+      // --- Shared Category Title Glide Transition ---
+      function animateSharedTitle(text, fromRect, toRect, fromScale, toScale, onDone) {
+        const ghost = document.createElement('div');
+        ghost.className = 'shared-title-ghost';
+        ghost.textContent = text;
+        ghost.style.left = `${fromRect.left}px`;
+        ghost.style.top = `${fromRect.top}px`;
+        ghost.style.transform = `translate3d(0, 0, 0) scale(${fromScale})`;
+        document.body.appendChild(ghost);
+
+        const dx = toRect.left - fromRect.left;
+        const dy = toRect.top - fromRect.top;
+
+        requestAnimationFrame(() => {
+          ghost.style.transition = 'transform 0.38s cubic-bezier(0.22, 1, 0.36, 1)';
+          ghost.style.transform = `translate3d(${dx}px, ${dy}px, 0) scale(${toScale})`;
+        });
+
+        setTimeout(() => {
+          ghost.remove();
+          onDone && onDone();
+        }, 390);
+      }
+
+      async function openCategory(category, sourceTitleEl) {
+        if (state.isTransitioning) return;
+        state.isTransitioning = true;
+
+        const sourceRect = sourceTitleEl ? sourceTitleEl.getBoundingClientRect() : null;
+        state.selectedCategory = category;
+        state.isSearchActive = false;
+        state.searchQuery = '';
+        el.searchInput.value = '';
+        state.isUpdateAvailable = false;
+        state.latestNetworkData = null;
+        el.updateFab.classList.remove('visible');
+
+        updateHeader();
+        history.pushState({ view: 'grid', catId: category.id }, '');
+
+        const headerRect = el.headerTitle.getBoundingClientRect();
+
+        if (sourceRect && sourceTitleEl) {
+          sourceTitleEl.classList.add('invisible-shared');
+          el.headerTitle.classList.add('invisible-shared');
+          animateSharedTitle(displayCategoryTitle(category), sourceRect, headerRect, 23 / 22, 1, () => {
+            el.headerTitle.classList.remove('invisible-shared');
+            sourceTitleEl.classList.remove('invisible-shared');
+          });
+        }
+
+        el.categoryScreen.classList.add('fading-out');
+        loadCategoryItems(category);
+
+        setTimeout(() => {
+          el.categoryScreen.classList.add('hidden');
+          el.categoryScreen.classList.remove('fading-out');
+
+          el.gridScreen.classList.remove('hidden');
+          el.gridScreen.classList.add('entering');
+          window.scrollTo({ top: 0, behavior: 'instant' });
+
+          requestAnimationFrame(() => {
+            el.gridScreen.classList.remove('entering');
+            el.gridScreen.classList.add('active');
+          });
+
+          setTimeout(() => { state.isTransitioning = false; }, 340);
+        }, 120);
+      }
+
+      function goBackToCategoryList() {
+        if (state.isTransitioning || !state.selectedCategory) return;
+        state.isTransitioning = true;
+        const prevCat = state.selectedCategory;
+
+        state.isSearchActive = false;
+        state.searchQuery = '';
+        el.searchInput.value = '';
+        el.updateFab.classList.remove('visible');
+
+        const headerRect = el.headerTitle.getBoundingClientRect();
+
+        el.gridScreen.classList.remove('active');
+        el.gridScreen.classList.add('entering');
+
+        setTimeout(() => {
+          el.gridScreen.classList.add('hidden');
+          el.gridScreen.classList.remove('entering');
+
+          state.selectedCategory = null;
+          updateHeader();
+          renderCategories();
+
+          el.categoryScreen.classList.remove('hidden');
+          el.categoryScreen.classList.add('fading-out');
+
+          const targetCard = el.categoryList.querySelector(`.cat-banner[data-cat-id="${CSS.escape(prevCat.id)}"]`);
+          const targetTitle = targetCard ? targetCard.querySelector('.cat-title') : null;
+
+          requestAnimationFrame(() => {
+            if (targetTitle) {
+              const targetRect = targetTitle.getBoundingClientRect();
+              targetTitle.classList.add('invisible-shared');
+              animateSharedTitle(displayCategoryTitle(prevCat), headerRect, targetRect, 1, 23 / 22, () => {
+                targetTitle.classList.remove('invisible-shared');
+              });
+            }
+            el.categoryScreen.classList.remove('fading-out');
+          });
+
+          setTimeout(() => { state.isTransitioning = false; }, 360);
+        }, 140);
+      }
+
+      // --- Data Loading ---
+      async function loadAppConfig() {
+        loadDownloadedIds();
+        const cached = getCachedConfig();
+
+        if (cached && cached.categories.length > 0) {
+          applyAppConfig(cached);
+        } else {
+          renderCategoryShimmers();
+        }
+
+        try {
+          const res = await fetch(APP_CONFIG_URL, { cache: 'no-store' });
+          if (!res.ok) throw new Error('Network error');
+          const rawText = await res.text();
+          const netConfig = parseAppConfig(rawText);
+
+          const shouldUpdate = !cached || netConfig.version >= cached.version;
+          if (shouldUpdate) {
+            saveCachedConfig(rawText);
+            applyAppConfig(netConfig);
+          } else {
+            state.appConfig.maintenanceMode = netConfig.maintenanceMode;
+            state.appConfig.maintenanceMessage = netConfig.maintenanceMessage;
+            syncMaintenanceView();
+          }
+        } catch {
+          if (!cached || cached.categories.length === 0) {
+            el.categoryList.innerHTML = '';
+            el.categoryToolbar.classList.add('hidden');
+            el.configErrorView.classList.remove('hidden');
+          }
+        }
+      }
+
+      function syncMaintenanceView() {
+        const maint = state.appConfig.maintenanceMode;
+        el.maintenanceView.classList.toggle('hidden', !maint);
+        el.mainStage.classList.toggle('hidden', maint);
+        el.maintenanceMsg.textContent =
+          state.appConfig.maintenanceMessage || 'ସର୍ଭର ମେଣ୍ଟେନାନ୍ସ ଚାଲିଛି...';
+      }
+
+      function applyAppConfig(cfg) {
+        state.appConfig = cfg;
+        state.activeCategories = cfg.categories.filter(c => !cfg.hiddenTabs.includes(c.id));
+        syncMaintenanceView();
+        if (!cfg.maintenanceMode) {
+          renderCategories();
+          fetchAllCategoryPreviews();
+        }
+      }
+
+      function fetchAllCategoryPreviews() {
+        state.activeCategories.forEach(async cat => {
+          const cached = getCachedCategory(cat.id);
+          if (cached && cached.items.length > 0) {
+            state.previews[cat.id] = {
+              firstImage: cached.items[0].image || '',
+              itemCount: cached.items.length
+            };
+            updateSingleCategoryBanner(cat.id);
+          }
+
+          const net = await fetchCategoryNetwork(cat);
+          if (net && net.items.length > 0) {
+            if (!cached || cached.items.length === 0) {
+              saveCachedCategory(cat.id, net.rawJson);
+            }
+            state.previews[cat.id] = {
+              firstImage: net.items[0].image || '',
+              itemCount: net.items.length
+            };
+            updateSingleCategoryBanner(cat.id);
+          }
+        });
+      }
+
+      async function loadCategoryItems(category) {
+        state.isLoadingItems = true;
+        state.isUpdateAvailable = false;
+        state.latestNetworkData = null;
+        el.updateFab.classList.remove('visible');
+        renderItemsGrid();
+
+        const cached = getCachedCategory(category.id);
+        if (cached && cached.items.length > 0) {
+          state.itemsList = cached.items;
+          state.isLoadingItems = false;
+          renderItemsGrid();
+        }
+
+        const net = await fetchCategoryNetwork(category);
+        if (state.selectedCategory?.id !== category.id) return;
+
+        if (net) {
+          if (!cached || cached.items.length === 0) {
+            state.itemsList = net.items;
+            state.isLoadingItems = false;
+            saveCachedCategory(category.id, net.rawJson);
+            state.previews[category.id] = {
+              firstImage: net.items[0]?.image || '',
+              itemCount: net.items.length
+            };
+            renderItemsGrid();
+          } else if (net.version > cached.version) {
+            state.latestNetworkData = net;
+            state.isUpdateAvailable = true;
+            el.updateFab.classList.add('visible');
+          }
+        } else {
+          state.isLoadingItems = false;
+          renderItemsGrid();
+        }
+      }
+
+      // --- Shared-Element Animated Item Detail Modal ---
+      function buildDetailBodyHtml(item) {
+        const extraEntries = Object.entries(item.extraDetails || {});
+        const extraHtml = extraEntries.length > 0 ? `
+          <div class="extra-card">
+            <h3 class="section-heading">📖 ଅଧିକ ତଥ୍ୟ</h3>
+            ${extraEntries.map(([k, v]) => `
+              <div class="extra-row">
+                <span class="extra-key">${escapeHtml(k.replace(/_/g, ' '))} :</span>
+                <span class="extra-val">${escapeHtml(toOdia(v))}</span>
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        const factsHtml = item.facts && item.facts.length > 0 ? `
+          <div class="facts-wrap" id="factsSection">
+            <h3 class="section-heading">🎯 ବିଶେଷ ତଥ୍ୟ</h3>
+            ${item.facts.map(f => `
+              <div class="fact-card">
+                <span>🐾</span>
+                <span>${escapeHtml(toOdia(f))}</span>
+              </div>
+            `).join('')}
+          </div>
+        ` : '';
+
+        return `
+          ${item.category ? `<span class="detail-cat-chip">🌟 ${escapeHtml(item.category)}</span>` : ''}
+          <h2 class="detail-odia">${escapeHtml(item.odiaName)}</h2>
+          <p class="detail-eng">${escapeHtml(item.englishName)}</p>
+          ${item.scientificName && item.scientificName !== 'Unknown'
+            ? `<p class="detail-sci">Sc: ${escapeHtml(item.scientificName)}</p>` : ''}
+          <div class="detail-divider"></div>
+          <p class="detail-desc">${escapeHtml(item.descriptionOdia)}</p>
+          ${extraHtml}
+          ${factsHtml}
+        `;
+      }
+
+      function syncScrollDownFab() {
+        const hasFacts = state.activeItem && state.activeItem.facts && state.activeItem.facts.length > 0;
+        const sc = el.detailScroll;
+        const remaining = sc.scrollHeight - sc.scrollTop - sc.clientHeight;
+        el.scrollDownFab.classList.toggle('visible', Boolean(hasFacts && remaining > 50));
+      }
+
+      function openDetailModal(item, sourceEl) {
+        state.activeItem = item;
+        state.sourceImgEl = sourceEl || null;
+        document.body.classList.add('no-scroll');
+
+        el.detailHeroImg.src = item.image || '';
+        el.detailHeroImg.alt = item.odiaName;
+        el.detailBody.innerHTML = buildDetailBodyHtml(item);
+        el.detailScroll.scrollTop = 0;
+
+        el.detailOverlay.classList.add('open');
+        history.pushState({ view: 'detail' }, '');
+
+        const srcRect = sourceEl ? sourceEl.getBoundingClientRect() : null;
+
+        if (srcRect && item.image) {
+          el.detailHero.classList.add('hidden-for-flight');
+
+          requestAnimationFrame(() => {
+            el.detailOverlay.classList.add('visible');
+            const destRect = el.detailHero.getBoundingClientRect();
+
+            const ghost = document.createElement('img');
+            ghost.src = item.image;
+            ghost.className = 'flying-img-ghost';
+            ghost.style.left = `${srcRect.left}px`;
+            ghost.style.top = `${srcRect.top}px`;
+            ghost.style.width = `${srcRect.width}px`;
+            ghost.style.height = `${srcRect.height}px`;
+            ghost.style.borderRadius = '16px';
+            document.body.appendChild(ghost);
+
+            requestAnimationFrame(() => {
+              ghost.style.transition = 'all 0.36s cubic-bezier(0.22, 1, 0.36, 1)';
+              ghost.style.left = `${destRect.left}px`;
+              ghost.style.top = `${destRect.top}px`;
+              ghost.style.width = `${destRect.width}px`;
+              ghost.style.height = `${destRect.height}px`;
+              ghost.style.borderRadius = '24px';
+            });
+
+            setTimeout(() => {
+              el.detailHero.classList.remove('hidden-for-flight');
+              ghost.remove();
+              syncScrollDownFab();
+            }, 370);
+          });
+        } else {
+          requestAnimationFrame(() => {
+            el.detailOverlay.classList.add('visible');
+            setTimeout(syncScrollDownFab, 320);
+          });
+        }
+      }
+
+      function closeDetailModal() {
+        if (!state.activeItem) return;
+        const item = state.activeItem;
+        const sourceEl = state.sourceImgEl;
+
+        el.scrollDownFab.classList.remove('visible');
+        el.detailScroll.scrollTop = 0;
+
+        const srcRect = sourceEl && document.body.contains(sourceEl)
+          ? sourceEl.getBoundingClientRect()
+          : null;
+        const fromRect = el.detailHero.getBoundingClientRect();
+
+        if (srcRect && item.image && srcRect.bottom > 0 && srcRect.top < window.innerHeight) {
+          el.detailHero.classList.add('hidden-for-flight');
+          const ghost = document.createElement('img');
+          ghost.src = item.image;
+          ghost.className = 'flying-img-ghost';
+          ghost.style.left = `${fromRect.left}px`;
+          ghost.style.top = `${fromRect.top}px`;
+          ghost.style.width = `${fromRect.width}px`;
+          ghost.style.height = `${fromRect.height}px`;
+          ghost.style.borderRadius = '24px';
+          document.body.appendChild(ghost);
+
+          el.detailOverlay.classList.remove('visible');
+
+          requestAnimationFrame(() => {
+            ghost.style.transition = 'all 0.28s cubic-bezier(0.4, 0, 0.2, 1)';
+            ghost.style.left = `${srcRect.left}px`;
+            ghost.style.top = `${srcRect.top}px`;
+            ghost.style.width = `${srcRect.width}px`;
+            ghost.style.height = `${srcRect.height}px`;
+            ghost.style.borderRadius = '16px';
+          });
+
+          setTimeout(() => {
+            ghost.remove();
+            el.detailHero.classList.remove('hidden-for-flight');
+            el.detailOverlay.classList.remove('open');
+            document.body.classList.remove('no-scroll');
+            state.activeItem = null;
+            state.sourceImgEl = null;
+          }, 290);
+        } else {
+          el.detailOverlay.classList.remove('visible');
+          setTimeout(() => {
+            el.detailOverlay.classList.remove('open');
+            document.body.classList.remove('no-scroll');
+            state.activeItem = null;
+            state.sourceImgEl = null;
+          }, 260);
+        }
+      }
+
+      // --- Full-Screen Zoom-Anywhere Viewer (Pinch, Pan, Wheel & Double-Tap) ---
+      const zoom = {
+        scale: 1,
+        x: 0,
+        y: 0,
+        pointers: new Map(),
+        startDist: 0,
+        startScale: 1,
+        lastMid: null,
+        lastTapTime: 0,
+        lastTapPos: { x: 0, y: 0 },
+        dragMoved: false
+      };
+
+      function clampZoomOffset(nx, ny, s) {
+        if (s <= 1) return { x: 0, y: 0 };
+        const maxX = (window.innerWidth * (s - 1)) / 2;
+        const maxY = (window.innerHeight * (s - 1)) / 2;
+        return {
+          x: Math.max(-maxX, Math.min(maxX, nx)),
+          y: Math.max(-maxY, Math.min(maxY, ny))
+        };
+      }
+
+      function applyZoomTransform(animated = false) {
+        el.zoomImg.style.transition = animated ? 'transform 0.3s cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
+        el.zoomImg.style.transform = `translate3d(${zoom.x}px, ${zoom.y}px, 0) scale(${zoom.scale})`;
+      }
+
+      function openZoomViewer() {
+        if (!state.activeItem || !state.activeItem.image) return;
+        state.isZoomOpen = true;
+        zoom.scale = 1;
+        zoom.x = 0;
+        zoom.y = 0;
+        zoom.pointers.clear();
+
+        el.zoomImg.src = state.activeItem.image;
+        el.zoomImg.alt = state.activeItem.odiaName;
+        el.zoomImg.style.transition = 'none';
+        el.zoomImg.style.transform = 'scale(0.86)';
+
+        el.zoomOverlay.classList.add('open');
+        history.pushState({ view: 'zoom' }, '');
+
+        requestAnimationFrame(() => {
+          el.zoomOverlay.classList.add('visible');
+          applyZoomTransform(true);
+        });
+      }
+
+      function closeZoomViewer() {
+        if (!state.isZoomOpen) return;
+        state.isZoomOpen = false;
+        el.zoomOverlay.classList.remove('visible');
+        setTimeout(() => {
+          el.zoomOverlay.classList.remove('open');
+          zoom.scale = 1;
+          zoom.x = 0;
+          zoom.y = 0;
+        }, 240);
+      }
+
+      function zoomAtPoint(clientX, clientY, targetScale) {
+        const clampedScale = Math.max(1, Math.min(4.5, targetScale));
+        if (clampedScale <= 1.01) {
+          zoom.scale = 1;
+          zoom.x = 0;
+          zoom.y = 0;
+          applyZoomTransform(true);
+          return;
+        }
+        const cx = window.innerWidth / 2;
+        const cy = window.innerHeight / 2;
+        const fx = clientX - cx;
+        const fy = clientY - cy;
+        const factor = clampedScale / zoom.scale;
+        const rawX = (zoom.x - fx) * factor + fx;
+        const rawY = (zoom.y - fy) * factor + fy;
+        const clamped = clampZoomOffset(rawX, rawY, clampedScale);
+        zoom.scale = clampedScale;
+        zoom.x = clamped.x;
+        zoom.y = clamped.y;
+        applyZoomTransform(true);
+      }
+
+      el.zoomOverlay.addEventListener('pointerdown', e => {
+        if (e.target.closest('.zoom-close')) return;
+        el.zoomOverlay.setPointerCapture(e.pointerId);
+        zoom.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        zoom.dragMoved = false;
+
+        if (zoom.pointers.size === 2) {
+          const pts = [...zoom.pointers.values()];
+          zoom.startDist = Math.hypot(pts[1].x - pts[0].x, pts[1].y - pts[0].y);
+          zoom.startScale = zoom.scale;
+          zoom.lastMid = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 };
+        } else if (zoom.pointers.size === 1) {
+          zoom.lastMid = { x: e.clientX, y: e.clientY };
+        }
+      });
+
+      el.zoomOverlay.addEventListener('pointermove', e => {
+        if (!zoom.pointers.has(e.pointerId)) return;
+        const prev = zoom.pointers.get(e.pointerId);
+        zoom.pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+        if (zoom.pointers.size === 2) {
+          zoom.dragMoved = true;
+          const pts = [...zoom.pointers.values()];
+          const dist = Math.hypot(pts[1].x - pts[0].x, pts[1].y - pts[0].y);
+          const mid = { x: (pts[0].x + pts[1].x) / 2, y: (pts[0].y + pts[1].y) / 2 };
+          if (zoom.startDist > 0) {
+            const newScale = Math.max(1, Math.min(4.5, zoom.startScale * (dist / zoom.startDist)));
+            const factor = newScale / zoom.scale;
+            const cx = window.innerWidth / 2;
+            const cy = window.innerHeight / 2;
+            const dx = zoom.lastMid ? mid.x - zoom.lastMid.x : 0;
+            const dy = zoom.lastMid ? mid.y - zoom.lastMid.y : 0;
+            const fx = mid.x - cx;
+            const fy = mid.y - cy;
+            const clamped = clampZoomOffset(
+              (zoom.x + dx - fx) * factor + fx,
+              (zoom.y + dy - fy) * factor + fy,
+              newScale
+            );
+            zoom.scale = newScale;
+            zoom.x = clamped.x;
+            zoom.y = clamped.y;
+            applyZoomTransform(false);
+          }
+          zoom.lastMid = mid;
+        } else if (zoom.pointers.size === 1 && zoom.scale > 1.01) {
+          const dx = e.clientX - prev.x;
+          const dy = e.clientY - prev.y;
+          if (Math.hypot(dx, dy) > 2) zoom.dragMoved = true;
+          const clamped = clampZoomOffset(zoom.x + dx, zoom.y + dy, zoom.scale);
+          zoom.x = clamped.x;
+          zoom.y = clamped.y;
+          applyZoomTransform(false);
+        }
+      });
+
+      el.zoomOverlay.addEventListener('pointerup', e => {
+        if (!zoom.pointers.has(e.pointerId)) return;
+        zoom.pointers.delete(e.pointerId);
+
+        if (zoom.pointers.size === 0 && !zoom.dragMoved) {
+          const now = Date.now();
+          const tapDist = Math.hypot(e.clientX - zoom.lastTapPos.x, e.clientY - zoom.lastTapPos.y);
+          if (now - zoom.lastTapTime < 280 && tapDist < 40) {
+            zoom.lastTapTime = 0;
+            if (zoom.scale > 1.08) {
+              zoomAtPoint(e.clientX, e.clientY, 1);
+            } else {
+              zoomAtPoint(e.clientX, e.clientY, 2.6);
+            }
+          } else {
+            zoom.lastTapTime = now;
+            zoom.lastTapPos = { x: e.clientX, y: e.clientY };
+          }
+        }
+      });
+
+      el.zoomOverlay.addEventListener('wheel', e => {
+        e.preventDefault();
+        const delta = e.deltaY < 0 ? 1.18 : 0.85;
+        zoomAtPoint(e.clientX, e.clientY, zoom.scale * delta);
+      }, { passive: false });
+
+      // --- Download / Delete Dialogs & Offline Jobs ---
+      function openDialog({ title, titleColor, desc, buttons }) {
+        el.dialogTitle.textContent = title;
+        el.dialogTitle.style.color = titleColor || 'var(--text)';
+        el.dialogDesc.textContent = desc;
+        el.dialogActions.innerHTML = '';
+
+        buttons.forEach(btn => {
+          const b = document.createElement('button');
+          b.className = `dialog-btn ${btn.cls}`;
+          b.textContent = btn.label;
+          b.onclick = () => { closeDialog(); btn.onClick(); };
+          el.dialogActions.appendChild(b);
+        });
+
+        el.actionDialog.classList.add('open');
+        requestAnimationFrame(() => el.actionDialog.classList.add('visible'));
+      }
+
+      function closeDialog() {
+        el.actionDialog.classList.remove('visible');
+        setTimeout(() => el.actionDialog.classList.remove('open'), 220);
+      }
+
+      function setDownloadBanner(visible, text = '', pct = 0) {
+        state.isDownloading = visible;
+        el.dlBannerWrap.classList.toggle('visible', visible);
+        if (visible) {
+          el.dlStatusText.textContent = text || 'ଡାଉନଲୋଡ୍ ଚାଲିଛି...';
+          const p = Math.round(pct * 100);
+          el.dlPctText.textContent = `${toOdia(p)}%`;
+          el.dlProgressFill.style.width = `${p}%`;
+        }
+        renderCategoryOfflinePill();
+        renderGridOfflinePill();
+      }
+
+      async function downloadSingleCategory(cat) {
+        setDownloadBanner(true, `${displayCategoryTitle(cat)} ସେଭ୍ ହେଉଛି...`, 0);
+        const net = await fetchCategoryNetwork(cat);
+        let items = state.itemsList;
+        if (net) {
+          saveCachedCategory(cat.id, net.rawJson);
+          items = net.items;
+        }
+        const total = Math.max(items.length, 1);
+        for (let i = 0; i < items.length; i++) {
+          if (items[i].image) await cacheImageOffline(items[i].image);
+          setDownloadBanner(true, `${displayCategoryTitle(cat)} ସେଭ୍ ହେଉଛି...`, (i + 1) / total);
+        }
+        state.downloadedIds.add(cat.id);
+        saveDownloadedIds();
+        setTimeout(() => {
+          setDownloadBanner(false);
+          if (!state.selectedCategory) renderCategories();
+        }, 350);
+      }
+
+      async function downloadAllCategories() {
+        const cats = [...state.activeCategories];
+        setDownloadBanner(true, 'ସବୁ ବିଭାଗ ପ୍ରସ୍ତୁତ ହେଉଛି...', 0);
+        const bundles = [];
+
+        for (const cat of cats) {
+          setDownloadBanner(true, `${displayCategoryTitle(cat)} ତଥ୍ୟ ଅଣାଯାଉଛି...`, 0);
+          const net = await fetchCategoryNetwork(cat);
+          const data = net ? (saveCachedCategory(cat.id, net.rawJson), net) : getCachedCategory(cat.id);
+          if (data) bundles.push({ cat, items: data.items });
+        }
+
+        const total = Math.max(bundles.reduce((s, b) => s + b.items.length, 0), 1);
+        let done = 0;
+        for (const b of bundles) {
+          for (const item of b.items) {
+            if (item.image) await cacheImageOffline(item.image);
+            done++;
+            setDownloadBanner(true, `${displayCategoryTitle(b.cat)} ଡାଉନଲୋଡ୍ ହେଉଛି...`, done / total);
+          }
+          state.downloadedIds.add(b.cat.id);
+        }
+        saveDownloadedIds();
+        setTimeout(() => {
+          setDownloadBanner(false);
+          if (!state.selectedCategory) renderCategories();
+        }, 350);
+      }
+
+      function openDownloadDialog() {
+        const cat = state.selectedCategory;
+        const buttons = [];
+        if (cat) {
+          const estMB = toOdia((state.itemsList.length * 0.15).toFixed(1));
+          buttons.push({
+            label: `କେବଳ ${cat.title} (~${estMB} ଏମବି)`,
+            cls: 'btn-orange',
+            onClick: () => downloadSingleCategory(cat)
+          });
+        }
+        buttons.push({
+          label: '🌟 ସବୁ ବିଭାଗ ଡାଉନଲୋଡ୍ କରନ୍ତୁ',
+          cls: cat ? 'btn-brown' : 'btn-orange',
+          onClick: downloadAllCategories
+        });
+
+        openDialog({
+          title: 'ଅଫଲାଇନ୍ ଡାଉନଲୋଡ୍ 📥',
+          desc: cat
+            ? `ବିନା ଇଣ୍ଟରନେଟରେ ପଢ଼ିବା ପାଇଁ ଆପଣ କେବଳ '${cat.title}' କିମ୍ବା ସବୁ ବିଭାଗ ଏକାଠି ସେଭ୍ କରିପାରିବେ।`
+            : 'ବିନା ଇଣ୍ଟରନେଟରେ ପଢ଼ିବା ପାଇଁ ସବୁ ବିଭାଗର ଫଟୋ ଏବଂ ତଥ୍ୟ ସେଭ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି?',
+          buttons
+        });
+      }
+
+      function openDeleteDialog() {
+        const cat = state.selectedCategory;
+        if (!cat) return;
+        openDialog({
+          title: 'ଡିଲିଟ୍ କରନ୍ତୁ 🗑️',
+          titleColor: 'var(--red)',
+          desc: `ଆପଣ କେବଳ '${cat.title}' କିମ୍ବା ସବୁ ବିଭାଗର ଅଫଲାଇନ୍ ଫଟୋ ଡିଲିଟ୍ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି?`,
+          buttons: [
+            {
+              label: `କେବଳ ${cat.title} ଡିଲିଟ୍`,
+              cls: 'btn-red',
+              onClick: async () => {
+                if ('caches' in window) {
+                  const cache = await caches.open(CACHE_NAME);
+                  for (const it of state.itemsList) {
+                    if (it.image) await cache.delete(it.image);
+                  }
+                }
+                state.downloadedIds.delete(cat.id);
+                saveDownloadedIds();
+                renderGridOfflinePill();
+              }
+            },
+            {
+              label: 'ସବୁ ଅଫଲାଇନ୍ ଡାଟା ଡିଲିଟ୍',
+              cls: 'btn-red-outline',
+              onClick: async () => {
+                if ('caches' in window) await caches.delete(CACHE_NAME);
+                state.downloadedIds.clear();
+                saveDownloadedIds();
+                renderGridOfflinePill();
+              }
+            }
+          ]
+        });
+      }
+
+      // --- Event Listeners ---
+      function handleStepBack() {
+        if (state.isZoomOpen) {
+          closeZoomViewer();
+        } else if (state.activeItem) {
+          closeDetailModal();
+        } else if (state.isSearchActive) {
+          state.isSearchActive = false;
+          state.searchQuery = '';
+          el.searchInput.value = '';
+          updateHeader();
+          renderItemsGrid();
+        } else if (state.selectedCategory) {
+          goBackToCategoryList();
+        }
+      }
+
+      el.backBtn.addEventListener('click', handleStepBack);
+
+      el.searchBtn.addEventListener('click', () => {
+        state.isSearchActive = true;
+        updateHeader();
+        setTimeout(() => el.searchInput.focus(), 60);
+      });
+
+      el.searchInput.addEventListener('input', e => {
+        state.searchQuery = e.target.value;
+        el.searchClearBtn.classList.toggle('visible', state.searchQuery.length > 0);
+        renderItemsGrid();
+      });
+
+      el.searchClearBtn.addEventListener('click', () => {
+        state.searchQuery = '';
+        el.searchInput.value = '';
+        el.searchClearBtn.classList.remove('visible');
+        renderItemsGrid();
+        el.searchInput.focus();
+      });
+
+      el.retryConfigBtn.addEventListener('click', loadAppConfig);
+
+      el.updateFab.addEventListener('click', () => {
+        if (!state.latestNetworkData || !state.selectedCategory) return;
+        const fresh = state.latestNetworkData;
+        state.itemsList = fresh.items;
+        state.isUpdateAvailable = false;
+        state.latestNetworkData = null;
+        el.updateFab.classList.remove('visible');
+        saveCachedCategory(state.selectedCategory.id, fresh.rawJson);
+        state.previews[state.selectedCategory.id] = {
+          firstImage: fresh.items[0]?.image || '',
+          itemCount: fresh.items.length
+        };
+        renderItemsGrid();
+      });
+
+      el.detailBackdrop.addEventListener('click', closeDetailModal);
+      el.detailCloseBtn.addEventListener('click', closeDetailModal);
+      el.detailHero.addEventListener('click', openZoomViewer);
+      el.detailScroll.addEventListener('scroll', syncScrollDownFab, { passive: true });
+      el.scrollDownFab.addEventListener('click', () => {
+        el.detailScroll.scrollTo({ top: el.detailScroll.scrollHeight, behavior: 'smooth' });
+      });
+
+      el.zoomCloseBtn.addEventListener('click', closeZoomViewer);
+      el.dialogCancelBtn.addEventListener('click', closeDialog);
+      el.actionDialog.addEventListener('click', e => {
+        if (e.target === el.actionDialog) closeDialog();
+      });
+
+      window.addEventListener('popstate', handleStepBack);
+      window.addEventListener('keydown', e => {
+        if (e.key === 'Escape') handleStepBack();
+      });
+
+      // --- Boot ---
+      updateHeader();
+      loadAppConfig();
+    })();
+  </script>
 </body>
 </html>
