@@ -6,14 +6,14 @@
     
     <!-- SEO Meta Tags -->
     <title>ଆସ ଜାଣିବା | Asa Janiba - Odia Bhasa</title>
-    <meta name="description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ ଏବଂ ପନିପରିବା ବିଷୟରେ ଜାଣନ୍ତୁ। Learn about , fruits, and vegetables in Odia language with interesting facts.">
-    <meta name="keywords" content="Odia Bhasa, Asa Janiba,  in Odia, Fruits in Odia, Vegetables in Odia, Odia General Knowledge, Sandeep Biswal G">
+    <meta name="description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ, ପନିପରିବା, ଗାଡ଼ି ଓ ସଡ଼କ ଏବଂ ଯାନବାହନ ବିଷୟରେ ଚିତ୍ର ଓ ବିଶେଷ ତଥ୍ୟ ସହ ଜାଣନ୍ତୁ । Learn about animals, birds, fruits, vegetables, vehicles, and road & transport in Odia with interesting facts .">
+    <meta name="keywords" content="Odia Bhasa, Asa Janiba, ଆସ ଜାଣିବା, Animals in Odia, Birds in Odia, Fruits in Odia, Vegetables in Odia, Vehicles in Odia, Road and Traffic in Odia, Transport in Odia, ପଶୁ, ପକ୍ଷୀ, ଫଳ, ପନିପରିବା, ଗାଡ଼ି ଓ ସଡ଼କ, ଯାନବାହନ, Odia General Knowledge, Learn Odia, Sandeep Biswal G">
     <meta name="author" content="Sandeep Biswal G">
     <link rel="canonical" href="https://imsbg.github.io/odiabhasa/asa-janiba">
     
     <!-- Open Graph for Social Media -->
     <meta property="og:title" content="ଆସ ଜାଣିବା | Asa Janiba - Odia Bhasa">
-    <meta property="og:description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ ଏବଂ ପନିପରିବା ବିଷୟରେ ଜାଣନ୍ତୁ।">
+    <meta property="og:description" content="ଓଡ଼ିଆ ଭାଷାରେ ପଶୁ, ପକ୍ଷୀ, ଫଳ, ପନିପରିବା, ଗାଡ଼ି ଓ ସଡ଼କ ଏବଂ ଯାନବାହନ ବିଷୟରେ ଚିତ୍ର ଓ ବିଶେଷ ତଥ୍ୟ ସହ ଜାଣନ୍ତୁ ।">
     <meta property="og:image" content="https://imsbg.github.io/odiabhasa/images/app.png">
     <meta property="og:url" content="https://imsbg.github.io/odiabhasa/asa-janiba">
   <!-- ========== END SEO & METADATA ========== -->
@@ -966,6 +966,200 @@
       border-radius: 10px;
     }
 
+    /* --- Mobile Bottom Popup (Open in App / Continue in Web) --- */
+    .mobile-app-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 145;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.48);
+      opacity: 0;
+      transition: opacity 0.26s var(--ease);
+    }
+    .mobile-app-overlay.open { display: flex; }
+    .mobile-app-overlay.visible { opacity: 1; }
+
+    .mobile-app-sheet {
+      width: 100%;
+      max-width: 480px;
+      background: var(--card-bg);
+      border-radius: 26px 26px 0 0;
+      border-top: 1.5px solid var(--border);
+      padding: 18px 20px calc(22px + env(safe-area-inset-bottom, 0px));
+      box-shadow: 0 -10px 34px rgba(45, 36, 30, 0.18);
+      transform: translateY(100%);
+      transition: transform 0.34s var(--spring);
+    }
+    .mobile-app-overlay.visible .mobile-app-sheet {
+      transform: translateY(0);
+    }
+    .mobile-app-handle {
+      width: 40px;
+      height: 4px;
+      border-radius: 50px;
+      background: var(--border);
+      margin: 0 auto 14px;
+    }
+    .mobile-app-title {
+      margin: 0 0 6px;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .mobile-app-desc {
+      margin: 0 0 18px;
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--text-sec);
+    }
+    .mobile-app-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mobile-app-open {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: 16px;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(255, 109, 0, 0.26);
+      transition: transform 0.15s var(--spring);
+    }
+    .mobile-app-open:active { transform: scale(0.97); }
+    .mobile-app-web {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: var(--footer-bg);
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      font-size: 14.5px;
+      font-weight: 700;
+      transition: transform 0.15s var(--spring);
+    }
+    .mobile-app-web:active { transform: scale(0.97); }
+
+    /* --- Gentle Non-Forced Message (After Watching 5 Items) --- */
+    .gentle-toast-wrap {
+      position: fixed;
+      left: 14px;
+      right: 14px;
+      bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+      z-index: 132;
+      display: none;
+      justify-content: center;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.28s var(--ease), transform 0.32s var(--spring);
+    }
+    .gentle-toast-wrap.open { display: flex; }
+    .gentle-toast-wrap.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    body.has-desktop-bar .gentle-toast-wrap {
+      bottom: 68px;
+    }
+    .gentle-toast-wrap.above-detail-fab {
+      bottom: calc(78px + env(safe-area-inset-bottom, 0px));
+    }
+    .gentle-toast-card {
+      pointer-events: auto;
+      width: 100%;
+      max-width: 460px;
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 18px;
+      padding: 12px 14px;
+      box-shadow: 0 10px 28px rgba(45, 36, 30, 0.16);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .gentle-toast-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .gentle-toast-text {
+      margin: 0;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .gentle-toast-link {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--orange);
+      text-decoration: none;
+    }
+    .gentle-toast-close {
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      border-radius: 50%;
+      background: var(--footer-bg);
+      color: var(--text-sec);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* --- Desktop-Only Bottom Rounded One-Line Bar (Not Closable) --- */
+    .desktop-app-bar {
+      position: fixed;
+      left: 50%;
+      bottom: 12px;
+      transform: translateX(-50%);
+      z-index: 95;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      max-width: calc(100vw - 28px);
+      background: var(--card-bg);
+      border: 1.5px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 10px 8px 18px;
+      box-shadow: 0 8px 26px rgba(45, 36, 30, 0.14);
+      white-space: nowrap;
+    }
+    .desktop-app-bar.visible { display: inline-flex; }
+    .desktop-app-bar-text {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .desktop-app-bar-link {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      background: var(--orange);
+      color: #FFFFFF;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.15s var(--spring);
+    }
+    .desktop-app-bar-link:hover { opacity: 0.94; }
+    .desktop-app-bar-link:active { transform: scale(0.96); }
+    body.has-desktop-bar .stage { padding-bottom: 78px; }
+
     /* --- Animations --- */
     @keyframes shimmerMove {
       0% { background-position: 200% 0; }
@@ -1137,6 +1331,40 @@
     </div>
   </div>
 
+  <!-- Mobile-Only Bottom Popup (Open in App / Continue in Web) -->
+  <div class="mobile-app-overlay" id="mobileAppPopup" role="dialog" aria-modal="true">
+    <div class="mobile-app-sheet">
+      <div class="mobile-app-handle"></div>
+      <h2 class="mobile-app-title">ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ରେ ଖୋଲନ୍ତୁ</h2>
+      <p class="mobile-app-desc">ଉତ୍ତମ ଅନୁଭୂତି ଏବଂ ସହଜରେ ଶିଖିବା ପାଇଁ ଆପଣ ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ରେ ଏହାକୁ ଖୋଲିପାରିବେ କିମ୍ବା ୱେବ୍‌ରେ ଜାରି ରଖିପାରିବେ ।</p>
+      <div class="mobile-app-actions">
+        <a class="mobile-app-open" href="https://odiabhasa.pages.dev/open?ASA_JANIBA">ଆପ୍‌ରେ ଖୋଲନ୍ତୁ</a>
+        <button class="mobile-app-web" id="continueWebBtn" type="button">ୱେବ୍‌ରେ ଜାରି ରଖନ୍ତୁ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gentle Non-Forced Message (After Watching 5 Items) -->
+  <div class="gentle-toast-wrap" id="gentleAppToast" role="status" aria-live="polite">
+    <div class="gentle-toast-card">
+      <div class="gentle-toast-body">
+        <p class="gentle-toast-text">ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ରେ ଆପଣ ଏହି ସବୁ ତଥ୍ୟ କେବଳ ଥରେ ଡାଉନଲୋଡ୍ କରି ବିନା ଇଣ୍ଟରନେଟ୍‌ରେ ମଧ୍ୟ ଦେଖିପାରିବେ ।</p>
+        <a class="gentle-toast-link" id="gentleAppLink" href="https://odiabhasa.pages.dev/open?ASA_JANIBA">ଓଡ଼ିଆ ଭାଷା ଆପ୍‌ରେ ଦେଖନ୍ତୁ →</a>
+      </div>
+      <button class="gentle-toast-close" id="gentleToastCloseBtn" type="button" aria-label="ବନ୍ଦ କରନ୍ତୁ">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Desktop-Only One-Line Rounded Bottom Footer Bar (Not Closable) -->
+  <div class="desktop-app-bar" id="desktopAppBar" role="region" aria-label="Odia Bhasa Mobile App">
+    <span class="desktop-app-bar-text">📱 Download Odia Bhasa app on your mobile for a better experience and learn Odia language .</span>
+    <a class="desktop-app-bar-link" href="https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa" target="_blank" rel="noopener noreferrer">Play Store ↗</a>
+  </div>
+
   <script>
     (() => {
       'use strict';
@@ -1146,6 +1374,10 @@
       const LS_CONFIG_KEY = 'asa_janiba_app_config_v2';
       const LS_CAT_PREFIX = 'asa_janiba_cat_data_';
       const LS_DOWNLOADED_KEY = 'asa_janiba_downloaded_ids';
+      const APP_OPEN_URL = 'https://odiabhasa.pages.dev/open?ASA_JANIBA';
+      const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=in.sandeep.odiabhasa';
+      const SS_MOBILE_POPUP_KEY = 'asa_janiba_mobile_popup_seen';
+      const SS_GENTLE_TOAST_KEY = 'asa_janiba_gentle_toast_seen';
 
       const ICON_CHECK = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
       const ICON_DL = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
@@ -1170,6 +1402,12 @@
         return cat.icon && cat.icon.trim() ? `${cat.icon.trim()} ${cat.title}` : cat.title;
       }
 
+      function isMobileDevice() {
+        const ua = navigator.userAgent || navigator.vendor || window.opera || '';
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua) ||
+          (window.matchMedia('(pointer: coarse)').matches && window.innerWidth <= 900);
+      }
+
       // --- App State ---
       const state = {
         appConfig: { version: 0, maintenanceMode: false, maintenanceMessage: '', hiddenTabs: [], categories: [] },
@@ -1187,7 +1425,9 @@
         isTransitioning: false,
         activeItem: null,
         sourceImgEl: null,
-        isZoomOpen: false
+        isZoomOpen: false,
+        watchedItemsCount: 0,
+        gentleToastShown: false
       };
 
       // --- DOM Refs ---
@@ -1242,8 +1482,77 @@
         dialogTitle: document.getElementById('dialogTitle'),
         dialogDesc: document.getElementById('dialogDesc'),
         dialogActions: document.getElementById('dialogActions'),
-        dialogCancelBtn: document.getElementById('dialogCancelBtn')
+        dialogCancelBtn: document.getElementById('dialogCancelBtn'),
+
+        mobileAppPopup: document.getElementById('mobileAppPopup'),
+        continueWebBtn: document.getElementById('continueWebBtn'),
+        gentleAppToast: document.getElementById('gentleAppToast'),
+        gentleAppLink: document.getElementById('gentleAppLink'),
+        gentleToastCloseBtn: document.getElementById('gentleToastCloseBtn'),
+        desktopAppBar: document.getElementById('desktopAppBar')
       };
+
+      // --- Mobile Popup / Desktop Footer / 5-View Gentle Prompt ---
+      const IS_MOBILE = isMobileDevice();
+
+      function showMobileAppPopup() {
+        if (!IS_MOBILE) return;
+        try {
+          if (sessionStorage.getItem(SS_MOBILE_POPUP_KEY) === '1') return;
+        } catch {}
+        el.mobileAppPopup.classList.add('open');
+        requestAnimationFrame(() => el.mobileAppPopup.classList.add('visible'));
+      }
+
+      function closeMobileAppPopup() {
+        try { sessionStorage.setItem(SS_MOBILE_POPUP_KEY, '1'); } catch {}
+        el.mobileAppPopup.classList.remove('visible');
+        setTimeout(() => el.mobileAppPopup.classList.remove('open'), 260);
+      }
+
+      function syncGentleToastPosition() {
+        const shouldLift = el.detailOverlay.classList.contains('open') && el.scrollDownFab.classList.contains('visible');
+        el.gentleAppToast.classList.toggle('above-detail-fab', shouldLift);
+      }
+
+      function showGentleAppToast() {
+        if (state.gentleToastShown) return;
+        try {
+          if (sessionStorage.getItem(SS_GENTLE_TOAST_KEY) === '1') return;
+        } catch {}
+        state.gentleToastShown = true;
+        syncGentleToastPosition();
+        el.gentleAppToast.classList.add('open');
+        requestAnimationFrame(() => el.gentleAppToast.classList.add('visible'));
+      }
+
+      function closeGentleAppToast() {
+        try { sessionStorage.setItem(SS_GENTLE_TOAST_KEY, '1'); } catch {}
+        el.gentleAppToast.classList.remove('visible');
+        setTimeout(() => el.gentleAppToast.classList.remove('open'), 280);
+      }
+
+      function trackItemWatch() {
+        state.watchedItemsCount += 1;
+        if (state.watchedItemsCount === 5) {
+          setTimeout(showGentleAppToast, 450);
+        }
+      }
+
+      function initDevicePrompts() {
+        if (IS_MOBILE) {
+          el.gentleAppLink.href = APP_OPEN_URL;
+          el.gentleAppLink.removeAttribute('target');
+          el.gentleAppLink.removeAttribute('rel');
+          setTimeout(showMobileAppPopup, 380);
+        } else {
+          el.gentleAppLink.href = PLAY_STORE_URL;
+          el.gentleAppLink.setAttribute('target', '_blank');
+          el.gentleAppLink.setAttribute('rel', 'noopener noreferrer');
+          el.desktopAppBar.classList.add('visible');
+          document.body.classList.add('has-desktop-bar');
+        }
+      }
 
       // --- Persistent Storage Helpers ---
       function loadDownloadedIds() {
@@ -1888,12 +2197,14 @@
         const sc = el.detailScroll;
         const remaining = sc.scrollHeight - sc.scrollTop - sc.clientHeight;
         el.scrollDownFab.classList.toggle('visible', Boolean(hasFacts && remaining > 50));
+        syncGentleToastPosition();
       }
 
       function openDetailModal(item, sourceEl) {
         state.activeItem = item;
         state.sourceImgEl = sourceEl || null;
         document.body.classList.add('no-scroll');
+        trackItemWatch();
 
         el.detailHeroImg.src = item.image || '';
         el.detailHeroImg.alt = item.odiaName;
@@ -1988,6 +2299,7 @@
             document.body.classList.remove('no-scroll');
             state.activeItem = null;
             state.sourceImgEl = null;
+            syncGentleToastPosition();
           }, 290);
         } else {
           el.detailOverlay.classList.remove('visible');
@@ -1996,6 +2308,7 @@
             document.body.classList.remove('no-scroll');
             state.activeItem = null;
             state.sourceImgEl = null;
+            syncGentleToastPosition();
           }, 260);
         }
       }
@@ -2322,7 +2635,9 @@
 
       // --- Event Listeners ---
       function handleStepBack() {
-        if (state.isZoomOpen) {
+        if (el.mobileAppPopup.classList.contains('open')) {
+          closeMobileAppPopup();
+        } else if (state.isZoomOpen) {
           closeZoomViewer();
         } else if (state.activeItem) {
           closeDetailModal();
@@ -2390,6 +2705,12 @@
         if (e.target === el.actionDialog) closeDialog();
       });
 
+      el.continueWebBtn.addEventListener('click', closeMobileAppPopup);
+      el.mobileAppPopup.addEventListener('click', e => {
+        if (e.target === el.mobileAppPopup) closeMobileAppPopup();
+      });
+      el.gentleToastCloseBtn.addEventListener('click', closeGentleAppToast);
+
       window.addEventListener('popstate', handleStepBack);
       window.addEventListener('keydown', e => {
         if (e.key === 'Escape') handleStepBack();
@@ -2398,6 +2719,7 @@
       // --- Boot ---
       updateHeader();
       loadAppConfig();
+      initDevicePrompts();
     })();
   </script>
 </body>
