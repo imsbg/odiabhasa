@@ -1,15 +1,6 @@
 {
   "version": 29,
   "banners": [ 
-             {
-  "image": "https://imsbg.github.io/odiabhasa/images/banner/jd/divyanshee-tripathy-26-11-2020.jpg",
-  "text": "",
-  "paragraph": "",
-  "link": "",
-  "promo": "no",
-  "start": "26-11-2026 00:01",
-  "end": "26-11-2026 23:58"
-},
        {
   "image": "https://i.ibb.co/nMH9Lnbq/aj-janabahana.png",
   "text": "",
@@ -17,7 +8,7 @@
   "link": "odiabhasa://open?ASA_JANIBA",
   "promo": "yes",
   "start": "26-11-2026 8:30",
-  "end": "30-11-2026 23:59"
+  "end": "10-12-2026 23:59"
 },
 
      {
